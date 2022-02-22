@@ -1,0 +1,36 @@
+{
+  "name": "landforms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rm -rf _site && mkdir _site && tailwind build -i src/css/styles.css -o _site/css/styles.css && eleventy --serve",
+    "build": "tailwindcss build -i ./src/styles.css -o ./_site/tailwind.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "NODE_ENV=production npx tailwindcss build ./src/tailwind.css -o ./_site/tailwind.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-cache-assets": "^2.3.0",
+    "@11ty/eleventy-img": "^1.0.0",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.2",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^12.3.2",
+    "node-env": "^0.1.6",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
+    "eslint": "^8.9.0",
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.5.1"
+  }
+}

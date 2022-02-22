@@ -1,0 +1,15 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<section>
+  <article>
+  <h1>{{ title or metadata.title }}</h1>
+  {{ content | safe }}
+  </article>
+</section>
+<section>
+  {% for book in books %}
+  {{book.ISBN}}<br>
+  {% endfor %}
+</section>
+{% endblock %}

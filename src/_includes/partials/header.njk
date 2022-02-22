@@ -1,0 +1,12 @@
+  <header class="">
+    <nav>
+      {% set navPages = collections.all | eleventyNavigation %}
+      <ul class="flex sm:flex-row flex-col">
+      {%- for entry in navPages %}
+        <li  class="p-3">
+          <a href="{{ entry.url | url }}" class="{% if entry.url == page.url %}{% else %}underline{% endif %}">{{ entry.title }}</a>
+        </li>
+      {%- endfor %}
+      </ul>
+    </nav>
+  </header>

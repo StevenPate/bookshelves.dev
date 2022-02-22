@@ -1,0 +1,5 @@
+{
+  "permalink": "/{{ page.fileSlug }}/",
+  "layout": "layouts/shelf.njk",
+  "tags": "shelf"
+}
