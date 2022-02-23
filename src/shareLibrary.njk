@@ -1,0 +1,23 @@
+---
+permalink: '/library.json'
+---
+{
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "bio": "{{ site.description }}",
+  "lists": [
+  {%- for item in collections.shelves %}
+    {
+      "title": "{{ item.data.title }}",
+      "url": "{{ site.url }}{{ item.url }}",
+      "books": [
+        {%- for book in item.data.books %}
+        { 
+          {% book book.ISBN, 'json' %}
+        }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    }{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ]
+}

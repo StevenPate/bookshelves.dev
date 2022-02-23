@@ -1,0 +1,5 @@
+{% extends 'layouts/base.njk' %}
+{% block content %}
+{% book book.ISBN, 'full', null, 'purchase', 'full' %}
+{{ content | safe }}
+{% endblock %}

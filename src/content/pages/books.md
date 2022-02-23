@@ -3,4 +3,12 @@ title: Books
 eleventyNavigation:
   key: Books
 ---
-Books go here.
+Here are the books...
+
+<section>
+  <div class="grid grid-cols-3 gap-4">
+  {% for book in ISBNsOnShelves %}
+  {% book book.ISBN, 'cover', '', 'local' %}
+  {% endfor %}
+  </div>
+</section>

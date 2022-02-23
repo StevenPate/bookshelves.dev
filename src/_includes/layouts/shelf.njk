@@ -9,7 +9,7 @@
 </section>
 <section>
   {% for book in books %}
-  {{book.ISBN}}<br>
+    {% book book.ISBN, 'full', null, 'purchase', '', page.inputPath %}
   {% endfor %}
 </section>
 {% endblock %}

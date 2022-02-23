@@ -1,0 +1,6 @@
+{
+  "tags": ["posts"],
+  "permalink": "/{{ page.fileSlug }}/",
+  "layout": "layouts/page.njk",
+  "date": "Last Modified"
+}

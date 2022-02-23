@@ -1,0 +1,17 @@
+{
+  "onlineSalesDefault": "bookshop.org",
+  "bookshoporgLink": "https://bookshop.org/a/",
+  "bookshoporgAffiliateID": "a23123",
+  "bookshop": "https://bookshop.org/a/23123/",
+  "audioSalesDefault": "libro.fm",
+  "conversions": [
+    {
+      "pathName": "mb-librofm",
+      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=madisonbooks"
+    },
+    {
+      "pathName": "librofm",
+      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]"
+    }
+  ]
+}

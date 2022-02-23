@@ -17,5 +17,10 @@ jspm_packages/
 # Serverless directories
 .serverless/
 
-# buils dilwa
+# the usual junk
+.DS_Store
+
+# build artifacts
 _site/
+src/images/
+src/_data/ISBNsOnShelves.json

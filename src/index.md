@@ -1,23 +1,6 @@
 ---
-layout: layouts/page.njk
+layout: layouts/home.njk
 title: Home
 eleventyNavigation:
   key: Home
 ---
-## Heart is here
-It's good here.
-
-lorem     
-
-test.html
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptatibus eveniet quas explicabo repudiandae nihil cumque modi eos nam provident! Libero soluta accusantium deserunt, dolor asperiores aliquam ab rerum explicabo.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore veniam officia placeat, nisi voluptate eligendi. Nobis necessitatibus dolorem alias esse doloribus eos eveniet provident soluta quasi neque. Harum, asperiores necessitatibus?
-Reiciendis expedita, earum rerum praesentium a libero quasi incidunt optio dolores esse neque magnam dolor culpa error quis quam beatae amet minima quos nesciunt eveniet sunt! Sint quaerat saepe similique.
-Cupiditate amet officiis nulla nam cum quasi ea similique laudantium ullam doloremque architecto quisquam consequuntur veniam saepe culpa, id qui delectus fugit porro. Inventore officiis tenetur, hic mollitia voluptatem molestias.
-Dicta aliquid consequatur tempore suscipit assumenda harum? Officia rerum quis deserunt nihil, in, dolore quaerat alias voluptas quae quo repudiandae animi, autem eaque. Architecto libero officia incidunt optio alias totam.
-Omnis molestiae alias veniam, temporibus facilis magni doloribus ullam! Dignissimos, doloribus deleniti nulla blanditiis mollitia ipsum eius. Voluptate dolorum dolores consequuntur, tempore, corporis praesentium, error voluptates veritatis ea enim eum!
-Enim, obcaecati aliquid architecto unde dolor illum? Accusantium veritatis, tenetur quo nesciunt sint molestiae asperiores saepe molestias voluptates sequi fugiat. Sapiente libero, aut repellendus eius suscipit deleniti doloremque fugit dolorem.
-Incidunt non ratione, in dicta consequuntur magnam obcaecati veritatis eius explicabo veniam, commodi nam architecto nostrum nulla amet, temporibus laboriosam sapiente ullam enim? Labore quaerat quos corporis voluptatum deleniti commodi.
-Soluta, possimus, architecto enim omnis corrupti earum optio hic quam eaque esse ducimus. Eaque quia voluptatem molestias sit reprehenderit obcaecati tempore fuga aliquid tempora, eos itaque laudantium suscipit doloribus ut.
-Ipsam vero similique quod voluptas tempora nam dicta nulla amet, dolorem commodi eum sapiente, repellat odio cum reiciendis impedit ex ducimus sed numquam eius deserunt hic earum atque aperiam. Nobis.
-Repudiandae excepturi recusandae nulla tempora suscipit harum eaque laboriosam quam molestias repellat dolorum aut mollitia deleniti ipsa ad, incidunt labore veniam at aliquid autem nemo, corporis quidem. Voluptate, nostrum ab.

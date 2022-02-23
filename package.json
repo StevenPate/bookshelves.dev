@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf _site && mkdir _site && tailwind build -i src/css/styles.css -o _site/css/styles.css && eleventy --serve",
+    "dev": "rm -rf _site && mkdir _site && node ./stockShelves.js && tailwind build -i src/css/styles.css -o _site/css/styles.css && eleventy --serve",
     "build": "tailwindcss build -i ./src/styles.css -o ./_site/tailwind.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "NODE_ENV=production npx tailwindcss build ./src/tailwind.css -o ./_site/tailwind.css"
@@ -20,6 +20,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
+    "bookcovers": "^0.1.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^12.3.2",
     "node-env": "^0.1.6",
