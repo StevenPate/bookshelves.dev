@@ -1,6 +1,5 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
-const bookcovers = require("bookcovers");
 const Cache = require("@11ty/eleventy-cache-assets");
 const cacheImage = require("./src/js/cacheImage");
 const slugify = require("slugify");
@@ -111,8 +110,6 @@ const findDataForISBN = async (ISBN) => {
   let bookshopCoverImageURL = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
   let cachedImage = await cacheImage(bookshopCoverImageURL, "book-cover shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110", ISBN);
   fetchedBookData.bookshopCoverImage = cachedImage;
-
-  // fetchedBookData.fullData.imageData = bookcovers.withIsbn(ISBN).then(results => console.log(results));
 
   return fetchedBookData;
 };
