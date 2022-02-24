@@ -6,7 +6,7 @@ eleventyNavigation:
 Here are the books...
 
 <section>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
   {% for book in ISBNsOnShelves %}
   {% book book.ISBN, 'cover', '', 'local' %}
   {% endfor %}

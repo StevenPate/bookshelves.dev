@@ -1,7 +1,8 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<section>
+<article>
+<section title="About the '{{ title }}' shelf" class="prose prose-xl">
   <article>
   <h1>{{ title or metadata.title }}</h1>
   {{ content | safe }}
@@ -12,4 +13,5 @@
     {% book book.ISBN, 'full', null, 'purchase', '', page.inputPath %}
   {% endfor %}
 </section>
+</article>
 {% endblock %}

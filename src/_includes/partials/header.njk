@@ -1,12 +1,22 @@
-  <header class="">
-    <nav>
-      {% set navPages = collections.all | eleventyNavigation %}
-      <ul class="flex sm:flex-row flex-col">
-      {%- for entry in navPages %}
-        <li  class="p-3">
-          <a href="{{ entry.url | url }}" class="{% if entry.url == page.url %}{% else %}underline{% endif %}">{{ entry.title }}</a>
-        </li>
-      {%- endfor %}
-      </ul>
+  <header class="flex justify-center w-full py-6 sm:justify-start sm:px-8 md:px-16 lg:px-32">
+    <nav class="flex flex-col mx-auto sm:m-0 sm:flex-row items-center justify-center sm:justify-between max-w-[65ch] w-full">
+        <a href="{{ '/' | url }}" class="mb-8 sm:mb-0 sm:mr-5">
+          <div class="relative ">
+            <div class="absolute z-0 w-full h-full duration-300 ease-in bg-blue-200 rounded-sm hover:scale-110 hover:top-0 top-2 left-4 mix-blend-multiply hover:left-0 hover:p-2 opacity-70"></div>
+            <h1 class="z-10 max-w-5xl mb-0 text-3xl font-bold leading-none tracking-tighter font-Lora text-neutral-600">{{ site.title | safe }}</h1>
+          </div>
+        </a>
+        <ul class="flex flex-row text-lg sm:justify-end gap-x-5 gap-y-2 sm:mb-0 font-MerriweatherSans text-slate-600">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <a class="z-10 no-underline group decoration-amber-500 hover:decoration-wavy" href="{{ entry.url | url }}">
+            <li class="relative nav-item{% if entry.url == page.url %} bg-blue-100 bg-opacity-70 group-hover:bg-opacity-0{% endif %}">
+            <div class="absolute z-0 w-full h-full duration-300 ease-in rounded-sm group-hover:bg-blue-200 group-hover:scale-110 group-hover:top-0 top-2 left-4 mix-blend-multiply hover:left-0 group-hover:p-2 opacity:0 bg-none group-hover:opacity-70"></div>
+            {{ entry.title }}</li>
+          </a>
+        {%- endfor %}
+
+
+
+
     </nav>
   </header>

@@ -5,6 +5,7 @@ const findDataForISBN = require("../js/findDataForISBN");
 const slugify = require("slugify");
 const MarkdownIt = require("markdown-it");
 let md = new MarkdownIt();
+const lf = new Intl.ListFormat('en');
 
 const createISBNObject = async (ISBN) => {
   let fetchedDataForISBN = await findDataForISBN(ISBN);
@@ -17,17 +18,24 @@ const createISBNObject = async (ISBN) => {
 };
 
 const refineBookObject = (ISBNObject, thisShelf) => {
+
+  let authorString = (Array.isArray(ISBNObject.fetchedData.author))
+    ? lf.format(ISBNObject.fetchedData.author)
+    : ISBNObject.fetchedData.author
+
   let thisBook = {
     ISBN: ISBNObject.ISBN,
     slug: slugify(ISBNObject.fetchedData.title, { lower: true, strict: true }),
     title: ISBNObject.fetchedData.title,
     subtitle: ISBNObject.fetchedData.subtitle,
-    author: ISBNObject.fetchedData.author,
+    author: authorString,
     description: ISBNObject.fetchedData.description,
     descriptionCredit: null,
     categories: ISBNObject.fetchedData.categories,
     coverImage: ISBNObject.fetchedData.bookshopCoverImage,
   };
+
+  
 
   let contexts = [];
 
@@ -93,6 +101,7 @@ const refineBookObject = (ISBNObject, thisShelf) => {
     thisBook.description += ` (${thisBook.descriptionCredit})`;
   } 
   thisBook.description = md.render(thisBook.description);
+  // console.log (thisBook)
   return thisBook;
 };
 
@@ -211,6 +220,7 @@ module.exports = async function (
   let fullContext = renderDescriptiveContexts(thisBook, thisShelf);
 
   let renderedBook = thisBook.title;
+  
 
   switch (display) {
     case "cover":
@@ -218,33 +228,38 @@ module.exports = async function (
       break;
     case "full":
       renderedBook = `
-      <div id="${thisBook.slug}" class="flex space-x-8 my-16 border-2 rounded-lg shadow-xl">
-        <div id="${thisBook.slug}-info" class="w-2/3 m-6">
-          <h2 id="${thisBook.slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title font-Asul">
+      <div id="${thisBook.slug}" class="flex gap-x-8 my-16">
+        <div id="${thisBook.slug}-info" class="w-2/3">
+          <h2 id="${thisBook.slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
             ${thisBook.title}
           </h2>`;
       if (thisBook.subtitle != null) {
-        renderedBook += `<h3 id="${thisBook.slug}=subtitle" class="mb-12 text-3xl font-bold text-gray-500 sm:text-3xl">${thisBook.subtitle}</h3>`;
+        renderedBook += `<h3 id="${thisBook.slug}=subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${thisBook.subtitle}</h3>`;
       }
       if (thisBook.author != null) renderedBook += `
-          <div id="${thisBook.slug}-author" class="mb-12 text-2xl leading-tight ease-in-out prose prose-xl book-attribution font-Asul">
+          <div id="${thisBook.slug}-author" class="mb-12 mt-4 text-2xl leading-tight ease-in-out prose prose-xl book-attribution font-Asul">
             by ${thisBook.author}
           </div>`
 
       renderedBook += `
-          ${thisBook.description}
-        </div>
-        <div id="${thisBook.slug}-image" class="w-1/3 not-prose my-6 px-6">
-        <!-- {{ processedCoverImage | safe }} -->
-          ${thisBook.coverImage}
-        </div>
-      </div>`;
+          
+        <div class="prose prose-xl">${thisBook.description}</div>`
+
       if (displayText) {
         renderedBook += `<p>${displayText}</p>`;
       }
       if (context == "full") {
         renderedBook += `<div>${fullContext}</div>`;
       }
+
+      renderedBook += `
+        </div>
+        <div id="${thisBook.slug}-image" class="w-1/3 not-prose my-6 px-6">
+        <!-- {{ processedCoverImage | safe }} -->
+          ${thisBook.coverImage}
+        </div>
+      </div>`;
+
       break;
     case "textlink":
     default:

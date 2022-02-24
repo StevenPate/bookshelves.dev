@@ -1,5 +1,7 @@
 {% extends 'layouts/base.njk' %}
 {% block content %}
-<h1>{{ title or metadata.title }}</h1>
+<section class="prose prose-xl">
+<h1 class="text-neutral-600">{{ title or metadata.title }}</h1>
 {{ content | safe }}
+</div>
 {% endblock %}
