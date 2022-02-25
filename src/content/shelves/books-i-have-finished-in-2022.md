@@ -1,6 +1,7 @@
 ---
 layout: layouts/shelf.njk
 title: Books I have finished in 2022
+categories: ['Tumwater']
 books:
   - ISBN: "9780374157357"
     description: A provocative account of how we came to organize our societies provides hope for making them better.
