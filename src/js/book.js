@@ -35,17 +35,16 @@ const refineBookObject = (ISBNObject, thisShelf) => {
     coverImage: ISBNObject.fetchedData.bookshopCoverImage,
   };
 
-  
 
   let contexts = [];
 
   if (ISBNObject.shelfData != (null || undefined)) {
     ISBNObject.shelfData.forEach((shelfObject) => {
       let shelfLink = `<a href="/${shelfObject.shelfID}/">${shelfObject.shelfTitle}</a>`;
-      let shelfAttrribution =
-        shelfObject.bookData.descriptionCredit != null
-          ? shelfObject.bookData.descriptionCredit
-          : null;
+
+      let shelfAttrribution = (shelfObject.bookData.descriptionCredit != null) 
+        ? shelfObject.bookData.descriptionCredit
+        : shelfObject.shelfAttribution
       //////// will add link at some point!
 
       let shelfLabel =
@@ -101,7 +100,7 @@ const refineBookObject = (ISBNObject, thisShelf) => {
     thisBook.description += ` (${thisBook.descriptionCredit})`;
   } 
   thisBook.description = md.render(thisBook.description);
-  // console.log (thisBook)
+
   return thisBook;
 };
 
@@ -226,7 +225,7 @@ module.exports = async function (
     case "cover":
       renderedBook = `<a href="${ISBNLink}">${thisBook.coverImage}</a>`;
       break;
-    case "full":
+    case "page":
       renderedBook = `
       <div id="${thisBook.slug}" class="flex gap-x-8 my-16">
         <div id="${thisBook.slug}-info" class="w-2/3">
@@ -238,7 +237,7 @@ module.exports = async function (
       }
       if (thisBook.author != null) renderedBook += `
           <div id="${thisBook.slug}-author" class="mb-12 mt-4 text-2xl leading-tight ease-in-out prose prose-xl book-attribution font-Asul">
-            by ${thisBook.author}
+          ${thisBook.categories} by ${thisBook.author}
           </div>`
 
       renderedBook += `
@@ -249,18 +248,62 @@ module.exports = async function (
         renderedBook += `<p>${displayText}</p>`;
       }
       if (context == "full") {
-        renderedBook += `<div>${fullContext}</div>`;
+        renderedBook += `<aside class="mt-12 bg-blue-100 px-6 py-6">${fullContext}</aside>`;
       }
 
       renderedBook += `
         </div>
-        <div id="${thisBook.slug}-image" class="w-1/3 not-prose my-6 px-6">
+        <div id="${thisBook.slug}-image" class="w-1/3 not-prose my-6 px-6 flex flex-col">
         <!-- {{ processedCoverImage | safe }} -->
-          ${thisBook.coverImage}
+          ${thisBook.coverImage}`
+
+          if (linkType == "purchase") {
+          renderedBook += `
+            <a href="${ISBNLink}" class="mx-auto my-6 text-xl sm:text-2xl font-bold text-[#79BEFE] hover:underline; hover:decoration-wavy hover:decoration-amber-500	">
+                Buy on Bookshop.org→
+            </a>`
+          };
+
+        renderedBook += `
         </div>
       </div>`;
 
       break;
+    case "full":
+        renderedBook = `
+        <div id="${thisBook.slug}" class="flex flex-col-reverse sm:flex-row gap-x-8 my-16">
+          <div id="${thisBook.slug}-info" class="w-full sm:w-2/3">
+            <h2 id="${thisBook.slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
+              ${thisBook.title}
+            </h2>`;
+        if (thisBook.subtitle != null) {
+          renderedBook += `<h3 id="${thisBook.slug}=subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${thisBook.subtitle}</h3>`;
+        }
+        if (thisBook.author != null) renderedBook += `
+            <div id="${thisBook.slug}-author" class="mb-12 mt-4 text-2xl leading-tight ease-in-out prose prose-xl book-attribution font-Asul">
+            ${thisBook.categories} by ${thisBook.author}
+            </div>`
+  
+        renderedBook += `
+            
+          <div class="prose prose-xl">${thisBook.description}</div>`
+  
+        if (displayText) {
+          renderedBook += `<p>${displayText}</p>`;
+        }
+        if (context == "full") {
+          renderedBook += `<aside class="mt-12 bg-blue-100 px-6 py-6">${fullContext}</aside>`;
+        }
+  
+        renderedBook += `
+          </div>
+          <div id="${thisBook.slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6">
+          <!-- {{ processedCoverImage | safe }} -->
+            ${thisBook.coverImage}
+          </div>
+        </div>`;
+  
+        break;  
     case "textlink":
     default:
       displayText = !displayText ? thisBook.title : displayText;

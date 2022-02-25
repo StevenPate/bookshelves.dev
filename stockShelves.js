@@ -21,6 +21,8 @@ const processShelves = (folderPath) => {
         newShelf.shelfTitle = shelfTitle;
         newShelf.shelfID = slugify(shelfTitle, { lower: true, strict: true });
         newShelf.masterShelf = isMaster;
+        newShelf.categories = (data[0].categories || null);
+        newShelf.shelfAttribution = (data[0].shelfAttribution || null);
         //////// Add conversionPath if there is one at the shelf level. Then have this cascade to book in book.js
         let booksToAdd = [];
         if (isMaster) {
@@ -32,13 +34,14 @@ const processShelves = (folderPath) => {
           booksToAdd = data[0].books;
         }
         const addISBN = (book, newShelf) => {
+          
           let bookDataForShelf = {
             title: book.title || null,
             subtitle: book.subtitle || null,
             author: book.author || null,
             description: JSON.stringify(book.description) || null,
             descriptionCredit: book.descriptionCredit || null,
-            category: book.category || null,
+            categories: book.categories || newShelf.cagegories || null,
             coverImage: book.coverImage || null,
             shelfLabel: book.shelfLabel || null,
             conversionPath: book.conversionPath || null,
@@ -108,7 +111,7 @@ const findDataForISBN = async (ISBN) => {
   };
 
   let bookshopCoverImageURL = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
-  let cachedImage = await cacheImage(bookshopCoverImageURL, "book-cover shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110", ISBN);
+  let cachedImage = await cacheImage(bookshopCoverImageURL, "book-cover shadow-xl transition duration-400 ease-in-out transform hover:-translate-y-1 hover:scale-110", ISBN);
   fetchedBookData.bookshopCoverImage = cachedImage;
 
   return fetchedBookData;
@@ -152,6 +155,5 @@ const writeShelvesToJSON = (itemsForJSON) => {
 };
 
 processShelves("./src/content/shelves/");
-
 addFoundData(ISBNsOnShelves);
 

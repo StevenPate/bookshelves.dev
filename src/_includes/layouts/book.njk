@@ -1,7 +1,7 @@
 {% extends 'layouts/base.njk' %}
 {% block content %}
-<section class="max-w-[65ch]">
-  {% book book.ISBN, 'full', null, 'purchase', 'full' %}
+<section class="">
+  {% book book.ISBN, 'page', null, 'purchase', 'full' %}
   {{ content | safe }}
 </section>
 {% endblock %}
