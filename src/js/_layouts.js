@@ -5,7 +5,7 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 }
 
-function full(id, details, contexts) {
+function full(id, details, contexts) { // TODO make formatDetails and formatContexts into functions each layout can call
   let {title, subtitle, categories, authors, description, cachedCover, link} = details;
   let slug = slugify(title, { lower: true, strict: true });
   let sub = (subtitle != null) ?`<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>` : ''
