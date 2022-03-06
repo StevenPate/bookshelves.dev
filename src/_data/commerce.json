@@ -6,6 +6,10 @@
   "audioSalesDefault": "libro.fm",
   "conversions": [
     {
+      "pathName": "default",
+      "pathURL": "https://bookshop.org/a/23123/[ISBN]/"
+    },
+    {
       "pathName": "mb-librofm",
       "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=madisonbooks"
     },
@@ -13,5 +17,9 @@
       "pathName": "librofm",
       "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]"
     }
-  ]
+  ],
+  "conversionLinks": {
+    "default": "https://bookshop.org/a/23123/[ISBN]/",
+    "librofm": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]"
+    }
 }

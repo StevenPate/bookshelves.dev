@@ -29,11 +29,13 @@ const processFoldersToShelves = (folderPaths) => {
       const fileData = (fileType == "masterShelf") ? data[0] : data
 
       const createShelf = (fileData, filePath, fileType) => {
-        const {title, categories, attribution, books, conversionPath} = fileData[0];
+        const {title, description, categories, attribution, books, conversionPath} = fileData[0];
         const shelfData = {
           shelfID: path.basename(filePath, '.md'),
           shelfPath: filePath,
           shelfTitle: title,
+          shelfDescription: description,
+          shelfItems: books.length,
           categories: categories,
           attribution: attribution,
           conversionPath: conversionPath,

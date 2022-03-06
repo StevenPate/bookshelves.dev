@@ -1,3 +1,15 @@
+@layer components {
+  
+  html { 
+    scroll-behavior: smooth; 
+  }
+  
+  .book:nth-child(even) {
+    @apply flex-row-reverse;
+  }
+    
+}
+
 @tailwind base;
 @tailwind components;
 /* Write Custom CSS */

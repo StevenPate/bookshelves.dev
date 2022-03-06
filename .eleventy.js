@@ -2,12 +2,14 @@
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const book = require("./src/js/book");
+const _shortcode = require("./src/js/_shortcode");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
 
   // book shortcode
   eleventyConfig.addNunjucksAsyncShortcode("book", book);
+  eleventyConfig.addNunjucksAsyncShortcode("_shortcode", _shortcode);
 
   // shelves collection
   eleventyConfig.addCollection("shelves", function (collectionApi) {
@@ -24,9 +26,9 @@ module.exports = function (eleventyConfig) {
   });
   
   eleventyConfig.setQuietMode(true);
+  // eleventyConfig.addPlugin(directoryOutputPlugin);
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(directoryOutputPlugin);
 
   eleventyConfig.addPassthroughCopy("./src/images");
 

@@ -3,6 +3,7 @@
 title: The Landmarks of *Landmarks*
 description: A shelf of books concerning the natural landscape, as featured in Robert MacFarlane's <em>Landmarks</em>.
 summary: "Robert MacFarlane's landmarks charts a course through some magical Nature writing. Here are the features he navigates the way we talk about the natural world."
+conversionPath: aValueFromTheShelf
 books:
   - ISBN: "9780241967874"
     description: |
@@ -28,7 +29,7 @@ books:
     title: zen stuff
     shelfLabel: Book of the Millenium
     description: This is the shelf description!
-    descriptionCredit: Steven
+    attribution: Steven
     conversionPath: a1214
 ---
 
