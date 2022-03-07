@@ -6,6 +6,7 @@ const formatArray = (arrayToFormat) => {
 }
 
 function full(id, details, contexts) {
+  console.table(contexts)
   let {title, subtitle, categories, authors, description, cachedCover, link} = details;
   let slug = slugify(title, { lower: true, strict: true });
   let sub = (subtitle != null) ?`<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>` : ''

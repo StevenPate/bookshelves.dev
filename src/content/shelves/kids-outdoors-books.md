@@ -13,3 +13,5 @@ books:
 Here is where a description of shelff would go.
 
 9781847809766 isn't in google books api!!!
+
+I'd like to put {% book "9780307118394" %} on this shelf.

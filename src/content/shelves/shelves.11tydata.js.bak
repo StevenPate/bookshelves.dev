@@ -1,0 +1,47 @@
+const ISBNsOnShelves = require("../../_data/ISBNsOnShelves.json");
+
+const createObjectFromISBN = require("../../js/createISBNObject");
+const formatISBNContext = require("../../js/formatISBNContext");
+const refineBookObject = require("../../js/refineBookObject");
+const createISBNLink = require("../../js/createISBNLink");
+
+const findThisISBNObject = (thisISBN) => {
+  let ISBNfromShelves = ISBNsOnShelves.find(
+    (element) => element.ISBN === thisISBN
+  );
+  let ISBNObject = ISBNfromShelves;
+  return ISBNObject
+}
+// let thisBook = refineBookObject(ISBNObject, thisShelf);
+// let ISBNLink = createISBNLink(thisBook, linkType);
+// let fullContext = formatISBNContext(thisBook, thisShelf);
+
+// let renderedBook = thisBook.title;
+
+
+
+
+
+const getISBNObjects = ArrayOfShelfData => {
+  // console.log(ArrayOfShelfData);
+  ArrayOfShelfData.forEach(element => {
+    // console.log(element.ISBN);
+    let thisISBNObject = findThisISBNObject(element.ISBN);
+    console.log(thisISBNObject);
+    return thisISBNObject;
+  });
+  // let thing = (Array.isArray(ArrayOfShelfData)) 
+  // ? ArrayOfShelfData
+  //   .filter((book) => book.ISBN)
+  //   .forEach((ISBN) => findThisISBNObject(ISBN)) 
+  // : findThisISBNObjext(ISBN);
+  // console.log(thing);
+}
+
+
+module.exports = {
+  eleventyComputed: {
+    ISBNObjects: (data) => getISBNObjects(data.books),
+    // bookObjects: (data) => refineBookObject(getISBNObjects(data.books), data.page.inputPath),
+  }
+}

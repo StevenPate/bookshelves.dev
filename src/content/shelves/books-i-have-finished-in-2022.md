@@ -11,5 +11,4 @@ books:
     description: Description of The Dry Heart.
   - ISBN: "9781771644198"
     description: Tree description, which has a subtitle set off by a colon. Watch out!.
-  - ISBN: "9780062954794"
 ---
