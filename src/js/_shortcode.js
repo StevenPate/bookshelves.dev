@@ -1,38 +1,27 @@
 const {get} = require("./_book");
-const {full} = require("./_layouts")
+const {layout} = require("./_layouts")
 
 // const ISBN = "9780399231094";
 // const shelf = 'the-landmarks-of-landmarks'
 // const display = "raw"
 
-book = async (ISBN, display,
+book = async (
+  ISBN, 
+  display,
   displayText,
   linkType,
   context,
   thisShelf
-  
-  
   ) => {
 
   const {id, details, contexts, otherContexts} = get(ISBN);
 
   if (!details) {
-    console.log(id)
+    console.log(`Hey didn't return any details for ${id}. Why don't we go get some now?`)
     return
   }
   
-  switch (display) {
-    case "textlink":
-    default:
-      let {title, link} = details;
-      link = (linkType == "purchase") ? link.purchase : link.local
-      const textLink = `<a href="${link}">${title}</a>`
-      return textLink;
-    case "full":
-      return full(id, details, contexts);
-    case "raw":
-      return JSON.stringify(get(ISBN));
-  }
+  return layout(id, details, contexts, display);
 
 }
 
