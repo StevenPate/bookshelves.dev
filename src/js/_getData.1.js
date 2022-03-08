@@ -1,3 +1,5 @@
+// adds a consolidated function call for easier use in multiple places.
+
 const Cache = require("@11ty/eleventy-cache-assets");
 const cacheImage = require("./cacheImage");
 
@@ -109,6 +111,7 @@ const getOpenLibrary = async (ISBN) => {
 }
 
 const getBookshopOrg = async (ISBN) => {
+  // console.log(`we're going to get the bookshop.org data for ${ISBN} now.`)
   let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
   let cachedCover = await cacheImage(cover, "book-cover", ISBN);
   return { cover, cachedCover }

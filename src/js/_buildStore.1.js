@@ -1,3 +1,4 @@
+// now uses consolidated function for data fetching, more encapsulated code to use elsewhere.
 const fs = require("fs");
 const path = require('path');
 const yaml = require("js-yaml");
@@ -57,6 +58,7 @@ const processFoldersToShelves = (folderPaths) => {
             shelf: (fileType == "masterShelf") ? fileType : path.basename(filePath, '.md'),  
             details}]
         }
+   
  
         const bookEntryFound = allBooks.find(
           (item) => item.ISBN === thisISBN
@@ -65,6 +67,8 @@ const processFoldersToShelves = (folderPaths) => {
         (bookEntryFound) 
           ? bookEntryFound.shelves.push(shelfEntry.shelves[0])
           : allBooks.push(shelfEntry)
+
+
       }
 
       (fileType == "shelf") ? createShelf(fileData, filePath, fileType) : createShelfEntry(fileData, filePath, fileType);
@@ -79,9 +83,15 @@ const processFoldersToShelves = (folderPaths) => {
 const addDataToBooks = async (booksOnShelves) => {
   
   const {books,shelves} = booksOnShelves
+  // console.log(shelves);
+
+  // let booksForData = booksOnShelves.books
+  // console.log(booksOnShelves.shelves)
   const booksWithData = await getAllData(books);
+  // console.log(test);
 
   bookshelvesToJSON({books:booksWithData, shelves});
+  // bookshelvesToJSON(books);
 }
 
 const bookshelvesToJSON = (itemsForJSON) => {

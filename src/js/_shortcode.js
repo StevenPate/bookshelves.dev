@@ -1,32 +1,27 @@
 const {get} = require("./_book");
 const {layout} = require("./_layouts")
-
-// const ISBN = "9780399231094";
-// const shelf = 'the-landmarks-of-landmarks'
-// const display = "raw"
+const {getAllData} = require("./_getData");
 
 book = async (
   ISBN, 
   display,
   displayText,
-  linkType,
+  linkType = "purchase",
   context,
   thisShelf
   ) => {
 
-  const {id, details, contexts, otherContexts} = get(ISBN);
+  let {id, details, contexts, otherContexts} = get(ISBN);
+
 
   if (!details) {
-    console.log(`Hey didn't return any details for ${id}. Why don't we go get some now?`)
-    return
+    const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
+    let missingBook = get(ISBN, null, unshelvedISBN[0]);
+    details = missingBook.details
   }
   
-  return layout(id, details, contexts, display);
+  return layout(id, details, contexts, display, linkType);
 
 }
-
-// TODO figure out what the enabled the old book.js shortcode function's async stuff to work
-
-// TODO build a setter for unfound ISBN??
 
 module.exports = book;
