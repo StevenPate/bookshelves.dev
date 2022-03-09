@@ -15,10 +15,11 @@ sections:
   create: all
   match: "**/*.md"
 - type: directory
-  path: "./src/content/books"
+  path: src/content/books
   label: Books
   create: all
-  match: "**/*.md"
+  match: "**/*"
+  exclude: "*.json"
 - type: directory
   path: src/content/shelves
   label: Shelves
