@@ -20,10 +20,10 @@ sections:
   create: all
   match: "**/*.md"
 - type: directory
-  path: "./src/content/shelves"
+  path: src/content/shelves
   label: Shelves
   create: all
-  match: "**/*.md"
+  match: "**/*"
 upload_dir: "./src/images/uploads"
 public_path: "/uploads"
 front_matter_path: ''
