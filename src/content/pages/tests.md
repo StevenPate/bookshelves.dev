@@ -1,4 +1,8 @@
 ---
 title: tests
 ---
-{% book "9780804172448", "text::whatever words you like" %}
+text:
+{% book "9780307157850", "text::whatever words you like", "purchase::valueThing" %}
+
+full:
+{% book "9780804172448", "full::whatever words you like" %}

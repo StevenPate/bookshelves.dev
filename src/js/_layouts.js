@@ -2,6 +2,8 @@ const site = require("../_data/site.json");
 
 const slugify = require("slugify");
 const humanizeList = require("humanize-list");
+const { data } = require("autoprefixer");
+const { getBookshopOrg } = require("./_getData");
 
 const formatArray = (arrayToFormat) => {
   if (Array.isArray(arrayToFormat)) {
@@ -10,7 +12,47 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 };
 
-function layout(id, display, details, contexts, otherContexts, linkType) {
+const buildLink = (defaultLinks, linkInfo, conversionPath) => {
+
+  if (/::/.test(linkInfo)) {
+    linkComponents = linkInfo.split(new RegExp('[::]'));
+    linkType = linkComponents[0];
+    linkValue = linkComponents[2];
+    // console.log(linkType, linkValue)
+  } else {
+    linkType = linkInfo;
+    linkValue = (conversionPath) ? conversionPath : "default";
+  }
+  
+  // so at this point 
+  //   we have a linkType of local or purchase.
+  //   if it's local, wright the default local link, which is /[ISBN]
+  //   If it is purchase, then...
+  //   if there was something after :: in the linkInfo parameter passed by the shortcode,
+  //   we have that as the linkValue.
+  //   if not we will use a conversionPath from the shelf or masterShelf and use that as linkValue
+  //   otherwise the linkValue is default.
+  // now we want to do this:
+  //   if default, write the default link using global commerce data.
+  //   if it's a value we recognize from global commerce data, use the corresponding link
+  //   if it looks like a borg affiliate id, use that
+  //   if we recognize it as a url, look for [ISBN] in there and write that out for linkValue
+
+  //   defaultLinks as defined aren't useful but maybe all this logic gets moved to component and called from _buildBook, so just output a link.
+
+  switch (linkType) {
+    case "purchase":
+      link = (linkValue == "default") ? defaultLinks.purchase : linkValue
+      break;
+    case "local":
+      link = (linkValue == "default") ? defaultLinks.local : linkValue
+      break;
+  }
+
+  return link;
+}
+
+function layout(id, display, details, contexts, otherContexts, linkInfo) {
   let {
     title,
     subtitle,
@@ -19,14 +61,53 @@ function layout(id, display, details, contexts, otherContexts, linkType) {
     description,
     cover,
     cachedCover,
-    link,
+    defaultLinks,
+    conversionPath
   } = details;
   let slug = slugify(title, { lower: true, strict: true });
   let sub =
     subtitle != null
       ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
       : "";
-  link = linkType == "purchase" ? link.purchase : link.local;
+  // link = linkType == "purchase" ? link.purchase : link.local;
+
+  let link = buildLink(defaultLinks, linkInfo, conversionPath);
+  
+  // if (/::/.test(linkInfo)) {
+  //   linkComponents = linkInfo.split(new RegExp('[::]'));
+  //   linkType = linkComponents[0];
+  //   linkValue = linkComponents[2];
+  //   console.log(title, linkType, linkValue)
+  // } else {
+  //   linkType = linkInfo;
+  //   linkValue = "default";
+  // }
+  
+  // switch (linkType) {
+  //   case "purchase":
+  //     link = (linkValue == "default") ? defaultLinks.purchase : linkValue
+  //     break;
+  //   case "local":
+  //     link = (linkValue == "default") ? defaultLinks.local : linkValue
+  //     break;
+  // }
+  // console.log(linkType);
+  // switch (linkType) {
+  //   case "purchase":
+  //   default:
+  //     console.log(`purchase!`);
+  //     link = link.purchase; //temp
+  //     break
+  //     // return `<a href="${link2}">${displayText}</a>`;
+  //   case "local":
+  //     console.log(`local!`);
+  //     link = link.local; //temp
+  //     break
+  //     // return `<a href="${link2}">${displayText}</a>`;
+  //   case "URL":
+  //     console.log(`URL!`);
+  //     break
+  // }
 
   let contextsLayout = "";
   if (contexts) {
@@ -45,8 +126,8 @@ function layout(id, display, details, contexts, otherContexts, linkType) {
   displayText = title
   if (/::/.test(display)) {
     const displayHasText = display.split(new RegExp('[::]'));
+    display = displayHasText[0];
     displayText = displayHasText[2];
-    display = "text";
   }
 
   
@@ -73,6 +154,7 @@ ${categories} by ${authors}
 <div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6">
 ${cachedCover}
 ${contextsLayout}
+<div><a href="${link}">here is a link</a></div>
 </div>
         </div>`;
     case "raw":

@@ -6,12 +6,11 @@ const {logMissing} = require("./_missingISBNs")
 book = async (
   ISBN, 
   display,
-  linkType = "purchase",
+  linkInfo = "purchase",
   thisShelf
   ) => {
 
   let {id, details, contexts, otherContexts} = get(ISBN, thisShelf);
-
 
   if (!details) {
     const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
@@ -20,7 +19,7 @@ book = async (
     logMissing({ id, details});
   }
 
-  return layout(id, display, details, contexts, otherContexts, linkType);
+  return layout(id, display, details, contexts, otherContexts, linkInfo);
 
 }
 
