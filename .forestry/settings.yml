@@ -24,7 +24,7 @@ sections:
   label: Shelves
   create: all
   match: "**/*.md"
-upload_dir: uploads
+upload_dir: "./src/images/uploads"
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
