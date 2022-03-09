@@ -1,5 +1,4 @@
-//this prevents an error when there is no context e.g. when using shortcode with an ISBN not on a shelf.
-//  might clean this up further.
+const site = require("../_data/site.json");
 
 const slugify = require("slugify");
 const humanizeList = require("humanize-list");
@@ -12,7 +11,7 @@ const formatArray = (arrayToFormat) => {
 };
 
 function layout(id, details, contexts, diaplay, linkType) {
-  let { title, subtitle, categories, authors, description, cachedCover, link } =
+  let { title, subtitle, categories, authors, description, cover, cachedCover, link } =
     details;
   let slug = slugify(title, { lower: true, strict: true });
   let sub =
@@ -61,8 +60,15 @@ ${contextsLayout}
         </div>`;
     case "raw":
       return JSON.stringify(details);
-    case "test":
-      return "ha!";
+    case "json":
+      // linkText = 'Buy Now on Bookshop.org';
+      return `"title": "${title}",
+            "id": "${id}",
+            "author": "${authors}",
+            "link": "${site.url}/${id}/",
+            "image": "${cover}",
+            "date_finished": null,
+            "notes": "${description}"`;
   }
 }
 

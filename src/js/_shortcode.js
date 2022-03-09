@@ -11,7 +11,7 @@ book = async (
   thisShelf
   ) => {
 
-  let {id, details, contexts, otherContexts} = get(ISBN);
+  let {id, details, contexts, otherContexts} = get(ISBN, thisShelf);
 
 
   if (!details) {

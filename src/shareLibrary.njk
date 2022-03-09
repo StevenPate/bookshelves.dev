@@ -13,7 +13,7 @@ permalink: '/library.json'
       "books": [
         {%- for book in item.data.books %}
         { 
-          {% book book.ISBN, 'json' %}
+          {% _shortcode book.ISBN, 'json' %}
         }{% if not loop.last %},{% endif %}
         {%- endfor %}
       ]
