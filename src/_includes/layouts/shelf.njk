@@ -10,10 +10,7 @@
 </section>
 <section>
   {% for book in books %}
-    {% _shortcode book.ISBN, "full", "", "purchase", "", page.fileSlug %}
-    {# <div>{% _shortcode "book.ISBN, "full", "samplewords", "purchase"" %}</div> #}
-    {# {% book book.ISBN, 'full', '', 'purchase', '', page.inputPath %} #}
-    {# {% _shortcode book.ISBN, 'full', '', 'purchase', '', page.inputPath %} #}
+    {% book book.ISBN, "full", "", "purchase", "", page.fileSlug %}
   {% endfor %}
 </section>
 </article>

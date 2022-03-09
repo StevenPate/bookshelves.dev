@@ -1,15 +1,13 @@
 
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const book = require("./src/js/book");
-const _shortcode = require("./src/js/_shortcode");
+const book = require("./src/js/_book");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
 
   // book shortcode
   eleventyConfig.addNunjucksAsyncShortcode("book", book);
-  eleventyConfig.addNunjucksAsyncShortcode("_shortcode", _shortcode);
 
   // shelves collection
   eleventyConfig.addCollection("shelves", function (collectionApi) {
