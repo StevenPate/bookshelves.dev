@@ -10,9 +10,17 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 };
 
-function layout(id, details, contexts, diaplay, linkType) {
-  let { title, subtitle, categories, authors, description, cover, cachedCover, link } =
-    details;
+function layout(id, display, details, contexts, otherContexts, linkType) {
+  let {
+    title,
+    subtitle,
+    categories,
+    authors,
+    description,
+    cover,
+    cachedCover,
+    link,
+  } = details;
   let slug = slugify(title, { lower: true, strict: true });
   let sub =
     subtitle != null
@@ -34,10 +42,19 @@ function layout(id, details, contexts, diaplay, linkType) {
   categories = formatArray(categories);
   authors = formatArray(authors);
 
-  switch (diaplay) {
-    case "textlink":
+  displayText = title
+  if (/::/.test(display)) {
+    const displayHasText = display.split(new RegExp('[::]'));
+    displayText = displayHasText[2];
+    display = "text";
+  }
+
+  
+
+  switch (display) {
+    case "text":
     default:
-      return `<a href="${link}">${title}</a>`;
+      return `<a href="${link}">${displayText}</a>`;
     case "cover":
       return `<a href="${link}">${cachedCover}</a>`;
     case "full":
