@@ -1,11 +1,11 @@
 ---
 eleventyComputed:
-  title: "{{ book.fetchedData.title}}" 
+  title: "{{ book.title}}" 
 layout: layouts/book.njk
 tags: book
 pagination:
-    data: ISBNsOnShelves
+    data: booksOnShelves.books
     size: 1
     alias: book
-permalink: "/{{ book.fetchedData.ISBN }}/"
+permalink: "/{{ book.ISBN }}/"
 ---

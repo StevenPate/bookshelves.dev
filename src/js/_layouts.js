@@ -23,18 +23,15 @@ function layout(id, display, details, contexts, otherContexts, linkInfo) {
 
   let slug = slugify(title, { lower: true, strict: true });
   
-  let sub =
-    subtitle != null
-      ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
-      : "";
+
  
   let contextsLayout = "";
   if (contexts) {
     const deccriptiveContexts = contexts.map(({ descriptive }) => descriptive);
     let contextsList = formatArray(deccriptiveContexts);
     contextsLayout = `
-      <aside class="mt-12 px-6 py-6">
-        <h3 class="font-bold">Shelves:</h3>
+      <aside class="my-12">
+        <h3 class="font-bold">${title} is on these shelves:</h3>
           ${contextsList}
       </aside>`;
   }
@@ -56,6 +53,10 @@ function layout(id, display, details, contexts, otherContexts, linkInfo) {
     case "cover":
       return `<a href="${link}">${cachedCover}</a>`;
     case "full":
+      let sub =
+      subtitle != null
+        ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
+        : "";
       return `
 <div id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16">
 <div id="${slug}-info" class="w-full sm:w-2/3">
@@ -73,7 +74,7 @@ ${cachedCover}
 ${contextsLayout}
 <div><a href="${link}">${linkText}</a></div>
 </div>
-        </div>`;
+</div>`;
     case "raw":
       return JSON.stringify(details);
     case "json":

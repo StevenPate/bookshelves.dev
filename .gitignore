@@ -23,4 +23,4 @@ jspm_packages/
 # build artifacts
 _site/
 src/images/
-src/_data/ISBNsOnShelves.json
+src/_data/booksOnShelves.json
