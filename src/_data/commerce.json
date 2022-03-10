@@ -7,19 +7,18 @@
   "conversions": [
     {
       "pathName": "default",
-      "pathURL": "https://bookshop.org/a/23123/[ISBN]/"
+      "pathURL": "https://bookshop.org/a/23123/[ISBN]/",
+      "pathLinkText": "Buy on Bookshop.org→"
     },
     {
       "pathName": "mb-librofm",
-      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=madisonbooks"
+      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=madisonbooks",
+      "pathLinkText": "Buy on libro.fm"
     },
     {
       "pathName": "librofm",
-      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]"
+      "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]",
+      "pathLinkText": "Buy on libro.fm"
     }
-  ],
-  "conversionLinks": {
-    "default": "https://bookshop.org/a/23123/[ISBN]/",
-    "librofm": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]"
-    }
+  ]
 }

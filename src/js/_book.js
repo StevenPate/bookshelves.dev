@@ -1,8 +1,7 @@
-const { get} = require("./_buildBook");
+const { buildBook, buildLink } = require("./_buildBook");
 const { layout } = require("./_layouts")
 const { getAllData } = require("./_getData");
 const { logMissing } = require("./_missingISBNs")
-const { buildLink } = require("./_buildLink")
 
 book = async (
   ISBN, 
@@ -11,11 +10,11 @@ book = async (
   thisShelf
   ) => {
 
-  let {id, details, contexts, otherContexts} = get(ISBN, thisShelf);
+  let {id, details, contexts, otherContexts} = buildBook(ISBN, thisShelf);
 
   if (!details) {
     const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
-    let missingBook = get(ISBN, null, unshelvedISBN[0]);
+    let missingBook = buildBook(ISBN, null, unshelvedISBN[0]);
     details = missingBook.details
     logMissing({ id, details});
   }

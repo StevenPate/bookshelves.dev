@@ -42,17 +42,17 @@ function layout(id, display, details, contexts, otherContexts, linkInfo) {
   categories = formatArray(categories);
   authors = formatArray(authors);
 
-  displayText = title;
+  linkText = title;
   if (/::/.test(display)) {
     const displayHasText = display.split(new RegExp("[::]"));
     display = displayHasText[0];
-    displayText = displayHasText[2];
+    linkText = displayHasText[2];
   }
 
   switch (display) {
     case "text":
     default:
-      return `<a href="${link}">${displayText}</a>`;
+      return `<a href="${link}">${linkText}</a>`;
     case "cover":
       return `<a href="${link}">${cachedCover}</a>`;
     case "full":
@@ -71,7 +71,7 @@ ${categories} by ${authors}
 <div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6">
 ${cachedCover}
 ${contextsLayout}
-<div><a href="${link}">here is a link</a></div>
+<div><a href="${link}">${linkText}</a></div>
 </div>
         </div>`;
     case "raw":

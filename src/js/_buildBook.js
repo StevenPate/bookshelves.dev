@@ -82,17 +82,35 @@ class Book {
     this.otherContexts = this.contexts.filter(
       (context) => context.shelfID != this.shelf
     );
-
-    // this.details.defaultLinks = {
-    //   local: `/${this.id}`,
-    //   purchase: commerce.conversionLinks.default.replace("[ISBN]", this.id),
-    // };
   }
 }
 
-const get = (ISBN, shelf, shelfEntry) => {
+const buildBook = (ISBN, shelf, shelfEntry) => {
   let book = new Book(ISBN, shelf, shelfEntry);
   return book;
+};
+
+const buildLink = (id, linkInfo, conversionPath) => {
+  
+  if (/::/.test(linkInfo)) {
+    linkComponents = linkInfo.split(new RegExp("[::]"));
+    linkType = linkComponents[0];
+    linkValue = linkComponents[2];
+  } else {
+    linkType = linkInfo;
+    linkValue = conversionPath ? conversionPath : "default";
+  }
+
+  let commercePath = commerce.conversions.find((item) => item.pathName === linkValue);
+
+  link =
+    commercePath != undefined
+      ? commercePath.pathURL.replace("[ISBN]", id)
+      : (/^a\d+$/i.test(linkValue))
+        ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
+        : link
+
+  return link;
 };
 
 // let testBook = get("9780062954794", 'the-landmarks-of-landmarks');
@@ -100,4 +118,5 @@ const get = (ISBN, shelf, shelfEntry) => {
 // let testBook = getBook("9780062954794");
 // console.log(testBook);
 
-module.exports.get = get;
+module.exports.buildLink = buildLink;
+module.exports.buildBook = buildBook;
