@@ -83,10 +83,10 @@ class Book {
       (context) => context.shelfID != this.shelf
     );
 
-    this.details.defaultLinks = {
-      local: `/${this.id}`,
-      purchase: commerce.conversionLinks.default.replace("[ISBN]", this.id),
-    };
+    // this.details.defaultLinks = {
+    //   local: `/${this.id}`,
+    //   purchase: commerce.conversionLinks.default.replace("[ISBN]", this.id),
+    // };
   }
 }
 
