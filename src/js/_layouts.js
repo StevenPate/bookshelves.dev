@@ -75,6 +75,24 @@ ${contextsLayout}
 <div><a href="${link}">${linkText}</a></div>
 </div>
 </div>`;
+    case "small":
+      return `
+<div id="${slug}" class="my-4 flex flex-row content-start" >
+  <div id="${slug}-image" class="w-28 pr-2 content-start items-top"><a href="${link}">${cachedCover}</a></div>
+  <div id="${slug}-info" class="">
+    <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
+    <div id="${slug}-author" class="font-lg">${authors}</div>
+  </div>
+</div>
+`
+    case "title":
+      return `
+<div id="${slug}" class="my-4">
+<div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
+<div id="${slug}-author" class="font-lg">${authors}</div>
+</div>
+</div>
+`
     case "raw":
       return JSON.stringify(details);
     case "json":

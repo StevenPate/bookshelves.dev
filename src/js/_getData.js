@@ -110,7 +110,7 @@ const getOpenLibrary = async (ISBN) => {
 
 const getBookshopOrg = async (ISBN) => {
   let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
-  let cachedCover = await cacheImage(cover, "book-cover", ISBN);
+  let cachedCover = await cacheImage(cover, "book-cover not-prose my-0", ISBN);
   return { cover, cachedCover }
 }
 
