@@ -93,6 +93,20 @@ ${contextsLayout}
 </div>
 </div>
 `
+    case "card":
+    return `
+
+<div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
+<div class="lg:w-1/3 bg-gray-50 p-6">${cachedCover}</div>
+<div class="p-6 bg-gray-50 lg:w-2/3">
+<h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
+<p class="text-gray-600">${authors}</p>
+<div class="justify-center mx-auto"><a href="${link}">${linkText}</a></div>
+</div>
+</div>
+
+
+    `
     case "raw":
       return JSON.stringify(details);
     case "json":

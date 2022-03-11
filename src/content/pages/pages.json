@@ -1,4 +1,5 @@
 {
   "permalink": "/{{ page.fileSlug }}/",
+  "sectionClass": "prose prose-xl",
   "layout": "layouts/page.njk"
 }
