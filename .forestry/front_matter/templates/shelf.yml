@@ -29,6 +29,7 @@ fields:
   name: conversionPath
   label: Conversion path
 pages:
+- src/content/shelves/another test.md
 - src/content/shelves/preparing-a-toddler-for-life.md
 - src/content/shelves/test-shelf.md
 - src/content/shelves/wordless.md
