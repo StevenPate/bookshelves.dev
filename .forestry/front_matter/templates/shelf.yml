@@ -4,16 +4,10 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Shelf Title
 - type: textarea
   name: description
   label: description
-- type: textarea
-  name: summary
-  label: summary
-- type: text
-  name: conversionPath
-  label: conversionPath
 - type: field_group_list
   name: books
   label: books
@@ -24,3 +18,9 @@ fields:
   - type: textarea
     name: description
     label: description
+- type: textarea
+  name: summary
+  label: summary
+- type: text
+  name: conversionPath
+  label: conversionPath
