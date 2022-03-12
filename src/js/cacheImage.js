@@ -16,7 +16,10 @@ module.exports = async function (
     formats: ["webp", "avif", "jpeg"],
     urlPath: "/images/web/",
     outputDir: "./src/images/web/",
-    cacheOptions: { duration: "1y" },
+    cacheOptions: { 
+      duration: "1y",
+      directory: "_cache" 
+    },
   });
 
   let imageAttributes = {

@@ -13,6 +13,7 @@ jspm_packages/
 
 # cache
 .cache/
+_cache/
 
 # Serverless directories
 .serverless/

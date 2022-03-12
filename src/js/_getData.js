@@ -8,6 +8,7 @@ const getIdentifiers = async (ISBN) => {
     let bookishData = await Cache(url, {
       type: "json",
       duration: "10d",
+      directory: "_cache"
     });
 
     const {
@@ -40,6 +41,7 @@ const getGoogle = async (ISBN) => {
     let googleData = await Cache(url, {
       type: "json",
       duration: "10d",
+      directory: "_cache"
     });
 
     const {
@@ -73,6 +75,7 @@ const getOpenLibrary = async (ISBN) => {
     let openLibraryData = await Cache(url, {
       type: "json",
       duration: "10d",
+      directory: "_cache"
     });
 
     const {
