@@ -29,6 +29,9 @@ fields:
   config:
     required: false
   label: Authors
+  showOnly:
+    field: details
+    value: true
 - type: textarea
   name: description
   label: Description
