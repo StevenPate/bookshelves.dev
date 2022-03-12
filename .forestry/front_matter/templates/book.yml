@@ -8,6 +8,7 @@ fields:
 - name: details
   type: boolean
   label: Details
+  description: Specify details to be used instead of those found online.
 - name: title
   type: text
   config:
