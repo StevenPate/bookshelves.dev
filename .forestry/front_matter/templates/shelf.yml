@@ -2,20 +2,6 @@
 label: shelf
 hide_body: false
 fields:
-- type: text
-  name: title
-  label: Shelf Title
-- type: textarea
-  name: description
-  label: Shelf description
-- name: attribution
-  type: text
-  config:
-    required: false
-  label: Shelf attribution
-- type: text
-  name: conversionPath
-  label: Conversion path
 - type: field_group_list
   name: books
   label: Books (ISBNs) on shelf
@@ -43,5 +29,19 @@ fields:
     config:
       required: false
     label: Conversion path
+- type: text
+  name: title
+  label: Shelf Title
+- type: textarea
+  name: description
+  label: Shelf description
+- name: attribution
+  type: text
+  config:
+    required: false
+  label: Shelf attribution
+- type: text
+  name: conversionPath
+  label: Conversion path
 pages:
 - src/content/shelves/wordless.md
