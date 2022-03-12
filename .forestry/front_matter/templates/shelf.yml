@@ -7,7 +7,15 @@ fields:
   label: Shelf Title
 - type: textarea
   name: description
-  label: Shelf Description
+  label: Shelf description
+- name: attribution
+  type: text
+  config:
+    required: false
+  label: Shelf attribution
+- type: text
+  name: conversionPath
+  label: Conversion path
 - type: field_group_list
   name: books
   label: Books (ISBNs) on shelf
@@ -17,24 +25,23 @@ fields:
     label: ISBN
     config:
       required: true
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
   - type: textarea
     name: description
-    label: Book Description
+    label: Description
   - name: attribution
     type: text
     config:
       required: false
-    label: Attribution for book entry
-- type: textarea
-  name: summary
-  label: summary
-- type: text
-  name: conversionPath
-  label: conversionPath
-- name: attribution
-  type: text
-  config:
-    required: false
-  label: Attribution for shelf entry
+    label: Attribution
+  - name: conversionPath
+    type: text
+    config:
+      required: false
+    label: Conversion path
 pages:
 - src/content/shelves/wordless.md
