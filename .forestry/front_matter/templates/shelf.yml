@@ -1,0 +1,26 @@
+---
+label: shelf
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: description
+  label: description
+- type: textarea
+  name: summary
+  label: summary
+- type: text
+  name: conversionPath
+  label: conversionPath
+- type: field_group_list
+  name: books
+  label: books
+  fields:
+  - type: text
+    name: ISBN
+    label: ISBN
+  - type: textarea
+    name: description
+    label: description
