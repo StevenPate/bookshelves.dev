@@ -21,6 +21,9 @@ fields:
   config:
     required: false
   label: Subtitle
+  showOnly:
+    field: details
+    value: true
 - name: authors
   type: text
   config:
@@ -29,11 +32,17 @@ fields:
 - type: textarea
   name: description
   label: Description
+  showOnly:
+    field: details
+    value: true
 - name: cover
   type: file
   config:
     maxSize: 64
   label: Cover
+  showOnly:
+    field: details
+    value: true
 - name: categories
   type: list
   config:
@@ -41,16 +50,28 @@ fields:
     min: 
     max: 
   label: Categories
+  showOnly:
+    field: details
+    value: true
 - name: audioISBN
   type: text
   config:
     required: false
   label: Audio ISBN
+  showOnly:
+    field: details
+    value: true
 - name: attribution
   type: text
   config:
     required: false
   label: Attribution
+  showOnly:
+    field: details
+    value: true
 - type: text
   name: conversionPath
   label: Conversion
+  showOnly:
+    field: details
+    value: true
