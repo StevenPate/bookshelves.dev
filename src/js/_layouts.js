@@ -68,11 +68,15 @@ ${sub}
 ${categories} by ${authors}
 </div>
 <div class="prose prose-xl">${description}</div>
-</div>
-<div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6">
-${cachedCover}
 ${contextsLayout}
-<div><a href="${link}">${linkText}</a></div>
+</div>
+<div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6 flex flex-col justify-center items-center">
+${cachedCover}
+<a href="${link}">
+<button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
+${linkText}
+</button>
+</a>
 </div>
 </div>`;
     case "small":
@@ -101,7 +105,11 @@ ${contextsLayout}
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
 <p class="text-gray-600">${authors}</p>
-<div class="justify-center mx-auto"><a href="${link}">${linkText}</a></div>
+<a href="${link}">
+<button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
+${linkText}
+</button>
+</a>
 </div>
 </div>
 
