@@ -1,34 +1,17 @@
 ---
 label: shelf
 hide_body: false
+display_field: title
 fields:
 - type: field_group_list
   name: books
   label: Books (ISBNs) on shelf
   fields:
-  - type: text
-    name: ISBN
-    label: ISBN
-    config:
-      required: true
-  - name: title
-    type: text
-    config:
-      required: false
-    label: Title
-  - type: textarea
-    name: description
-    label: Description
-  - name: attribution
-    type: text
-    config:
-      required: false
-    label: Attribution
-  - name: conversionPath
-    type: text
-    config:
-      required: false
-    label: Conversion path
+  - name: book
+    type: include
+    config: {}
+    template: book
+    label: Book
 - type: text
   name: title
   label: Shelf Title
