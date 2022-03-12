@@ -91,7 +91,7 @@ const buildBook = (ISBN, shelf, shelfEntry) => {
 };
 
 const buildLink = (id, linkInfo, conversionPath) => {
-  
+
   if (/::/.test(linkInfo)) {
     linkComponents = linkInfo.split(new RegExp("[::]"));
     linkType = linkComponents[0];
@@ -101,22 +101,21 @@ const buildLink = (id, linkInfo, conversionPath) => {
     linkValue = conversionPath ? conversionPath : "default";
   }
 
-  let commercePath = commerce.conversions.find((item) => item.pathName === linkValue);
+  let commercePath = commerce.conversions.find(
+    (item) => item.pathName === linkValue
+  );
 
   link =
     commercePath != undefined
       ? commercePath.pathURL.replace("[ISBN]", id)
-      : (/^a\d+$/i.test(linkValue))
-        ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
-        : link
-
-  return link;
+      : /^a\d+$/i.test(linkValue)
+      ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
+      : link;
+  if (commercePath != undefined) {
+    linkText = commercePath.pathLinkText;
+  }
+  return { link, linkText };
 };
-
-// let testBook = get("9780062954794", 'the-landmarks-of-landmarks');
-// let testBook = getBook("9780062954794", 'books-i-have-finished-in-2022');
-// let testBook = getBook("9780062954794");
-// console.log(testBook);
 
 module.exports.buildLink = buildLink;
 module.exports.buildBook = buildBook;

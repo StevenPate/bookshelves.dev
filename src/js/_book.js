@@ -19,10 +19,11 @@ book = async (
     logMissing({ id, details});
   }
 
- details.link = linkInfo == "local" ? `/${id}` : buildLink(id, linkInfo, details.conversionPath);
+  let {link, linkText} = buildLink(id, linkInfo, details.conversionPath);
+  details.link = linkInfo == "local" ? `/${id}` : link;
+  details.linkText = linkInfo == "local" ? `View book page→` : linkText;
 
-
-  return layout(id, display, details, contexts, otherContexts, linkInfo);
+  return layout(id, display, details, contexts, otherContexts);
 
 }
 

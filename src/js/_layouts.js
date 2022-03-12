@@ -19,12 +19,13 @@ function layout(id, display, details, contexts, otherContexts, linkInfo) {
     cover,
     cachedCover,
     link,
+    linkText
   } = details;
 
   let slug = slugify(title, { lower: true, strict: true });
+  categories = formatArray(categories);
+  authors = formatArray(authors);
   
-
- 
   let contextsLayout = "";
   if (contexts) {
     const deccriptiveContexts = contexts.map(({ descriptive }) => descriptive);
@@ -36,10 +37,6 @@ function layout(id, display, details, contexts, otherContexts, linkInfo) {
       </aside>`;
   }
 
-  categories = formatArray(categories);
-  authors = formatArray(authors);
-
-  linkText = title;
   if (/::/.test(display)) {
     const displayHasText = display.split(new RegExp("[::]"));
     display = displayHasText[0];
