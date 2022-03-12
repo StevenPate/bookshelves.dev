@@ -21,11 +21,15 @@ sections:
   create: all
   match: "**/*"
   exclude: "*.json"
+  templates:
+  - book
 - type: directory
   path: src/content/shelves
   label: Shelves
   create: all
   match: "**/*"
+  templates:
+  - shelf
 upload_dir: "./src/images/uploads"
 public_path: "/uploads"
 front_matter_path: ''
