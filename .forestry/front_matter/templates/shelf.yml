@@ -7,20 +7,32 @@ fields:
   label: Shelf Title
 - type: textarea
   name: description
-  label: description
+  label: Shelf Description
 - type: field_group_list
   name: books
-  label: books
+  label: Books (ISBNs) on shelf
   fields:
   - type: text
     name: ISBN
     label: ISBN
+    config:
+      required: true
   - type: textarea
     name: description
-    label: description
+    label: Book Description
+  - name: attribution
+    type: text
+    config:
+      required: false
+    label: Attribution for book entry
 - type: textarea
   name: summary
   label: summary
 - type: text
   name: conversionPath
   label: conversionPath
+- name: attribution
+  type: text
+  config:
+    required: false
+  label: Attribution for shelf entry
