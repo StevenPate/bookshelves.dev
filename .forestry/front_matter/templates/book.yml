@@ -1,0 +1,13 @@
+---
+label: book
+hide_body: false
+fields:
+- type: text
+  name: ISBN
+  label: ISBN
+- type: textarea
+  name: description
+  label: description
+- type: text
+  name: conversionPath
+  label: conversionPath
