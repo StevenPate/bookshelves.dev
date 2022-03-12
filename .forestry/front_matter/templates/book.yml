@@ -5,9 +5,52 @@ fields:
 - type: text
   name: ISBN
   label: ISBN
+- name: details
+  type: boolean
+  label: Details
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  showOnly:
+    field: details
+    value: true
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
+- name: authors
+  type: text
+  config:
+    required: false
+  label: Authors
 - type: textarea
   name: description
-  label: description
+  label: Description
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: Cover
+- name: categories
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Categories
+- name: audioISBN
+  type: text
+  config:
+    required: false
+  label: Audio ISBN
+- name: attribution
+  type: text
+  config:
+    required: false
+  label: Attribution
 - type: text
   name: conversionPath
-  label: conversionPath
+  label: Conversion
