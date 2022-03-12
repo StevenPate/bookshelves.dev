@@ -36,3 +36,5 @@ fields:
   config:
     required: false
   label: Attribution for shelf entry
+pages:
+- src/content/shelves/wordless.md
