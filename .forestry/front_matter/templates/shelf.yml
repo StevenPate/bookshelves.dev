@@ -12,6 +12,8 @@ fields:
     config: {}
     template: book
     label: Book
+  config:
+    labelField: ISBN
 - type: text
   name: title
   label: Shelf Title
