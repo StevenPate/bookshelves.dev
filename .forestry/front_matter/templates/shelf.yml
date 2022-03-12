@@ -44,4 +44,5 @@ fields:
   name: conversionPath
   label: Conversion path
 pages:
+- src/content/shelves/preparing-a-toddler-for-life.md
 - src/content/shelves/wordless.md
