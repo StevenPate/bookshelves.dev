@@ -5,6 +5,15 @@ fields:
 - type: text
   name: ISBN
   label: ISBN
+- type: textarea
+  name: description
+  label: Description
+  showOnly:
+    value: true
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
 - name: details
   type: boolean
   label: Details
@@ -30,12 +39,6 @@ fields:
   config:
     required: false
   label: Authors
-  showOnly:
-    field: details
-    value: true
-- type: textarea
-  name: description
-  label: Description
   showOnly:
     field: details
     value: true
