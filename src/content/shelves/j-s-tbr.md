@@ -1,6 +1,6 @@
 ---
 books:
-- ISBN: "9780735264892"
+- ISBN: '9780735264892'
   description: ''
   details: false
   title: ''
@@ -17,3 +17,4 @@ attribution: ''
 conversionPath: ''
 
 ---
+{% book "0811212831", "title", "worldcat" %}
