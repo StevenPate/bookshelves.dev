@@ -19,6 +19,16 @@
       "pathName": "librofm",
       "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=[storeID]",
       "pathLinkText": "Buy on libro.fm"
+    },
+    {
+      "pathName": "worldcat",
+      "pathURL": "https://openlibrary.org/isbn/${ISBN}",
+      "pathLinkText": "Find on Worldcat"
+    },
+    {
+      "pathName": "openlibrary",
+      "pathURL": "https://openlibrary.org/isbn/[ISBN]",
+      "pathLinkText": "Find on Open Library"
     }
   ]
 }

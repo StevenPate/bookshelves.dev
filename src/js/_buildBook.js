@@ -20,7 +20,9 @@ class Book {
     const details = masterShelf
       ? { ...bookData.google, ...bookData.bookshopOrg, ...masterShelf.details }
       : { ...bookData.google, ...bookData.bookshopOrg };
+    details.isbn10 = bookData.identifiers.isbn[0];
     this.details = details;
+
 
     if (this.shelf) {
       const shelfInfo = booksOnShelves.shelves.find(
@@ -90,8 +92,7 @@ const buildBook = (ISBN, shelf, shelfEntry) => {
   return book;
 };
 
-const buildLink = (id, linkInfo, conversionPath) => {
-
+const buildLink = (id, linkInfo, conversionPath, isbn10) => {
   if (/::/.test(linkInfo)) {
     linkComponents = linkInfo.split(new RegExp("[::]"));
     linkType = linkComponents[0];
@@ -107,7 +108,9 @@ const buildLink = (id, linkInfo, conversionPath) => {
 
   link =
     commercePath != undefined
-      ? commercePath.pathURL.replace("[ISBN]", id)
+      ? commercePath.pathURL.includes("[isbn10]")
+        ? commercePath.pathURL.replace("[isbn10]", isbn10)
+        : commercePath.pathURL.replace("[ISBN]", id)
       : /^a\d+$/i.test(linkValue)
       ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
       : link;

@@ -11,7 +11,7 @@ book = async (
   ) => {
 
   let {id, details, contexts, otherContexts} = buildBook(ISBN, thisShelf);
-
+  
   if (!details) {
     const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
     let missingBook = buildBook(ISBN, null, unshelvedISBN[0]);
@@ -19,10 +19,10 @@ book = async (
     logMissing({ id, details});
   }
 
-  let {link, linkText} = buildLink(id, linkInfo, details.conversionPath);
+  let {link, linkText} = buildLink(id, linkInfo, details.conversionPath, details.isbn10);
   details.link = linkInfo == "local" ? `/${id}` : link;
   details.linkText = linkInfo == "local" ? `View book page→` : linkText;
-
+  
   return layout(id, display, details, contexts, otherContexts);
 
 }
