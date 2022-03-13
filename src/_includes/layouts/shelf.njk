@@ -9,7 +9,6 @@
   </article>
 </section>
 <section>
-    {{ page.fileSlug }}
   {% for book in books %}
     {% book book.ISBN, "full", "external", page.fileSlug %}
   {% endfor %}

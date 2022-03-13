@@ -48,6 +48,17 @@ const processFoldersToShelves = (folderPaths) => {
         if (!fileData.ISBN) {
           return { error: "Bad request" };
         }
+        // console.log(fileData);
+        Object.keys(fileData).forEach(key => {
+          if (fileData[key] === '' || fileData[key] === []) {
+            console.log(fileData[key]);
+            delete fileData[key];
+          }
+        });
+        delete fileData.details
+        // console.log(fileData);
+
+
         const thisISBN = fileData.ISBN;
         const {ISBN, ...details} = fileData;
         const shelfEntry = {
