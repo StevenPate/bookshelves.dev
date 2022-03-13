@@ -11,7 +11,7 @@
 <section>
     {{ page.fileSlug }}
   {% for book in books %}
-    {% book book.ISBN, "full", "purchase", page.fileSlug %}
+    {% book book.ISBN, "full", "external", page.fileSlug %}
   {% endfor %}
 </section>
 </article>

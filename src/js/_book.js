@@ -6,7 +6,7 @@ const { logMissing } = require("./_missingISBNs")
 book = async (
   ISBN, 
   display,
-  linkInfo = "purchase",
+  linkInfo = "external",
   thisShelf
   ) => {
 

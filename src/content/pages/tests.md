@@ -5,7 +5,7 @@ title: tests
 
 
 text:
-{% book "9780804172448", "text::any text goes here", "purchase::openlibrary" %}
+{% book "9780804172448", "text::any text goes here", "external::openlibrary" %}
 
 full:
 {% book "9780804172448", "full::Buy on Bookshop.org" %}
