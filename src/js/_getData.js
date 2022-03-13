@@ -52,6 +52,7 @@ const getGoogle = async (ISBN) => {
       description,
       categories,
       publishedDate,
+      pageCount,
     } = googleData.items[0].volumeInfo;
 
     return {
@@ -62,6 +63,7 @@ const getGoogle = async (ISBN) => {
       description,
       categories,
       publishedDate,
+      pageCount,
     }
 
   } catch (error) {
