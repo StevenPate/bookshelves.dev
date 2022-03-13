@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
   
-  eleventyConfig.setQuietMode(true);
+  // eleventyConfig.setQuietMode(true);
   // eleventyConfig.addPlugin(directoryOutputPlugin);
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
