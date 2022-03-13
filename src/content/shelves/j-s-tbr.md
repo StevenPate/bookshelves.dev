@@ -17,4 +17,3 @@ attribution: ''
 conversionPath: ''
 
 ---
-{% book "0811212831", "title", "worldcat" %}
