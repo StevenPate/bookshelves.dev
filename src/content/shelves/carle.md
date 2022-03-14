@@ -1,6 +1,6 @@
 ---
 title: Carle
-categories: kids
+categories: ["kids"]
 books:
   - ISBN: "9780399208539"
   - ISBN: "9780805047905"

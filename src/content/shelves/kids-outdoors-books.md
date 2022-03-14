@@ -1,5 +1,6 @@
 ---
 title: Children's Picture Books about the Outdoors
+categories: ["kids"]
 books:
   - ISBN: "9781328866820"
   - ISBN: "9780395978351"
@@ -12,6 +13,3 @@ books:
 ---
 Here is where a description of shelff would go.
 
-9781847809766 isn't in google books api!!!
-
-I'd like to put {% book "9780307118394" %} on this shelf.

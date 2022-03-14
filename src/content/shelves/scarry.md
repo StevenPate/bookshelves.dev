@@ -1,5 +1,6 @@
 ---
 title: Scarry Stories
+categories: ["kids"]
 books:
   - ISBN: "9780553520590"
   - ISBN: "9780394842509"

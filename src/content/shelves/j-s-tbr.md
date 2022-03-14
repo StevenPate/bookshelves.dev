@@ -12,6 +12,7 @@ books:
   attribution: ''
   conversionPath: ''
 title: J's TBR
+categories: ["kids"]
 description: ''
 attribution: ''
 conversionPath: ''

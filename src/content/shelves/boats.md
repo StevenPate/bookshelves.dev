@@ -1,6 +1,6 @@
 ---
 title: Boats are fun
-categories: kids
+categories: ["kids"]
 shelfAttribution: Frank
 books:
   - ISBN: "9780375868009"

@@ -1,6 +1,6 @@
 ---
 title: Sing Song
-categories: kids
+categories: ["kids"]
 books:
   - ISBN: "9780358451228"
   - ISBN: "9781632170194"

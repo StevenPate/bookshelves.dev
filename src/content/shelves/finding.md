@@ -1,6 +1,6 @@
 ---
 title: finding
-categories: 
+categories: ["kids"]
 books:
   - ISBN: "9781615194988"
   - ISBN: "9780307157850"

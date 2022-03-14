@@ -35,7 +35,7 @@ const processFoldersToShelves = (folderPaths) => {
           shelfTitle: title,
           shelfDescription: description,
           shelfItems: books.length,
-          categories: categories,
+          categories: categories || [],
           attribution: attribution,
           conversionPath: conversionPath,
         }
@@ -51,7 +51,6 @@ const processFoldersToShelves = (folderPaths) => {
         // console.log(fileData);
         Object.keys(fileData).forEach(key => {
           if (fileData[key] === '' || fileData[key] === []) {
-            console.log(fileData[key]);
             delete fileData[key];
           }
         });

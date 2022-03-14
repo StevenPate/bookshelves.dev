@@ -1,6 +1,6 @@
 ---
 title: Feelings
-categories: kids
+categories: ["kids"]
 books:
   - ISBN: "9781419709371"
 ---

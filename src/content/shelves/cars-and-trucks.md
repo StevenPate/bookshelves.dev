@@ -1,6 +1,6 @@
 ---
 title: Cars and Trucks
-categories: kids
+categories: ["kids"]
 books:
   - ISBN: "9780307157850"
   - ISBN: "9781615194988"

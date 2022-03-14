@@ -2,6 +2,7 @@
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const book = require("./src/js/_book");
+const categoryFilter = require("./src/js/_catFilter")
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
@@ -13,6 +14,25 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("shelves", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/content/shelves/*.md")
   });
+
+  // eleventyConfig.addCollection('customDataCollection', customDataCollection);
+
+// Create collection from _data/customData.js
+
+eleventyConfig.addCollection("booksOnShelf", (collection) => {
+  const allItems = collection.getAll()[0].data.booksOnShelves.books;
+  return allItems
+});
+
+eleventyConfig.addCollection("kidsBooks", (collection) => {
+  return categoryFilter("kids").with
+});
+
+eleventyConfig.addCollection("nonKidsBooks", (collection) => {
+  return categoryFilter("kids").without
+});
+
+  
 
   // readableDate andhtmlDateString via the eleventy-blog-starter
   eleventyConfig.addFilter("readableDate", dateObj => {
