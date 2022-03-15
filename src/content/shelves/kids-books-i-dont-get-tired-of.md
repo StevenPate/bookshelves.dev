@@ -3,10 +3,8 @@ title: Kids Books that I haven't gotten tired of
 categories:
 - kids
 books:
-- ISBN: '978061825627'
+- ISBN: '9780618256273'
   description: 'Katy etc. '
-- ISBN: '978592702916'
-  description: Another magical book about rain.
 - ISBN: '9781452150130'
 - ISBN: '9780358362616'
 - ISBN: '9780064430685'
@@ -51,3 +49,5 @@ try 9780698113732
 Gobble, Growl, Grunt (9780385240949)
 
 For Maryanne's shelf... 9780375868009 -->
+
+need every color of light
