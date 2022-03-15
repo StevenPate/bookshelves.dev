@@ -5,6 +5,11 @@ fields:
 - type: text
   name: ISBN
   label: ISBN
+  config:
+    min: 13
+    max: 13
+    required: true
+  description: ISBN-13
 - type: textarea
   name: description
   label: Description
