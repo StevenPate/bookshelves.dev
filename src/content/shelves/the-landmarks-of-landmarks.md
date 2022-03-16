@@ -4,6 +4,7 @@ title: The Landmarks of *Landmarks*
 description: A shelf of books concerning the natural landscape, as featured in Robert MacFarlane's <em>Landmarks</em>.
 summary: "Robert MacFarlane's landmarks charts a course through some magical Nature writing. Here are the features he navigates the way we talk about the natural world."
 conversionPath: aValueFromTheShelf
+format: shelfDescriptionsOnly
 books:
   - ISBN: "9780241967874"
     description: |
@@ -25,12 +26,16 @@ books:
   - ISBN: '9781416595328'
     description: |
       Effortless and enchanting, Roger Deakin's *Wildwood* is unique in its weaving of encyclopedic appreciation for trees and personal anecdote. Simply if uncharitably put, Deakin looks into his navel and finds a forest. It's idosyncratic and beautiful, and you might find yourself checking prices on flights to southern Kyrgyzstan just to see if an actual lived experience can live up to his description of a walnut forest, or driving around Suffolk looking for his 400-year-old digs, or just wishing you could be half as observant as this writer, who spent a lifetime carefully looking around him and beautifully recording it. Give this amazing study of what he dubbed "the fifth element" (wood), a little time to take root, and something beatuiful will grow.
-  - ISBN: '9780062954794'
-    title: zen stuff
-    shelfLabel: Book of the Millenium
-    description: This is the shelf description!
-    attribution: Steven
-    conversionPath: a1214
+  - ISBN: '9780807085110'
+  - ISBN: '9781847771551'
+  - ISBN: '9781903385333'
+  - ISBN: '9781999971854'
+  - ISBN: '9781517076191'
+  - ISBN: '9780571347933'
+  - ISBN: '9781953534033'
+
+
+
 ---
 
 In 2016's *Landmarks*, MacFarlane still feels like a writer with his backpack on, but somehow there's also a 19th-century thesaurus in there with the parka and compass. Anyone sharing his simultaneous fascination with language and landscape will devour it like catnip.  In exploration of how we talk about where we live, he charts a course through some magical nature writing with care and enthusiasm. 

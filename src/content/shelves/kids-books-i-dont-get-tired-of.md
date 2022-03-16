@@ -54,3 +54,6 @@ Gobble, Growl, Grunt (9780385240949)
 For Maryanne's shelf... 9780375868009 -->
 
 need every color of light
+
+9781338265033 is bad
+9780590441566 is bad

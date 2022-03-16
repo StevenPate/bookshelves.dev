@@ -1,5 +1,9 @@
 const Cache = require("@11ty/eleventy-cache-assets");
 const cacheImage = require("./cacheImage");
+const MarkdownIt = require('markdown-it');
+const md = new MarkdownIt({
+  html: true
+});
 
 const getIdentifiers = async (ISBN) => {
 
@@ -44,7 +48,7 @@ const getGoogle = async (ISBN) => {
       directory: "_cache"
     });
 
-    const {
+    let {
       title,
       subtitle,
       authors,
@@ -54,6 +58,9 @@ const getGoogle = async (ISBN) => {
       publishedDate,
       pageCount,
     } = googleData.items[0].volumeInfo;
+
+    description += ` (Publisher's Description)`
+    description = md.render(description);
 
     return {
       title,

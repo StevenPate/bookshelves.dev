@@ -171,7 +171,7 @@ const buildContexts = (bookData, title, thisShelf) => {
       
       const otherItems = shelfItems - 1;
       const withOthers = (isOther)
-        ? ` with ${shelfItems} other books`
+        ? ` with ${otherItems} other books`
         : ''
 
       const contextPunctuation = ((i === 0) || (i == (contexts.length - 1)))
