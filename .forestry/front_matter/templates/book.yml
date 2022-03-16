@@ -73,6 +73,22 @@ fields:
   showOnly:
     field: details
     value: true
+- name: publisher
+  type: text
+  config:
+    required: false
+  label: Publisher
+  showOnly:
+    field: details
+    value: true
+- name: shelfLabel
+  type: text
+  config:
+    required: false
+  label: Label
+  showOnly:
+    field: details
+    value: true
 - name: attribution
   type: text
   config:
