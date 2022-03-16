@@ -19,8 +19,7 @@ books:
     it but to keep reading its haunting style. The clarity and directness of its prose
     feels at first like an unbearably and intensely focused light. It reveals, like
     a doctor's lamp. Another metaphor, from the title, is even better. It is dry and
-    desiccated in a breathtakingly clarifying way. The dry heart. What a title. What
-    a first line.
+    desiccated in a breathtakingly clarifying way. What a title. What a first line.
   details: true
 - ISBN: '9781771644198'
   description: Tree description, which has a subtitle set off by a colon. Watch out!.
