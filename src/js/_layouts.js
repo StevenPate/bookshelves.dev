@@ -24,10 +24,12 @@ function layout(id, display, details, contexts, linkInfo) {
     link,
     linkText,
   } = details;
-  let contextsGraph = '';
-  (contexts)
-    ? contextsGraph = contexts.verbose.all
-    : contextsGraph = `${id} has no contexts`
+  let allContexts = (contexts)
+    ? contexts.verbose.all
+    : `${id} has no contexts`
+  let otherContexts = (contexts)
+    ? contexts.verbose.other
+    : `${id} has no contexts`
 
   let slug = slugify(title, { lower: true, strict: true });
   categories = formatArray(categories);
@@ -38,9 +40,12 @@ function layout(id, display, details, contexts, linkInfo) {
       ? `
         <aside class="my-12 prose prose-xl">
           <h3><span class="font-bold italic">${title}</span> is on these shelves:</h3>
-            ${contextsGraph}
+            ${allContexts}
         </aside>`
-      : ``;
+      : `
+        <aside class="my-12 prose prose-base text-gray-500">
+            <span>Elsewhere</span>: ${otherContexts}
+        </aside>`;
 
   let detailsLayout =
     display == "full-details"
