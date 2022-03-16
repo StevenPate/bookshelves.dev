@@ -1,32 +1,36 @@
 ---
 title: Kids Books that I haven't gotten tired of
-categories: ["kids"]
+categories:
+- kids
 books:
-  - ISBN: "9781452150130"
-  - ISBN: "9780358362616"
-  - ISBN: "9780064430685"
-  - ISBN: "9780142403877"
-  - ISBN: "9780805047905"
-    description: What a debut book. The rhythm of this book, the distinctive illustration style, the clever conceit connecting page to page and breaking the fourth wall... *Brown Bear* is just incredible to me.
-  - ISBN: "9780688149000"
-  - ISBN: "9780307157850"
-  - ISBN: "9781615194988"
-  - ISBN: "9780394800202"
-  - ISBN: "9781419709371"
-  - ISBN: "9780670012954"
-  - ISBN: "9781536210637"
-  - ISBN: "9780316457163"
-  - ISBN: "9781626720916"
-  - ISBN: "9781481431217"
-  - ISBN: "9780553496796"
-    description: It is hard to imagine not enjoying this famous Seussian title, right up until the moment it is seared into your brain forever.
-  - ISBN: "9780358451228"
-  - ISBN: "9781423634119"
-  - ISBN: "9781328710604"
-
+- ISBN: '9780618256273'
+  description: 'Katy etc. '
+- ISBN: '9781452150130'
+- ISBN: '9780358362616'
+- ISBN: '9780064430685'
+- ISBN: '9780142403877'
+- ISBN: '9780805047905'
+  description: What a debut book. The rhythm of this book, the distinctive illustration
+    style, the clever conceit connecting page to page and breaking the fourth wall...
+    *Brown Bear* is just incredible to me.
+- ISBN: '9780688149000'
+- ISBN: '9780307157850'
+- ISBN: '9781615194988'
+- ISBN: '9780394800202'
+- ISBN: '9781419709371'
+- ISBN: '9780670012954'
+- ISBN: '9781536210637'
+- ISBN: '9780316457163'
+- ISBN: '9781626720916'
+- ISBN: '9781481431217'
+- ISBN: '9780553496796'
+  description: It is hard to imagine not enjoying this famous Seussian title, right
+    up until the moment it is seared into your brain forever.
+- ISBN: '9780358451228'
+- ISBN: '9781423634119'
+- ISBN: '9781328710604'
 
 ---
-
 Here are books I don't get tired of, miraculously.
 
 <!-- 9780448190532 is busy harbor i think and it must be out of print?
@@ -45,3 +49,5 @@ try 9780698113732
 Gobble, Growl, Grunt (9780385240949)
 
 For Maryanne's shelf... 9780375868009 -->
+
+need every color of light
