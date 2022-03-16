@@ -4,15 +4,16 @@ categories:
 - kids
 books:
 - ISBN: '9781481464444'
-  details: true
 - ISBN: '9780618256273'
   description: 'Katy etc. '
 - ISBN: '9781452150130'
+  authors: ['Brendan Wenzel']
 - ISBN: '9780358362616'
 - ISBN: '9780064430685'
 - ISBN: '9780142403877'
 - ISBN: '9780805047905'
-  description: What a debut book. The rhythm of this book, the distinctive illustration
+  description: |
+    What a debut book. The rhythm of this book, the distinctive illustration
     style, the clever conceit connecting page to page and breaking the fourth wall...
     *Brown Bear* is just incredible to me.
 - ISBN: '9780688149000'

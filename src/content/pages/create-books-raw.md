@@ -1,11 +1,11 @@
 ---
 eleventyComputed:
   title: "{{ book.google.title}}" 
-layout: layouts/book.njk
+layout: layouts/json.njk
 tags: book
 pagination:
     data: booksOnShelves.books
     size: 1
     alias: book
-permalink: "/{{ book.ISBN }}/"
+permalink: "/{{ book.ISBN }}.json"
 ---

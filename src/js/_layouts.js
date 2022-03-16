@@ -1,5 +1,9 @@
 const site = require("../_data/site.json");
 const slugify = require("slugify");
+const MarkdownIt = require('markdown-it');
+const md = new MarkdownIt({
+  html: true
+});
 const humanizeList = require("humanize-list");
 
 const formatArray = (arrayToFormat) => {
@@ -9,7 +13,8 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 };
 
-function layout(id, display, details, contexts, linkInfo) {
+function layout(id, display, details, contexts) {
+
   let {
     title,
     subtitle,
@@ -20,43 +25,82 @@ function layout(id, display, details, contexts, linkInfo) {
     cachedCover,
     publisher,
     publishedDate,
-    pages,
+    pageCount,
     link,
     linkText,
+    excerpts, //need to format for extraFieldsLayout
+    howFound, //need to format for extraFieldsLayout
+    whereFound, //need to format for extraFieldsLayout
+    otherInfo //need to format for extraFieldsLayout
   } = details;
   let allContexts = (contexts)
     ? contexts.verbose.all
     : `${id} has no contexts`
-  let otherContexts = (contexts)
-    ? contexts.verbose.other
-    : `${id} has no contexts`
-
+  let otherContexts = (contexts && contexts.verbose.other)
+    ? `${contexts.verbose.other}`
+    : ``
   let slug = slugify(title, { lower: true, strict: true });
   categories = formatArray(categories);
   authors = formatArray(authors);
 
+  //TODO: CLEAN THESE UP
+  // if (howFound) {
+  //   howFoundContent =  md.render(howFound)
+  //   howFoundDisplay = `
+  //   <div>
+  //     <h3>How did I find this?</h3> 
+  //     ${howFoundContent}
+  //   </div>`
+  // }; 
+  // if (whereFound) {
+  //   whereFound =  md.render(whereFound)
+  //   whereFoundDisplay = `
+  //   <div>
+  //     <h3>How did I find this?</h3> 
+  //     ${whereFound}
+  //   </div>`
+  // }; 
+  // if (otherInfo) {
+  //   otherInfo =  md.render(otherInfo)
+  //   otherInfoDisplay = `
+  //   <div>
+  //     <h3>Other Info</h3> 
+  //     ${whereFound}
+  //   </div>`
+  // }; 
+
   let contextsLayout =
     display == "full-details"
       ? `
-        <aside class="my-12 prose prose-xl">
-          <h3><span class="font-bold italic">${title}</span> is on these shelves:</h3>
+        <aside class="my-12 prose prose-base text-gray-500">
             ${allContexts}
         </aside>`
       : `
         <aside class="my-12 prose prose-base text-gray-500">
-            <span>Elsewhere</span>: ${otherContexts}
+            ${otherContexts}
         </aside>`;
+
+  // let extraFieldsLayout = 
+  //   display == "full-details"
+  //     ? `<div class="prose prose-base my-12">
+  //     ${howFoundDisplay}
+  //     ${whereFoundDisplay}
+  //     ${otherInfoDisplay}
+  //     </div>`
+  //     : ''
 
   let detailsLayout =
     display == "full-details"
       ? `
-      <div class="prose prose-sm my-12">
-      <h3 class="text-lg font-bold">Details</h3>
+      <div class="prose prose-sm my-12" x-data="{ show: false }">
+      <button class="text-lg font-bold underline" x-text="show ? 'Hide Details &gt;&gt;' : 'Show Details &gt;&gt;'" @click="show = !show"></button>
+      <div x-show="show">
       <div><strong>Publisher:</strong> ${publisher}</div>
       <div><strong>Categories:</strong> ${categories}</div>
-      <div><strong>Pages:</strong> ${pages}</div>
+      <div><strong>Pages:</strong> ${pageCount}</div>
       <div><strong>Publication Date:</strong> ${publishedDate}</div>
       <div><strong>ISBN:</strong> ${id}</div>
+      </div>
       </div>`
       : "";
 
@@ -91,15 +135,15 @@ by ${authors}
 </div>
 <div class="prose prose-xl">${description}</div>
 ${contextsLayout}
+${detailsLayout}
 </div>
 <div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6 flex flex-col items-center content-start">
-${cachedCover}
+<a href="/${id}">${cachedCover}</a>
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
 ${linkText}
 </button>
 </a>
-${detailsLayout}
 </div>
 </div>`;
     case "small":

@@ -14,14 +14,31 @@ class Book {
       this.error = `Bad input: didn't find any data for ${id}`;
       return;
     }
+  
 
     this.shelf = shelf || null;
     const masterShelf = bookData.shelves.find(
       (element) => element.shelf == "masterShelf"
     );
+    let shelfDetails = {};
+    bookData.shelves.forEach(shelfEntry => {
+      let add = shelfEntry.details
+      // TODO : attribute the description to a shelf 
+      // if (shelfEntry.details.description && (shelfEntry.shelf != "masterShelf")) {
+      //   const thisShelfInfo = booksOnShelves.shelves.find(
+      //     (element) => element.shelfID == shelfEntry.shelf
+      //   );
+      //    const shelfLink = ` (<a href="/${shelfEntry.shelf}">${thisShelfInfo.shelfTitle}</a>)`
+      //   shelfEntry.details.description += shelfLink
+        
+      // }
+      shelfDetails = {...shelfDetails, ...add}
+    });
+    const {shelfLabel, ...shelfDetailsToAdd} = shelfDetails; //remove shelf-specific stuff that should move upwards
+ 
     const details = masterShelf
-      ? { ...bookData.google, ...bookData.bookshopOrg, ...masterShelf.details }
-      : { ...bookData.google, ...bookData.bookshopOrg };
+      ? { ...bookData.google, ...bookData.bookshopOrg, ...shelfDetailsToAdd, ...masterShelf.details }
+      : { ...bookData.google, ...shelfDetailsToAdd, ...bookData.bookshopOrg };
     details.isbn10 = bookData.identifiers.isbn[0];
   
     this.details = details;
@@ -104,7 +121,7 @@ const buildContexts = (bookData, title, thisShelf) => {
       dateModified, // for flagging recently modified shelves
     } = { ...shelfInfo, ...shelfData.details };
 
-    return {title, shelfID, shelfTitle, attribution: attribution || '', shelfLabel: shelfLabel || '', dateCreated};
+    return {title, shelfID, shelfTitle, attribution: attribution || '', shelfLabel: shelfLabel || '', shelfItems, dateCreated};
   }
 
   shelvesForContext.forEach((shelfEntry) =>
@@ -115,8 +132,7 @@ const buildContexts = (bookData, title, thisShelf) => {
   );
   const data = {all:allContexts,other:otherContexts}
 
-  const createVerboseContexts = (contexts) => { // make a readable version of the context details
-    
+  const createVerboseContexts = (contexts, isOther) => { // make a readable version of the context details
     displayContexts = [];
     for (let i = 0; i < contexts.length; i++) {
 
@@ -126,6 +142,7 @@ const buildContexts = (bookData, title, thisShelf) => {
         attribution,
         shelfTitle,
         shelfID,
+        shelfItems,
       } = contexts[i];
 
       const ifTitle = (i === 0)
@@ -134,7 +151,7 @@ const buildContexts = (bookData, title, thisShelf) => {
           ? `It`
           : ''
 
-      const ifAlso = (i === 1)
+      const ifAlso = ((i === 1) || (isOther && (i === 0)))
         ? ' also'
         : ''
       
@@ -151,6 +168,11 @@ const buildContexts = (bookData, title, thisShelf) => {
       const asLabel = (shelfLabel)
         ? ` as "${shelfLabel}"`
         : ''
+      
+      const otherItems = shelfItems - 1;
+      const withOthers = (isOther)
+        ? ` with ${shelfItems} other books`
+        : ''
 
       const contextPunctuation = ((i === 0) || (i == (contexts.length - 1)))
         ? `. `
@@ -158,7 +180,7 @@ const buildContexts = (bookData, title, thisShelf) => {
           ? ' and'
           : ', '
 
-      displayContext = `${ifTitle}${shelfAction}${byAttribution}${shelf}${asLabel}${contextPunctuation}`;
+      displayContext = `${ifTitle}${shelfAction}${byAttribution}${shelf}${asLabel}${withOthers}${contextPunctuation}`;
       displayContexts.push(displayContext);
     }
           
@@ -166,7 +188,7 @@ const buildContexts = (bookData, title, thisShelf) => {
     
   }
 
-  let verbose = {all:createVerboseContexts(allContexts), other:createVerboseContexts(otherContexts)};
+  let verbose = {all:createVerboseContexts(allContexts, false), other:createVerboseContexts(otherContexts, true)};
   
   return {data,verbose}
 }
