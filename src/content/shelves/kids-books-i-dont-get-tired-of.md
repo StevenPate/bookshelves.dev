@@ -3,6 +3,8 @@ title: Kids Books that I haven't gotten tired of
 categories:
 - kids
 books:
+- ISBN: '9781481464444'
+  details: true
 - ISBN: '9780618256273'
   description: 'Katy etc. '
 - ISBN: '9781452150130'
