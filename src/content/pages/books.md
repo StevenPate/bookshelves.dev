@@ -19,9 +19,9 @@ eleventyNavigation:
   </section>
   <section x-show="currentTab === 'kids'">
   <h3 class="mt-4">Kids Books</h3>
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-3 gap-4">
   {% for item in collections.kidsBooks %}
-  {% book item.ISBN, 'small', 'local' %}
+  {% book item.ISBN, 'cover', 'local' %}
   {% endfor %}
   </div>
   </section>

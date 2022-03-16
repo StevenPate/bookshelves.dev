@@ -3,7 +3,9 @@ const booksOnShelves = require("../_data/booksOnShelves.json");
 
 class Book {
   constructor(id, shelf, shelfEntry) {
+
     //TODO make sure ID is ISBN or spit out an ISBN
+
     this.id = id;
     const bookData = shelfEntry
       ? shelfEntry
@@ -21,8 +23,8 @@ class Book {
       ? { ...bookData.google, ...bookData.bookshopOrg, ...masterShelf.details }
       : { ...bookData.google, ...bookData.bookshopOrg };
     details.isbn10 = bookData.identifiers.isbn[0];
+  
     this.details = details;
-
 
     if (this.shelf) {
       const shelfInfo = booksOnShelves.shelves.find(
@@ -36,54 +38,8 @@ class Book {
       }
     }
 
-    let contexts = [];
-    const shelvesForContext = bookData.shelves.filter(
-      (shelfEntry) => shelfEntry.shelf != "masterShelf"
-    );
-    const collectAllContexts = (shelfEntries) => {
-      const contextDetails = (shelfEntry) => {
-        const shelfInfo = booksOnShelves.shelves.find(
-          (element) => element.shelfID == shelfEntry.shelf
-        );
-        const shelfData = bookData.shelves.find(
-          (element) => element.shelf == shelfEntry.shelf
-        );
-        const {
-          shelfLabel,
-          attribution,
-          shelfTitle,
-          shelfID,
-          shelfItems,
-          shelfDescription,
-        } = { ...shelfInfo, ...shelfData.details };
-        const title = this.details.title;
-        // TODO: expand this placeholder
-        const descriptive = `<a href="/${shelfID}">${shelfTitle}</a>`;
+    this.contexts = buildContexts(bookData, this.details.title, this.shelf);
 
-        const fullContext = {
-          title,
-          shelfLabel,
-          attribution,
-          shelfTitle,
-          shelfID,
-          shelfItems,
-          shelfDescription,
-          descriptive,
-        };
-
-        return fullContext;
-      };
-
-      shelfEntries.forEach((shelfEntry) =>
-        contexts.push(contextDetails(shelfEntry))
-      );
-      return contexts;
-    };
-
-    this.contexts = collectAllContexts(shelvesForContext);
-    this.otherContexts = this.contexts.filter(
-      (context) => context.shelfID != this.shelf
-    );
   }
 }
 
@@ -120,5 +76,101 @@ const buildLink = (id, linkInfo, conversionPath, isbn10) => {
   return { link, linkText };
 };
 
-module.exports.buildLink = buildLink;
+const buildContexts = (bookData, title, thisShelf) => { 
+
+  const shelvesForContext = bookData.shelves.filter(
+    (shelfEntry) => shelfEntry.shelf != "masterShelf"
+  );
+
+  let allContexts = [];
+  
+  collectContextDetails = (shelfEntry) => { // get details from json to build context 
+    const shelfInfo = booksOnShelves.shelves.find( // get details of the shelf
+      (element) => element.shelfID == shelfEntry.shelf
+    );
+
+    const shelfData = bookData.shelves.find(
+      (element) => element.shelf == shelfEntry.shelf
+    );
+
+    const {
+      shelfLabel,
+      attribution,
+      shelfTitle,
+      shelfID,
+      shelfItems, // for later adding "allong with x number of other books"
+      shelfDescription, // for future display options
+      dateCreated,
+      dateModified, // for flagging recently modified shelves
+    } = { ...shelfInfo, ...shelfData.details };
+
+    return {title, shelfID, shelfTitle, attribution: attribution || '', shelfLabel: shelfLabel || '', dateCreated};
+  }
+
+  shelvesForContext.forEach((shelfEntry) =>
+    allContexts.push(collectContextDetails(shelfEntry))
+  );
+  const otherContexts = allContexts.filter(
+    (context) => context.shelfID != thisShelf
+  );
+  const data = {all:allContexts,other:otherContexts}
+
+  const createVerboseContexts = (contexts) => { // make a readable version of the context details
+    
+    displayContexts = [];
+    for (let i = 0; i < contexts.length; i++) {
+
+      const {
+        title,
+        shelfLabel,
+        attribution,
+        shelfTitle,
+        shelfID,
+      } = contexts[i];
+
+      const ifTitle = (i === 0)
+        ? `<strong><em>${title}</em></strong>`
+        : (i === 1)
+          ? `It`
+          : ''
+
+      const ifAlso = (i === 1)
+        ? ' also'
+        : ''
+      
+      const shelfAction = (attribution)
+        ? ` was${ifAlso} added`
+        : ` is${ifAlso} on the`
+
+      const byAttribution = (attribution)
+        ? ` by ${attribution} to`
+        : ''
+
+      const shelf = ` the <a href="/${shelfID}">${shelfTitle}</a> shelf`// shelfType newsletter one day
+            
+      const asLabel = (shelfLabel)
+        ? ` as "${shelfLabel}"`
+        : ''
+
+      const contextPunctuation = ((i === 0) || (i == (contexts.length - 1)))
+        ? `. `
+        : (contexts.length - 1)
+          ? ' and'
+          : ', '
+
+      displayContext = `${ifTitle}${shelfAction}${byAttribution}${shelf}${asLabel}${contextPunctuation}`;
+      displayContexts.push(displayContext);
+    }
+          
+    return displayContexts.join('')
+    
+  }
+
+  let verbose = {all:createVerboseContexts(allContexts), other:createVerboseContexts(otherContexts)};
+  
+  return {data,verbose}
+}
+
 module.exports.buildBook = buildBook;
+module.exports.buildLink = buildLink;
+module.exports.buildContexts = buildContexts;

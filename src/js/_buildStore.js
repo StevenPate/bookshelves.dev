@@ -21,6 +21,8 @@ const processFoldersToShelves = (folderPaths) => {
       if (ext != ".md") { continue; }
 
       const fileContents = fs.readFileSync(filePath, "utf8");
+      const {birthtime, mtime} = fs.statSync(filePath)
+    
       const data = yaml.loadAll(fileContents); 
       if (fileType == "masterShelf") { 
         data.longDescription = data[1];
@@ -38,6 +40,8 @@ const processFoldersToShelves = (folderPaths) => {
           categories: categories || [],
           attribution: attribution,
           conversionPath: conversionPath,
+          dateCreated: birthtime,
+          dateModified: mtime,
         }
         allShelves.push(shelfData)
 

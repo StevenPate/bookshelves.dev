@@ -9,7 +9,7 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 };
 
-function layout(id, display, details, contexts, linkInfo) {
+function layout(id, display, details, contexts, otherContexts, linkInfo) {
   let {
     title,
     subtitle,
@@ -24,21 +24,112 @@ function layout(id, display, details, contexts, linkInfo) {
     link,
     linkText,
   } = details;
-  let contextsGraph = '';
-  (contexts)
-    ? contextsGraph = contexts.verbose.all
-    : contextsGraph = `${id} has no contexts`
 
   let slug = slugify(title, { lower: true, strict: true });
   categories = formatArray(categories);
   authors = formatArray(authors);
+
+  let contextsList;
+  if (contexts) {
+    const deccriptiveContexts = contexts.map(({ descriptive }) => descriptive);
+    contextsList = formatArray(deccriptiveContexts);
+    let contextsGraph;
+    for (let i = 0; i < contexts.length; i++) {
+      console.log(contexts[i]);
+      const {
+        title,
+        shelfLabel,
+        attribution,
+        shelfTitle,
+        shelfID,
+        shelfItems,
+        shelfDescription,
+        dateCreated,
+        dateModified,
+        descriptive,
+      } = contexts[i];
+      
+      const ifTitle = (i === 0)
+        ? title
+        : "It"
+      const ifAlso = (i > 0)
+        ? ' also'
+        : ''
+      const shelfAction = (attribution)
+        ? ` was${ifAlso} added`
+        : ` is${ifAlso} on the`
+      const byAttribution = (attribution)
+        ? ` by ${attribution} to`
+        : ''
+      const shelf = ` the <a hred="/${shelfID}">${shelfTitle}</a> shelf`// shelfType newsletter one day
+      const asLabel = (shelfLabel)
+        ? ` as "${shelfLabel}"`
+        : ''
+
+      displayContext = `
+      ${ifTitle}${shelfAction}${byAttribution}${shelf}${asLabel}
+      `;
+      console.log(displayContext);
+    }
+  }
+
+  // ${title}${isAdded}${byAttribution}${toShelf}
+
+  // let contextsGraph;
+  // console.log(contexts)
+  // if (contexts){
+  //   let formattedContexts = [];
+  //   contexts.forEach((element) => {
+  //     element.shelfLabel != null
+  //       ? formattedContexts.unshift(element)
+  //       : formattedContexts.push(element);
+  //   });
+  //   formattedContexts.forEach((element) => {
+  //     console.log(element);
+  //     let theContext = title
+  //     theContext +=
+  //     element.shelfLabel != null
+  //       ? ` was named ${element.shelfLabel} in the `
+  //       : element.shelfAttribution != null
+  //         ?  `was added by ${shelfAttribution} to the `
+  //         : ` is on the `
+  //     theContext += `${shelfTitle} shelf.`
+  //     console.log(theContext);
+  //   });
+
+  //   // let ContextDescription
+
+  //   // for (let i = 0; i < formattedContexts.length; i++) {
+  //   //   if (i === 0) {
+  //   //     ContextDescription +=
+  //   //     contexts[i].shelfLabel != null
+  //   //       ? `${thisBook.title} was named ${contexts[i].shelfLabel} in ${contexts[i].shelfLink}`
+  //   //       : contexts[i].shelfAttribution
+  //   //       ? `${thisBook.title} was added to the ${contexts[i].shelfLink} shelf`
+  //   //       : `${thisBook.title} is on the ${contexts[i].shelfLink} shelf`;
+  //   //   ContextDescription += contexts[i].shelfAttribution
+  //   //     ? ` by ${contexts[i].shelfAttribution}. `
+  //   //     : `.`;
+
+  //   //   }
+
+  //   // }
+
+  //   // let formattedContext = `${title} is on ${contexts[0].shelfTitle}.`
+  //   // console.log(formattedContext);
+  //   // const formatContext = context => {
+  //   //   // console.log(context)
+  //   // }
+  //   // const formattedContexts = contexts.map((context) => formatContext(context))
+  //   // console.log(formattedContexts);
+  // }
 
   let contextsLayout =
     display == "full-details"
       ? `
         <aside class="my-12 prose prose-xl">
           <h3><span class="font-bold italic">${title}</span> is on these shelves:</h3>
-            ${contextsGraph}
+            ${contextsList}
         </aside>`
       : ``;
 
@@ -46,7 +137,7 @@ function layout(id, display, details, contexts, linkInfo) {
     display == "full-details"
       ? `
       <div class="prose prose-sm my-12">
-      <h3 class="text-lg font-bold">Details</h3>
+      <h3>Details</h3>
       <div><strong>Publisher:</strong> ${publisher}</div>
       <div><strong>Categories:</strong> ${categories}</div>
       <div><strong>Pages:</strong> ${pages}</div>

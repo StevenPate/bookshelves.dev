@@ -10,7 +10,7 @@ book = async (
   thisShelf
   ) => {
 
-  let {id, details, contexts, otherContexts} = buildBook(ISBN, thisShelf);
+  let {id, details, contexts} = buildBook(ISBN, thisShelf);
   
   if (!details) {
     const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
@@ -23,8 +23,8 @@ book = async (
   details.link = linkInfo == "local" ? `/${id}` : link;
   details.linkText = linkInfo == "local" ? `View book page→` : linkText;
   
-  return layout(id, display, details, contexts, otherContexts);
+  return layout(id, display, details, contexts);
 
 }
 
-module.exports = book;
+module.exports = book; 

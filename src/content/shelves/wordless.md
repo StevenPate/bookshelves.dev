@@ -1,11 +1,12 @@
 ---
 title: Wordless
 categories: ["kids"]
-conversionPath: libro
+conversionPath: thirdplace
 books:
 - ISBN: "9781328710604"
   description: ''
   attribution: ''
+  shelfLabel: 'Book with Longest Butter Churn'
 attribution: Steven
 description: ''
 summary: ''
