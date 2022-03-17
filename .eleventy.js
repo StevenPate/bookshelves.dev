@@ -1,8 +1,7 @@
 
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+// const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const book = require("./src/js/_book");
-const shelf = require("./src/js/_shelf");
+const { book, shelf } = require("./src/js/_shortcodes");
 const categoryFilter = require("./src/js/_catFilter")
 const { DateTime } = require("luxon");
 

@@ -9,7 +9,7 @@ The books on this site are organized onto shelves, which is where they feel at h
 <ul class="p-0 list-none">
 {% for item in collections.shelves | reverse %}
   <li class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group">
-    <a class="group-hover:decoration-wavy" href="{{item.url}}">{{item.data.title}}</a>
+    <a class="group-hover:decoration-wavy" href="{{item.url}}">{{item.data.title | safe}}</a>
     <div class="mt-3">{{ item.data.description | safe }}</div>
     <div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on {{ item.date | readableDate }}</div>
   </li>

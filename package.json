@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf _site && mkdir _site && node ./src/js/_buildStore.js && tailwind build -i src/css/styles.css -o _site/css/styles.css && eleventy --quiet --serve",
+    "dry": "npx @11ty/eleventy --quiet --dryrun",
     "build": "mkdir _site && node ./src/js/_buildStore.js && tailwindcss build -i ./src/css/styles.css -o ./_site/css/styles.css && eleventy",
     "prod": "NODE_ENV=production npx tailwindcss build ./src/tailwind.css -o ./_site/tailwind.css"
   },

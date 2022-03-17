@@ -169,7 +169,7 @@ const buildContexts = (bookData, title, thisShelf) => {
         ? ` as "${shelfLabel}"`
         : ''
       
-      const otherItems = shelfItems - 1;
+      const otherItems = shelfItems.length - 1;
       const withOthers = (isOther)
         ? ` with ${otherItems} other books`
         : ''

@@ -2,10 +2,12 @@
 title: tests
 ---
 
+shelf:
+{% shelf "the-landmarks-of-landmarks", "cover" %}
 
 
 text:
-{% book "9780804172448", "text::any text goes here", "external::openlibrary" %}
+{% book "9780804172448", "text" %}
 
 full:
 {% book "9780804172448", "full::Buy on Bookshop.org" %}
