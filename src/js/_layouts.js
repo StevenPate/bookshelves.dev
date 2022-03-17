@@ -111,16 +111,21 @@ function layout(id, display, details, contexts) {
       ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
       : "";
 
+  let textLink = title;
   if (/::/.test(display)) {
     const displayHasText = display.split(new RegExp("[::]"));
     display = displayHasText[0];
     linkText = displayHasText[2];
+    if (display == "text") {
+      textLink = linkText
+    }
   }
 
   switch (display) {
     case "text":
     default:
-      return `<a href="${link}">${linkText}</a>`;
+
+      return `<a href="${link}">${textLink}</a>`;
     case "cover":
       return `<a href="${link}">${cachedCover}</a>`;
     case "full":

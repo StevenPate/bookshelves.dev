@@ -2,12 +2,14 @@
 title: tests
 ---
 
-shelf:
+
+book (text):
+{% book "9780804172448", "text::whatever you like" %}
+
+shelf (cover):
 {% shelf "the-landmarks-of-landmarks", "cover" %}
 
 
-text:
-{% book "9780804172448", "text" %}
 
 full:
 {% book "9780804172448", "full::Buy on Bookshop.org" %}
