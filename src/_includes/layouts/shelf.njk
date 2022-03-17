@@ -4,14 +4,15 @@
 <article>
 <section title="About the '{{ title }}' shelf" class="prose prose-xl">
   <article>
-  <h1>{{ title or metadata.title }}</h1>
+  <h1>{{ title or metadata.title | safe }}!</h1>
   {{ content | safe }}
   </article>
 </section>
-<section>
-  {% for book in books %}
-    {% book book.ISBN, "full", "external", page.fileSlug %}
-  {% endfor %}
+<section class="">
+{% for book in books %}
+  {% book book.ISBN, "full", "external", page.fileSlug %}
+{% endfor %}
 </section>
 </article>
 {% endblock %}
+ç

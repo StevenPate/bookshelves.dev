@@ -2,6 +2,7 @@
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const book = require("./src/js/_book");
+const shelf = require("./src/js/_shelf");
 const categoryFilter = require("./src/js/_catFilter")
 const { DateTime } = require("luxon");
 
@@ -9,6 +10,8 @@ module.exports = function (eleventyConfig) {
 
   // book shortcode
   eleventyConfig.addNunjucksAsyncShortcode("book", book);
+  // shelf  shortcode
+  eleventyConfig.addNunjucksAsyncShortcode("shelf", shelf);
 
   // shelves collection
   eleventyConfig.addCollection("shelves", function (collectionApi) {
@@ -43,6 +46,7 @@ eleventyConfig.addCollection("nonKidsBooks", (collection) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
   
+
   // eleventyConfig.setQuietMode(true);
   // eleventyConfig.addPlugin(directoryOutputPlugin);
 

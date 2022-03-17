@@ -1,3 +1,4 @@
+const { borderColor } = require("tailwindcss/defaultTheme");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -43,6 +44,8 @@ module.exports = {
               // "margin-bottom": ".3rem !important",
             },
             h2: {
+              "font-weight": "800",
+              "color": "rgb(82 82 82)",
               // 'text-decoration': 'none',
               // "font-family": "Montserrat !important",
               // "font-size": "3rem !important",

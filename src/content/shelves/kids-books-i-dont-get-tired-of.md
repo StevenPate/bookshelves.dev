@@ -1,5 +1,6 @@
 ---
 title: Kids Books that I haven't gotten tired of
+description: Think of a book you like. Now think of reading it a few hundred times. Only the strong survive.
 categories:
 - kids
 books:

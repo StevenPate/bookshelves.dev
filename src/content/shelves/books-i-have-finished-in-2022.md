@@ -1,8 +1,7 @@
 ---
 layout: layouts/shelf.njk
 title: Books I have finished in 2022
-categories:
-- Tumwater
+description: I've been reading more than finishing books, but here are the ones I've gotten through so far this year.
 attribution: Steven
 books:
 - ISBN: '9780374157357'

@@ -92,9 +92,11 @@ function layout(id, display, details, contexts) {
   let detailsLayout =
     display == "full-details"
       ? `
+
+
       <div class="prose prose-sm my-12" x-data="{ show: false }">
-      <button class="text-lg font-bold underline" x-text="show ? 'Hide Details &gt;&gt;' : 'Show Details &gt;&gt;'" @click="show = !show"></button>
-      <div x-show="show">
+      <button class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" x-text="show ? 'Hide Details' : 'Show Details &gt;&gt;'" :class="{ 'bg-blue-200'}" @click="show = !show"></button>
+      <div x-show="show" class="prose prose-sm py-6">
       <div><strong>Publisher:</strong> ${publisher}</div>
       <div><strong>Categories:</strong> ${categories}</div>
       <div><strong>Pages:</strong> ${pageCount}</div>
@@ -123,9 +125,10 @@ function layout(id, display, details, contexts) {
       return `<a href="${link}">${cachedCover}</a>`;
     case "full":
     case "full-details":
+      description = md.render(description)
       return `
 <div id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16">
-<div id="${slug}-info" class="w-full sm:w-2/3">
+<div id="${slug}-info" class="max-w-[65ch] sm:w-2/3">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
 </h2>
@@ -148,9 +151,9 @@ ${linkText}
 </div>`;
     case "small":
       return `
-<div id="${slug}" class="my-4 flex flex-row content-start" >
-  <div id="${slug}-image" class="w-28 pr-2 content-start items-top"><a href="${link}">${cachedCover}</a></div>
-  <div id="${slug}-info" class="">
+<div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
+  <div id="${slug}-image" class="w-full sm:w-28 pr-2 content-start items-top"><a href="${link}">${cachedCover}</a></div>
+  <div id="${slug}-info" class="w-full sm:w-2/3 prose prose-lg py-6 sm:py-auto">
     <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
     <div id="${slug}-author" class="font-lg">${authors}</div>
   </div>

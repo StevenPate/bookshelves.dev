@@ -2,5 +2,6 @@
   "tags": ["posts"],
   "permalink": "/{{ page.fileSlug }}/",
   "layout": "layouts/page.njk",
+  "sectionClass": "prose prose-xl",
   "date": "Last Modified"
 }

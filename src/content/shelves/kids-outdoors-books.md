@@ -1,5 +1,6 @@
 ---
 title: Children's Picture Books about the Outdoors
+description: Books for kids that feature the wonders of the natural world.
 categories: ["kids"]
 books:
   - ISBN: "9781328866820"
@@ -9,6 +10,7 @@ books:
     title: Grand Canyon
   - ISBN: "9781883220310"
   - ISBN: "9781452174617"
+  - ISBN: "9780735264892"
 
 ---
 Here is where a description of shelff would go.
