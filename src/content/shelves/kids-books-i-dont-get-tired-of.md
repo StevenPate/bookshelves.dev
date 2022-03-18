@@ -5,7 +5,6 @@ description: Think of a book you like. Now think of reading it a few hundred tim
 categories:
 - kids
 books:
-- ISBN: '9780794526153'
 - ISBN: '9781481464444'
 - ISBN: '9780618256273'
   description: 'Katy etc. '
@@ -61,3 +60,5 @@ need every color of light
 
 9781338265033 is bad
 9780590441566 is bad
+
+9780794526153 No borg
