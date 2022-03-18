@@ -30,7 +30,3 @@ fields:
 - type: text
   name: conversionPath
   label: Conversion path
-pages:
-- src/content/shelves/j-s-tbr.md
-- src/content/shelves/preparing-a-toddler-for-life.md
-- src/content/shelves/wordless.md
