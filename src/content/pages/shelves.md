@@ -1,5 +1,5 @@
 ---
-title: Book-shelves
+title: Bookshelves
 eleventyNavigation:
   key: Bookshelves
 ---

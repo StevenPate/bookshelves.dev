@@ -1,16 +1,18 @@
 {% extends 'layouts/base.njk' %}
 {% block content %}
   {% if not noPageHeader %}
-  <section id="pageHeader" class="mb-4 prose prose-xl">
-    <h1>I want to talk to you about books.</h1>
-    <h2><a href="/about" class="text-3xl !font-bold">How about now? Is now good?→</a></h2>
+  <section id="pageHeader" class="h-screen px-8 mb-4 prose prose-xl sm:px-16 ">
+    <div>
+      <h1>I want to talk to you about books.</h1>
+      <h2><a href="/about" class="text-3xl !font-bold">How about now? Is now good?→</a></h2>
+    </div>
   </section>
   {% endif %}
-  {% if not noPageInfo %}
+  {# {% if not noPageInfo %}
   <section id="pageInfo" class="flex flex-row mb-12 border-t-2 md:flex-row-reverse">
     {% include "partials/pageInfo.njk" %}
   </section>
-  {% endif %}
+  {% endif %} #}
   <section id="pageContent" class="my-24">
     {{ content | safe }}
   </section>

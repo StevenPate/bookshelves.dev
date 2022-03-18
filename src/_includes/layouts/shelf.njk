@@ -2,9 +2,11 @@
 
 {% block content %}
 <article>
-<section title="About the '{{ title }}' shelf" class="prose prose-xl">
+<section title="About the '{{ title }}' shelf" class="px-8 prose prose-xl">
   <article>
+  <div class="grid justify-center grid-cols-1">
   <h1>{{ title or metadata.title | safe }}!</h1>
+  </div>
   {{ content | safe }}
   </article>
 </section>

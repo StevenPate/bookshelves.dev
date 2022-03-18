@@ -1,7 +1,7 @@
 @layer components {
   
   .book:nth-child(even) {
-    @apply flex-row-reverse;
+    @apply sm:flex-row-reverse;
   }
     
 }

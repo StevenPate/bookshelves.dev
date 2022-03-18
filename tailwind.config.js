@@ -38,6 +38,7 @@ module.exports = {
               "text-decoration-color": "#f59e0b",
             },
             h1: {
+              "font-size": "2rem",
               // 'text-decoration': 'none',
               // "font-size": "6rem !important",
               // color: "#52525b",

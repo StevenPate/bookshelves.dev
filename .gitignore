@@ -23,5 +23,5 @@ _cache/
 
 # build artifacts
 _site/
-src/images/
+src/images/web/
 src/_data/booksOnShelves.json

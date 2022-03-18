@@ -2,29 +2,5 @@
 title: tests
 ---
 
-
-book (text):
-{% book "9780804172448", "text::whatever you like" %}
-
 shelf (cover):
-{% shelf "the-landmarks-of-landmarks", "cover" %}
-
-
-
-full:
-{% book "9780804172448", "full::Buy on Bookshop.org" %}
-
-cover:
-{% book "9780804172448", "cover" %}
-
-small:
-{% book "9780804172448", "small" %}
-
-card:
-{% book "9780804172448", "card::Buy on Bookshop.org" %}
-
-title:
-{% book "9780804172448", "title" %}
-
-raw:
-{% book "9780804172448", "raw" %}
+{% shelf "the-landmarks-of-landmarks" %}

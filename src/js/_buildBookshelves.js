@@ -43,7 +43,8 @@ class Book {
   
     this.details = details;
 
-    if (this.shelf) {
+    // if we know the shelf, prioritize the details for that shelf
+    if (this.shelf) { 
       const shelfInfo = booksOnShelves.shelves.find(
         (element) => element.shelfID == this.shelf
       );
@@ -95,6 +96,10 @@ const buildLink = (id, bookLink, conversionPath, isbn10) => {
 
 const buildContexts = (bookData, title, thisShelf) => { 
 
+  if (!bookData.shelves) {
+    let error = `Bad input: didn't find any data for ${title}`;
+    return;
+  }
   const shelvesForContext = bookData.shelves.filter(
     (shelfEntry) => shelfEntry.shelf != "masterShelf"
   );
@@ -116,7 +121,7 @@ const buildContexts = (bookData, title, thisShelf) => {
       shelfTitle,
       shelfID,
       shelfItems, // for later adding "allong with x number of other books"
-      shelfDescription, // for future bookDisplayFormat options
+      shelfDescription, // for future display options
       dateCreated,
       dateModified, // for flagging recently modified shelves
     } = { ...shelfInfo, ...shelfData.details };
@@ -193,6 +198,13 @@ const buildContexts = (bookData, title, thisShelf) => {
   return {data,verbose}
 }
 
+const buildShelf =(shelfID, shelfBooks, shelfData, bookDisplayFormat)=> {
+
+  const shelfDisplayInfo = `<h3>This will be a formatted thing with some shelf info to fit the "${bookDisplayFormat}" bookDisplayFormat.</h3>`;
+  return {shelfDisplayInfo}
+}
+
 module.exports.buildBook = buildBook;
 module.exports.buildLink = buildLink;
 module.exports.buildContexts = buildContexts;
+module.exports.buildShelf = buildShelf;

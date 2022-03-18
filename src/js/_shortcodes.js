@@ -1,60 +1,96 @@
-const { buildBook, buildLink } = require("./_buildBook");
-const { layout } = require("./_layouts")
+const { buildBook, buildLink, buildShelf } = require("./_buildBookshelves");
+const { layoutBook, layoutShelf } = require("./_layouts");
 const { getAllData } = require("./_getData");
-const { logMissing } = require("./_missingISBNs")
+// const { logMissing } = require("./_missingISBNs")
 const booksOnShelves = require("../_data/booksOnShelves.json");
 
-book = async (
-  ISBN, 
-  display,
-  linkInfo = "external",
-  thisShelf
-  ) => {
+book = async (ISBN, bookDisplayFormat, bookLink = "external", thisShelf) => {
+  let { id, details, contexts } = buildBook(ISBN, thisShelf);
 
-  let {id, details, contexts} = buildBook(ISBN, thisShelf);
-  
   if (!details) {
-    const unshelvedISBN = await getAllData([{ISBN:id,shelves:[]}]);
-    let missingBook = buildBook(ISBN, null, unshelvedISBN[0]);
-    details = missingBook.details
-    logMissing({ id, details});
+    const missingISBN = await getAllData([{ ISBN: id, shelves: [] }]);
+    let missingBook = buildBook(ISBN, null, missingISBN[0]);
+    details = missingBook.details;
+    // logMissingISBN({ id, details});
   }
 
-  let {link, linkText} = buildLink(id, linkInfo, details.conversionPath, details.isbn10);
-  details.link = linkInfo == "local" ? `/${id}` : link;
-  details.linkText = linkInfo == "local" ? `View book page→` : linkText;
-  
-  return layout(id, display, details, contexts);
+  let { link, linkText } = buildLink(
+    id,
+    bookLink,
+    details.conversionPath,
+    details.isbn10
+  );
+  details.link = bookLink == "local" ? `/${id}` : link;
+  details.linkText = bookLink == "local" ? `View book page→` : linkText;
 
-}
+  return layoutBook(id, bookDisplayFormat, details, contexts);
+};
 
 shelf = async (
-  shelfID, 
-  display,
-  linkInfo = "external"
-  ) => {
-    const shelfData = booksOnShelves.shelves.find((element) => element.shelfID == shelfID)
-    if (!shelfData) {
-      return { error: `Bad input: didn't find any data for ${id}`};
-    }
-    const { shelfItems, conversionPath } = shelfData; // we can get a lot more from here, including conversionPath (for linkInfo)
-    linkInfo = conversionPath
-      ? conversionPath
-      : linkInfo
-    console.log(linkInfo);
+  shelfID,
+  bookDisplayFormat = "cover", //probly change the default here
+  bookLink = "external",
+  shelfBooks = []
+) => {
+  const { shelfItems, ...shelfData } = booksOnShelves.shelves.find(
+    (element) => element.shelfID == shelfID
+  );
 
-    let completeShelf = []
-      for (let i = 0; i < shelfItems.length; i++) { 
-        shelfEntries = await book(shelfItems[i], display, linkInfo, shelfID)
-        .then(value => shelfItem= value)
-        completeShelf.push(shelfItem);
-      }
-    // console.log(completeShelf); 
-    console.log(`now we need to wrap this up in some containing element format`);
+  // for (let i = 0; i < shelfItems.length; i++) {
+  //   await book(shelfItems[i], bookDisplayFormat, bookLink, shelfID).then(
+  //     (value) => shelfBooks.push(value)
+  //   );
+  // }
+  for (let i = 0; i < shelfItems.length; i++) {
+    awaitedShelfThing = await book(shelfItems[i], bookDisplayFormat, bookLink, shelfID)
+    .then(value => shelfItem = value)
+    shelfBooks.push(awaitedShelfThing);
+  }
 
+  // for (let shelf in shelfItems) {
+  //   await book(shelfItems[i], bookDisplayFormat, bookLink, shelfID).then(
+  //     (value) => shelfBooks.push(value)
+  //   );
+  // }
+  // console.log(shelfItems);
+  // console.log(shelfEntries);
+  console.log(shelfBooks);
 
-  return completeShelf.join();
-}
+  const test = layoutShelf(
+    shelfID,
+    shelfBooks,
+    shelfData,
+    bookDisplayFormat,
+    bookLink
+  );
 
-module.exports.book = book; 
-module.exports.shelf = shelf; 
+  // console.log(test);
+  return test
+
+  // console.log(shelfBooks);
+  // console.log(`now we need to wrap this up in some containing element format`);
+  // console.log(shelfDisplayInfo, newBookLinkTemp);
+
+  // return completeShelf.join();
+
+  // const shelfData = booksOnShelves.shelves.find((element) => element.shelfID == shelfID)
+  // if (!shelfData) {
+  //   return { error: `Bad input: didn't find any data for ${id}`};
+  // }
+  // const { shelfItems, conversionPath } = shelfData; // we can get a lot more from here
+  // bookLink = conversionPath ? conversionPath : bookLink
+
+  // let completeShelf = []
+  //   for (let i = 0; i < shelfItems.length; i++) {
+  //     shelfEntries = await book(shelfItems[i], bookDisplayFormat, bookLink, shelfID)
+  //     .then(value => shelfItem= value)
+  //     completeShelf.push(shelfItem);
+  //   }
+  // console.log(completeShelf);
+  // console.log(`now we need to wrap this up in some containing element format`);
+
+  // return completeShelf.join();
+};
+
+module.exports.book = book;
+module.exports.shelf = shelf;

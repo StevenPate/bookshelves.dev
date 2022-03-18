@@ -13,7 +13,7 @@ const formatArray = (arrayToFormat) => {
   return arrayToFormat;
 };
 
-function layout(id, display, details, contexts) {
+function layoutBook(id, bookDisplayFormat, details, contexts) {
 
   let {
     title,
@@ -70,7 +70,7 @@ function layout(id, display, details, contexts) {
   // }; 
 
   let contextsLayout =
-    display == "full-details"
+    bookDisplayFormat == "full-details"
       ? `
         <aside class="my-12 prose prose-base text-gray-500">
             ${allContexts}
@@ -81,7 +81,7 @@ function layout(id, display, details, contexts) {
         </aside>`;
 
   // let extraFieldsLayout = 
-  //   display == "full-details"
+  //   bookDisplayFormat == "full-details"
   //     ? `<div class="prose prose-base my-12">
   //     ${howFoundDisplay}
   //     ${whereFoundDisplay}
@@ -90,7 +90,7 @@ function layout(id, display, details, contexts) {
   //     : ''
 
   let detailsLayout =
-    display == "full-details"
+    bookDisplayFormat == "full-details"
       ? `
 
 
@@ -112,16 +112,16 @@ function layout(id, display, details, contexts) {
       : "";
 
   let textLink = title;
-  if (/::/.test(display)) {
-    const displayHasText = display.split(new RegExp("[::]"));
-    display = displayHasText[0];
+  if (/::/.test(bookDisplayFormat)) {
+    const displayHasText = bookDisplayFormat.split(new RegExp("[::]"));
+    bookDisplayFormat = displayHasText[0];
     linkText = displayHasText[2];
-    if (display == "text") {
+    if (bookDisplayFormat == "text") {
       textLink = linkText
     }
   }
 
-  switch (display) {
+  switch (bookDisplayFormat) {
     case "text":
     default:
 
@@ -132,8 +132,8 @@ function layout(id, display, details, contexts) {
     case "full-details":
       description = md.render(description)
       return `
-<div id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16">
-<div id="${slug}-info" class="max-w-[65ch] sm:w-2/3">
+<div id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
+<div id="${slug}-info" class="max-w-[65ch] sm:w-2/3 px-8 sm:px-16">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
 </h2>
@@ -145,10 +145,10 @@ by ${authors}
 ${contextsLayout}
 ${detailsLayout}
 </div>
-<div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 px-6 flex flex-col items-center content-start">
+<div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
 <a href="/${id}">${cachedCover}</a>
 <a href="${link}">
-<button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
+<button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300  hover:border-transparent transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl">
 ${linkText}
 </button>
 </a>
@@ -157,7 +157,7 @@ ${linkText}
     case "small":
       return `
 <div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
-  <div id="${slug}-image" class="w-full sm:w-28 pr-2 content-start items-top"><a href="${link}">${cachedCover}</a></div>
+  <div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCover}</a></div>
   <div id="${slug}-info" class="w-full sm:w-2/3 prose prose-lg py-6 sm:py-auto">
     <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
     <div id="${slug}-author" class="font-lg">${authors}</div>
@@ -204,4 +204,25 @@ ${linkText}
   }
 }
 
-module.exports.layout = layout;
+function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat){
+
+  switch (bookDisplayFormat) {
+    case "text":
+    default:
+      // console.log(shelfBooks);
+      let renderedShelf
+      for (let book in shelfBooks) {
+        renderedShelf += `<div class="my-6 text-lg">${shelfBooks[0]}</div>`;
+      }
+      // console.log(renderedShelf);
+      return renderedShelf
+  }
+
+
+  const shelfDisplayInfo = `<h3>This will be a formatted thing with some shelf info to fit the "${bookDisplayFormat}" bookDisplayFormat.</h3>`;
+  // return {shelfDisplayInfo}
+  console.log(bookDisplayFormat)
+}
+
+module.exports.layoutBook = layoutBook;
+module.exports.layoutShelf = layoutShelf;
