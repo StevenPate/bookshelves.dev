@@ -1,6 +1,7 @@
 ---
 title: Kids Books that I haven't gotten tired of
-description: Think of a book you like. Now think of reading it a few hundred times. Only the strong survive.
+description: Think of a book you like. Now think of reading it a few hundred times.
+  Only the strong survive.
 categories:
 - kids
 books:
@@ -8,7 +9,8 @@ books:
 - ISBN: '9780618256273'
   description: 'Katy etc. '
 - ISBN: '9781452150130'
-  authors: ['Brendan Wenzel']
+  authors:
+  - Brendan Wenzel
 - ISBN: '9780358362616'
 - ISBN: '9780064430685'
 - ISBN: '9780142403877'
@@ -58,3 +60,5 @@ need every color of light
 
 9781338265033 is bad
 9780590441566 is bad
+
+9780794526153 No borg
