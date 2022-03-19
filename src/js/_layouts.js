@@ -39,7 +39,7 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
   let otherContexts = (contexts && contexts.verbose.other)
     ? `${contexts.verbose.other}`
     : ``
-  let slug = slugify(title, { lower: true, strict: true });
+  let slug = (title) ? slugify(title, { lower: true, strict: true }) : '??? ';
   categories = formatArray(categories);
   authors = formatArray(authors);
 
@@ -124,7 +124,6 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
   switch (bookDisplayFormat) {
     case "text":
     default:
-
       return `<a href="${link}">${textLink}</a>`;
     case "cover":
       return `<a href="${link}">${cachedCover}</a>`;
@@ -212,16 +211,12 @@ function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat){
       // console.log(shelfBooks);
       let renderedShelf
       for (let book in shelfBooks) {
-        renderedShelf += `<div class="my-6 text-lg">${shelfBooks[0]}</div>`;
+        renderedShelf += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
       }
       // console.log(renderedShelf);
-      return renderedShelf
-  }
-
-
-  const shelfDisplayInfo = `<h3>This will be a formatted thing with some shelf info to fit the "${bookDisplayFormat}" bookDisplayFormat.</h3>`;
-  // return {shelfDisplayInfo}
-  console.log(bookDisplayFormat)
+      return `<div class="grid grid-cols-5 grid-flow-col-dense gap-3">
+        ${renderedShelf}
+      </div>`  }
 }
 
 module.exports.layoutBook = layoutBook;
