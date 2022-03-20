@@ -35,7 +35,7 @@ shelf = async (
     (element) => element.shelfID == shelfID
   );
   let bookDisplayFormat = shelfDisplayFormat; // elaborate
-  const promises = shelfItems.map(async (shelfItem) => {
+  const promises = shelfItems.map(async (shelfItem) => { // TODO: not if displayType is shelfCard
     const shelfBook = await book(
       shelfItem,
       bookDisplayFormat,

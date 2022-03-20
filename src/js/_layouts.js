@@ -204,8 +204,14 @@ ${linkText}
 }
 
 function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat){
-
+  const { shelfTitle, shelfDescription, dateModified} = shelfData;
   switch (bookDisplayFormat) {
+    case "card":
+      return `<div class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group">
+<a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
+<div class="mt-3">${shelfDescription}</div>
+<div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on ${dateModified}</div>
+</div>`
     case "text":
     default:
       // console.log(shelfBooks);

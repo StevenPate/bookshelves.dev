@@ -4,6 +4,7 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt({
   html: true
 });
+const fetch = require('node-fetch');
 
 const getIdentifiers = async (ISBN) => {
 
@@ -47,6 +48,11 @@ const getGoogle = async (ISBN) => {
       duration: "10d",
       directory: "_cache"
     });
+
+    if (!googleData.items) {
+      console.log('no googleData items')
+      return
+    }
 
     let {
       title,
@@ -101,6 +107,11 @@ const getOpenLibrary = async (ISBN) => {
       publish_places
     } = openLibraryData;
 
+    if (!openLibraryData) {
+      console.log('no open library data');
+      return
+    }
+    
     return {
       subjects,
       identifiers,
@@ -116,14 +127,37 @@ const getOpenLibrary = async (ISBN) => {
     }
 
   } catch (error) {
-    console.error(error);
-  }
+		if (error.name === 'AbortError') {
+			console.log('OpenLibrary request was aborted');
+		}
+	}
 }
 
 const getBookshopOrg = async (ISBN) => {
-  let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
-  let cachedCover = await cacheImage(cover, "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
-  return { cover, cachedCover }
+
+
+
+  try {
+    let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
+
+    try {
+      // TODO do error handling and fallbacks 
+      const response = await fetch(cover);
+      if (response.status == "404") {
+        console.warn(`Couldn't find the ${ISBN} image on bookshop.org`)
+        cover = `https://placeimg.com/264/400/nature`
+      }
+    } catch (err) {
+      console.log(`getBookshopOrg has a problem with ${ISBN} .`)
+      console.log(err);
+    }
+
+    let cachedCover = await cacheImage(cover, "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
+    return { cover, cachedCover }
+  } catch (error) {
+    console.error(error);
+  }
+
 }
 
 const getAllData = async (books) => {
