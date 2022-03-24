@@ -23,6 +23,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     description,
     cover,
     cachedCover,
+    coverUrl,
+    cachedCoverUrl,
     publisher,
     publishedDate,
     pageCount,
@@ -43,6 +45,7 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
   categories = formatArray(categories);
   authors = formatArray(authors);
 
+  // console.log(id,details)
   //TODO: CLEAN THESE UP
   // if (howFound) {
   //   howFoundContent =  md.render(howFound)
@@ -126,12 +129,12 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     default:
       return `<a href="${link}">${textLink}</a>`;
     case "cover":
-      return `<a href="${link}">${cachedCover}</a>`;
+      return `<a href="${link}">${cachedCoverUrl}</a>`;
     case "full":
     case "full-details":
-      description = md.render(description)
+      description = (description) ? md.render(description) : ''
       return `
-<div id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
+<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
 <div id="${slug}-info" class="max-w-[65ch] sm:w-2/3 px-8 sm:px-16">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
@@ -145,7 +148,7 @@ ${contextsLayout}
 ${detailsLayout}
 </div>
 <div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
-<a href="/${id}">${cachedCover}</a>
+<a href="/${id}">${cachedCoverUrl}</a>
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300  hover:border-transparent transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl">
 ${linkText}
@@ -175,7 +178,7 @@ ${linkText}
       return `
 
 <div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
-<div class="lg:w-1/3 bg-gray-50 p-6">${cachedCover}</div>
+<div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverUrl}</div>
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
 <p class="text-gray-600">${authors}</p>
@@ -215,14 +218,26 @@ function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat){
     case "text":
     default:
       // console.log(shelfBooks);
-      let renderedShelf
+      return shelfBooks.join('<br>')
+      // let renderedShelf
+      // for (let book in shelfBooks) {
+      //   renderedShelf += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
+      // }
+      // // console.log(renderedShelf);
+      // return `<div class="">
+      //   ${renderedShelf}
+      // </div>` 
+    case "cover":
+      // console.log(shelfBooks);
+      let renderedCovers
       for (let book in shelfBooks) {
-        renderedShelf += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
+        renderedCovers += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
       }
       // console.log(renderedShelf);
-      return `<div class="grid grid-cols-5 grid-flow-col-dense gap-3">
-        ${renderedShelf}
-      </div>`  }
+      return `<div class="grid grid-cols-3 gap-3">
+        ${renderedCovers}
+      </div>` 
+  }
 }
 
 module.exports.layoutBook = layoutBook;

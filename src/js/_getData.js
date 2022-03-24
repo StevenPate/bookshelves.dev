@@ -1,16 +1,18 @@
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 const cacheImage = require("./cacheImage");
 const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt({
   html: true
 });
 const fetch = require('node-fetch');
+const cheerio = require("cheerio");
+
 
 const getIdentifiers = async (ISBN) => {
 
   try {
     let url = `https://api.bookish.tech/search?type=isbn&id=${ISBN}`; //*
-    let bookishData = await Cache(url, {
+    let bookishData = await EleventyFetch(url, {
       type: "json",
       duration: "10d",
       directory: "_cache"
@@ -43,7 +45,7 @@ const getGoogle = async (ISBN) => {
 
   try {
     let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`;
-    let googleData = await Cache(url, {
+    let googleData = await EleventyFetch(url, {
       type: "json",
       duration: "10d",
       directory: "_cache"
@@ -85,9 +87,10 @@ const getGoogle = async (ISBN) => {
 }
 
 const getOpenLibrary = async (ISBN) => {
+
   try {
     let url = `https://openlibrary.org/isbn/${ISBN}.json`;
-    let openLibraryData = await Cache(url, {
+    let openLibraryData = await EleventyFetch(url, {
       type: "json",
       duration: "10d",
       directory: "_cache"
@@ -135,8 +138,6 @@ const getOpenLibrary = async (ISBN) => {
 
 const getBookshopOrg = async (ISBN) => {
 
-
-
   try {
     let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
 
@@ -160,6 +161,58 @@ const getBookshopOrg = async (ISBN) => {
 
 }
 
+const getAmazon = async (ISBN) => {
+  let coverUrl
+  try {   
+    let amznURL = `https://www.amazon.com/gp/search/ref=sr_adv_b/?search-alias=stripbooks&unfiltered=1&field-isbn=${ISBN}&sort=relevanceexprank`
+    // TODO do error handling and fallbacks 
+    const response = await fetch(amznURL);
+    if (response.status == "404") {
+      console.warn(`Couldn't find  ${ISBN} image on amazon`)
+      coverUrl = `https://placeimg.com/264/400/nature`
+    }
+    const amznData = await EleventyFetch(amznURL, {
+      type: "text",
+      duration: "10d",
+      directory: "_cache"
+    });
+    const amznHTML = cheerio.load(amznData);
+    const amznImages = amznHTML('.s-image').attr("srcset");
+    function parseSrcset(srcset) {
+      if (!srcset) return null;
+      return srcset
+        .split(", ")
+        .map((d) => d.split(" "))
+        .reduce((p, c) => {
+          if (c.length !== 2) {
+            // throw new Error("Error parsing srcset.");
+            return;
+          }
+          p[c[1]] = c[0];
+          return p;
+        }, {});
+    }
+    const parsedAmznImages = parseSrcset(amznImages);
+    let sortedAmznImages = []
+    Object.keys(parsedAmznImages)
+      .sort()
+      .reverse()
+      .forEach(key => {
+        // console.log(key)
+        sortedAmznImages.push( {
+        'size':key, 
+        'URL':parsedAmznImages[key]
+        })
+      })
+    coverUrl = sortedAmznImages[0].URL
+  } catch (err) {
+    console.log(`getBookshopOrg has a problem with ${ISBN} .`)
+    console.log(err);
+  }
+  let cachedCoverUrl = await cacheImage(coverUrl, "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
+  return { coverUrl, cachedCoverUrl }
+}
+
 const getAllData = async (books) => {
   for (let i = 0; i < books.length; i++) {  // use promise.all or something better here
     identifiers = await getIdentifiers(books[i].ISBN)
@@ -170,6 +223,8 @@ const getAllData = async (books) => {
     .then(value => books[i].openlibrary = value)
     bookshopOrg = await getBookshopOrg(books[i].ISBN)
     .then(value => books[i].bookshopOrg = value)
+    coverImage = await getAmazon(books[i].ISBN)
+    .then(value => books[i].image = value)
   }
   return books;
 }

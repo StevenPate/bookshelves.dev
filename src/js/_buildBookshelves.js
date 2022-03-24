@@ -37,8 +37,8 @@ class Book {
     const {shelfLabel, ...shelfDetailsToAdd} = shelfDetails; //remove shelf-specific stuff that should move upwards
  
     const details = masterShelf
-      ? { ...bookData.google, ...bookData.bookshopOrg, ...shelfDetailsToAdd, ...masterShelf.details }
-      : { ...bookData.google, ...shelfDetailsToAdd, ...bookData.bookshopOrg };
+      ? { ...bookData.google, ...bookData.bookshopOrg, ...bookData.image, ...shelfDetailsToAdd, ...masterShelf.details }
+      : { ...bookData.google, ...shelfDetailsToAdd, ...bookData.bookshopOrg, ...bookData.image, };
     details.isbn10 = bookData.identifiers.isbn[0];
   
     this.details = details;
