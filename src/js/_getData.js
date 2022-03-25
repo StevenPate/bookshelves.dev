@@ -4,9 +4,22 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt({
   html: true
 });
+const { Isbn } = require("library-lib");
 const fetch = require('node-fetch');
 const cheerio = require("cheerio");
 
+const checkISBN = ISBN => {
+  try {
+    const isbnToParse = ISBN.replace(/[^0-9]/g, '');
+    const { isbn } = Isbn.parse(isbnToParse);
+    return isbn;
+  } catch (err) {
+    console.log(
+      `${ISBN} looks like a bad isbn.`
+    );
+    return { error: "Bad request" };
+  }
+};
 
 const getIdentifiers = async (ISBN) => {
 
@@ -52,7 +65,7 @@ const getGoogle = async (ISBN) => {
     });
 
     if (!googleData.items) {
-      console.log('no googleData items')
+      console.log(`No googleData items found for ${ISBN}.`)
       return
     }
 
@@ -159,18 +172,32 @@ const getBookshopOrg = async (ISBN) => {
     console.error(error);
   }
 
+
 }
 
 const getAmazon = async (ISBN) => {
   let coverUrl
   try {   
     let amznURL = `https://www.amazon.com/gp/search/ref=sr_adv_b/?search-alias=stripbooks&unfiltered=1&field-isbn=${ISBN}&sort=relevanceexprank`
+    // let amznURL = `https://www.amazon.ca/gp/search/ref=sr_adv_b/?search-alias=stripbooks&unfiltered=1&field-isbn=${ISBN}&sort=relevanceexprank`
+    // let amznURL = `https://www.amazon.com/s?rh=p_66:${ISBN}`
     // TODO do error handling and fallbacks 
-    const response = await fetch(amznURL);
-    if (response.status == "404") {
-      console.warn(`Couldn't find  ${ISBN} image on amazon`)
-      coverUrl = `https://placeimg.com/264/400/nature`
-    }
+
+
+// headers = {
+//     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+//     'referer': 'https://google.com',
+//     }
+// res = requests.get('https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994', headers=headers)
+// res.raise_for_status()
+
+    // const response = await fetch(amznURL);
+    // console.log(ISBN, response.status)
+    // if (response.status == "404") {
+    //   console.warn(`Couldn't find  ${ISBN} image on amazon`)
+    //   coverUrl = `https://placeimg.com/264/400/nature`
+    // }
+
     const amznData = await EleventyFetch(amznURL, {
       type: "text",
       duration: "10d",
@@ -206,7 +233,7 @@ const getAmazon = async (ISBN) => {
       })
     coverUrl = sortedAmznImages[0].URL
   } catch (err) {
-    console.log(`getBookshopOrg has a problem with ${ISBN} .`)
+    console.log(`getAmazon has a problem with ${ISBN} .`)
     console.log(err);
   }
   let cachedCoverUrl = await cacheImage(coverUrl, "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
@@ -229,6 +256,7 @@ const getAllData = async (books) => {
   return books;
 }
 
+module.exports.checkISBN = checkISBN;
 module.exports.getIdentifiers = getIdentifiers;
 module.exports.getGoogle = getGoogle;
 module.exports.getOpenLibrary = getOpenLibrary;

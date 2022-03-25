@@ -1,12 +1,23 @@
 const { buildBook, buildLink, buildShelf } = require("./_buildBookshelves");
 const { layoutBook, layoutShelf } = require("./_layouts");
-const { getAllData } = require("./_getData");
+const { checkISBN, getAllData } = require("./_getData");
 // const { logMissing } = require("./_missingISBNs")
 const booksOnShelves = require("../_data/booksOnShelves.json");
 
-book = async (ISBN, bookDisplayFormat, bookLink = "external", thisShelf) => {
+book = async (
+  inputISBN,
+  bookDisplayFormat,
+  bookLink = "external",
+  thisShelf
+) => {
+  const ISBN = checkISBN(inputISBN);
+  if (ISBN.error) {
+    return;
+  }
+
   let { id, details, contexts } = buildBook(ISBN, thisShelf);
   if (!details) {
+    console.log(`${ISBN} was missing details. Getting some now.`);
     const missingISBN = await getAllData([{ ISBN: id, shelves: [] }]);
     let missingBook = buildBook(ISBN, null, missingISBN[0]);
     details = missingBook.details;
@@ -35,7 +46,8 @@ shelf = async (
     (element) => element.shelfID == shelfID
   );
   let bookDisplayFormat = shelfDisplayFormat; // elaborate
-  const promises = shelfItems.map(async (shelfItem) => { // TODO: not if displayType is shelfCard
+  const promises = shelfItems.map(async (shelfItem) => {
+    // TODO: not if displayType is shelfCard
     const shelfBook = await book(
       shelfItem,
       bookDisplayFormat,

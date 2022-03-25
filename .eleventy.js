@@ -4,6 +4,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { book, shelf } = require("./src/js/_shortcodes");
 const categoryFilter = require("./src/js/_catFilter")
 const { DateTime } = require("luxon");
+const EleventyFetch = require("@11ty/eleventy-fetch");
+EleventyFetch.concurrency = 2; // default is 10
 
 module.exports = function (eleventyConfig) {
 
