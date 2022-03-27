@@ -1,8 +1,8 @@
 {
-  "title": "What is a Bookstore?",
-  "url": "https://whatisabookstore.com",
+  "title": "bookshelves.dev",
+  "url": "https://bookshelves.dev",
   "language": "en",
-  "description": "Documenting my exploration of an idea of a bookstore.",
+  "description": "Hacking together a new way to encounter books online.",
   "BorgAffiliateID": "23123",
   "author": {
     "name": "Steven Pate",

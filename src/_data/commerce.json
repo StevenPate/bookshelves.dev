@@ -22,7 +22,7 @@
     },
     {
       "pathName": "worldcat",
-      "pathURL": "https://openlibrary.org/isbn/${ISBN}",
+      "pathURL": "https://www.worldcat.org/search?q=bn%3A[ISBN]",
       "pathLinkText": "Find on Worldcat"
     },
     {
