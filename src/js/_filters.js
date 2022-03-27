@@ -30,6 +30,4 @@ const booksWithCategory = {with: withCategory, without: withoutCategory}
 }
 
 
-
-
-module.exports = categoryFilter;
+module.exports.category = categoryFilter;

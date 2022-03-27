@@ -7,5 +7,6 @@ pagination:
     data: booksOnShelves.books
     size: 1
     alias: book
+    addAllPagesToCollections: true
 permalink: "/{{ book.ISBN }}/"
 ---

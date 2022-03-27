@@ -2,10 +2,8 @@
 // const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { book, shelf } = require("./src/js/_shortcodes");
-const categoryFilter = require("./src/js/_catFilter")
+const { category } = require("./src/js/_filters")
 const { DateTime } = require("luxon");
-const EleventyFetch = require("@11ty/eleventy-fetch");
-EleventyFetch.concurrency = 2; // default is 10
 
 module.exports = function (eleventyConfig) {
 
@@ -29,11 +27,11 @@ eleventyConfig.addCollection("booksOnShelf", (collection) => {
 });
 
 eleventyConfig.addCollection("kidsBooks", (collection) => {
-  return categoryFilter("kids").with
+  return category("kids").with
 });
 
 eleventyConfig.addCollection("nonKidsBooks", (collection) => {
-  return categoryFilter("kids").without
+  return category("kids").without
 });
 
   
