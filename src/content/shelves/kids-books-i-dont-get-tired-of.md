@@ -47,13 +47,13 @@ Here are books I don't get tired of, miraculously.
 
 <!-- 9780448190532 is busy harbor i think and it must be out of print?
 
+Just me and my dad 9780307118394
 Big Book of Big Trucks(9780794530785) is just not on bookshop
 
 978039483240 is not Trucks
 
 9781847809766 isn't in google books api!!!
 
-I'd like to put {% book "9780307118394" %} on this shelf.
 
 two wordless books not on bookshop.org... In the Woods (9780590436335) and Peter Spier's Rain (9780385241052).
 

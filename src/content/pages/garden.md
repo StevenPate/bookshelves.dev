@@ -1,5 +1,6 @@
 ---
 title: Digital Garden
+subtitle: Like a blog, but the posts are never "done". [What is a Digital Garden?](/digital-gardens/)
 eleventyNavigation:
   key: Digital Garden
 ---

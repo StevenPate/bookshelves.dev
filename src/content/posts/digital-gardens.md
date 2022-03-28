@@ -1,6 +1,7 @@
 ---
-title: Digital Garden Tour
+title: About Digital Gardens
 subtitle: What is a digital garden? It's a place where we watch things grow.
+dateCreated: 2022-01-28
 ---
 
 When I read Joel Hooks description on [My blog is a digital garden, not a blog](https://joelhooks.com/digital-garden), I was hooked. He calls the digital garden "a metaphor for thinking about writing and creating that focuses less on the resulting 'showpiece'" and more on the process, care, and craft it takes to get there." But he says so much more than that. It's a quick read, and I recommend it.

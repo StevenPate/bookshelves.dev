@@ -5,7 +5,7 @@
 <section title="About the '{{ title }}' shelf" class="px-8 prose prose-xl">
   <article>
   <div class="grid justify-center grid-cols-1">
-  <h1>{{ title or metadata.title | safe }}!</h1>
+  <h1>{{ title or metadata.title | safe }}</h1>
   </div>
   {{ content | safe }}
   </article>
@@ -15,6 +15,8 @@
   {% book book.ISBN, "full", "external", page.fileSlug %}
 {% endfor %}
 </section>
-</article>
+</article> 
+
+<p class="prose prose-base">This shelf was updated on {{ page.date | readableDate }}. <a href="https://github.com/StevenPate/landforms/blame/main/{{ page.inputPath }}">See the history of updates to this page</a>.</p>
 {% endblock %}
 ç

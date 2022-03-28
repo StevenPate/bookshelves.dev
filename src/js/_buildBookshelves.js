@@ -126,7 +126,7 @@ const buildContexts = (bookData, title, thisShelf) => {
       dateModified, // for flagging recently modified shelves
     } = { ...shelfInfo, ...shelfData.details };
 
-    return {title, shelfID, shelfTitle, attribution: attribution || '', shelfLabel: shelfLabel || '', shelfItems, dateCreated};
+    return {title, shelfID, shelfTitle, attribution: attribution || '', shelfLabel: shelfLabel || '', shelfItems, dateCreated, dateModified};
   }
 
   shelvesForContext.forEach((shelfEntry) =>
