@@ -2,11 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 const slugify = require("slugify");
+const bookshelves = require("../../bookshelves.config")
 const { checkISBN, getAllData } = require("./_getData");
-const masterShelf = "./src/content/books/";
-const folders = ["./src/content/shelves/", masterShelf];
-// const folders = ["./src/content/json/"]; //testing
-const shelvesFile = "./src/_data/booksOnShelves.json";
 
 const processFoldersToShelves = (folderPaths) => {
   let allShelves = [];
@@ -20,10 +17,12 @@ const processFoldersToShelves = (folderPaths) => {
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { birthtime, mtime } = fs.statSync(filePath);
       const { name, ext } = path.parse(filePath);
-      // if (ext != ".md") {
-      //   continue;
-      // }
       let fileData;
+
+      // if ((bookshelves.useLocalInventory != false) && (localinventoryFile != null)) {
+      //   console.log(bookshelves.useLocalInventory)
+      //   //process localinventoryFile (csv to json)
+      // }
      
       const createShelf = (fileData, filePath, fileType) => {
         const {
@@ -49,12 +48,7 @@ const processFoldersToShelves = (folderPaths) => {
         };
         allShelves.push(shelfData);
 
-        // const IDtoISBN = (book) => {
-        //   book.ISBN = (!book.ISBN && book.id) ? book.id : book.ISBN
-        // }
-        // books.forEach((book) => IDtoISBN(book));
         books.forEach((book) => createShelfEntry(book, filePath, fileType));
-        // books.forEach((book) => console.log(book));
       };
 
       const createShelfEntry = (fileData, filePath, fileType) => {
@@ -65,6 +59,11 @@ const processFoldersToShelves = (folderPaths) => {
         if (thisISBN.error) {
           return;
         }
+
+      // if (bookshelves.useLocalInventory != false) {
+      //   console.log(bookshelves.useLocalInventory)
+      //   //add local inventory info for ISBN if found
+      // }
 
         Object.keys(fileData).forEach((key) => {
           if (fileData[key] === "" || fileData[key] === []) {
@@ -94,9 +93,6 @@ const processFoldersToShelves = (folderPaths) => {
           : allBooks.push(shelfEntry);
       };
 
-
-
-      
       if (ext == '.md') {
         const data = yaml.loadAll(fileContents);
         if (fileType == "masterShelf") {
@@ -110,7 +106,6 @@ const processFoldersToShelves = (folderPaths) => {
       }
 
       if ((ext == '.json') && (name == 'test')) {
-        // in progress... generated shelfID for booksOnShelves.shelves items will break shelf shortcode
         const fileData = JSON.parse(fileContents);
         const { lists } = fileData;
 
@@ -149,17 +144,18 @@ const addDataToBooks = async (booksOnShelves) => {
 
 const bookshelvesToJSON = (itemsForJSON) => {
   const JSONdata = JSON.stringify(itemsForJSON);
-  fs.writeFile(shelvesFile, JSONdata, "utf8", (err) => {
+  fs.writeFile(bookshelves.dataFile, JSONdata, "utf8", (err) => {
     if (err) {
-      console.log(`Error writing ${shelvesFile}: ${err}`);
+      console.log(`Error writing ${bookshelves.dataFile}: ${err}`);
     } else {
-      console.log(`${shelvesFile} is written successfully!`);
+      console.log(`${bookshelves.dataFile} is written successfully!`);
     }
   });
 };
 
-console.log(`Building ${shelvesFile} now...`);
+console.log(`Building ${bookshelves.dataFile} now...`);
 
-const booksOnShelves = processFoldersToShelves(folders);
+const { markdownFiles, masterShelf, jsonFiles, csvFiles} = bookshelves
+const booksOnShelves = processFoldersToShelves(masterShelf.concat(markdownFiles, jsonFiles, csvFiles));
 
 addDataToBooks(booksOnShelves);
