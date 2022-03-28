@@ -1,8 +1,6 @@
 ---
-layout: layouts/shelf.njk
 title: Books I have finished in 2022
 description: I've been reading more than finishing books, but here are the ones I've gotten through so far this year.
-attribution: Steven
 books:
 - ISBN: '9780374157357'
   description: A provocative account of how we came to organize our societies provides

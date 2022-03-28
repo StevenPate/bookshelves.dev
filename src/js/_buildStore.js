@@ -1,9 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
+const slugify = require("slugify");
 const { checkISBN, getAllData } = require("./_getData");
 const masterShelf = "./src/content/books/";
 const folders = ["./src/content/shelves/", masterShelf];
+// const folders = ["./src/content/json/"]; //testing
 const shelvesFile = "./src/_data/booksOnShelves.json";
 
 const processFoldersToShelves = (folderPaths) => {
@@ -15,20 +17,14 @@ const processFoldersToShelves = (folderPaths) => {
     for (let file in folderContents) {
       const fileType = folderPath == masterShelf ? "masterShelf" : "shelf";
       const filePath = folderPath + folderContents[file];
-      const { ext } = path.parse(filePath);
-      if (ext != ".md") {
-        continue;
-      }
-
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { birthtime, mtime } = fs.statSync(filePath);
-
-      const data = yaml.loadAll(fileContents);
-      if (fileType == "masterShelf") {
-        data.longDescription = data[1];
-      }
-      const fileData = fileType == "masterShelf" ? data[0] : data;
-
+      const { name, ext } = path.parse(filePath);
+      // if (ext != ".md") {
+      //   continue;
+      // }
+      let fileData;
+     
       const createShelf = (fileData, filePath, fileType) => {
         const {
           title,
@@ -48,12 +44,17 @@ const processFoldersToShelves = (folderPaths) => {
           categories: categories || [],
           attribution: attribution,
           conversionPath: conversionPath,
-          dateCreated: birthtime,
-          dateModified: mtime,
+          dateCreated: birthtime || '',
+          dateModified: mtime || '',
         };
         allShelves.push(shelfData);
 
+        // const IDtoISBN = (book) => {
+        //   book.ISBN = (!book.ISBN && book.id) ? book.id : book.ISBN
+        // }
+        // books.forEach((book) => IDtoISBN(book));
         books.forEach((book) => createShelfEntry(book, filePath, fileType));
+        // books.forEach((book) => console.log(book));
       };
 
       const createShelfEntry = (fileData, filePath, fileType) => {
@@ -93,9 +94,44 @@ const processFoldersToShelves = (folderPaths) => {
           : allBooks.push(shelfEntry);
       };
 
-      fileType == "shelf"
+
+
+      
+      if (ext == '.md') {
+        const data = yaml.loadAll(fileContents);
+        if (fileType == "masterShelf") {
+          data.longDescription = data[1];
+        }
+        fileData = fileType == "masterShelf" ? data[0] : data;
+
+        fileType == "shelf"
         ? createShelf(fileData, filePath, fileType)
         : createShelfEntry(fileData, filePath, fileType);
+      }
+
+      if ((ext == '.json') && (name == 'test')) {
+        // in progress... generated shelfID for booksOnShelves.shelves items will break shelf shortcode
+        const fileData = JSON.parse(fileContents);
+        const { lists } = fileData;
+
+        const formatShelfData = shelf => {
+          const IDtoISBN = (book) => {
+            book.ISBN = (!book.ISBN && book.id) ? book.id : book.ISBN
+          }
+          shelf.books.forEach((book) => IDtoISBN(book));
+          shelf.shelfID = slugify(shelf.title, { lower: true, strict: true });
+        }
+
+        lists.map((shelf) => formatShelfData(shelf));
+        lists.map((shelf) => createShelf([shelf], shelf.shelfID, 'shelf'))
+      }
+      // if (ext == '.csv') {
+        // get fileData, filePath, fileType and shelfItems
+      // }
+
+        else {
+          continue;
+        }
     }
   };
 

@@ -1,5 +1,5 @@
 ---
-title: Kids Books that I haven't gotten tired of
+title: Kids books that I am somehow not tired of
 description: Think of a book you like. Now think of reading it a few hundred times.
   Only the strong survive.
 categories:

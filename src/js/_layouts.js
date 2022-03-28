@@ -196,18 +196,19 @@ ${linkText}
       return JSON.stringify(details);
     case "json":
       // linkText = 'Buy Now on Bookshop.org';
+      let goodDesc = JSON.stringify(description)
       return `"title": "${title}",
             "id": "${id}",
             "author": "${authors}",
             "link": "${site.url}/${id}/",
             "image": "${cover}",
             "date_finished": null,
-            "notes": "${description}"`;
+            "notes": "TBD"`;
   }
 }
 
 function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat){
-  const { shelfTitle, shelfDescription, dateModified} = shelfData;
+  const { shelfTitle, shelfDescription = '', dateModified} = shelfData;
   switch (bookDisplayFormat) {
     case "card":
       return `<div class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group">

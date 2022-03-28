@@ -2,24 +2,32 @@
 title: tests
 ---
 
+    <!-- collections: {
+      all: [Array],
+      'about this site': [Array],
+      book: [Array],
+      shelf: [Array],
+      posts: [Array],
+      about: [Array],
+      shelves: [Array],
+      booksOnShelf: [Array],
+      kidsBooks: [Array],
+      nonKidsBooks: [Array]
+    } -->
+
+
 text:
-{% book "978-1250253125", "text::whatever text is required", "external::worldcat"  %}
+{% book "9780062954794", "text::whatever text is required", "external::worldcat"  %}
 
 cover:
 
-{% book "978-1250253125", "cover"  %}
-
 full:
-{% book "978-1250253125", "full"  %}
 
 full-details:
-{% book "978-1250253125", "full-details"  %}
 
 raw:
-{% book "978-1250253125", "raw"  %}
 
 json:
-{% book "978-1250253125", "json"  %}
 
 
 

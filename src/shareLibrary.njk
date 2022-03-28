@@ -6,14 +6,15 @@ permalink: '/library.json'
   "url": "{{ site.url }}",
   "bio": "{{ site.description }}",
   "lists": [
-  {%- for item in collections.shelves %}
+  {%- for item in booksOnShelves.shelves %}
     {
-      "title": "{{ item.data.title }}",
-      "url": "{{ site.url }}{{ item.url }}",
+      "title": "{{ item.shelfTitle }}",
+      "shelfID": "{{ item.shelfID }}",
+      "url": "{{ site.url }}/{{ item.shelfPath }}",
       "books": [
-        {%- for book in item.data.books %}
+        {%- for ISBN in item.shelfItems %}
         { 
-          {% book book.ISBN, 'json' %}
+          {% book ISBN, 'json' %}
         }{% if not loop.last %},{% endif %}
         {%- endfor %}
       ]
