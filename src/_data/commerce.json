@@ -11,6 +11,11 @@
       "pathLinkText": "Buy on Bookshop.org→"
     },
     {
+      "pathName": "inventory",
+      "pathURL": "/[ISBN]?purchase",
+      "pathLinkText": "Buy our copy→"
+    },
+    {
       "pathName": "mb-librofm",
       "pathURL": "https://www.libro.fm/audiobooks/[ISBN]/?bookstore=madisonbooks",
       "pathLinkText": "Buy on libro.fm"

@@ -8,6 +8,23 @@ const { Isbn } = require("library-lib");
 const fetch = require('node-fetch');
 const cheerio = require("cheerio");
 
+
+const getInventory= async thisISBN => {
+  const bookshelves = require("../../bookshelves.config");
+  const localInventory = require("../_data/localInventory.json")
+  if (!bookshelves.useLocalInventory) { 
+    return
+  }
+  // console.log(`let's check local inventory for ${ISBN}.`)
+  const inventoryFound = localInventory.find((item) => item.ISBN === thisISBN);
+  // console.log(inventoryFound)
+  if (!inventoryFound) {
+    return;
+  }
+  const {ISBN, ...inventoryInfo} = inventoryFound
+  return inventoryInfo
+}
+
 const checkISBN = ISBN => {
   try {
     const isbnToParse = ISBN.replace(/[^0-9]/g, '');
@@ -252,10 +269,13 @@ const getAllData = async (books) => {
     .then(value => books[i].bookshopOrg = value)
     coverImage = await getAmazon(books[i].ISBN)
     .then(value => books[i].image = value)
+    inventoryInfo = await getInventory(books[i].ISBN)
+    .then(value => books[i].inventoryInfo = value)
   }
   return books;
 }
 
+module.exports.getInventory = getInventory;
 module.exports.checkISBN = checkISBN;
 module.exports.getIdentifiers = getIdentifiers;
 module.exports.getGoogle = getGoogle;

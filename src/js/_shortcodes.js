@@ -24,11 +24,15 @@ book = async (
     // logMissingISBN({ id, details});
   }
 
+  bookLink = ((details.inventoryInfo != null) && (details.inventoryInfo.useLocalInventory != "false"))
+    ? 'purchase::inventory'
+    : bookLink
+
   let { link, linkText } = buildLink(
     id,
     bookLink,
     details.conversionPath,
-    details.isbn10
+    details.isbn10,
   );
 
   details.link = bookLink == "local" ? `/${id}` : link;

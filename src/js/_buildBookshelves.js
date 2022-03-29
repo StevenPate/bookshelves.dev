@@ -40,7 +40,9 @@ class Book {
       ? { ...bookData.google, ...bookData.bookshopOrg, ...bookData.image, ...shelfDetailsToAdd, ...masterShelf.details }
       : { ...bookData.google, ...shelfDetailsToAdd, ...bookData.bookshopOrg, ...bookData.image, };
     details.isbn10 = bookData.identifiers.isbn[0];
-  
+    details.inventoryInfo = bookData.inventoryInfo
+      ? bookData.inventoryInfo
+      : null;
     this.details = details;
 
     // if we know the shelf, prioritize the details for that shelf
