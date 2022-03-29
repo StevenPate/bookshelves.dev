@@ -6,7 +6,6 @@ module.exports = {
     './src/content/books/'
   ],
   jsonFiles: [
-    './src/content/json/'
   ],
   csvFiles: [
   ],

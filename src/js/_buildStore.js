@@ -148,14 +148,14 @@ const bookshelvesToJSON = (itemsForJSON) => {
     if (err) {
       console.log(`Error writing ${bookshelves.dataFile}: ${err}`);
     } else {
-      console.log(`${bookshelves.dataFile} is written successfully!`);
+      console.log(`/||||| ${bookshelves.dataFile} is written successfully!`);
     }
   });
 };
 
-console.log(`Building ${bookshelves.dataFile} now...`);
+console.log(`/||||| Building ${bookshelves.dataFile} now...`);
 
 const { markdownFiles, masterShelf, jsonFiles, csvFiles} = bookshelves
-const booksOnShelves = processFoldersToShelves(masterShelf.concat(markdownFiles, jsonFiles, csvFiles));
+const booksOnShelves = processFoldersToShelves([ ...masterShelf,...markdownFiles, ...jsonFiles, ...csvFiles]);
 
 addDataToBooks(booksOnShelves);
