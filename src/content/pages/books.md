@@ -16,13 +16,20 @@ The books on this site are organized onto shelves, which is where they feel at h
 
 
 <h2>All Books</h2>
-<div x-data="{ currentTab: 'clear'}" class="sm:px-6">
+<div x-data="{ currentTab: 'clear'}" class="">
   <div class="flex flex-row space-x-4">
   <button @click="currentTab = 'non-kids'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200' : currentTab === 'non-kids'}">Non-kids Books</button>
   <button @click="currentTab = 'kids'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200' : currentTab === 'kids'}">Kids Books</button>
   <button @click="currentTab = 'clear'" class="p-2" :class="{ 'text-gray-100' : currentTab === 'clear'}">Clear</button>
   </div>
   <div class="p-2 border-2 border-gray-100 border-dotted">
+  <section x-show="currentTab === 'clear'">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  {% for item in collections.booksOnShelf %}
+  {% book item.ISBN, 'small', 'local' %}
+  {% endfor %}
+  </div>
+  </section>
   <section x-show="currentTab === 'non-kids'">
   <h3 class="mt-4">Non-Kids Books</h3>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
