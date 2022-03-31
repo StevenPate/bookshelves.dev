@@ -10,11 +10,17 @@
   {{ content | safe }}
   </article>
 </section>
-<section class="">
-{% for book in books %}
-  {% book book.ISBN, "full", "external", page.fileSlug %}
-{% endfor %}
-</section>
+{% if sortByDescription %}
+  <section class="">
+    {% shelf page.fileSlug, "full::description" %}
+    <h3>Other titles on this shelf:</h3>
+    {% shelf page.fileSlug, "cover::no-description" %}
+  </section>
+{% else %}
+  <section class="prose prose-xl">
+    {% shelf page.fileSlug, "full" %}
+  </section>
+{%endif%}
 </article> 
 
 <p class="prose prose-base">This shelf was updated on {{ page.date | readableDate }}. <a href="https://github.com/StevenPate/landforms/blame/main/{{ page.inputPath }}">See the history of updates to this page</a>.</p>

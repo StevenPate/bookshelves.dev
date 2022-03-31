@@ -1,6 +1,7 @@
-const { buildBook, buildLink, buildShelf } = require("./_buildBookshelves");
+const { buildBook, buildLink } = require("./_buildBookshelves");
 const { layoutBook, layoutShelf } = require("./_layouts");
 const { checkISBN, getAllData } = require("./_getData");
+const { breakoutByParam } = require("./_utils")
 // const { logMissing } = require("./_missingISBNs")
 const booksOnShelves = require("../_data/booksOnShelves.json");
 
@@ -41,37 +42,53 @@ book = async (
   return layoutBook(id, bookDisplayFormat, details, contexts);
 };
 
+
+
 shelf = async (
   shelfID,
   shelfDisplayFormat = "cover", //probly change the default here
   bookLink = "external"
 ) => {
-  const { shelfItems, ...shelfData } = booksOnShelves.shelves.find(
+
+  const buildShelf = async (shelfItems, shelfData, shelfID, shelfDisplayFormat, bookLink) => {
+
+    let bookDisplayFormat = shelfDisplayFormat; // elaborate
+    
+    const getShelfBooks = shelfItems.map(async (shelfItem) => {
+      // TODO: not if displayType is shelfCard
+      const shelfBook = await book(
+        shelfItem,
+        bookDisplayFormat,
+        bookLink,
+        shelfID
+      );
+      return shelfBook;
+    });
+
+    // const shelfBooks = ;
+    const renderedShelf = layoutShelf(
+      shelfID,
+      await Promise.all(getShelfBooks),
+      shelfData,
+      bookDisplayFormat,
+      bookLink
+    );
+
+    return renderedShelf;
+  }
+  let { shelfItems, ...shelfData } = booksOnShelves.shelves.find(
     (element) => element.shelfID == shelfID
   );
-  let bookDisplayFormat = shelfDisplayFormat; // elaborate
-  const promises = shelfItems.map(async (shelfItem) => {
-    // TODO: not if displayType is shelfCard
-    const shelfBook = await book(
-      shelfItem,
-      bookDisplayFormat,
-      bookLink,
-      shelfID
-    );
-    return shelfBook;
-  });
+  if (/::/.test(shelfDisplayFormat)) {
+    const shelfDisplayMulti = shelfDisplayFormat.split(new RegExp("[::]"));
+    shelfDisplayFormat = shelfDisplayMulti[0];
+    shelfDisplayFormatParam = shelfDisplayMulti[2];
+    const shelfItemsParam = breakoutByParam(shelfID, shelfDisplayFormatParam);
+    shelfItems = shelfItemsParam;
+  
+  }
+  return buildShelf(shelfItems, shelfData, shelfID, shelfDisplayFormat, bookLink);
 
-  const shelfBooks = await Promise.all(promises);
-  const renderedShelf = layoutShelf(
-    shelfID,
-    shelfBooks,
-    shelfData,
-    bookDisplayFormat,
-    bookLink
-  );
-
-  return renderedShelf;
-  // return shelfBooks.join('');
 };
 
 module.exports.book = book;

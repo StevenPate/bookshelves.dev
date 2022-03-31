@@ -19,7 +19,7 @@ _cache/
 .serverless/
 
 # the usual junk
-.DS_Store
+.editorconfig
 *.DS_Store
 
 # build artifacts
@@ -27,3 +27,4 @@ _site/
 src/images/web/
 src/_data/booksOnShelves.json
 src/_data/localInventory.json
+src/content/pages/tests.md
