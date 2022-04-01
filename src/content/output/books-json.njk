@@ -1,7 +1,6 @@
 ---
 eleventyComputed:
   title: "{{ book.google.title}}" 
-layout: layouts/json.njk
 tags: book
 pagination:
     data: booksOnShelves.books
@@ -9,3 +8,4 @@ pagination:
     alias: book
 permalink: "/{{ book.ISBN }}.json"
 ---
+{% book book.ISBN, "raw" %}

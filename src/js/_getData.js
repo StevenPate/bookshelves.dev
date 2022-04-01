@@ -72,7 +72,7 @@ const getGoogle = async (ISBN) => {
         });
 
         if (!googleData.items) {
-            console.log(`No googleData items found for ${ISBN}.`);
+            console.log(`No googleapis data found for ${ISBN}.`);
             return;
         }
 
@@ -169,7 +169,7 @@ const getBookshopOrg = async (ISBN) => {
             // TODO do error handling and fallbacks
             const response = await fetch(cover);
             if (response.status == "404") {
-                console.warn(`Couldn't find the ${ISBN} image on bookshop.org`);
+                
                 cover = `404`;
             }
         } catch (err) {
@@ -178,13 +178,15 @@ const getBookshopOrg = async (ISBN) => {
         }
 
         let cachedCover = await cacheImage(
-            "https://placeimg.com/264/400/nature",
+            // "https://placeimg.com/264/400/nature",
+            cover,
             "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
             ISBN
         );
         return { cover, cachedCover };
     } catch (error) {
-        console.error(error);
+        console.error(`Couldn't find the ${ISBN} image on bookshop.org (404).`);
+        // console.error(error);
     }
 };
 

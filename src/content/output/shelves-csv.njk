@@ -1,7 +1,6 @@
 ---
 eleventyComputed:
   title: "{{title}}" 
-layout: layouts/csv.njk
 tags: shelf
 pagination:
     data: booksOnShelves.shelves
@@ -9,3 +8,6 @@ pagination:
     alias: shelf
 permalink: "/{{ shelf.shelfID }}.csv"
 ---
+{%- for item in shelf.shelfItems %}
+{{ item }}
+{%- endfor %}

@@ -41,6 +41,7 @@ books:
   - ISBN: '9781423634119'
   - ISBN: '9781328710604'
   - ISBN: '9780794526153'
+    description: onlyhere to have something that isn't on borg.
 
 ---
 Think of a book you like. Now think of reading it a few hundred times. Only the strong survive. There are different reasons for every selection. I will try and capture those reasons in the form of short descriptions.

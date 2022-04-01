@@ -24,11 +24,9 @@ The books on this site are organized onto shelves, which is where they feel at h
   </div>
   <div class="p-2 border-2 border-gray-100 border-dotted">
   <section x-show="currentTab === 'clear'">
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
   {% for item in collections.booksOnShelf %}
-  {% book item.ISBN, 'small', 'local' %}
+  {% book item.ISBN, 'text', 'local' %}
   {% endfor %}
-  </div>
   </section>
   <section x-show="currentTab === 'non-kids'">
   <h3 class="mt-4">Non-Kids Books</h3>

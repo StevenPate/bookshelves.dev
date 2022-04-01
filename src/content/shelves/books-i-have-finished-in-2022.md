@@ -2,6 +2,7 @@
 title: Books I have finished in 2022
 description: I've been reading more than finishing books, but here are the ones I've gotten through so far this year.
 books:
+  - ISBN: "9780295745336"
   - ISBN: "9780374157357"
     description:
       A provocative account of how we came to organize our societies provides
@@ -20,3 +21,5 @@ books:
     publisher: Greystone Books
   - ISBN: "9780857861832"
 ---
+
+

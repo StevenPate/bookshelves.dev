@@ -1,0 +1,13 @@
+---
+eleventyComputed:
+  title: "{{title}}" 
+tags: shelf
+pagination:
+    data: booksOnShelves.shelves
+    size: 1
+    alias: shelf
+permalink: "/{{ shelf.shelfID }}.txt"
+---
+{%- for item in shelf.shelfItems %}
+{{ item }}
+{%- endfor %}

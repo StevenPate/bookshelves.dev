@@ -1,0 +1,11 @@
+---
+eleventyComputed:
+  title: "{{ book.google.title}}" 
+tags: book
+pagination:
+    data: booksOnShelves.shelves
+    size: 1
+    alias: shelf
+permalink: "/{{ shelf.shelfID }}.json"
+---
+{% shelf shelf.shelfID, "raw" %}

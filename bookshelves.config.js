@@ -4,7 +4,7 @@ module.exports = {
     jsonFiles: [],
     csvFiles: [],
     useLocalInventory: "auto", // auto|only|false
-    // localInventoryFile: './src/content/csv/test.csv',
+    // localInventoryFile: './src/inv/test.csv',
     localInventoryFileData: "./src/_data/localInventory.json",
     dataFile: "./src/_data/booksOnShelves.json",
 };
