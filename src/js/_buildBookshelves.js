@@ -36,6 +36,7 @@ class Book {
 
         const details = masterShelf
             ? {
+                ...bookData.librofm,
                 ...bookData.google,
                 ...bookData.bookshopOrg,
                 ...bookData.image,
@@ -43,6 +44,7 @@ class Book {
                 ...masterShelf.details,
             }
         : {
+                ...bookData.librofm,
                 ...bookData.google,
                 ...shelfDetailsToAdd,
                 ...bookData.bookshopOrg,
@@ -80,7 +82,7 @@ const buildBook = (ISBN, shelf, shelfEntry) => {
     return book;
 };
 
-const buildLink = async (id, bookLink, conversionPath, isbn10) => {
+const buildLink = async (ISBN, bookLink, conversionPath, isbn10, audioISBN) => {
     if (/::/.test(bookLink)) {
         linkComponents = bookLink.split(new RegExp("[::]"));
         linkType = linkComponents[0];
@@ -94,35 +96,30 @@ const buildLink = async (id, bookLink, conversionPath, isbn10) => {
         (item) => item.pathName === linkValue
     );
 
-    link =
+    if (audioISBN) {
+        if (commercePath != undefined) {
+            link = commercePath.pathURL.replace("[ISBN]", audioISBN);
+            linkText = commercePath.pathLinkText;
+            return {link, linkText}
+        }
+    } else {
+        // TODO remvove nested ternaries i hate them
+        link =
         commercePath != undefined
             ? commercePath.pathURL.includes("[isbn10]")
                 ? commercePath.pathURL.replace("[isbn10]", isbn10)
-                : commercePath.pathURL.replace("[ISBN]", id)
+                : commercePath.pathURL.replace("[ISBN]", ISBN)
             : /^a\d+$/i.test(linkValue)
-            ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
-            : link;
-    if (commercePath != undefined) {
-        linkText = commercePath.pathLinkText;
-    }
-
-    // Ssubstitute a safer link if it looks like bookshop.org is coming up empty and we were trying to write a link there.
-    const checkLink = (link, linkText) => {
-        const linkURL = new URL(link);
-        let thisBook = booksOnShelves.books.find((element) => element.ISBN == id);  
-        let fallbackCommercePath = commerce.conversions.find(
-            (item) => item.pathName === "fallback"
-        );
-
-        if ((linkURL.hostname == 'bookshop.org') && (thisBook.bookshopOrg.cover == "404")) {
-            link = fallbackCommercePath.pathURL.replace("[ISBN]", id);
-            linkText = fallbackCommercePath.pathLinkText
+                ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
+                : link;
+        if (commercePath != undefined) {
+            linkText = commercePath.pathLinkText;
         }
-        return { link, linkText }
 
+        return {link, linkText}
     }
 
-    return checkLink(link, linkText)
+
 };
 
 const buildContexts = (bookData, title, thisShelf) => {

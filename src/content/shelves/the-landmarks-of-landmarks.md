@@ -1,5 +1,4 @@
 ---
-
 title: The Landmarks of Landmarks
 description: A shelf of books concerning the natural landscape, as featured in Robert MacFarlane's <em>Landmarks</em>.
 summary: "Robert MacFarlane's landmarks charts a course through some magical Nature writing. Here are the features he navigates the way we talk about the natural world."
