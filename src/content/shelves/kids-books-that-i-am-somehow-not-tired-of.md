@@ -41,6 +41,7 @@ books:
 - ISBN: '9780358451228'
 - ISBN: '9781423634119'
 - ISBN: '9781328710604'
+- ISBN: '9780794526153'
 
 ---
 Here are books I don't get tired of, miraculously.

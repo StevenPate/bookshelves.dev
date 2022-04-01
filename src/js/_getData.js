@@ -100,10 +100,18 @@ const getGoogle = async (ISBN) => {
     description += ` (Publisher's Description)`
     description = md.render(description);
 
+    let authorSortName
+    if ((authors != undefined) && (authors.length != 0)) {
+        let firstAuthorName = authors[0].split(" ");
+        let firstAuthorLastName = firstAuthorName.reverse();
+        authorSortName = firstAuthorLastName[0];
+    }
+
     return {
       title,
       subtitle,
       authors,
+      authorSortName,
       publisher,
       description,
       categories,
@@ -176,14 +184,14 @@ const getBookshopOrg = async (ISBN) => {
       const response = await fetch(cover);
       if (response.status == "404") {
         console.warn(`Couldn't find the ${ISBN} image on bookshop.org`)
-        cover = `https://placeimg.com/264/400/nature`
+        cover = `404`
       }
     } catch (err) {
       console.log(`getBookshopOrg has a problem with ${ISBN} .`)
       console.log(err);
     }
 
-    let cachedCover = await cacheImage(cover, "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
+    let cachedCover = await cacheImage("https://placeimg.com/264/400/nature", "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110", ISBN);
     return { cover, cachedCover }
   } catch (error) {
     console.error(error);
