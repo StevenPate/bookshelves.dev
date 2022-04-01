@@ -5,10 +5,13 @@ const csv = require("csv-parser");
 const slugify = require("slugify");
 const bookshelves = require("../../bookshelves.config");
 const { checkISBN, getAllData } = require("./_getData");
-const { book } = require("./_shortcodes");
-const { format } = require("path");
 
 const processFoldersToShelves = (folderPaths) => {
+    fs.writeFile(bookshelves.dataFile, "", "utf8", (err) => {
+        if (err) {
+            console.log(`Error writing empty ${bookshelves.dataFile}: ${err}`);
+        }
+    });
     const allShelves = [];
     const allBooks = [];
 
@@ -100,9 +103,7 @@ const processFoldersToShelves = (folderPaths) => {
                     return;
                 }
 
-                const format = (fileData.audiobook)
-                    ? "audiobook"
-                    : "book"
+                const format = fileData.audiobook ? "audiobook" : "book";
 
                 // if (bookshelves.useLocalInventory != false) {
                 //   //add local inventory info for ISBN if found
