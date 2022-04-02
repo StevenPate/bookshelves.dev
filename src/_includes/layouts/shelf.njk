@@ -23,6 +23,9 @@
 {%endif%}
 </article> 
 
-<p class="prose prose-base">This shelf was updated on {{ page.date | readableDate }}. <a href="https://github.com/StevenPate/landforms/blame/main/{{ page.inputPath }}">See the history of updates to this page</a>.</p>
+<div class="prose prose-base">
+  <p>This shelf was updated on {{ page.date | readableDate }}.</p>
+  <p><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a> or <a href="/{{page.fileSlug}}.json">access the file as json</a>.
+</div>
 {% endblock %}
 ç

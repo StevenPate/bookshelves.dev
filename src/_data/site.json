@@ -1,6 +1,7 @@
 {
   "title": "bookshelves.dev",
   "url": "https://bookshelves.dev",
+  "github": "https://github.com/StevenPate/landforms",
   "language": "en",
   "description": "Hacking together a new way to encounter books online.",
   "BorgAffiliateID": "23123",
