@@ -284,9 +284,9 @@ const getLibro = async (ISBN) => {
 const getAllData = async (books) => {
     for (let i = 0; i < books.length; i++) {
         // use promise.all or something better here
-        identifiers = await getIdentifiers(books[i].ISBN).then(
-            (value) => (books[i].identifiers = value)
-        );
+        // identifiers = await getIdentifiers(books[i].ISBN).then(
+        //     (value) => (books[i].identifiers = value)
+        // );
         google = await getGoogle(books[i].ISBN).then(
             (value) => (books[i].google = value)
         );
@@ -315,7 +315,7 @@ const getAllData = async (books) => {
 
 module.exports.getInventory = getInventory;
 module.exports.checkISBN = checkISBN;
-module.exports.getIdentifiers = getIdentifiers;
+// module.exports.getIdentifiers = getIdentifiers;
 module.exports.getGoogle = getGoogle;
 module.exports.getOpenLibrary = getOpenLibrary;
 module.exports.getBookshopOrg = getBookshopOrg;
