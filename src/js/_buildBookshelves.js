@@ -50,7 +50,7 @@ class Book {
                 ...bookData.bookshopOrg,
                 ...bookData.image,
             };
-        details.isbn10 = bookData.identifiers.isbn[0];
+        // details.isbn10 = bookData.identifiers.isbn[0];
         details.inventoryInfo = bookData.inventoryInfo
             ? bookData.inventoryInfo
             : null;
@@ -82,7 +82,7 @@ const buildBook = (ISBN, shelf, shelfEntry) => {
     return book;
 };
 
-const buildLink = async (ISBN, bookLink, conversionPath, isbn10, audioISBN) => {
+const buildLink = async (ISBN, bookLink, conversionPath, audioISBN) => {
     if (/::/.test(bookLink)) {
         linkComponents = bookLink.split(new RegExp("[::]"));
         linkType = linkComponents[0];
@@ -106,9 +106,10 @@ const buildLink = async (ISBN, bookLink, conversionPath, isbn10, audioISBN) => {
         // TODO remvove nested ternaries i hate them
         link =
         commercePath != undefined
-            ? commercePath.pathURL.includes("[isbn10]")
-                ? commercePath.pathURL.replace("[isbn10]", isbn10)
-                : commercePath.pathURL.replace("[ISBN]", ISBN)
+            // ? commercePath.pathURL.includes("[isbn10]")
+            //     ? commercePath.pathURL.replace("[isbn10]", isbn10)
+            //     : commercePath.pathURL.replace("[ISBN]", ISBN)
+            ? commercePath.pathURL.replace("[ISBN]", ISBN)
             : /^a\d+$/i.test(linkValue)
                 ? `${commerce.bookshoporgLink}${linkValue.substring(1)}/${id}`
                 : link;

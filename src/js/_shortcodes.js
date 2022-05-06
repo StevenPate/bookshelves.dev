@@ -35,7 +35,7 @@ book = async (
         id,
         bookLink,
         details.conversionPath,
-        details.isbn10,
+        // details.isbn10,
         details.audioISBN
     );
 
