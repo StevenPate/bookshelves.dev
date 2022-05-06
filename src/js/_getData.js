@@ -37,30 +37,30 @@ const checkISBN = (ISBN) => {
     }
 };
 
-const getIdentifiers = async (ISBN) => {
-    try {
-        let url = `https://api.bookish.tech/search?type=isbn&id=${ISBN}`; //*
-        let bookishData = await EleventyFetch(url, {
-            type: "json",
-            duration: "10d",
-            directory: "_cache",
-        });
+// const getIdentifiers = async (ISBN) => {
+//     try {
+//         let url = `https://api.bookish.tech/search?type=isbn&id=${ISBN}`; //*
+//         let bookishData = await EleventyFetch(url, {
+//             type: "json",
+//             duration: "10d",
+//             directory: "_cache",
+//         });
 
-        const { isbn, lccn, oclc, openlibrary, goodreads, isbn13 } =
-            bookishData["results"];
+//         const { isbn, lccn, oclc, openlibrary, goodreads, isbn13 } =
+//             bookishData["results"];
 
-        return {
-            isbn,
-            isbn13,
-            lccn,
-            oclc,
-            openlibrary,
-            goodreads,
-        };
-    } catch (error) {
-        console.error(error);
-    }
-};
+//         return {
+//             isbn,
+//             isbn13,
+//             lccn,
+//             oclc,
+//             openlibrary,
+//             goodreads,
+//         };
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
 
 const getGoogle = async (ISBN) => {
     try {
