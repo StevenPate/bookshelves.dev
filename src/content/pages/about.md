@@ -1,40 +1,31 @@
 ---
-title: What is this about?
+title: What is this about, anyway?
 subtitle: Doing things with books on the web
 created: 2022-01-01
 tags: about this site
 eleventyNavigation:
   key: About
+  order: 3
 ---
 
-One day I realized: In bookstores, I almost always encounter the books I didn't even know I wanted to read. But that almost never happens on bookstore *websites*. Why?
+In bookstores, I almost always encounter the books I didn't even know I wanted to read. But that almost never happens on bookstore *websites*. Why?
 
-In the physical store, booksellers create spaces to encounter books. Theu showcase their curation, take pride in their recommendations, through shelf-talkers or conversation.
+<mark class="bg-amber-100">Booksellers are people who facilitate encounters with books</mark>. You find the ones you knew you wanted you wanted when you walked in, yes, but also ones you didn't know you wanted. This is because they created that environment, and it can feel magical. 
 
-Online, this so often just gets lost in search boxes and scrolling through pages of product links.
+The recommendation from booksellers—perhaps conveyed in a conversation from across the counter or captured in a shelftalker but always and foremost embodied in the selection of books on the shelves—is the explanation for the magic.
 
-I get excited about books I read about in newsletters in articles or on social media. Then if I'm being a good and well-behaved bibliophile, I head to the website of an independent bookstore and try and try to buy it from them. I may *find* the book there, but I didn't *encounter* it there.
+But this careful shaping of the experience through curation and presentation is just not hard to translate well to bookstores' online incarnations. It is lost in search boxes, or disappears while scrolling through pages of product links and marketing copy, or scared away by the feeling that the principal curator is an algorithm. 
 
-So I've been thinking that fostering encounters with books is really the magic of bookstores. They are great at doing this in physical spaces, because they are there shaping those encounters all the time through the arrangement of the space, the makeup of the shelves and displays, and of course because they can talk to you and guide you in helpful directions.
-
-I'd love to see indie bookstores translate that capacity for introducing me to new books through 
-
-They could focus on their unique recommendations and use original content to merchandise books. They could lead with the curation and expertise of their booksellers, not with a search box or an exhaustive menu of categories. This site will document of my plodding attempt to **build the online bookshop I wish existed**.
-
-A bookstore is not a collection of books for sale. <mark class="bg-amber-100">A bookstore is: booksellers plus space.</mark> What I'm really asking is what could this mean when **extended to the _online_ space?** And boy do I have opinions.
+A bookstore is not a collection of books for sale. <mark class="bg-amber-100">A bookstore is: booksellers plus space.</mark> What could this mean when **extended to the _online_ space?** Boy do I have opinions.
 
 This project is primarily a learning exercise, though I really hope some other folks will find it useful.
 
 ### If you want to know a little bit more:
 
-A new landscape of apps, frameworks, and APIs offers an opportunity to imagine something new. **The pandemic-catalyzed reliance on online shopping is not going away**. A better world is possible if we build it together.
+I want to explore how we might build a way of encountering books online that honors the idea of a bookstore? A new landscape of apps, frameworks, and APIs offers an opportunity to imagine something new. **The pandemic-catalyzed reliance on online shopping is not going away**. A better world is possible if we build it together. To learn a little bit more, maybe start with my post about [what to expect on this site](http://localhost:8080/what-to-expect/). I really want to create <mark class="bg-amber-100">an experience that truly complements and strengthen the physical presence of bookstores that I love</mark>. If not, I know that there are some interesting things to learn and interesting people to and learn from along the way.
 
-[insert posts]
-
-I wish I were in a bookstore right now, and maybe you do too. There's no substitute for that space. But maybe there's a <em>better</em> substitute, <mark class="bg-amber-100">an experience truly complements and strengthen the physical presence of bookstores that I love</mark>. If not, I know that there are some interesting things to learn and interesting people to and learn from along the way.
-
-### Who is behind this?
-
-I'm [Steven](https://stevenpate.com/). Absolutely nobody asked me to do this. But also: nobody who knows me will be surprised I'm trying ayway.
-
-Thanks for reading this!
+### Some other things to note.
+- My name is [Steven](https://stevenpate.com/). Absolutely nobody asked me to do this.  But also: nobody who knows me will be surprised I'm trying ayway.
+- You can view the <a href="https://github.com/StevenPate/landforms/">source code for this project on github</a>. It has a long way to go! 
+- <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Freepik - Flaticon</a>.
+- You are really nice for checking this page out. High five to you.

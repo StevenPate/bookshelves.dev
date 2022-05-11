@@ -2,6 +2,7 @@
 title: The Landmarks of Landmarks
 description: A shelf of books concerning the natural landscape, as featured in Robert MacFarlane's <em>Landmarks</em>.
 summary: "Robert MacFarlane's landmarks charts a course through some magical Nature writing. Here are the features he navigates the way we talk about the natural world."
+attribution: Steven
 sortByDescription: true
 books:
   - ISBN: "9780241967874"
@@ -15,7 +16,7 @@ books:
 
       The beautiful, patient specifiity of Nan Shepherd's revered meditation on years of wandering the austere Cairngorm mountains in Scotland, works on you like a spell. Its unforgettable prose worn over like the stones of a weatherbean plateau sat in a drawer, *The Living Mountain* sat unpublished in a drawer for 40 yearsand then spent 40 more accumulating a reknown as a classic of nature writing. As Robert Macfarlane says in his introduction to this edition: "Most works of mountain literature are written by men, and most of them focus on the goal of the summit. Nan Shepherd's aimless, sensual exploration of the Cairngorms is bracingly different."
   - ISBN: "9781883011246"
-    title: "John Muir: Nature Writings"
+    title: "Nature Writings"
     description: |
       One wonders if the name recognition John Muir still enjoys as a principal author of our modern ideas of nature has so far outstripped his reputation as an author of *actual* books that the wilderness icon is destined to be forever more worshipped than read. This would be a shame. 
 

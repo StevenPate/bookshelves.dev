@@ -125,13 +125,13 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
         default:
             return `<a href="${link}">${textLink}</a>`;
         case "cover":
-            return `<a href="${link}">${cachedCoverUrl}</a>`;
+            return `<div><a href="${link}">${cachedCoverUrl}</a></div>`;
         case "full":
         case "full-details":
             description = description ? md.render(description) : "";
             return `
-<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
-<div id="${slug}-info" class="max-w-[65ch] sm:w-2/3 px-8 sm:px-16">
+<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 lg:px-32 my-16 bg-gradient-to-b from-gray-100 via-gray-100 to-gray-300">
+<div id="${slug}-info" class="book-info max-w-[65ch] sm:w-2/3">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
 </h2>
@@ -143,7 +143,7 @@ by ${authors}
 ${contextsLayout}
 ${detailsLayout}
 </div>
-<div id="${slug}-image" class="w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
+<div id="${slug}-image" class="book-cover w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
 <a href="/${id}">${cachedCoverUrl}</a>
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300  hover:border-transparent transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl">
@@ -152,6 +152,20 @@ ${linkText}
 </a>
 </div>
 </div>`;
+        case "wrapped":
+            return `
+<div data-aos="fade-up" id="${slug}" class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
+<div id="${slug}-description" class="relative book-description">
+ <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
+  <a href="/${id}">${cachedCover}</a>
+  <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
+  <div id="${slug}-author" class="font-lg">by ${authors}</div>
+ </div>
+ ${description}
+</div>
+</div>
+
+            `
         case "small":
             return `
 <div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
@@ -208,10 +222,14 @@ function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat) {
     switch (bookDisplayFormat) {
         case "card":
             return `
-<div class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group">
+<div class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group flex flex-row space-x-8 items-start">
+<img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
+<div class="prose prose-xl">
 <a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
 <div class="mt-3">${shelfDescription}</div>
 <div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on ${dateModified}</div>
+</div>
+
 </div>`;
         case "text":
         default:

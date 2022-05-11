@@ -2,5 +2,7 @@
   "permalink": "/{{ page.fileSlug }}/",
   "layout": "layouts/shelf.njk",
   "tags": "shelf",
-  "format": "full"
+  "format": "full",
+  "date": "Last Modified"
+
 }

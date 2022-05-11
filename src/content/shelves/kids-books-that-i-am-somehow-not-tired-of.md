@@ -26,8 +26,11 @@ books:
       style, the clever conceit connecting page to page, the breaking of the fourth wall...
       *Brown Bear* is just incredible to me.
   - ISBN: '9780688149000'
+    description: Donald Crews illustrations are very clear, and this text is so simple that it was one of the first books we enjoyed together. The train goes all sorts of places.
   - ISBN: '9780307157850'
+    description: I could imagine and end to capitalism before I could imagine my child growing tired of this book. I'm not saying it won't happen one day. Just that I cannot imagine it. The fact that I'm always finding new things to amuse myself in Scarry's worlds is a source of wonder. The text here is fun, but it's just getting lost in the whimsy of the imaginary conveyences that never gets old.
   - ISBN: '9781615194988'
+    description: Wimmelbooks are great for getting a kid to point out things they know, giving them words for things they don't, and allowing them to start to create their own stories. As he has gotten older and noticed more details, there are other levels to enjoy.
   - ISBN: '9780394800202'
   - ISBN: '9780670012954'
   - ISBN: '9781536210637'
@@ -37,11 +40,10 @@ books:
   - ISBN: '9780553496796'
     description: It is hard to imagine not enjoying this famous Seussian title, right
       up until the moment it is seared into your brain forever.
-  - ISBN: '9780358451228'
   - ISBN: '9781423634119'
+    description: If there's one book on this list I should definitely be tired of, it's this one. There's hardly anything to it. It forces me to do sound effects. But for some reason it still slaps. I have no idea why J likes this one so much. It features haracters, places, and events from Arthur Conan Doyle's "The Hound of the Baskervilles."
   - ISBN: '9781328710604'
-  - ISBN: '9780794526153'
-    description: onlyhere to have something that isn't on borg.
+    description: Tomie dePaola's wordless picture book is an absolute winner. It's fun, has a good story. 
 
 ---
 Think of a book you like. Now think of reading it a few hundred times. Only the strong survive. There are different reasons for every selection. I will try and capture those reasons in the form of short descriptions.

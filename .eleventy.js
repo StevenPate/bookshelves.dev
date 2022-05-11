@@ -4,6 +4,10 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { book, shelf } = require("./src/js/_shortcodes");
 const { category } = require("./src/js/_filters")
 const { DateTime } = require("luxon");
+const markdownIt = require("markdown-it");
+const md = new markdownIt({
+    html: true,
+  });
 
 module.exports = function (eleventyConfig) {
 
@@ -45,6 +49,9 @@ eleventyConfig.addCollection("nonKidsBooks", (collection) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
   
+  eleventyConfig.addFilter("markdown", (content) => {
+    return md.render(content);
+  });
 
   // eleventyConfig.setQuietMode(true);
   // eleventyConfig.addPlugin(directoryOutputPlugin);

@@ -2,19 +2,25 @@
 
 {% block content %}
 <article>
-<section title="About the '{{ title }}' shelf" class="px-8 prose prose-xl">
+<section title="About the '{{ title }}' shelf" class="px-8 md:px-16 lg:px-32">
   <article>
-  <div class="grid justify-center grid-cols-1">
-  <h1>{{ title or metadata.title | safe }}</h1>
+  <div class="grid justify-center grid-cols-1 prose prose-xl">
+  <h1 class="mb-4">{{ title or metadata.title | safe }}</h1>
+  {% if description %}<div class="mt-4 mb-4 text-2xl font-semibold text-slate-500">{{ description | markdown | safe }}</div>{% endif %}
   </div>
-  {{ content | safe }}
+  <div class="prose prose-lg">
+  {{ content | markdown | safe }}
+  {% if attribution %}<div class="flex flex-row-reverse"><div class="text-xl italic">{{ attribution }}</div></div>{% endif %}
+  </div>
   </article>
 </section>
 {% if sortByDescription %}
   <section class="">
     {% shelf page.fileSlug, "full::description" %}
-    <h3>Other titles on this shelf:</h3>
+    <div class="px-8 md:px-16 lg:px-32">
+    <h3 class="prose prose-xl">Other titles on this shelf:</h3>
     {% shelf page.fileSlug, "cover::no-description" %}
+    </div>
   </section>
 {% else %}
   <section>
@@ -23,9 +29,9 @@
 {%endif%}
 </article> 
 
-<div class="prose prose-base">
-  <p>This shelf was updated on {{ page.date | readableDate }}.</p>
-  <p><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a> or <a href="/{{page.fileSlug}}.json">access the file as json</a>.
+<div class="px-8 mt-12 md:px-16 lg:px-32">
+  <p class="prose prose-base">This shelf was updated on {{ page.date | readableDate }}.</p>
+  <p class="w-full prose prose-base"><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a> or <a href="/{{page.fileSlug}}.json">access the file as json</a>.
 </div>
 {% endblock %}
 ç
