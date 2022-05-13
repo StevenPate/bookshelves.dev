@@ -5,15 +5,14 @@ books:
   - ISBN: "9780743203968"
     audioISBN: "9780743562669"
     audiobook: true 
-    description:  
+    description: |
+      This was one of the specific titles recommended for consumption in audiobook format (thank you Andy). He was right about the match of narrator Laurie Anderson and the tone of Delillo's text, which is somehow clear about the obscurity of its subject matter.
 
-    This was one of the specific titles recommended for consumption in audiobook format (thank you Andy). He was right about the match of narrator Laurie Anderson and the tone of Delillo's text, which is somehow clear about the obscurity of its subject matter.
-
-    An artist occupies a lonely rented house and discovers a mysterious, ageless man with inexplicable knowledge of her own life in this short, haunting tale. It's a ghost story, a study of grief and loneliness, and a deep dive into the artistic process. Through the arid deserts of southern California, it was Don DeLillo's storytelling prowess and impeccable sentences that got me really hooked on
-    
-    
-    As
-    "She practices what she calls “bodywork,” a series of exercises, stretches, and expressive postures she has devised to maintain fitness for her performances. She chops firewood. She stares for hours at footage from a webcam overlooking a road in Finland." Storytelling. Obscurity. Mystery. Mastery. https://www.youtube.com/watch?v=hraFAwRWIgY "Is she hallucinating? DeLillo is not concerned with the psychology behind this; a mysterious man Lauren loved is gone, and the world must fill his absence."
+      An artist occupies a lonely rented house and discovers a mysterious, ageless man with inexplicable knowledge of her own life in this short, haunting tale. It's a ghost story, a study of grief and loneliness, and a deep dive into the artistic process. Through the arid deserts of southern California, it was Don DeLillo's storytelling prowess and impeccable sentences that got me really hooked on
+      
+      
+      As
+      "She practices what she calls “bodywork,” a series of exercises, stretches, and expressive postures she has devised to maintain fitness for her performances. She chops firewood. She stares for hours at footage from a webcam overlooking a road in Finland." Storytelling. Obscurity. Mystery. Mastery. https://www.youtube.com/watch?v=hraFAwRWIgY "Is she hallucinating? DeLillo is not concerned with the psychology behind this; a mysterious man Lauren loved is gone, and the world must fill his absence."
     conversionPath: librofm
   - ISBN: "9781501125669"
     audioISBN: "9781508265818"
