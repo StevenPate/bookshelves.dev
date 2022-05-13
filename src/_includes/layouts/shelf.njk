@@ -2,7 +2,7 @@
 
 {% block content %}
 <article>
-<section title="About the '{{ title }}' shelf" class="px-8 md:px-16 lg:px-32">
+<section title="About the '{{ title }}' shelf" class="px-8 mb-32 md:px-16 lg:px-32">
   <article>
   <div class="grid justify-center grid-cols-1 prose prose-xl">
   <h1 class="mb-4">{{ title or metadata.title | safe }}</h1>
@@ -14,18 +14,19 @@
   </div>
   </article>
 </section>
+
 {% if sortByDescription %}
-  <section class="">
-    {% shelf page.fileSlug, "full::description" %}
-    <div class="px-8 md:px-16 lg:px-32">
-    <h3 class="prose prose-xl">Other titles on this shelf:</h3>
-    {% shelf page.fileSlug, "cover::no-description" %}
-    </div>
-  </section>
+<section>
+  {% shelf page.fileSlug, "full::description" %}
+  <div class="px-8 md:px-16 lg:px-32">
+  <h3 class="prose prose-xl">Other titles on this shelf:</h3>
+  {% shelf page.fileSlug, "cover::no-description" %}
+  </div>
+</section>
 {% else %}
-  <section>
-    {% shelf page.fileSlug, "full" %}
-  </section>
+<section>
+  {% shelf page.fileSlug, "full" %}
+</section>
 {%endif%}
 </article> 
 

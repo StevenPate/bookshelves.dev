@@ -180,7 +180,7 @@ const getBookshopOrg = async (ISBN) => {
         let cachedCover = await cacheImage(
             // "https://placeimg.com/264/400/nature",
             cover,
-            "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
+            "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110 max-w-96 h-auto",
             ISBN
         );
         return { cover, cachedCover };

@@ -6,7 +6,7 @@ const { breakoutByParam } = require("./_utils");
 const booksOnShelves = require("../_data/booksOnShelves.json");
 
 book = async (
-    inputISBN,
+    inputISBN = '9780802144638',
     bookDisplayFormat,
     bookLink = "external",
     thisShelf

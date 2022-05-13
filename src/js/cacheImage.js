@@ -1,18 +1,18 @@
 const Image = require("@11ty/eleventy-img");
-module.exports = async function (
+
+async function imageShortcode(
     src,
-    cls = "",
-    alt = "Alt text",
-    sizes = "50vw"
+    cls,
+    alt = "alt text",
+    sizes = "(min-width: 760px) 600px, 300px"
 ) {
-    if (src == null) {
-        return;
+    if (alt === undefined) {
+        // You bet we throw an error on missing alt (alt="" works okay)
+        throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
     }
-    if (src == undefined) {
-        return;
-    }
+
     let metadata = await Image(src, {
-        widths: [400, 600],
+        widths: [300, 600],
         formats: ["webp", "avif", "jpeg"],
         urlPath: "/images/web/",
         outputDir: "./src/images/web/",
@@ -22,14 +22,26 @@ module.exports = async function (
         },
     });
 
-    let imageAttributes = {
-        class: cls,
-        alt,
-        sizes,
-        loading: "lazy",
-        decoding: "async",
-        duration: "1y",
-    };
+    let lowsrc = metadata.jpeg[0];
+    let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
-    return Image.generateHTML(metadata, imageAttributes);
-};
+    return `<picture>
+    ${Object.values(metadata)
+        .map((imageFormat) => {
+            return `  <source type="${
+                imageFormat[0].sourceType
+            }" srcset="${imageFormat
+                .map((entry) => entry.srcset)
+                .join(", ")}" sizes="${sizes}">`;
+        })
+        .join("\n")}
+      <img
+        src="${lowsrc.url}"
+        alt="${alt}"
+        class="${cls}"
+        loading="lazy"
+        decoding="async">
+    </picture>`;
+}
+
+module.exports = imageShortcode;
