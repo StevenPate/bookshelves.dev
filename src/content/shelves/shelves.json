@@ -3,6 +3,7 @@
   "layout": "layouts/shelf.njk",
   "tags": "shelf",
   "format": "full",
+  "visible": true,
   "date": "Last Modified"
 
 }

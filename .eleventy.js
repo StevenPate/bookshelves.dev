@@ -18,7 +18,10 @@ module.exports = function (eleventyConfig) {
 
   // shelves collection
   eleventyConfig.addCollection("shelves", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/content/shelves/*.md")
+    // return collectionApi.getFilteredByGlob("./src/content/shelves/*.md")
+    const allShelves = collectionApi.getFilteredByGlob("./src/content/shelves/*.md");
+    const filteredShelves = allShelves.filter(item => item.data.visible == true)
+    return filteredShelves;
   });
 
   // eleventyConfig.addCollection('customDataCollection', customDataCollection);

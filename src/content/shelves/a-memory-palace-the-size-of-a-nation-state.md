@@ -6,37 +6,44 @@ books:
     audioISBN: "9780743562669"
     audiobook: true 
     description: |
-      This was one of the specific titles recommended for consumption in audiobook format (thank you Andy). He was right about the match of narrator Laurie Anderson and the tone of Delillo's text, which is somehow clear about the obscurity of its subject matter.
-
-      An artist occupies a lonely rented house and discovers a mysterious, ageless man with inexplicable knowledge of her own life in this short, haunting tale. It's a ghost story, a study of grief and loneliness, and a deep dive into the artistic process. Through the arid deserts of southern California, it was Don DeLillo's storytelling prowess and impeccable sentences that got me really hooked on
+      An artist living in a lonely rented house discovers a mysterious man with inexplicable knowledge of her own life. This novella is at once a sort of ghost story, an exploration of grief and solitude, and a surprising dive into the mysterious depths of the artistic process. DeLillo's impeccable sentences helped to pull me through the arid, sunwashed mountains, and Laurie Anderson's mesmerising, low-affext voice making it all the more surreal. This was one of the only audiobook recommendations I received before heading out on the trail (thanks Andy!), and it worked its magic on me. 
       
-      
-      As
-      "She practices what she calls “bodywork,” a series of exercises, stretches, and expressive postures she has devised to maintain fitness for her performances. She chops firewood. She stares for hours at footage from a webcam overlooking a road in Finland." Storytelling. Obscurity. Mystery. Mastery. https://www.youtube.com/watch?v=hraFAwRWIgY "Is she hallucinating? DeLillo is not concerned with the psychology behind this; a mysterious man Lauren loved is gone, and the world must fill his absence."
+      **What this book is like (for me)**: sitting in the noonday desert sun listening to someone insisting that it is midnight on a moonless night, and believing them because they are that good at telling a story.
     conversionPath: librofm
   - ISBN: "9781501125669"
     audioISBN: "9781508265818"
     audiobook: true
     conversionPath: librofm
     description: | 
-      I remember getting hooked into this around Crater Lake.
+      This memoir was just obscenely lauded before I even had a chance to crack it open. This unflinching recounting of the kinds of secrets and struggles most of us have a hard time sharing with anyone is riveting and rewarding. Expect hard truths about America, about societal violence and family violence, about family and art and identity. There's a through-line about the value of reading and writing, but it's a bruising account from start to finish. 
+      
+      Leymon and I  grew up in the same town at the same time, but his skill as a writer showed me in new clarity how different his experience as a black youth in Mississippi in the 80s and 90s was than mine as a white one.  I remember getting hooked into this immediately the day I listened to the first chapter. I was hiking around one of the more scenic spots in all of Oregon, Crater Lake, as I pressed play. About five minutes in, the clouds descended and it began to hail. Somehow it was fitting. 
 
-      In this powerful, provocative, and universally lauded memoir—winner of the Andrew Carnegie Medal and finalist for the Kirkus Prize—genre-bending essayist and novelist Kiese Laymon “provocatively meditates on his trauma growing up as a black man, and in turn crafts an essential polemic against American moral rot” (Entertainment Weekly). In Heavy, Laymon writes eloquently and honestly about growing up a hard-headed black son to a complicated and brilliant black mother in Jackson, Mississippi. From his early experiences of sexual violence, to his suspension from college, to time in New York as a college professor, Laymon charts his complex relationship with his mother, grandmother, anorexia, obesity, sex, writing, and ultimately gambling. Heavy is a “gorgeous, gutting…generous” (The New York Times) memoir that combines personal stories with piercing intellect to reflect both on the strife of American society and on Laymon’s experiences with abuse. By attempting to name secrets and lies he and his mother spent a lifetime avoiding, he asks us to confront the terrifying possibility that few in this nation actually know how to responsibly love, and even fewer want to live under the weight of actually becoming free. “A book for people who appreciated Roxane Gay’s memoir Hunger” (Milwaukee Journal Sentinel), Heavy is defiant yet vulnerable, an insightful, often comical exploration of weight, identity, art, friendship, and family through years of haunting implosions and long reverberations. “You won’t be able to put [this memoir] down…It is packed with reminders of how black dreams get skewed and deferred, yet are also pregnant with the possibility that a kind of redemption may lie in intimate grappling with black realities” (The Atlantic). (Publisher's Description)
+      This is one of those books you finish and think: there isn't a person in America who shouldn't read this. Or, perhaps even better, listen to the author read his own text in the audiobook ([this short piece written while recording the audiobook](https://scalawagmagazine.org/2019/02/kiese-laymon-heavy) can give you a flavor for Leymon's flinty, beautiful but unvarnished prose).
   - ISBN: "9780525576716"
     audioISBN: "9780593103067"
     audiobook: true
     conversionPath: librofm
     description: | 
-      Listening to The Uninhabitable Earth was a real "there's no going back" moment. I actually listened to it twice. It radicalized me.
+      The simplicity of its first line says almost everything you need to know: "It is worse, much worse, than you think." Listening to ***The Uninhabitable Earth*** was a one of the definitive "there's no going back" moments of global warming contemplateion for me. I actually listened to it twice. It terrified and radicalized me. It felt like nothing short of our generation's ***Silent Spring***. I stopped worrying about sounding like a kook and began sounding the alarm. 
+
+      The year I hiked the PCT was anamolous for the few forest fires that impacted the thru-hiking season. We were all expecting to have our hikes interrupted by the world on fire as it burned closer to us. It probably won't happen again.
+      Reading this on the trail felt like a memento mori. Every step felt like a gift, but also like a step towards eventual confrontation with this crisis. 
+
+      I would recommend this book to people who somehow don't feel urgency about this crisis, or who somehow need validation that their fears are real.
   - ISBN: "9780735224155"
     audioISBN: "9780525627166"
     audiobook: true
     conversionPath: librofm
-    description: Michael Pollen made me crave mushrooms.
+    description: Michael Pollen made me crave psychedelic mushrooms. Mega-star nonfiction author Pollan changed American food culture almost single-handedly with ***The Omnivore's Dilemma***. This one won't do the same for psychedelic drugs, but perhaps it should. Pollan's gift for weaving his own experiences and perspectives with historical and scientific research and firsthand accounts makes this compelling and digestible. He makes a near-watertight case that the closing off of these drugs to (at the very least) scientifc and pharmaceutical research and testing makes zero sense. Along the way, there are interesting insights into some of the recent literature on neuroscience and neuropsychology.
   - ISBN: "9780143039167"
-    description: Don't listen to the audiobook. Just don't. Type II fun fun for me. Borders on type III. https://www.rei.com/blog/climb/fun-scale [Interesting Piece](https://www.vox.com/culture/2020/5/7/21250016/kristin-lavransdatter-novel-sigrid-undset).
-  - ISBN: "9780061859373"
-    description: No audiobook on libro. I felt like Fire Season was a little too on-the-nose for me. Underbrush-less big trees in WA.
+    description: |
+      Get ready to have all of your preconceived notions about fourteenth-century Norway totally upended. Wait a second... anyone with ideas about fourteenth-century Norway who *hasn't* read this must reside in the overlappy part of a venn diagram so small that the normal rules of book recommendations just won't work. These aren't quantum rules. Anyway this is a massive epic about early Christian Norway, and it's... epic.
+      
+      But listen. Don't listen to the audiobook. Just don't. This was [Type II fun](https://www.rei.com/blog/climb/fun-scale), bordering on type III, for me. But by all means, read this epic tale from slept-on nobel laureate Undset. But I think you're going to enjoy turning pages for this kind of thing.
+
+      I *will* say that the day I knew I was going to finish this book was a great feeling of triumph that totally overshadowed one of the lamest trail towns of the whole thing. 
+
   - ISBN: "9781439195468"
     audioISBN: "9781508235408"
     audiobook: true
@@ -46,26 +53,30 @@ books:
     audioISBN: "9781004014743"
     audiobook: true
     conversionPath: librofm
-    description: It's the character of Thomas Cromwell, isn't it? Urbane but devout. Brutal.
-  - ISBN: "9781476738024"
-    description: No audiobook on libro. I did not like A Man Called Ove.
+    description: Hillary Mantel's trilogy is justly celebrated. It's compulsively readable, and the depth of her characterization of of Thomas Cromwell, is nothing short of miraculous. An absolutely unforgettable character. The narration of Ben Miles (Mantel's choice to play Cromwell in the Royal Shakespeare Company adaptation of the text) is perfect. If you have Mark Rylance's portrayal from BBC series version, you may be skeptical. But this is great.
   - ISBN: "9780393356250"
-    description: No audiobook on libro. The Emily Wilson text is read by Claire Danes on the evil empire's audiobook tributary. Wonderful.
-  - ISBN: "9781591792383"
-    title: "Getting Unstuck"
-    authors:
-    - Pema Chodron
-    description: No audiobook for 'Getting Unstuck' on libro. And no google books data for 9781591792383!
-    conversionPath: worldcat
+    description: This is one for which there is no audiobook on librofm and I am really sorry about that. The Emily Wilson text is read by Claire Danes on the evil empire's audiobook tributary. It is mighty fine. The text itself is fresh and lovely but Wilson's introduction is *essential*.
   - ISBN: "9780819567147"
     audioISBN: "9781982648329"
     audiobook: true
     conversionPath: librofm
-    description: SciFi Hat Creek Rim
+    description: |
+      When I began this text I confess to being caught off-guard. It was my first Delany. I'd read about him before but never took the plunge. Some of this was disorienting and shocking, but I stuck with it and fell so hard for it. Hat Creek Rim is one of the hottest, hardest parts of the trail. This blew my mind and rekindled my interest in speculative fiction. A truly wild ride.
   - ISBN: "9781250234957"
     audioISBN: "9781250204806"
     audiobook: true
     conversionPath: librofm
-    description: Ghost Wall is a bit of a cheat, but it's the last book I read. Dark mornings and evenings in March, this book carried me on 10 mile hikes.
+    description: |
+      Ghost Wall is a bit of a cheat, but it's the last book I read. Dark mornings and evenings in March, this book carried me on 10 mile hikes. It's fun.
 ---
-<p class="has-dropcap">You have a lot of time to listen. </p>
+When I decided to thru-hike the Pacific Crest Trail, I knew I was going to have to get over my audiobook aversion.
+
+It was 2,650 miles from the U.S.-Mexico border to the Canada-U.S. border. I hiked every step in an unbroken footpath. It was exhilerating and grueling and life-affirming and death-defying. And I'm not sure how I wouldn't have done it without a libro.fm subscription.
+
+You have a lot of time to listen.
+
+Now when I think of any of these books, I can immediately picture places where I was walking while listening to them. I won't forget **Stars** on Hat Creek Rim. Or **Change Your Mind** deep in the forests of Oregon. ***Heavy*** after a hailstorm around Crater Lake. And I can tell you the mile marker (???) and the date (belden) I finally finished ***Kristin Lavransdatter***. Heck I remember the who was leapfrogging me the moment I *realized* I was going to finish ***Kristin Lavransdatter***.
+
+If you know somebody who tells you they are going to hike a long trail, give them a [libro.fm](http://libro.fm) gift card.
+
+Note that I didn't include books I didn't finish and ones I didn't like. What's the point of that? Also, I did listen to a few things the Libby app and a Chicago Public Library card, and a few things on Audible. Some of these aren't on librofm. Some of the things I listened to on libro.fm are no longer on libro.fm.
