@@ -1,6 +1,6 @@
 ---
 title: A memory palace the size of a nation-state
-description: I hiked for 6 months straight and listened to a bunch of books. Here are the ones that stuck.
+description: I hiked for 6 months straight and listened to a bunch of audiobooks. Here are the ones that stuck.
 books:
   - ISBN: "9780743203968"
     audioISBN: "9780743562669"
@@ -71,7 +71,7 @@ books:
     description: |
       Ghost Wall is a bit of a cheat, but it's the last book I read. Dark mornings and evenings in March, this book carried me on 10 mile hikes. It's fun.
 ---
-When I think of any of these books, I cannot help but be transported to the places where I was walking while listening to them. I won't forget **Stars in My Pocket Like Grains of Sand** on Hat Creek Rim. Or **How to Change Your Mind** deep in the mushroom-dense forests of Oregon. Starting ***Heavy*** in a hailstorm around Crater Lake. And I can tell you the mile marker (1285) and the date (July 14, 2019) I finally finished ***Kristin Lavransdatter***. Heck I remember the who was leapfrogging me the moment I *realized* I was going to finish ***Kristin Lavransdatter***. His trail name was Tarzan.
+When I think of any of these books, I cannot help but be transported to the places where I was walking while listening to them. I won't forget **Stars in My Pocket Like Grains of Sand** on Hat Creek Rim. Or **How to Change Your Mind** deep in the mushroom-dense forests of Oregon. Starting ***Heavy*** in a hailstorm around Crater Lake. And I can tell you the mile marker (1285) and the date (July 14, 2019) I finally finished ***Kristin Lavransdatter***. Heck I remember the who the hiker leapfrogging me the moment I *realized* I was going to finish ***Kristin Lavransdatter***. His trail name was Tarzan.
 
 In 2019, I walked every step of the 2,650 miles [Pacific Crest Trail](https://www.pcta.org/discover-the-trail/) from the U.S.-Mexico border north to the Canada-U.S. border, a string of unbroken footsteps that stretched 2,650 miles. It was exhilerating and grueling and life-affirming and mortality-confronting. And I'm not sure how I wouldn't have done it without a [libro.fm](http://libro.fm) subscription.
 
