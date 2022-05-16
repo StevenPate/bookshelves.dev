@@ -77,4 +77,4 @@ In 2019, I walked every step of the 2,650 miles [Pacific Crest Trail](https://ww
 
 I listened to plenty of music and consumed tons of podcasts. I also read a handful of paperbacks as well. The point is that these are the audiobooks (I'm leaving the duds out) that got me through some long days and made interminable climbs a bit easier. The sound of one's own feet aren't always enough. 
 
-I genuinely treasure the entertwined memories of these books and my time hiking across the country. If there's one takeaway I would offer you, it is: **If you know somebody who tells you they are going to hike a long trail, give them a [libro.fm](http://libro.fm) gift card.**
+I genuinely treasure the entertwined memories of these books and my time hiking across the country. If there's one takeaway I would offer you, it is that  ***somebody tells you they are going to hike a long trail, give them a [libro.fm](http://libro.fm) gift card.**
