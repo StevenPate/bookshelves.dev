@@ -35,15 +35,17 @@ books:
     audioISBN: "9780525627166"
     audiobook: true
     conversionPath: librofm
-    description: Michael Pollen made me crave psychedelic mushrooms. Mega-star nonfiction author Pollan changed American food culture almost single-handedly with ***The Omnivore's Dilemma***. This one won't do the same for psychedelic drugs, but perhaps it should. Pollan's gift for weaving his own experiences and perspectives with historical and scientific research and firsthand accounts makes this compelling and digestible. He makes a near-watertight case that the closing off of these drugs to (at the very least) scientifc and pharmaceutical research and testing makes zero sense. Along the way, there are interesting insights into some of the recent literature on neuroscience and neuropsychology.
+    description: |
+      Michael Pollen made me crave psychedelic mushrooms. Mega-star nonfiction author Pollan changed American food culture almost single-handedly with ***The Omnivore's Dilemma***. This one won't do the same for psychedelic drugs, but perhaps it should. Pollan's gift for weaving his own experiences and perspectives with historical and scientific research and firsthand accounts makes this compelling and digestible. He makes a near-watertight case that the closing off of these drugs to (at the very least) scientifc and pharmaceutical research and testing makes zero sense. Along the way, there are interesting insights into some of the recent literature on neuroscience and neuropsychology.
+
+      I read this one in the "green tunnel" of Oregon, dodging mosquitos, swimming in cool lakes and watching as the mushrooms proliferate to disturbing density on the trail. If it was a sign for me to turn my trip into a *trip*, I wasn't bold enough to do so. But it got me thinking about suffering, joy, perspectives and consciousness. Just like the trail itself.
   - ISBN: "9780143039167"
     description: |
       Get ready to have all of your preconceived notions about fourteenth-century Norway totally upended. Wait a second... anyone with ideas about fourteenth-century Norway who *hasn't* read this must reside in the overlappy part of a venn diagram so small that the normal rules of book recommendations just won't work. These aren't quantum rules. Anyway this is a massive epic about early Christian Norway, and it's... epic.
       
-      But listen. Don't listen to the audiobook. Just don't. This was [Type II fun](https://www.rei.com/blog/climb/fun-scale), bordering on type III, for me. But by all means, read this epic tale from slept-on nobel laureate Undset. But I think you're going to enjoy turning pages for this kind of thing.
+      But listen. Don't listen to the audiobook. Just don't. This was [Type II fun](https://www.rei.com/blog/climb/fun-scale), bordering on type III, for me. But by all means, read this epic tale from slept-on nobel laureate Undset. But I think you're going to enjoy turning pages for this kind of thing. So I've put the link to a paper copy of this one. (It doesn't help that this audiobook is only available via Audible, which I'm not interested in supporting.)
 
-      I *will* say that the day I knew I was going to finish this book was a great feeling of triumph that totally overshadowed one of the lamest trail towns of the whole thing. 
-
+      I *will* say that the day I knew I was going to finish this book was a great feeling of triumph that totally compensated for arriving at one of my least favorite trail towns of the whole thing (sorry, Belden, CA). 
   - ISBN: "9781439195468"
     audioISBN: "9781508235408"
     audiobook: true
@@ -69,14 +71,10 @@ books:
     description: |
       Ghost Wall is a bit of a cheat, but it's the last book I read. Dark mornings and evenings in March, this book carried me on 10 mile hikes. It's fun.
 ---
-When I decided to thru-hike the Pacific Crest Trail, I knew I was going to have to get over my audiobook aversion.
+When I think of any of these books, I cannot help but be transported to the places where I was walking while listening to them. I won't forget **Stars in My Pocket Like Grains of Sand** on Hat Creek Rim. Or **How to Change Your Mind** deep in the mushroom-dense forests of Oregon. Starting ***Heavy*** in a hailstorm around Crater Lake. And I can tell you the mile marker (1285) and the date (July 14, 2019) I finally finished ***Kristin Lavransdatter***. Heck I remember the who was leapfrogging me the moment I *realized* I was going to finish ***Kristin Lavransdatter***. His trail name was Tarzan.
 
-It was 2,650 miles from the U.S.-Mexico border to the Canada-U.S. border. I hiked every step in an unbroken footpath. It was exhilerating and grueling and life-affirming and death-defying. And I'm not sure how I wouldn't have done it without a libro.fm subscription.
+In 2019, I walked every step of the 2,650 miles [Pacific Crest Trail](https://www.pcta.org/discover-the-trail/) from the U.S.-Mexico border north to the Canada-U.S. border, a string of unbroken footsteps that stretched 2,650 miles. It was exhilerating and grueling and life-affirming and mortality-confronting. And I'm not sure how I wouldn't have done it without a [libro.fm](http://libro.fm) subscription.
 
-You have a lot of time to listen.
+I listened to plenty of music and consumed tons of podcasts. I also read a handful of paperbacks as well. The point is that these are the audiobooks (I'm leaving the duds out) that got me through some long days and made interminable climbs a bit easier. The sound of one's own feet aren't always enough. 
 
-Now when I think of any of these books, I can immediately picture places where I was walking while listening to them. I won't forget **Stars** on Hat Creek Rim. Or **Change Your Mind** deep in the forests of Oregon. ***Heavy*** after a hailstorm around Crater Lake. And I can tell you the mile marker (???) and the date (belden) I finally finished ***Kristin Lavransdatter***. Heck I remember the who was leapfrogging me the moment I *realized* I was going to finish ***Kristin Lavransdatter***.
-
-If you know somebody who tells you they are going to hike a long trail, give them a [libro.fm](http://libro.fm) gift card.
-
-Note that I didn't include books I didn't finish and ones I didn't like. What's the point of that? Also, I did listen to a few things the Libby app and a Chicago Public Library card, and a few things on Audible. Some of these aren't on librofm. Some of the things I listened to on libro.fm are no longer on libro.fm.
+I genuinely treasure the entertwined memories of these books and my time hiking across the country. If there's one takeaway I would offer you, it is: **If you know somebody who tells you they are going to hike a long trail, give them a [libro.fm](http://libro.fm) gift card.**
