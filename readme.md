@@ -1,12 +1,5 @@
-## Table of contents
-* [General info](#general-info)
-* [DwRUEWA](#general-info)
-* [Technology](#Technology)
-* [To Do](#ToDo)
-
-
-## General info 📚
-This project about building a content-focused approach to online book collections: [bookshelves.dev?](https://bookshelves.dev)
+## Bookshelves.dev 📚
+Building a content-focused approach to online book collections: [bookshelves.dev](https://bookshelves.dev)
 
 ## Features ✨
 - Showcase book recommendations
@@ -47,4 +40,4 @@ This project about building a content-focused approach to online book collection
 - [ ] Integrate with Eventbrite API for event data
 ...
 
-[Steven Pate][author]
+Just getting this thing started. Any feedback is good feedback right now. Thanks for looking!
