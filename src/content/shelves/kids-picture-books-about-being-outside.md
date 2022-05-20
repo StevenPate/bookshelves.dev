@@ -1,6 +1,7 @@
 ---
-title: Picture books about the outdoors
+title: Kids' picture books about being outside
 description: Books for kids that feature the wonders of the natural world.
+visible: false
 categories:
 - kids
 books:

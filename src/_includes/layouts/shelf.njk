@@ -1,9 +1,8 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<article>
+<article id="shelf">
 <section title="About the '{{ title }}' shelf" class="px-8 mb-32 md:px-16 lg:px-32">
-  <article>
   <div class="grid justify-center grid-cols-1 prose prose-xl">
   <h1 class="mb-4">{{ title or metadata.title | safe }}</h1>
   {% if description %}<div class="mt-4 mb-4 text-2xl font-semibold text-slate-500">{{ description | markdown | safe }}</div>{% endif %}
@@ -12,7 +11,6 @@
   {{ content | markdown | safe }}
   {% if attribution %}<div class="flex flex-row-reverse"><div class="text-xl italic">{{ attribution }}</div></div>{% endif %}
   </div>
-  </article>
 </section>
 
 {% if sortByDescription %}
@@ -28,6 +26,9 @@
   {% shelf page.fileSlug, "full" %}
 </section>
 {%endif%}
+<section class="grid place-items-center">
+  <p class="prose prose-xl"><a href="#shelf">top</a></p>
+</section>
 </article> 
 
 <div class="px-8 mt-12 md:px-16 lg:px-32">

@@ -23,21 +23,18 @@ books:
       The spiritual father of the national park system and literal founder of the Sierra Club was an irrepressible advocate for the power and value of time spent outside, yes. But anyone who finds communion in those ideas but has never dipped into his still-very-readable, infectiously romantic writings is denying themselves a special pleasure. If ever anyone deserved a Library of America treatment, it must be the nation's most eloquent tramp: his words literally changed the American landscape. 
 
       Muir is no exception to the a ongoing [reckoning](https://www.smithsonianmag.com/smart-news/sierra-club-grapples-founder-john-muirs-racism-180975404/) with the [complicated legacy](https://crosscut.com/opinion/2020/08/john-muir-godfather-seattles-spiritual-life-and-racist) of the sainted figures of progressive causes. His work can survive this overdue contextualization, and encountering his thoughtful, ecstatically expressed sentiments on the page is itself a corrective to successive generations of uncritical hagiography. Alongside Thoreau, Leopold and Carson, this is the most essential writing about nature, period. It is also just plain enjoyable. You'll want to take a loaf of crusty bread up to a mountain meadow and read it under a tree.
-  - ISBN: '9781416595328'
+  - ISBN: "9781416595328"
     description: |
       Effortless and enchanting, Roger Deakin's *Wildwood* is unique in its weaving of encyclopedic appreciation for trees and personal anecdote. Simply if uncharitably put, Deakin looks into his navel and finds a forest. It's idosyncratic and beautiful, and you might find yourself checking prices on flights to southern Kyrgyzstan just to see if an actual lived experience can live up to his description of a walnut forest, or driving around Suffolk looking for his 400-year-old digs, or just wishing you could be half as observant as this writer, who spent a lifetime carefully looking around him and beautifully recording it. Give this amazing study of what he dubbed "the fifth element" (wood), a little time to take root, and something beatuiful will grow.
-  - ISBN: '9780807085110'
-  - ISBN: '9781847771551'
-  - ISBN: '9781903385333'
-  - ISBN: '9781999971854'
-  - ISBN: '9781517076191'
-  - ISBN: '9780571347933'
-  - ISBN: '9781953534033'
-
-
-
+  - ISBN: "9780807085110"
+  - ISBN: "9781847771551"
+  - ISBN: "9781903385333"
+  - ISBN: "9781999971854"
+  - ISBN: "9781517076191"
+  - ISBN: "9780571347933"
+  - ISBN: "9781953534033"
 ---
 
-In 2016's *Landmarks*, MacFarlane still feels like a writer with his backpack on, but somehow there's also a 19th-century thesaurus in there with the parka and compass. Anyone sharing his simultaneous fascination with language and landscape will devour it like catnip.  In exploration of how we talk about where we live, he charts a course through some magical nature writing with care and enthusiasm. 
+In 2016's _Landmarks_, MacFarlane writes like someone who still has his backpack on, but somehow there's also a 19th-century thesaurus in there with the parka and compass. Anyone sharing his simultaneous fascination with language and landscape will devour it like catnip. In exploration of how we talk about where we live, he charts a course through some magical nature writing with care and enthusiasm.
 
-The fact that many of the works he chose are now available in editions featuring introductions by MacFarlane himself is a testament to what I'm going to dub "The MacFarlane Effect." If you enjoyed *Landmarks*, the works around which MacFarlane blazed its trail are obvious directions to head next. If you just love nature writing, you'll find wonderful places to get lost here.
+The fact that many of the works he chose are now available in editions featuring introductions by MacFarlane himself is a testament to what I'm going to dub "The MacFarlane Effect." If you enjoyed _Landmarks_, the works around which MacFarlane blazed its trail are obvious directions to head next. If you just love nature writing, you'll find wonderful places to get lost here.
