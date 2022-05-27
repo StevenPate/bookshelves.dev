@@ -1,0 +1,11 @@
+---
+title: Discovering the Olympic Peninsula
+books:
+  - ISBN: "9780295743288"
+  - ISBN: "9780295745336"
+  - ISBN: "9780806135526"
+  - ISBN: "9780898868081"
+  - ISBN: "9781680513295"
+  - ISBN: "9780295748610"
+  - ISBN: "9780295988788"
+---
