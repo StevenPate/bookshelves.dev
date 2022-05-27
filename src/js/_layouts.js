@@ -40,6 +40,9 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     let slug = title ? slugify(title, { lower: true, strict: true }) : "??? ";
     categories = formatArray(categories);
     authors = formatArray(authors);
+    if (cachedCoverUrl == null) {
+        cachedCoverUrl = cachedCover;
+    }
 
     // console.log(id,details)
     //TODO: CLEAN THESE UP

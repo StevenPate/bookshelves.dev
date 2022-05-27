@@ -35,6 +35,6 @@ books:
   - ISBN: "9781953534033"
 ---
 
-In 2016's _Landmarks_, MacFarlane writes like someone who still has his backpack on, but somehow there's also a 19th-century thesaurus in there with the parka and compass. Anyone sharing his simultaneous fascination with language and landscape will devour it like catnip. In exploration of how we talk about where we live, he charts a course through some magical nature writing with care and enthusiasm.
+Robert MacFarlane always writes as if he still has his backpack on. In 2016's __Landmarks__, it seemed like he also stuck a 19th-century thesaurus in there with the parka and compass. Anyone sharing his simultaneous fascination with language and landscape will devour this exploration of how we talk about where we live like catnip, as he charts a course through some very special nature writing with care and conviction.
 
-The fact that many of the works he chose are now available in editions featuring introductions by MacFarlane himself is a testament to what I'm going to dub "The MacFarlane Effect." If you enjoyed _Landmarks_, the works around which MacFarlane blazed its trail are obvious directions to head next. If you just love nature writing, you'll find wonderful places to get lost here.
+The fact that many of the works he chose are now available in editions featuring introductions by MacFarlane himself is a testament to what I'm going to dub "The MacFarlane Effect." If you enjoyed _Landmarks_, the works around which MacFarlane blazed its trail are obvious directions to head next. If you just love nature writing, you'll find wonderful places to get lost here. As I make my way through these works, I will share my thoughts about each one here.
