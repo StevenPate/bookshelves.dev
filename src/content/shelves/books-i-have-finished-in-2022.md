@@ -49,6 +49,13 @@ books:
   - ISBN: "9780143128045"
     description: If you, like me, have only read Jaackson's works of horror and mystery,  ***Life Among the Savages***, you are in for a treat. In this lightly fictionalized memoir of six years of raising her family, Jackson uses her storycrafting craft to depict the chaos of home life with droll self-deprecation and an outsider's eye on the quirks of small town life in New England. Resolutely from the 1950s, this feels utterly contemporary. Charming. 
   - ISBN: '9780295988788'
+    description : |
+      After I finished **The Last Wilderness**, I returned to Alan at [Port Book and News](https://www.portbooknews.com/), who had recommended it to me for learning about the Peninsula, and asked him what should be next for learning about the area around Port Angeles. Without even a second of hesitation he walked to the shelf, plucked off a copy of **Breaking Ground** and put it into in my hands. I am so glad he pointed me to this amazing account of a gripping local story that helped to reframe my perspective on this specific part of the world.
+
+      In 2003, routine work at the site of the largest construction projects in the state of Washington turned up the first archeological evidence of what eventually was discovered to be the largest pre-European contact village site ever excavated. Stopping work on an enormous project was controversial, but it was the story of how the memory of the site had been ignored and erased which was the most profound revelation. This story encapsulates so much about European settlers' attitudes towards native peoples' cultures, and the hurt this has caused for generations. There are hopeful notes about changing attitudes, and it is certainly noteworthy that the project with so much money and so many interested parties and agencies was indeed stopped.
+
+      This is a closely-reported story, and certainly feels definitive. Mapes clearly interviewed a lot of people and the eyewitness accounts yield interesting results, such as an incredibly thorough depiction of a burning ceremony (where a feast table, clothing and other objects were burned for the ancestors). I learned so much from this book.
+
 ---
 
 Last year's reading slump has continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. I've finished a really big book (***The Dawn of Everything***) and am making progress on some other things. For now I'm limiting this list to books that I have both finished and which I would recommend.
