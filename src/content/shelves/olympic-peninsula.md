@@ -3,6 +3,8 @@ title: Discovering the Olympic Peninsula
 description: These are the books I've been reading to learn about the Olympic Peninsula.
 books:
   - ISBN: "9780295743288"
+    description: |
+        This magisterial text gave me everything I wanted to know about the geology, ecology and natural history of the peninsula. But while there is a brief guide to visiting the park, this is not a guidebook. Organized into four broad but thorough sections (The Mountains, The Forest, The Coast, Humans and the Landscape), this is a comprehensive survey of the place.  McNulty is a poet who has lived and worked here for many years, and his lyricism and personal perspective make this book distinctive. It reads as though it is written by someone who loves being in the outdoors, and these spaces in particular, who is gifted at bringing those experiences to the page. Here is a book that I would give to anyone who wanted to know why I am excited by this place.
   - ISBN: "9780295745336"
   - ISBN: "9780806135526"
     description: |
@@ -37,6 +39,8 @@ books:
   - ISBN: "9780295988788"
 attribution: Steven
 ---
-The Olympic Peninsula is one wild and interesting place. Its captivating natural landscapes also have a fascinating history of human settlement and development. There is a lot to learn, and these books have been particularly valuable to me.
+1,400 square miles of rugged mountains. The richest old growth forest preserve anywhere. Glaciers. (Still). (Barely). The cleanest air and the quietest places in the country. A human presence at for at least 13,000 years. Home of complex cultures. Site of the most inspiring example of ecological restoration you may ever find. 
 
-Note that this shelf is just a draft, and I have yet to write my own thoughts about most of these titles.
+The Olympic Peninsula is one wild and interesting place. Its captivating natural landscapes also have a fascinating history of human settlement and development. These are books that have been particularly helpful to me as I begin learning about this place.
+
+*Note that I am still using publishers' descriptions for most of these texts, but wanted to share it as I'm writing these capsules.*
