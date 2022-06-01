@@ -172,7 +172,7 @@ ${linkText}
         case "small":
             return `
 <div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
-<div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCover}</a></div>
+<div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCoverUrl}</a></div>
 <div id="${slug}-info" class="w-full sm:w-2/3 prose prose-lg py-6 pl-4 sm:py-auto">
 <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
 <div id="${slug}-author" class="font-lg">${authors}</div>
