@@ -48,6 +48,7 @@ book = async (
 shelf = async (
     shelfID,
     shelfDisplayFormat = "cover", //probly change the default here
+    lastModifiedDate = "",
     bookLink = "external"
 ) => {
     const buildShelf = async (
@@ -76,6 +77,7 @@ shelf = async (
             await Promise.all(getShelfBooks),
             shelfData,
             bookDisplayFormat,
+            lastModifiedDate,
             bookLink
         );
 

@@ -8,8 +8,8 @@ The books on this site are organized onto shelves, which is where they feel at h
 
 <section>
 <div div="p-0">
-{% for item in collections.shelves | reverse %}
-{% shelf item.data.page.fileSlug, "card" %}
+{% for item in collections.shelves %}
+{% shelf item.data.page.fileSlug, "card", item.data.modified %}
 {% endfor %}
 </div>
 </section>

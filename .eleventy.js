@@ -8,6 +8,8 @@ const markdownIt = require("markdown-it");
 const md = new markdownIt({
     html: true,
   });
+  const pluginGitCommitDate = require("eleventy-plugin-git-commit-date");
+
 
 module.exports = function (eleventyConfig) {
 
@@ -21,7 +23,10 @@ module.exports = function (eleventyConfig) {
     // return collectionApi.getFilteredByGlob("./src/content/shelves/*.md")
     const allShelves = collectionApi.getFilteredByGlob("./src/content/shelves/*.md");
     const filteredShelves = allShelves.filter(item => item.data.visible == true)
-    return filteredShelves;
+    return filteredShelves.sort(function(a, b) {
+      return b.date - a.date; // sort by date - ascending
+      // return b.modified - a.modified; // sort by date - descending;
+    })
   });
 
   // eleventyConfig.addCollection('customDataCollection', customDataCollection);
@@ -60,6 +65,7 @@ eleventyConfig.addCollection("nonKidsBooks", (collection) => {
   // eleventyConfig.addPlugin(directoryOutputPlugin);
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginGitCommitDate);
 
   eleventyConfig.addPassthroughCopy("./src/images");
 

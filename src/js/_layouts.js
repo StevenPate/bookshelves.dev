@@ -220,8 +220,9 @@ ${linkText}
     }
 }
 
-function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat) {
+function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat, lastModifiedDate) {
     const { shelfTitle, shelfDescription = "", dateModified } = shelfData;
+    const lastModified = (lastModifiedDate != "") ? lastModifiedDate : dateModified;
     switch (bookDisplayFormat) {
         case "card":
             return `
@@ -230,7 +231,7 @@ function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat) {
 <div class="prose prose-xl">
 <a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
 <div class="mt-3">${shelfDescription}</div>
-<div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on ${dateModified}</div>
+<div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on ${lastModified}</div>
 </div>
 
 </div>`;
