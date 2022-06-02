@@ -38,7 +38,7 @@ The books on this site are organized onto shelves, which is where they feel at h
   </section>
   <section x-show="currentTab === 'kids'">
   <h3 class="mt-4">Kids Books</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-3">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
   {% for item in collections.kidsBooks %}
   {% book item.ISBN, 'cover', 'local' %}
   {% endfor %}
