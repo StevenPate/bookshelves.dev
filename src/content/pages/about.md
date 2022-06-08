@@ -8,6 +8,8 @@ eleventyNavigation:
   order: 3
 ---
 
+Bookshelves.dev is my playground for trying out new ideas for encountering books online.
+
 In bookstores, I almost always encounter the books I didn't even know I wanted to read. But that almost never happens on bookstore *websites*. Why?
 
 <mark class="bg-amber-100">Booksellers are people who facilitate encounters with books</mark>. You find the ones you knew you wanted you wanted when you walked in, yes, but also ones you didn't know you wanted. This is because they created that environment, and it can feel magical. 
