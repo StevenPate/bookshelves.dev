@@ -23,21 +23,19 @@ Building a content-focused approach to online book collections: [bookshelves.dev
 - [ ] Flesh out this readme 😊 
 - [ ] Add social share images for posts, books, shelves
 - [ ] Add readable *created* and *edited* dates on all content
+- [ ] Handle drafts
 - [ ] Add "next shelf" link on shelf layout
 - [ ] Add "latest" book to homepage
-- [ ] Add testing
 - [ ] Use local/cached image paths for library.json 
 - [ ] Add read time estimator
-- [ ] Generate collage image for shelves using 
-- [ ] Integrate `fathom analytics`
+- [ ] Generate collage image for shelves using `Sharp`
+- [x] Integrate `fathom analytics`
 - [ ] Fix attribution shortcomings (multiple authors, editors, translators, etc.)
-- [ ] Scrape more  data to serve with serverless and edge functions
-- [ ] Componetize code in javascript modules
+- [ ] Scrape more data to serve with serverless and edge functions
 - [ ] Add fonts and problematic styles to asset pipeline
-- [ ] Hook 'netlify forms' up with newsletter
-- [ ] Integrate with 'headless ecommerce'
 - [ ] Integrate newsletter html generation from pages and RSS
-- [ ] Integrate with Eventbrite API for event data
+- [ ] Integrate with event data API
+- [ ] Add intuitive way for suggesting the next shelf with clickable component
 ...
 
 Just getting this thing started. Any feedback is good feedback right now. Thanks for looking!
