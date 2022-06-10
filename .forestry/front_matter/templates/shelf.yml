@@ -30,3 +30,14 @@ fields:
 - type: text
   name: conversionPath
   label: Conversion path
+- name: modifiedDate
+  type: datetime
+  description: Date Modified
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+  label: Modified Date
+  hidden: true
