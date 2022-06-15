@@ -5,6 +5,7 @@ const md = new MarkdownIt({
     html: true,
 });
 const humanizeList = require("humanize-list");
+const dayjs = require('dayjs')
 
 const formatArray = (arrayToFormat) => {
     if (Array.isArray(arrayToFormat)) {
@@ -221,17 +222,17 @@ ${linkText}
 }
 
 function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat, lastModifiedDate) {
-    const { shelfTitle, shelfDescription = "", dateModified } = shelfData;
-    const lastModified = (lastModifiedDate != "") ? lastModifiedDate : dateModified;
+    const { shelfTitle, shelfDescription = "", dateModified, commitDate } = shelfData;
+    const lastModified = dayjs(commitDate).format("YYYY-MM-DD")
     switch (bookDisplayFormat) {
         case "card":
             return `
-<div class="py-6 sm:p-6 hover:bg-white hover:shadow-xl group flex flex-row space-x-8 items-start">
+<div class="my-6 py-6 sm:p-6 bg-white shadow-xl group flex flex-row space-x-8 items-start">
 <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
 <div class="prose prose-xl">
 <a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
 <div class="mt-3">${shelfDescription}</div>
-<div class="text-sm text-gray-100 group-hover:text-gray-400">Updated on ${lastModified}</div>
+<div class="text-sm text-gray-400">Updated on ${lastModified}</div>
 </div>
 
 </div>`;

@@ -21,10 +21,23 @@ function getShelfData(shelfID) {
   // console.log(shelfData);
 }
 
+function getCommitDate(shelfID) {
+  // const { shelfItems, ...shelfData } = booksOnShelves.shelves.find(
+  //   (element) => element.shelfID == shelfID
+  // );
+  const { commitDate } = booksOnShelves.shelves.find(
+    (element) => element.shelfID == shelfID
+  );
+  return commitDate;
+  
+  // console.log(shelfData);
+}
+
 module.exports = {
   eleventyComputed: {
     shelfID: (data) => data.page.fileSlug,
     dateCreated: (data) => getShelfData(data.page.fileSlug),
+    commitDate: (data) => getCommitDate(data.page.fileSlug),
     // dateCreated: shelfData.dateCreated
     // title: (data) => md.render(data.title),
     // title: "{{ title | safe }}",

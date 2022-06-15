@@ -5,6 +5,7 @@ const csv = require("csv-parser");
 const slugify = require("slugify");
 const bookshelves = require("../../bookshelves.config");
 const { checkISBN, getAllData } = require("./_getData");
+const ccd = require('cached-commit-date');
 
 const processFoldersToShelves = (folderPaths) => {
     fs.writeFile(bookshelves.dataFile, "", "utf8", (err) => {
@@ -62,6 +63,8 @@ const processFoldersToShelves = (folderPaths) => {
             const fileContents = fs.readFileSync(filePath, "utf8");
             const { birthtime, mtime } = fs.statSync(filePath);
             const { name, ext } = path.parse(filePath);
+            const commitDate = ccd.commitDate(filePath);
+
             let fileData;
 
             const createShelf = (fileData, filePath, fileType) => {
@@ -81,10 +84,12 @@ const processFoldersToShelves = (folderPaths) => {
                     shelfDescription: description,
                     shelfItems,
                     categories: categories || [],
+                    tags: categories || [],
                     attribution: attribution,
                     conversionPath: conversionPath,
                     dateCreated: birthtime || "",
                     dateModified: mtime || "",
+                    commitDate,
                 };
                 allShelves.push(shelfData);
 

@@ -44,6 +44,10 @@ books:
   - ISBN: '9780316457163'
   - ISBN: '9781626720916'
   - ISBN: '9781481431217'
+  - ISBN: '9780618862443'
+    authors:
+      - Susan Marie Swanson (Author)
+      - Beth Krommes (Illustrator)
 
 ---
 

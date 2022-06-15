@@ -36,7 +36,7 @@ eleventyComputed:
 </article> 
 
 <div class="px-8 mt-12 md:px-16 lg:px-32">
-  <p class="prose prose-base">This shelf was updated on {{ page.inputPath | getGitCommitDateFromPath | readableDate }}.</p>
+  <p class="prose prose-base">This shelf was updated on {{ commitDate | dateString }}.</p>
   <p class="w-full prose prose-base"><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a> or <a href="/{{page.fileSlug}}.json">access the file as json</a>.
 </div>
 {% endblock %}

@@ -154,6 +154,7 @@ const buildContexts = (bookData, title, thisShelf) => {
             shelfDescription, // for future display options
             dateCreated,
             dateModified, // for flagging recently modified shelves
+            commitDate,
         } = { ...shelfInfo, ...shelfData.details };
 
         return {
@@ -165,6 +166,7 @@ const buildContexts = (bookData, title, thisShelf) => {
             shelfItems,
             dateCreated,
             dateModified,
+            commitDate,
         };
     };
 

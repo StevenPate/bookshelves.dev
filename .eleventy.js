@@ -5,6 +5,7 @@ const { book, shelf } = require("./src/js/_shortcodes");
 const { category } = require("./src/js/_filters")
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
+const dayjs = require('dayjs')
 const md = new markdownIt({
     html: true,
   });
@@ -23,9 +24,10 @@ module.exports = function (eleventyConfig) {
     // return collectionApi.getFilteredByGlob("./src/content/shelves/*.md")
     const allShelves = collectionApi.getFilteredByGlob("./src/content/shelves/*.md");
     const filteredShelves = allShelves.filter(item => item.data.visible == true)
-    return filteredShelves.sort(function(a, b) {
-      return b.date - a.date; // sort by date - ascending
-      // return b.modified - a.modified; // sort by date - descending;
+    return filteredShelves.sort((a, b) => {
+      if (a.data.commitDate > b.data.commitDate) return -1;
+      else if (a.data.commitDate < b.data.commitDate) return 1;
+      else return 0;
     })
   });
 
@@ -56,9 +58,16 @@ eleventyConfig.addCollection("nonKidsBooks", (collection) => {
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
+  eleventyConfig.addFilter('dateString', (dateObj) => {
+    return dayjs(dateObj).format("MMM D, YYYY");
+  });
   
   eleventyConfig.addFilter("markdown", (content) => {
     return md.render(content);
+  });
+
+  eleventyConfig.addFilter("limit", function (arr, limit) {
+    return arr.slice(0, limit);
   });
 
   // eleventyConfig.setQuietMode(true);

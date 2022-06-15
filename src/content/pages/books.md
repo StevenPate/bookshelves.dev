@@ -9,7 +9,8 @@ The books on this site are organized onto shelves, which is where they feel at h
 <section>
 <div div="p-0">
 {% for item in collections.shelves %}
-{% shelf item.data.page.fileSlug, "card", item.data.modified %}
+<!-- {{ item.data.title }} ({{ item.data.commitDate }})<br> -->
+{% shelf item.data.page.fileSlug, "card"%}
 {% endfor %}
 </div>
 </section>
