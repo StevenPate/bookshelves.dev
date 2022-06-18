@@ -1,4 +1,4 @@
 ---
 title: Contact
 ---
-Seriously, [contact me](steven@stevenpate.com).
+Seriously, [contact me](mailto:steven@stevenpate.com).
