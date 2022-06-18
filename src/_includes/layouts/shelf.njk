@@ -6,7 +6,7 @@ eleventyComputed:
 
 {% block content %}
 <article id="shelf">
-<section title="About the '{{ title }}' shelf" class="px-8 mb-32 md:px-16 lg:px-32">
+<section title="About the '{{ title }}' shelf" class="px-8 mb-32 md:px-16 lg:pl-32">
   <div class="grid justify-center grid-cols-1 prose prose-xl">
   <h1 class="mb-4">{{ title or metadata.title | safe }}</h1>
   {% if description %}<div class="mt-4 mb-4 text-2xl font-semibold text-slate-500">{{ description | markdown | safe }}</div>{% endif %}
@@ -20,7 +20,7 @@ eleventyComputed:
 {% if sortByDescription %}
 <section>
   {% shelf page.fileSlug, "full::description" %}
-  <div class="px-8 md:px-16 lg:px-32">
+  <div class="px-8 md:px-16 lg:pl-32">
   <h3 class="prose prose-xl">Other titles on this shelf:</h3>
   {% shelf page.fileSlug, "cover::no-description" %}
   </div>
@@ -35,7 +35,7 @@ eleventyComputed:
 </section>
 </article> 
 
-<div class="px-8 mt-12 md:px-16 lg:px-32">
+<div class="px-8 mt-12 md:px-16 lg:pl-32">
   <p class="prose prose-base">This shelf was updated on {{ commitDate | dateString }}.</p>
   <p class="w-full prose prose-base"><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a> or <a href="/{{page.fileSlug}}.json">access the file as json</a>.
 </div>

@@ -2,145 +2,68 @@
 title: Books I have finished in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
-- ISBN: '9780295745336'
-  description: 'Every geographically-unque region should be so lucky as to have someone
-    like Murray Morgan to capture it forever in prose. ***The Last Wilderness*** is
-    so evocative, hilarious, informative and I can''t imagine it ever losing its place
-    as the definitive introduction to the Olympic Peninsula. Researched with obvious
-    care and undoubtedly benifits from conversations with old sourdoughs and lifers
-    of all stripes from a place that he clearly loved. There are stories of the first
-    peoples here and some forays into the natural wonders of this jungle of giant
-    firs and cedars, glaciar-clad mountains towering straight up from the sea, and
-    rivers teeming with salmon, but this is first and foremost an acount of the loggers
-    and prospectos, the confidence men and utopian cultists, the wobblies and conservationists
-    and all the other colorful characters that have peopled this wildest corner of
-    the conttinental U.S. This is one of the books I''ve gotten at Port Book and News
-    in Port Angeles to help acquaint myself with the Olympic Peninsula and I read
-    through it a second time to whet my appetite for the place before moving here.  I
-    loved its first sentence so much, I suggested ot to Madison Books for [the "First
-    Lines that Last" feature in their newsletter](https://mailchi.mp/84198621b62e/madison-books-newsletter-119)
-    last year.
+  - ISBN: "9781594857348"
+  - ISBN: "9780295745336"
+    description: |
+     Every geographically-unque region should be so lucky as to have someone like Murray Morgan to capture it forever in prose. ***The Last Wilderness*** is so evocative, hilarious, informative and I can't imagine it ever losing its place as the definitive introduction to the Olympic Peninsula. Researched with obvious care and undoubtedly benifits from conversations with old sourdoughs and lifers of all stripes from a place that he clearly loved. There are stories of the first peoples here and some forays into the natural wonders of this jungle of giant firs and cedars, glaciar-clad mountains towering straight up from the sea, and rivers teeming with salmon, but this is first and foremost an acount of the loggers and prospectos, the confidence men and utopian cultists, the wobblies and conservationists and all the other colorful characters that have peopled this wildest corner of the conttinental U.S. 
+     
+     This is one of the books I've gotten at [Port Book and News](https://www.portbooknews.com/) in Port Angeles to help acquaint myself with the Olympic Peninsula and I read through it a second time to whet my appetite for the place before moving here.  I loved its first sentence so much, I suggested ot to Madison Books for [the "First Lines that Last" feature in their newsletter](https://mailchi.mp/84198621b62e/madison-books-newsletter-119) last year.
+    excerpts:
+      excerptType: firstLines
+      excerptLocation: "Page Number: 1"
+      excerpt: "'God made the universe,' the saying went, 'and when He finished He dumped everything left over onto the Olympic Peninsula.' Thus the pioneers explained the fist of land thrust north between Puget Sound and the Pacific Ocean, a wilderness area of six thousand square miles, as large as the state of Massachusetts, more rugged than the Rockies, its lowlands blanketed by a cool jungle of fir and pine and cedar, its peaks bearing hundreds of miles of living ice that gave rise to swift rivers alive with giant salmon; the first land in the Pacific Northwest to be reported by explorers, the last to be mapped—the last wilderness."
+  - ISBN: "9780374157357"
+    summary: "A provocative account of how we came to organize our societies provides hope for making them better."
+    description: |
+      Understanding that we have the power to make this world better is especially important during times when everything seems aligned to thwart us. Among the most profound obstacles to imagining a world without exploitation and oppression is the received wisdom telling us that it *has* to be this way. That it has *always*  been this way, or on a linear progression to being this way. In ***The Dawn of Everything***, archaeologist David Wengrow and the late anthropoligist David Graeber have given us a sprawling, challenging and inspiring corrective to some of the most entrenched furrows of that received wisdom. 
+      
+      One of their principal targets is the idea that the adoptioan of agriculture necessarily meant a wealth accumulation, inequality and technological acceleration. This account has been popular in some bestselling books of recent years (such as *Guns, Germs and Steel*, *Sapiens*, and *Against the Grain*) but ignores the growing body of evidence against it. 
+      
+      The idea that we have passed through a "progression" of development from hunter-gatherers to sedentary agriculturalists to urban city states to a globalized web of capitalist nation states is itself one of the enlightenment era just-so stories that don't stand up to scrutiny, at least according to Graeber and Wengrow's survey of recent research. People have lived in all sorts of ways, sometimes in very large numbers and in arrangements that lasted for hundreds or thousands of years. Things, it turns out, are far messier and perhaps more hopeful than we've been led to believe. Anyone who enjoyed ***Debt&#58; the first 5,000 Years*** or any of the much-beloved Graeber's work won't need any arm-twisting. This is provocative, captivating and mostly convincing extrapolation of one of Graeber's oft-quoted lines~&#58;~ "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently." 
+    details: true
+    publisher: Farrar, Straus and Giroux
+  - ISBN: "9780062954794"
+    description: |
+      You don’t see a lot of self help books on your average “Global Climate Change” reading list, unless you count those helping people attend to their energy use or consumer habits. This one is different. 
 
-    '
-  excerpts:
-    excerptType: firstLines
-    excerptLocation: 'Page Number: 1'
-    excerpt: "'God made the universe,' the saying went, 'and when He finished He dumped
-      everything left over onto the Olympic Peninsula.' Thus the pioneers explained
-      the fist of land thrust north between Puget Sound and the Pacific Ocean, a wilderness
-      area of six thousand square miles, as large as the state of Massachusetts, more
-      rugged than the Rockies, its lowlands blanketed by a cool jungle of fir and
-      pine and cedar, its peaks bearing hundreds of miles of living ice that gave
-      rise to swift rivers alive with giant salmon; the first land in the Pacific
-      Northwest to be reported by explorers, the last to be mapped—the last wilderness."
-- ISBN: '9780374157357'
-  summary: A provocative account of how we came to organize our societies provides
-    hope for making them better.
-  description: "Understanding that we have the power to make this world better is
-    especially important during times when everything seems aligned to thwart us.
-    Among the most profound obstacles to imagining a world without exploitation and
-    oppression is the received wisdom telling us that it *has* to be this way. That
-    it has *always*  been this way, or on a linear progression to being this way.
-    In ***The Dawn of Everything***, archaeologist David Wengrow and the late anthropoligist
-    David Graeber have given us a sprawling, challenging and inspiring corrective
-    to some of the most entrenched furrows of that received wisdom. \n\nOne of their
-    principal targets is the idea that the adoption of agriculture necessarily meant
-    a wealth accumulation, inequality and technological acceleration. This account
-    has been popular in some bestselling books of recent years (such as *Guns, Germs
-    and Steel*, *Sapiens*, and *Against the Grain*) but ignores the growing body of
-    evidence against it. \n\nThe idea that we have passed through a \"progression\"
-    of development from hunter-gatherers to sedentary agriculturalists to urban city
-    states to a globalized web of capitalist nation states is itself one of the enlightenment
-    era just-so stories that don't stand up to scrutiny, at least according to Graeber
-    and Wengrow's survey of recent research. People have lived in all sorts of ways,
-    sometimes in very large numbers and in arrangements that lasted for hundreds or
-    thousands of years. Things, it turns out, are far messier and perhaps more hopeful
-    than we've been led to believe. Anyone who enjoyed ***Debt&#58; the first 5,000
-    Years*** or any of the much-beloved Graeber's work won't need any arm-twisting.
-    This is provocative, captivating and mostly convincing extrapolation of one of
-    Graeber's oft-quoted lines~&#58;~ \"The ultimate, hidden truth of the world is
-    that it is something that we make, and could just as easily make differently.\"
-    \n"
-  details: true
-  publisher: Farrar, Straus and Giroux
-- ISBN: '9780062954794'
-  description: "You don’t see a lot of self help books on your average “Global Climate
-    Change” reading list, unless you count those helping people attend to their energy
-    use or consumer habits. This one is different. \n\nIn ***Zen and the Art of Saving
-    the Planet***, Nhat Hanh (or Thay, as he was known), patiently guides us to take
-    care of ourselves in order to foster our resiliance and streng for the work of
-    taking care of eachother and the world. When it sometimes feels like we face challenges
-    so overwhelming that there is nothing we can do to help, Thay offers wisdom to
-    put that in perspective. I will not soon forget his account of using meditation
-    to overcome despair when working to stop the war in his native Vietnam, another
-    overwhelming, life-threatening and seemingly intractable challenge. \n\nThere
-    is great teaching here on listening compassionately to others whom you may be
-    inclined to fear or hate. This book offered me new tools to keep my cool and seek
-    genuine dialog when talking to people I might see as complicit in the climate
-    crisis or whose reluctance to face it I may resent.\n\nThe idea that surviving
-    global climate change means first dealing with our own anxiety and despair seems
-    both obvious and under-appreciated. My intuition is this book will be most impactful
-    for those already predisposed to buddhist teachings, but Thay’s accounts of political
-    engagement and the interconnectedness of everything . The author of 75 books available
-    in English (his 1992 work *Peace Is Every Step* is particularly resonant to me),
-    Thay died just days before I am writing this. His legacy is enormous and this
-    book is one epic and generous gift before departing.\n"
-- ISBN: '9780811228787'
-  details: true
-- ISBN: '9781771644198'
-  publisher: Greystone Books
-  description: "How about a book that feels like sitting down with under a tree with
-    renowned envirobmentalist David Suzuki, as he gives a magesterial, stem-winding
-    biography of it. Yes, a biography of a tree. Or perhaps it's a botanograpy? Anyway,
-    I throoughly enjoyed a masterful teacher skilfully sliding from topic to topic
-    in a supernaturally informed lecture which somehow never feels exhaustive in the
-    manner of a textbook. \n\nI am, admittedly, very into trees. Anyone else here
-    will find startling facts, pleasing reveries and memorable anecdotes. Somehow
-    he covers the implications of the similarity of hemoglobin to chlorophyll, the
-    life of a galapogos tomato whose seeds can only germinate if they pass through
-    the digestive system of a tortoise, and many more tangents through lichens and
-    salmon, sunlight and spotted owls, but it is all, satisfyingly, in the service
-    of the story of a single tree from the instant the seed is released from a cone
-    until, hundreds of years later, it lives on as a nurse log on the forest floor,
-    fostering the life of a future generation.\n"
-- ISBN: '9780857861832'
-- ISBN: '9780374603946'
-  description: "If you would like to read something unlike anything you have ever
-    read, __Pure Color__ is an excellent choice. Your expectations are likely to be
-    confounded, even if they derive from Heti's earlier works, as this isn't the high-wire
-    act of self-scrutiny that made ***How Should a Person Be*** and ***Motherhood***
-    so celebrated. Whether you will like what you find is harder to say, but I certainly
-    did.\n\nFrom one of its brief chapters to the next, his book can feel like a modern-day
-    fable, like an autofictional foray into magical realism, or like a transparent
-    vehicle for smuggling philosophy and aesthetics into the Fiction section. Mostly,
-    though, it feels like having a conversation with someone you slowly realize is
-    an absolute kook. This is a good thing! It's the kooks who end up with all the
-    out-there ideas that start our movements, change our paradigms and shake up our
-    world views. And boy does the cosmology of protagonist Mira fit the bill. Mira
-    is on her way to being art critic who gets hung up on an unrequited love and waylaid
-    by the death of her father. Some of the book's dominant conceits, like that we
-    are living in the first draft of the world during the moments where God is on
-    the verge of ripping it up for the second, and that everyone is either a bird,
-    a fish or a bear (a sort of faux-naive myers-briggs diagnostic for a world  in
-    which the supreme being is a sort of critic) scaffold a unique conception of the
-    world which undergirds the story. The account of Mira's life often reads someone
-    channeling the cosmic assurance of a lost pre-socratic philosopher into a spiritual
-    text for children. \n\nHeti takes weird, simultaneous stabs at the ineffable and
-    mundane and again reaffirms herself as a writer unafraid to go into new places
-    that surprise me and make me think. I didn't know about this book until I heard
-    Heti talking about it on the [Between the Covers Podcast](https://tinhouse.com/podcasts/)
-    (which, if you don't know about it, is just something you're going to need to
-    really check out).\n"
-- ISBN: '9780143128045'
-  description: If you, like me, have only read Jaackson's works of horror and mystery,  ***Life
-    Among the Savages***, you are in for a treat. In this lightly fictionalized memoir
-    of six years of raising her family, Jackson uses her storycrafting craft to depict
-    the chaos of home life with droll self-deprecation and an outsider's eye on the
-    quirks of small town life in New England. Resolutely from the 1950s, this feels
-    utterly contemporary. Charming.
-- ISBN: '9780295988788'
+      In ***Zen and the Art of Saving the Planet***, Nhat Hanh (or Thay, as he was known), patiently guides us to take care of ourselves in order to foster our resiliance and streng for the work of taking care of eachother and the world. When it sometimes feels like we face challenges so overwhelming that there is nothing we can do to help, Thay offers wisdom to put that in perspective. I will not soon forget his account of using meditation to overcome despair when working to stop the war in his native Vietnam, another overwhelming, life-threatening and seemingly intractable challenge. 
+      
+      There is great teaching here on listening compassionately to others whom you may be inclined to fear or hate. This book offered me new tools to keep my cool and seek genuine dialog when talking to people I might see as complicit in the climate crisis or whose reluctance to face it I may resent.
+
+      The idea that surviving global climate change means first dealing with our own anxiety and despair seems both obvious and under-appreciated. My intuition is this book will be most impactful for those already predisposed to buddhist teachings, but Thay’s accounts of political engagement and the interconnectedness of everything . The author of 75 books available in English (his 1992 work *Peace Is Every Step* is particularly resonant to me), Thay died just days before I am writing this. His legacy is enormous and this book is one epic and generous gift before departing.
+  - ISBN: "9780811228787"
+    details: true
+  - ISBN: "9781771644198"
+    publisher: Greystone Books
+    description: | 
+      How about a book that feels like sitting down with under a tree with renowned envirobmentalist David Suzuki, as he gives a magesterial, stem-winding biography of it. Yes, a biography of a tree. Or perhaps it's a botanograpy? Anyway, I throoughly enjoyed a masterful teacher skilfully sliding from topic to topic in a supernaturally informed lecture which somehow never feels exhaustive in the manner of a textbook. 
+      
+      I am, admittedly, very into trees. Anyone else here will find startling facts, pleasing reveries and memorable anecdotes. Somehow he covers the implications of the similarity of hemoglobin to chlorophyll, the life of a galapogos tomato whose seeds can only germinate if they pass through the digestive system of a tortoise, and many more tangents through lichens and salmon, sunlight and spotted owls, but it is all, satisfyingly, in the service of the story of a single tree from the instant the seed is released from a cone until, hundreds of years later, it lives on as a nurse log on the forest floor, fostering the life of a future generation.
+  - ISBN: "9780857861832"
+  - ISBN: "9780374603946"
+    description: |
+      If you would like to read something unlike anything you have ever read, __Pure Color__ is an excellent choice. Your expectations are likely to be confounded, even if they derive from Heti's earlier works, as this isn't the high-wire act of self-scrutiny that made ***How Should a Person Be*** and ***Motherhood*** so celebrated. Whether you will like what you find is harder to say, but I certainly did.
+      
+      From one of its brief chapters to the next, his book can feel like a modern-day fable, like an autofictional foray into magical realism, or like a transparent vehicle for smuggling philosophy and aesthetics into the Fiction section. Mostly, though, it feels like having a conversation with someone you slowly realize is an absolute kook. This is a good thing! It's the kooks who end up with all the out-there ideas that start our movements, change our paradigms and shake up our world views. And boy does the cosmology of protagonist Mira fit the bill. Mira is on her way to being art critic who gets hung up on an unrequited love and waylaid by the death of her father. Some of the book's dominant conceits, like that we are living in the first draft of the world during the moments where God is on the verge of ripping it up for the second, and that everyone is either a bird, a fish or a bear (a sort of faux-naive myers-briggs diagnostic for a world  in which the supreme being is a sort of critic) scaffold a unique conception of the world which undergirds the story. The account of Mira's life often reads someone channeling the cosmic assurance of a lost pre-socratic philosopher into a spiritual text for children. 
+      
+      Heti takes weird, simultaneous stabs at the ineffable and mundane and again reaffirms herself as a writer unafraid to go into new places that surprise me and make me think. I didn't know about this book until I heard Heti talking about it on the [Between the Covers Podcast](https://tinhouse.com/podcasts/) (which, if you don't know about it, is just something you're going to need to really check out).
+  - ISBN: "9780143128045"
+    description: If you, like me, have only read Jaackson's works of horror and mystery,  ***Life Among the Savages***, you are in for a treat. In this lightly fictionalized memoir of six years of raising her family, Jackson uses her storycrafting craft to depict the chaos of home life with droll self-deprecation and an outsider's eye on the quirks of small town life in New England. Resolutely from the 1950s, this feels utterly contemporary. Charming. 
+  - ISBN: '9780295988788'
+    description : |
+      After I finished **The Last Wilderness**, I returned to Alan at [Port Book and News](https://www.portbooknews.com/), who had recommended it to me for learning about the Peninsula, and asked him what should be next for learning about the area around Port Angeles. Without even a second of hesitation he walked to the shelf, plucked off a copy of **Breaking Ground** and put it into in my hands. I am so glad he pointed me to this amazing account of a gripping local story that helped to reframe my perspective on this specific part of the world.
+
+      In 2003, routine work at the site of the largest construction projects in the state of Washington turned up the first archeological evidence of what eventually was discovered to be the largest pre-European contact village site ever excavated. Stopping work on an enormous project was controversial, but it was the story of how the memory of the site had been ignored and erased which was the most profound revelation. This story encapsulates so much about European settlers' attitudes towards native peoples' cultures, and the hurt this has caused for generations. There are hopeful notes about changing attitudes, and it is certainly noteworthy that the project with so much money and so many interested parties and agencies was indeed stopped.
+
+      This is a closely-reported story, and certainly feels definitive. Mapes clearly interviewed a lot of people and the eyewitness accounts yield interesting results, such as an incredibly thorough depiction of a burning ceremony (where a feast table, clothing and other objects were burned for the ancestors). I learned so much from this book.
+  - ISBN: '9781644450802'
+    description: |
+      Have you ever wondered what would happen if Haruki Murakami had tried to create his version of Faulkner's Yoknapatawpha County, but in remote Catalonia, with naive but poetic language and (perhaps ironically because we're talking about Catalonia) less surrealism and more folklore? And in under 200 pages?
+
+      ***When I Sing, Mountains Dance*** is a polyphonic novel whose specificity of place pervades it with extraordinary depth. That place is a small town in the Pyrenees, where the physical and spiritual relics of generational tragedy (civil war) litter the landscape, and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. The totality of the place seems to be telling this story. Entries in this collection of monologues are voiced by: clouds, ghosts, mushrooms, deer, witches, mountains, and homo sapiens. The kaleidoscope of perspectives is playful while also grounding the events to an almost elemental perspective. "Here," says a whole, peopled landscape,  "is life; it isn't always easy, but it is very much life." 
+
+      Irene Solà's 2019 novel was translated from the Catalan by Mara Faye Lethem and published by Graywolf Press this year. I ate up its 18 short chapters like so many exquisite little tapas. I don't mean that in an insulting way. Consuming tapas and short chapters of adventurous literary fiction are literally two of my favorite things. Plus this book also let me enjoy remembering the only time I have ever been in the remote Pyrenees, visiting a friend for a week a loooooong time ago. How we took a walk that ended in an improbable ruin perched in a place where nobody should be building anything, were overtaken in a microscopic town by a herd of demonstrative sheep, lost power in the middle of one freezing night in what was still mostly a barn, cobbled together dinners from the neglected pantry of poets and painters, and in general enjoyed feeling alive in majestically unpeopled spaces. That setting felt quiet while also crackling with a capability, if given full attention, of saying more than I was quite ready to understand. And it is surely my own memory playing tricks on me, but... this novel? It felt like that.
 
 ---
-Last year's reading slump has continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. I've finished a really big book (**_The Dawn of Everything_**) and am making progress on some other things. For now I'm limiting this list to books that I have both finished and which I would recommend.
 
-I am also doing a lot of reading of books designed for readers under three years of age. We'll put those on a different shelf.
+Last year's reading slump has continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. I've finished a really big book (***The Dawn of Everything***) and am making progress on some other things. For now I'm limiting this list to books that I have both finished and which I would recommend.
