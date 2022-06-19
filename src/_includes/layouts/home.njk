@@ -13,7 +13,9 @@
     {% include "partials/pageInfo.njk" %}
   </section>
   {% endif %} #}
-  <section id="pageContent" class="my-24">
-    {{ content | safe }}
-  </section>
+<section id="pageContent" class="my-24">
+<div class="max-w-5xl px-8 prose-xl md:px-16">
+{{ content | safe }}
+</div>
+</section>
 {% endblock %}

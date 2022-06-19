@@ -1,7 +1,7 @@
 {% extends 'layouts/base.njk' %}
 {% block content %}
-<div class="{{ sectionClass }} px-8 md:px-16 lg:pl-32">
-<h1 class="prose-lg text-neutral-600 text-[2.8rem] sm:text-5xl">{{ title or metadata.title }}</h1>
+<div class="max-w-5xl px-8 prose-xl md:px-16">
+<h1 class="prose-lg max-w-none text-neutral-600 text-[2.8rem] sm:text-5xl">{{ title or metadata.title }}</h1>
 {{ content | safe }}
 </div>
 {% endblock %}

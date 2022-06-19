@@ -1,17 +1,17 @@
-  <header class="flex justify-center w-full py-6 sm:justify-start sm:px-8 md:px-16 lg:pl-32">
+  <header class="flex justify-center w-full py-6 sm:justify-start sm:px-8 md:px-16">
     <nav class="flex flex-col items-center justify-center w-full mx-auto sm:m-0 sm:flex-row sm:justify-between">
     {# <nav class="flex flex-col mx-auto sm:m-0 sm:flex-row items-center justify-center sm:justify-between max-w-[65ch] w-full"> #}
-        <a href="{{ '/' | url }}" class="mb-8 sm:mb-0 sm:mr-5">
+        <a href="{{ '/' | url }}" class="mb-8 no-underline sm:mb-0 sm:mr-5 hover:underline hover:decoration-wavy">
           <div class="relative ">
             <div class="absolute z-0 w-full h-full duration-300 ease-in bg-blue-200 rounded-sm hover:scale-110 hover:top-0 top-2 left-4 mix-blend-multiply hover:left-0 hover:p-2 opacity-70"></div>
             <h1 class="z-10 max-w-5xl mb-0 text-3xl font-bold leading-none tracking-tighter font-Lora text-neutral-600">{{ site.title | safe }}</h1>
           </div>
         </a>
-        <ul class="flex flex-row text-lg sm:justify-end gap-x-3 sm:gap-x-5 gap-y-2 sm:mb-0 font-MerriweatherSans text-slate-600">
+        <ul class="flex flex-row text-lg list-none sm:justify-end gap-x-3 sm:gap-x-5 gap-y-2 sm:mb-0 font-MerriweatherSans text-slate-600">
         {%- for entry in collections.all | eleventyNavigation %}   
           {# <li class="relative nav-item{% if entry.url == page.url %} bg-blue-100 bg-opacity-70 group-hover:bg-opacity-0{% endif %}"> #}
           <li class="hover:bg-white hover:shadow-xl {% if entry.url == page.url %}border border-blue-200 bg-white{% endif %}"">
-            <a class="p-2" href="{{ entry.url | url }}">
+            <a class="pr-2 no-underline hover:underline" href="{{ entry.url | url }}">
               {{ entry.title }}
             </a>
           </li>          

@@ -21,8 +21,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
         categories,
         authors,
         description,
-        cover,
-        cachedCover,
+        // cover,
+        // cachedCover,
         coverUrl,
         cachedCoverUrl,
         publisher,
@@ -41,9 +41,9 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     let slug = title ? slugify(title, { lower: true, strict: true }) : "??? ";
     categories = formatArray(categories);
     authors = formatArray(authors);
-    if (cachedCoverUrl == null) {
-        cachedCoverUrl = cachedCover;
-    }
+    // if (cachedCoverUrl == null) {
+    //     cachedCoverUrl = cachedCover;
+    // }
 
     // console.log(id,details)
     //TODO: CLEAN THESE UP
@@ -75,13 +75,13 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     let contextsLayout =
         bookDisplayFormat == "full-details"
             ? `
-        <aside class="my-12 prose prose-base text-gray-500">
-            ${allContexts}
-        </aside>`
+<aside class="my-12 prose prose-base text-gray-500">
+    ${allContexts}
+</aside>`
             : `
-        <aside class="my-12 prose prose-base text-gray-500">
-            ${otherContexts}
-        </aside>`;
+<aside class="my-12 prose prose-base text-gray-500">
+    ${otherContexts}
+</aside>`;
 
     // let extraFieldsLayout =
     //   bookDisplayFormat == "full-details"
@@ -134,7 +134,7 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
         case "full-details":
             description = description ? md.render(description) : "";
             return `
-<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 lg:px-32 my-16 bg-gradient-to-b from-gray-100 via-gray-100 to-gray-300">
+<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 lg:pl-16 lg:pr-48 my-16 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300">
 <div id="${slug}-info" class="book-info max-w-[65ch] sm:w-2/3">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
@@ -161,7 +161,7 @@ ${linkText}
 <div data-aos="fade-up" id="${slug}" class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
 <div id="${slug}-description" class="relative book-description">
  <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
-  <a href="/${id}">${cachedCover}</a>
+  <a href="/${id}">${cachedCoverUrl}</a>
   <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
   <div id="${slug}-author" class="font-lg">by ${authors}</div>
  </div>
@@ -188,14 +188,15 @@ ${linkText}
 </div>
 </div>
 `;
-        case "card":
-            return `
+case "card":
+    return `
 
 <div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
 <div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverUrl}</div>
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
 <p class="text-gray-600">${authors}</p>
+${contextsLayout}
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
 ${linkText}
@@ -205,7 +206,21 @@ ${linkText}
 </div>
 
 
-    `;
+`;
+case "context-card":
+    return `
+
+<div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
+<div class="lg:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
+<div class="p-6 bg-gray-50 lg:w-2/3">
+<h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
+<p class="text-gray-600">${authors}</p>
+${contextsLayout}
+</div>
+</div>
+
+
+`;
         case "raw":
             return JSON.stringify(details);
         case "json":
@@ -215,7 +230,7 @@ ${linkText}
             "id": "${id}",
             "author": "${authors}",
             "link": "${site.url}/${id}/",
-            "image": "${cover}",
+            "image": "${coverUrl}",
             "date_finished": null,
             "notes": "TBD"`;
     }

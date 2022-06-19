@@ -3,12 +3,12 @@
 
 {% include "partials/head.njk" %}
 
-<body class="w-full mx-auto antialiased leading-tight text-gray-900 bg-gray-100 snap-x">
+<body class="w-full mx-auto antialiased leading-tight prose prose-xl bg-gray-50 max-w-none prose-slate snap-x">
 
 {% include "partials/header.njk" %}
 
 <main class="mt-12">
-  {% block content %}{% endblock %}
+{% block content %}{% endblock %}
 </main>
 
 {% include "partials/footer.njk" %}

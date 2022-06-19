@@ -20,6 +20,7 @@ _cache/
 
 # the usual junk
 .editorconfig
+.vscode/
 *.DS_Store
 
 # build artifacts
