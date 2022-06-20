@@ -1,21 +1,48 @@
 {% extends 'layouts/base.njk' %}
 {% block content %}
   {% if not noPageHeader %}
-  <section id="pageHeader" class="h-screen px-8 mb-4 prose prose-xl sm:px-16 ">
-    <div>
-      <h1>I want to talk to you about books.</h1>
-      <h2><a href="/about" class="text-3xl !font-bold">How about now? Is now good?→</a></h2>
-    </div>
-  </section>
+    <section id="pageHeader" class="h-screen px-8 mb-4 prose prose-xl sm:px-16 ">
+      <div>
+        <h1>I want to talk to you about books.</h1>
+        <h2>
+          <a href="/about" class="text-3xl !font-bold">How about now? Is now good?→</a>
+        </h2>
+      </div>
+    </section>
   {% endif %}
   {# {% if not noPageInfo %}
-  <section id="pageInfo" class="flex flex-row mb-12 border-t-2 md:flex-row-reverse">
-    {% include "partials/pageInfo.njk" %}
-  </section>
-  {% endif %} #}
-<section id="pageContent" class="my-24">
-<div class="max-w-5xl px-8 prose-xl md:px-16">
-{{ content | safe }}
-</div>
-</section>
-{% endblock %}
+      <section id="pageInfo" class="flex flex-row mb-12 border-t-2 md:flex-row-reverse">
+        {% include "partials/pageInfo.njk" %}
+      </section>
+      {% endif %} #}
+  <section id="pageContent" class="my-24">
+    <div class="max-w-5xl px-8 prose-xl md:px-16">
+      {{ content | safe }}
+          <h2>Recently:</h2>
+      <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
+        <div>
+          {% book '9781644450802', "context-card", "local" %}
+        <h3 class="p-6 mt-0">
+          <a href="/books" class="text-2xl !font-bold">More books→</a>
+        </h3>
+        </div>
+        <div>
+          <div class="m-2 bg-white rounded-lg shadow-xl lg:max-w-lg">
+
+          {% for item in collections.posts | reverse | limit(1) %}
+            <!-- <li><a href="{{item.url}}">{{item.data.title}}</a></li> -->
+            <div class="flex flex-row items-start py-6 space-x-8 sm:p-6 group">
+              <div class="prose prose-xl">
+                <a class="group-hover:decoration-wavy" href="{{ item.url }}">{{ item.data.title }}</a>
+                <div class="mb-1 text-lg">{{ item.data.subtitle }}</div>
+                <div class="text-sm text-gray-400">Updated on {{ item.inputPath | getGitCommitDateFromPath | readableDate }}</div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        <h3 class="p-6 mt-0">
+          <a href="/digital-garden" class="text-2xl !font-bold">More posts→</a>
+        </h3>
+        </div>
+      </section>
+    {% endblock %}

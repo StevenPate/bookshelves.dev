@@ -57,6 +57,8 @@ books:
 
       This is a closely-reported story, and certainly feels definitive. Mapes clearly interviewed a lot of people and the eyewitness accounts yield interesting results, such as an incredibly thorough depiction of a burning ceremony (where a feast table, clothing and other objects were burned for the ancestors). I learned so much from this book.
   - ISBN: '9781644450802'
+    summary:  |
+      A polyphonic novel with a joyful and fresh voice giving life to a deep specificity of its place: a small Pyrenees village where the physical and spiritual relics of generational tragedy (civil war) litter the landscape and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. 
     description: |
       Have you ever wondered what would happen if Haruki Murakami had tried to create his version of Faulkner's Yoknapatawpha County, but in remote Catalonia, with naive but poetic language and (perhaps ironically because we're talking about Catalonia) less surrealism and more folklore? And in under 200 pages?
 

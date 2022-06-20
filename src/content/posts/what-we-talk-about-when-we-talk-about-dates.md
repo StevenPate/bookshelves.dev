@@ -1,6 +1,6 @@
 ---
-title: How to provide date created and date modified
-subtitle: How should I handle dates on this site?
+title: What we talk about when we talk about dates
+subtitle: Dating things that you publish on the internet (including book reviews and capsules) is always important, but doing this effectively on this site is giving me some headaches.
 tags:
   - about
 dateCreated: 2022-06-06

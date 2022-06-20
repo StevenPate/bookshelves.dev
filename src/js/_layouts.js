@@ -20,6 +20,7 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
         subtitle,
         categories,
         authors,
+        summary,
         description,
         // cover,
         // cachedCover,
@@ -93,13 +94,13 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     //     : ''
 
     let detailsLayout =
-        bookDisplayFormat == "full-details"
+        ((bookDisplayFormat == "context-card") || (bookDisplayFormat == "full-details"))
             ? `
 
 
-<div class="prose prose-sm my-12" x-data="{ show: false }">
-<button class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" x-text="show ? 'Hide Details' : 'Show Details &gt;&gt;'" :class="{ 'bg-blue-200'}" @click="show = !show"></button>
-<div x-show="show" class="prose prose-sm py-6">
+<div class="prose prose-sm text-center " x-data="{ show: false }">
+<button class="text-gray-500 p-2 transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" x-text="show ? 'Hide Details' : 'Show Details &gt;&gt;'" :class="{ 'bg-blue-200'}" @click="show = !show"></button>
+<div x-show="show" class="prose prose-sm py-6 text-left">
 <div><strong>Publisher:</strong> ${publisher}</div>
 <div><strong>Categories:</strong> ${categories}</div>
 <div><strong>Pages:</strong> ${pageCount}</div>
@@ -145,7 +146,6 @@ by ${authors}
 </div>
 <div class="prose prose-xl">${description}</div>
 ${contextsLayout}
-${detailsLayout}
 </div>
 <div id="${slug}-image" class="book-cover w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
 <a href="/${id}">${cachedCoverUrl}</a>
@@ -154,6 +154,7 @@ ${detailsLayout}
 ${linkText}
 </button>
 </a>
+${detailsLayout}
 </div>
 </div>`;
         case "wrapped":
@@ -196,7 +197,6 @@ case "card":
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
 <p class="text-gray-600">${authors}</p>
-${contextsLayout}
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300 hover:bg-blue-200 hover:text-white hover:border-transparent">
 ${linkText}
@@ -210,13 +210,21 @@ ${linkText}
 case "context-card":
     return `
 
-<div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
-<div class="lg:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
-<div class="p-6 bg-gray-50 lg:w-2/3">
-<h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
-<p class="text-gray-600">${authors}</p>
-${contextsLayout}
-</div>
+<div class="m-2 bg-white rounded-lg shadow-xl lg:max-w-lg">
+    <div class="lg:flex">
+        <div class="lg:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
+        <div class="px-6 lg:p-6 bg-gray-50 lg:w-2/3">
+            <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
+            <p class="text-gray-600">${authors}</p>
+        </div>
+    </div>
+    <div class="px-6 pb-6">
+    <p class="text-gray-600 text-base">${summary} (<a href="${link}">Read More</a>)</p>
+    <aside class="my-12 prose prose-base text-gray-500">
+        ${allContexts}
+    </aside>
+        ${detailsLayout}
+    </div>
 </div>
 
 
@@ -242,11 +250,11 @@ function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat, lastModi
     switch (bookDisplayFormat) {
         case "card":
             return `
-<div class="my-6 py-6 sm:p-6 bg-white shadow-xl group flex flex-row space-x-8 items-start">
+<div class="my-6 py-6 px-2 sm:p-6 bg-white shadow-xl group flex flex-row space-x-8 items-start">
 <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
 <div class="prose prose-xl">
 <a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
-<div class="mt-3">${shelfDescription}</div>
+<div class="mb-1 text-lg">${shelfDescription}</div>
 <div class="text-sm text-gray-400">Updated on ${lastModified}</div>
 </div>
 
