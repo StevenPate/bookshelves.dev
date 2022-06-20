@@ -146,6 +146,7 @@ by ${authors}
 </div>
 <div class="prose prose-xl">${description}</div>
 ${contextsLayout}
+${detailsLayout}
 </div>
 <div id="${slug}-image" class="book-cover w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
 <a href="/${id}">${cachedCoverUrl}</a>
@@ -154,7 +155,6 @@ ${contextsLayout}
 ${linkText}
 </button>
 </a>
-${detailsLayout}
 </div>
 </div>`;
         case "wrapped":
