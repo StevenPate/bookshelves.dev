@@ -1,14 +1,12 @@
 ---
 title: What is this about, anyway?
-subtitle: Doing things with books on the web
+subtitle: Bookshelves.dev is a space for trying out new ideas for encountering books online.
 created: 2022-01-01
 tags: about this site
 eleventyNavigation:
   key: About
   order: 3
 ---
-
-Bookshelves.dev is my playground for trying out new ideas for encountering books online.
 
 In bookstores, I almost always encounter the books I didn't even know I wanted to read. But that almost never happens on bookstore *websites*. Why?
 
@@ -28,6 +26,6 @@ I want to explore how we might build a way of encountering books online that hon
 
 ### Some other things to note.
 - My name is [Steven](https://stevenpate.com/). Absolutely nobody asked me to do this.  But also: nobody who knows me will be surprised I'm trying ayway.
-- You can view the <a href="https://github.com/StevenPate/landforms/">source code for this project on github</a>. It has a long way to go! 
+- You can view the <a href="https://github.com/StevenPate/bookshelves.dev/">source code for this project on github</a>. It has a long way to go! 
 - <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Freepik - Flaticon</a>.
 - You are really nice for checking this page out. High five to you.

@@ -8,15 +8,18 @@ eleventyNavigation:
 A digital garden? Well, it's like a blog but I continue updating the pages and tending to them. Read more on the post on the topic, [About Digital Gardens](/digital-gardens/).
 <section>
 {% for item in collections.posts | reverse %}
-<!-- <li><a href="{{item.url}}">{{item.data.title}}</a></li> -->
-<div class="flex flex-row items-start py-6 space-x-8 sm:p-6 group">
+<div class="my-6 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl
+hover:-translate-y-1 hover:scale-[1.01]">
+<a class="no-underline group" href="{{ item.url }}">
+<div class="flex flex-row items-start p-6 space-x-8 ">
 <div class="prose prose-xl">
-<a class="group-hover:decoration-wavy" href="{{item.url}}">{{item.data.title}}</a>
-<div class="mb-1 text-lg">{{item.data.subtitle}}</div>
-<div class="text-sm text-gray-400">Updated on {{ item.inputPath | getGitCommitDateFromPath | readableDate }}</div>
-
+<div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">{{ item.data.title }}</div>
+<div class="mb-1 text-lg no-underline">{{ item.data.subtitle }}</div>
+<div class="text-sm text-gray-400 no-underline">Updated on
+{{ item.inputPath | getGitCommitDateFromPath | readableDate }}</div>
 </div>
 </div>
-
+</a>
+</div>
 {% endfor %}
 </section>

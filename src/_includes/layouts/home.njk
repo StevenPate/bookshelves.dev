@@ -11,14 +11,14 @@
     </section>
   {% endif %}
   {# {% if not noPageInfo %}
-      <section id="pageInfo" class="flex flex-row mb-12 border-t-2 md:flex-row-reverse">
-        {% include "partials/pageInfo.njk" %}
-      </section>
-      {% endif %} #}
+            <section id="pageInfo" class="flex flex-row mb-12 border-t-2 md:flex-row-reverse">
+              {% include "partials/pageInfo.njk" %}
+            </section>
+            {% endif %} #}
   <section id="pageContent" class="my-24">
     <div class="max-w-5xl px-8 prose-xl md:px-16">
       {{ content | safe }}
-          <h2>Recently:</h2>
+      <h2>Recently:</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-1">
         <div class="mb-12">
           {% book '9781644450802', "context-card", "local" %}
@@ -26,22 +26,64 @@
             <a href="/books" class="text-2xl !font-bold">More books→</a>
           </h3>
         </div>
-        <div  class="mb-12">
-          <div class="m-2 bg-white rounded-lg shadow-xl lg:max-w-lg">
-            {% for item in collections.posts | reverse | limit(1) %}
-            <!-- <li><a href="{{item.url}}">{{item.data.title}}</a></li> -->
-            <div class="flex flex-row items-start p-6 space-x-8 group">
-              <div class="prose prose-xl">
-                <a class="group-hover:decoration-wavy" href="{{ item.url }}">{{ item.data.title }}</a>
-                <div class="mb-1 text-lg">{{ item.data.subtitle }}</div>
-                <div class="text-sm text-gray-400">Updated on {{ item.inputPath | getGitCommitDateFromPath | readableDate }}</div>
-              </div>
+        <div class="mb-12">
+          {% for item in collections.posts | reverse | limit(1) %}
+            <div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg lg:max-w-lg hover:bg-white hover:shadow-2xl
+                hover:-translate-y-1 hover:scale-[1.01]">
+              <a class="no-underline group" href="{{ item.url }}">
+                <div class="flex flex-row items-start p-6 space-x-8 ">
+                  <div class="prose prose-xl">
+                    <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">{{ item.data.title }}</div>
+                    <div class="mb-1 text-lg no-underline">{{ item.data.subtitle }}</div>
+                    <div class="text-sm text-gray-400 no-underline">Updated on
+                    {{ item.inputPath | getGitCommitDateFromPath | readableDate }}</div>
+                  </div>
+                </div>
+              </a>
             </div>
-            {% endfor %}
-          </div>
+          {% endfor %}
           <h3 class="p-6 mt-0">
             <a href="/digital-garden" class="text-2xl !font-bold">More posts→</a>
           </h3>
         </div>
       </section>
+      <a href="/basb">
+        <div class="NoteCard__StyledNoteCard-bxz4qj-1 fgboXx">
+          <svg
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin meet"
+            viewBox="0 0 25 25"
+            width="24"
+            height="24">
+            <defs>
+              <style>
+                .evergreen__cls-1 {
+                  fill: var(--color-sea-blue)
+                }
+              </style>
+            </defs>
+            <path
+              class="evergreen__cls-1"
+              d="M12.76 15.45a.36.36 0 01-.52 0c-3.59-3.74-3.6-10.73 0-14.45a.36.36 0 01.52 0c3.59 3.72 3.6 10.71 0 14.45z"></path>
+            <path
+              class="evergreen__cls-1"
+              d="M12.25 18.61a11.21 11.21 0 00-10.12-8.13.26.26 0 00-.27.29 10.36 10.36 0 0010.61 8.91h.06a10.36 10.36 0
+                0010.61-8.91.26.26 0 00-.27-.29 11.21 11.21 0 00-10.12 8.13.26.26 0 01-.5 0z"></path>
+            <path
+              class="evergreen__cls-1"
+              d="M24.17 24.1a.33.33 0 00.32-.42 6.21 6.21 0 00-6-4.22 6.3 6.3 0 00-5.7 3.44.32.32 0 01-.58 0 6.3 6.3 0 00-5.7-3.44 6.21
+                6.21 0 00-6 4.22.33.33 0 00.32.42H12.5z"></path>
+            <path fill="none" d="M0 0h25v25H0z"></path>
+          </svg>
+          <div>
+            <h3>Building a Second Brain: The Illustrated Notes</h3>
+            <div class="NoteCard__MetadataContainer-bxz4qj-0 dMCulH">
+              <span>Note</span>
+              <svg width="6px" height="14px">
+                <circle r="3" cx="3" cy="3" fill="var(--color-gray-400)"></circle>
+              </svg>about 2 months ago</div>
+          </div>
+        </div>
+      </a>
     {% endblock %}

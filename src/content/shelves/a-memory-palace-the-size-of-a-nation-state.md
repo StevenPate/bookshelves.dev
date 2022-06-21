@@ -1,5 +1,5 @@
 ---
-title: A memory palace the size of a nation-state
+title: "Audiobooks for the trail: a memory palace the size of a nation-state"
 description: I hiked for 6 months straight and listened to a bunch of audiobooks. Here are the ones that stuck.
 books:
   - ISBN: "9780743203968"

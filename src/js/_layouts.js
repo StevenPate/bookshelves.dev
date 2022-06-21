@@ -2,100 +2,100 @@ const site = require("../_data/site.json");
 const slugify = require("slugify");
 const MarkdownIt = require("markdown-it");
 const md = new MarkdownIt({
-    html: true,
+  html: true,
 });
 const humanizeList = require("humanize-list");
-const dayjs = require('dayjs')
+const dayjs = require("dayjs");
 
 const formatArray = (arrayToFormat) => {
-    if (Array.isArray(arrayToFormat)) {
-        arrayToFormat = humanizeList(arrayToFormat);
-    }
-    return arrayToFormat;
+  if (Array.isArray(arrayToFormat)) {
+    arrayToFormat = humanizeList(arrayToFormat);
+  }
+  return arrayToFormat;
 };
 
 function layoutBook(id, bookDisplayFormat, details, contexts) {
-    let {
-        title,
-        subtitle,
-        categories,
-        authors,
-        summary,
-        description,
-        // cover,
-        // cachedCover,
-        coverUrl,
-        cachedCoverUrl,
-        publisher,
-        publishedDate,
-        pageCount,
-        link,
-        linkText,
-        excerpts, //need to format for extraFieldsLayout
-        howFound, //need to format for extraFieldsLayout
-        whereFound, //need to format for extraFieldsLayout
-        otherInfo, //need to format for extraFieldsLayout
-    } = details;
-    let allContexts = contexts ? contexts.verbose.all : `${id} has no contexts`;
-    let otherContexts =
-        contexts && contexts.verbose.other ? `${contexts.verbose.other}` : ``;
-    let slug = title ? slugify(title, { lower: true, strict: true }) : "??? ";
-    categories = formatArray(categories);
-    authors = formatArray(authors);
-    // if (cachedCoverUrl == null) {
-    //     cachedCoverUrl = cachedCover;
-    // }
+  let {
+    title,
+    subtitle,
+    categories,
+    authors,
+    summary,
+    description,
+    // cover,
+    // cachedCover,
+    coverUrl,
+    cachedCoverUrl,
+    publisher,
+    publishedDate,
+    pageCount,
+    link,
+    linkText,
+    excerpts, //need to format for extraFieldsLayout
+    howFound, //need to format for extraFieldsLayout
+    whereFound, //need to format for extraFieldsLayout
+    otherInfo, //need to format for extraFieldsLayout
+  } = details;
+  let allContexts = contexts ? contexts.verbose.all : `${id} has no contexts`;
+  let otherContexts =
+    contexts && contexts.verbose.other ? `${contexts.verbose.other}` : ``;
+  let slug = title ? slugify(title, { lower: true, strict: true }) : "??? ";
+  categories = formatArray(categories);
+  authors = formatArray(authors);
+  // if (cachedCoverUrl == null) {
+  //     cachedCoverUrl = cachedCover;
+  // }
 
-    // console.log(id,details)
-    //TODO: CLEAN THESE UP
-    // if (howFound) {
-    //   howFoundContent =  md.render(howFound)
-    //   howFoundDisplay = `
-    //   <div>
-    //     <h3>How did I find this?</h3>
-    //     ${howFoundContent}
-    //   </div>`
-    // };
-    // if (whereFound) {
-    //   whereFound =  md.render(whereFound)
-    //   whereFoundDisplay = `
-    //   <div>
-    //     <h3>How did I find this?</h3>
-    //     ${whereFound}
-    //   </div>`
-    // };
-    // if (otherInfo) {
-    //   otherInfo =  md.render(otherInfo)
-    //   otherInfoDisplay = `
-    //   <div>
-    //     <h3>Other Info</h3>
-    //     ${whereFound}
-    //   </div>`
-    // };
+  // console.log(id,details)
+  //TODO: CLEAN THESE UP
+  // if (howFound) {
+  //   howFoundContent =  md.render(howFound)
+  //   howFoundDisplay = `
+  //   <div>
+  //     <h3>How did I find this?</h3>
+  //     ${howFoundContent}
+  //   </div>`
+  // };
+  // if (whereFound) {
+  //   whereFound =  md.render(whereFound)
+  //   whereFoundDisplay = `
+  //   <div>
+  //     <h3>How did I find this?</h3>
+  //     ${whereFound}
+  //   </div>`
+  // };
+  // if (otherInfo) {
+  //   otherInfo =  md.render(otherInfo)
+  //   otherInfoDisplay = `
+  //   <div>
+  //     <h3>Other Info</h3>
+  //     ${whereFound}
+  //   </div>`
+  // };
 
-    let contextsLayout =
-        bookDisplayFormat == "full-details"
-            ? `
+  let contextsLayout =
+    bookDisplayFormat == "full-details"
+      ? `
 <aside class="my-12 prose prose-base text-gray-500">
     ${allContexts}
 </aside>`
-            : `
+      : `
 <aside class="my-12 prose prose-base text-gray-500">
     ${otherContexts}
 </aside>`;
 
-    // let extraFieldsLayout =
-    //   bookDisplayFormat == "full-details"
-    //     ? `<div class="prose prose-base my-12">
-    //     ${howFoundDisplay}
-    //     ${whereFoundDisplay}
-    //     ${otherInfoDisplay}
-    //     </div>`
-    //     : ''
+  // let extraFieldsLayout =
+  //   bookDisplayFormat == "full-details"
+  //     ? `<div class="prose prose-base my-12">
+  //     ${howFoundDisplay}
+  //     ${whereFoundDisplay}
+  //     ${otherInfoDisplay}
+  //     </div>`
+  //     : ''
 
-    let detailsLayout =
-        ((bookDisplayFormat == "context-card") || (bookDisplayFormat == "full-details"))
-            ? `
+  let detailsLayout =
+    bookDisplayFormat == "context-card" || bookDisplayFormat == "full-details"
+      ? `
 
 
 <div class="prose prose-sm text-center " x-data="{ show: false }">
@@ -108,33 +108,33 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
 <div><strong>ISBN:</strong> ${id}</div>
 </div>
 </div>`
-            : "";
+      : "";
 
-    let sub =
-        subtitle != null
-            ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
-            : "";
+  let sub =
+    subtitle != null
+      ? `<h3 id="${slug}-subtitle" class="mb-2 text-3xl font-bold text-gray-500 sm:text-3xl">${subtitle}</h3>`
+      : "";
 
-    let textLink = title;
-    if (/::/.test(bookDisplayFormat)) {
-        const displayHasText = bookDisplayFormat.split(new RegExp("[::]"));
-        bookDisplayFormat = displayHasText[0];
-        linkText = displayHasText[2];
-        if (bookDisplayFormat == "text") {
-            textLink = linkText;
-        }
+  let textLink = title;
+  if (/::/.test(bookDisplayFormat)) {
+    const displayHasText = bookDisplayFormat.split(new RegExp("[::]"));
+    bookDisplayFormat = displayHasText[0];
+    linkText = displayHasText[2];
+    if (bookDisplayFormat == "text") {
+      textLink = linkText;
     }
+  }
 
-    switch (bookDisplayFormat) {
-        case "text":
-        default:
-            return `<a href="${link}">${textLink}</a>`;
-        case "cover":
-            return `<div><a href="${link}">${cachedCoverUrl}</a></div>`;
-        case "full":
-        case "full-details":
-            description = description ? md.render(description) : "";
-            return `
+  switch (bookDisplayFormat) {
+    case "text":
+    default:
+      return `<a href="${link}">${textLink}</a>`;
+    case "cover":
+      return `<div><a href="${link}">${cachedCoverUrl}</a></div>`;
+    case "full":
+    case "full-details":
+      description = description ? md.render(description) : "";
+      return `
 <div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 lg:pl-16 lg:pr-48 my-16 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300">
 <div id="${slug}-info" class="book-info max-w-[65ch] sm:w-2/3">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
@@ -157,8 +157,8 @@ ${linkText}
 </a>
 </div>
 </div>`;
-        case "wrapped":
-            return `
+    case "wrapped":
+      return `
 <div data-aos="fade-up" id="${slug}" class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
 <div id="${slug}-description" class="relative book-description">
  <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
@@ -170,9 +170,9 @@ ${linkText}
 </div>
 </div>
 
-            `
-        case "small":
-            return `
+            `;
+    case "small":
+      return `
 <div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
 <div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCoverUrl}</a></div>
 <div id="${slug}-info" class="w-full sm:w-2/3 prose prose-lg py-6 pl-4 sm:py-auto">
@@ -181,16 +181,16 @@ ${linkText}
 </div>
 </div>
 `;
-        case "title":
-            return `
+    case "title":
+      return `
 <div id="${slug}" class="my-4">
 <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
 <div id="${slug}-author" class="font-lg">${authors}</div>
 </div>
 </div>
 `;
-case "card":
-    return `
+    case "card":
+      return `
 
 <div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
 <div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverUrl}</div>
@@ -207,13 +207,13 @@ ${linkText}
 
 
 `;
-case "context-card":
-    return `
+    case "context-card":
+      return `
 
-<div class="m-2 bg-white rounded-lg shadow-xl lg:max-w-lg">
-    <div class="lg:flex">
-        <div class="lg:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
-        <div class="px-6 lg:p-6 bg-gray-50 lg:w-2/3">
+<div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01]">
+    <div class="sm:flex">
+        <div class="sm:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
+        <div class="px-6 lg:p-6 bg-gray-50 sm:w-2/3">
             <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
             <p class="text-gray-600">${authors}</p>
         </div>
@@ -223,55 +223,66 @@ case "context-card":
     <aside class="my-12 prose prose-base text-gray-500">
         ${allContexts}
     </aside>
-        ${detailsLayout}
     </div>
 </div>
 
 
 `;
-        case "raw":
-            return JSON.stringify(details);
-        case "json":
-            // linkText = 'Buy Now on Bookshop.org';
-            let goodDesc = JSON.stringify(description);
-            return `"title": "${title}",
+    case "raw":
+      return JSON.stringify(details);
+    case "json":
+      // linkText = 'Buy Now on Bookshop.org';
+      let goodDesc = JSON.stringify(description);
+      return `"title": "${title}",
             "id": "${id}",
             "author": "${authors}",
             "link": "${site.url}/${id}/",
             "image": "${coverUrl}",
             "date_finished": null,
             "notes": "TBD"`;
-    }
+  }
 }
 
-function layoutShelf(shelfID, shelfBooks, shelfData, bookDisplayFormat, lastModifiedDate) {
-    const { shelfTitle, shelfDescription = "", dateModified, commitDate } = shelfData;
-    const lastModified = dayjs(commitDate).format("YYYY-MM-DD")
-    switch (bookDisplayFormat) {
-        case "card":
-            return `
-<div class="my-6 py-6 px-2 sm:p-6 bg-white shadow-xl group flex flex-row space-x-8 items-start">
-<img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
-<div class="prose prose-xl">
-<a class="group-hover:decoration-wavy" href="/${shelfID}">${shelfTitle}</a>
-<div class="mb-1 text-lg">${shelfDescription}</div>
-<div class="text-sm text-gray-400">Updated on ${lastModified}</div>
-</div>
-
+function layoutShelf(
+  shelfID,
+  shelfBooks,
+  shelfData,
+  bookDisplayFormat,
+  lastModifiedDate
+) {
+  const {
+    shelfTitle,
+    shelfDescription = "",
+    dateModified,
+    commitDate,
+  } = shelfData;
+  const lastModified = dayjs(commitDate).format("YYYY-MM-DD");
+  switch (bookDisplayFormat) {
+    case "card":
+      return `
+<div class="my-6 py-6 px-2 sm:p-6 group m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] cursor-pointer">
+    <a class="no-underline group flex flex-row space-x-8 items-start" href="{{ item.url }}">
+        <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
+        <div class="prose prose-xl">
+            <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">${shelfTitle}</div>
+            <div class="mb-1 text-lg no-underline"">${shelfDescription}</div>
+            <div class="text-sm text-gray-400 no-underline"">Updated on ${lastModified}</div>
+        </div>
+    </a>
 </div>`;
-        case "text":
-        default:
-            return shelfBooks.join("<br>");
-        case "cover":
-            let renderedCovers = '';
-            for (let book in shelfBooks) {
-                renderedCovers += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
-            }
-            return `
+    case "text":
+    default:
+      return shelfBooks.join("<br>");
+    case "cover":
+      let renderedCovers = "";
+      for (let book in shelfBooks) {
+        renderedCovers += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
+      }
+      return `
 <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
 ${renderedCovers}
 </div>`;
-    }
+  }
 }
 
 module.exports.layoutBook = layoutBook;

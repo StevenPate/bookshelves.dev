@@ -1,10 +1,11 @@
 ---
 title: Books
+subtitle: The books on this site are organized onto shelves.
 eleventyNavigation:
   key: Books
   order: 1
 ---
-The books on this site are organized onto shelves, which is where they feel at home and can bump up with their friends. Why do I do it this way, and not and endless feed of books or "lists"? Good question! My thoughts about this are in a post called [No Books But On Shelves](/no-books-but-on-shelves/).
+Shelves are where books feel at home and can bump up with their friends. To read more about this, please take a look at [No Books But On Shelves](/no-books-but-on-shelves/).
 
 <section>
 <div div="p-0">

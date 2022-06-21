@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'bkshlvs-blue': '#3182ce',
+      },
       fontFamily: {
         sans: [
           "Montserrat",

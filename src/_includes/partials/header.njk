@@ -7,7 +7,7 @@
             <h1 class="z-10 max-w-5xl mb-0 text-3xl font-bold leading-none tracking-tighter font-Lora text-neutral-600">{{ site.title | safe }}</h1>
           </div>
         </a>
-        <ul class="flex flex-row text-lg list-none sm:justify-end gap-x-3 sm:gap-x-5 gap-y-2 sm:mb-0 font-MerriweatherSans text-slate-600">
+        <ul class="flex flex-row pl-0 text-lg list-none sm:justify-end gap-x-3 sm:gap-x-5 gap-y-2 sm:mb-0 font-MerriweatherSans text-slate-600">
         {%- for entry in collections.all | eleventyNavigation %}   
           {# <li class="relative nav-item{% if entry.url == page.url %} bg-blue-100 bg-opacity-70 group-hover:bg-opacity-0{% endif %}"> #}
           <li class="hover:bg-white hover:shadow-xl {% if entry.url == page.url %}border border-blue-200 bg-white{% endif %}"">
