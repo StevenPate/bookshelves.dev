@@ -261,7 +261,7 @@ function layoutShelf(
     case "card":
       return `
 <div class="my-6 py-6 px-2 sm:p-6 group m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] cursor-pointer">
-    <a class="no-underline group flex flex-row space-x-8 items-start" href="{{ item.url }}">
+    <a class="no-underline group flex flex-row space-x-8 items-start" href="/${shelfID}">
         <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
         <div class="prose prose-xl">
             <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">${shelfTitle}</div>
