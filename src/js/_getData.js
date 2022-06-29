@@ -161,34 +161,35 @@ const getOpenLibrary = async (ISBN) => {
     }
 };
 
-const getBookshopOrg = async (ISBN) => {
-    try {
-        let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
+// const getBookshopOrg = async (ISBN) => {
+//     try {
+//         // let cover = `https://images-us.bookshop.org/ingram/${ISBN}.jpg?height=1000&`;
+//         let cover = `https://bookshelves.dev/images/web/RBN00mc_BU-300.webp`;
 
-        try {
-            // TODO do error handling and fallbacks
-            const response = await fetch(cover);
-            if (response.status == "404") {
+//         try {
+//             // TODO do error handling and fallbacks
+//             const response = await fetch(cover);
+//             if (response.status == "404") {
                 
-                cover = `404`;
-            }
-        } catch (err) {
-            console.log(`getBookshopOrg has a problem with ${ISBN} .`);
-            console.log(err);
-        }
+//                 cover = `404`;
+//             }
+//         } catch (err) {
+//             console.log(`getBookshopOrg has a problem with ${ISBN} .`);
+//             console.log(err);
+//         }
 
-        let cachedCover = await cacheImage(
-            // "https://placeimg.com/264/400/nature",
-            cover,
-            "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110 max-w-96 h-auto",
-            ISBN
-        );
-        return { cover, cachedCover };
-    } catch (error) {
-        console.error(`Couldn't find the ${ISBN} image on bookshop.org (404).`);
-        // console.error(error);
-    }
-};
+//         let cachedCover = await cacheImage(
+//             // "https://placeimg.com/264/400/nature",
+//             cover,
+//             "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110 max-w-96 h-auto",
+//             ISBN
+//         );
+//         return { cover, cachedCover };
+//     } catch (error) {
+//         console.error(`Couldn't find the ${ISBN} image on bookshop.org (404).`);
+//         // console.error(error);
+//     }
+// };
 
 const getAmazon = async (ISBN) => {
     let coverUrl;
@@ -302,10 +303,10 @@ const getAllData = async (books) => {
             .then((value) => (books[i].librofm = value)
             );
             books[i].image = books[i].librofm.image
-        } 
-        bookshopOrg = await getBookshopOrg(books[i].ISBN).then(
-            (value) => (books[i].bookshopOrg = value)
-        );
+        };
+        // bookshopOrg = await getBookshopOrg(books[i].ISBN).then(
+        //     (value) => (books[i].bookshopOrg = value)
+        // );
         coverImage = await getAmazon(books[i].ISBN).then(
             (value) => (books[i].image = value)
         );
@@ -322,6 +323,6 @@ module.exports.checkISBN = checkISBN;
 // module.exports.getIdentifiers = getIdentifiers;
 module.exports.getGoogle = getGoogle;
 module.exports.getOpenLibrary = getOpenLibrary;
-module.exports.getBookshopOrg = getBookshopOrg;
+// module.exports.getBookshopOrg = getBookshopOrg;
 module.exports.getLibro = getLibro;
 module.exports.getAllData = getAllData;

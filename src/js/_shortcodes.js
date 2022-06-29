@@ -59,6 +59,10 @@ shelf = async (
         bookLink
     ) => {
         let bookDisplayFormat = shelfDisplayFormat; // elaborate
+        switch (shelfDisplayFormat) {
+            case "carousel-cover":
+                bookDisplayFormat = "card";
+        };
 
         const getShelfBooks = shelfItems.map(async (shelfItem) => {
             // TODO: not if displayType is shelfCard
@@ -76,7 +80,7 @@ shelf = async (
             shelfID,
             await Promise.all(getShelfBooks),
             shelfData,
-            bookDisplayFormat,
+            shelfDisplayFormat,
             lastModifiedDate,
             bookLink
         );
@@ -97,11 +101,11 @@ shelf = async (
         shelfItems = shelfItemsParam;
     }
     return buildShelf(
-        shelfItems,
-        shelfData,
-        shelfID,
-        shelfDisplayFormat,
-        bookLink
+        shelfItems, // ISBNs on this shelf
+        shelfData, // other data from shelf entry
+        shelfID, // the shelfID passed to this shortcode
+        shelfDisplayFormat, // the format passed to this shortcode
+        bookLink // the bookLink passed to shortcode
     );
 };
 

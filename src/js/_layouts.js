@@ -22,8 +22,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     authors,
     summary,
     description,
-    // cover,
-    // cachedCover,
+    cover,
+    cachedCover,
     coverUrl,
     cachedCoverUrl,
     publisher,
@@ -77,11 +77,11 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     bookDisplayFormat == "full-details"
       ? `
 <aside class="my-12 prose prose-base text-gray-500">
-    ${allContexts}
+${allContexts}
 </aside>`
       : `
 <aside class="my-12 prose prose-base text-gray-500">
-    ${otherContexts}
+${otherContexts}
 </aside>`;
 
   // let extraFieldsLayout =
@@ -131,6 +131,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
       return `<a href="${link}">${textLink}</a>`;
     case "cover":
       return `<div><a href="${link}">${cachedCoverUrl}</a></div>`;
+    case "carousel-cover":
+      return `<div class="max-w-72 py-8"><a href="${link}">${cachedCoverUrl}</a></div>`;
     case "full":
     case "full-details":
       description = description ? md.render(description) : "";
@@ -159,15 +161,17 @@ ${linkText}
 </div>`;
     case "wrapped":
       return `
-<div data-aos="fade-up" id="${slug}" class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 bg-gradient-to-b bg-gr from-gray-100 via-gra-100 to-gray-300">
-<div id="${slug}-description" class="relative book-description">
- <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
-  <a href="/${id}">${cachedCoverUrl}</a>
-  <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
-  <div id="${slug}-author" class="font-lg">by ${authors}</div>
- </div>
- ${description}
-</div>
+<div data-aos="fade-up" id="${slug}" class="bg-gradient-to-b bg-gr from-gray-50 via-gra-100 to-gray-300 pl-20 pr-24">
+  <div class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 pr-12">
+    <div id="${slug}-description" class="relative book-description">
+      <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
+        <a href="/${id}">${cachedCoverUrl}</a>
+        <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
+        <div id="${slug}-author" class="font-lg">by ${authors}</div>
+      </div>
+      ${description}
+    </div>
+  </div>
 </div>
 
             `;
@@ -183,10 +187,9 @@ ${linkText}
 `;
     case "title":
       return `
-<div id="${slug}" class="my-4">
+<div id="${slug}" class="my-2">
 <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
 <div id="${slug}-author" class="font-lg">${authors}</div>
-</div>
 </div>
 `;
     case "card":
@@ -209,24 +212,21 @@ ${linkText}
 `;
     case "context-card":
       return `
-
-<div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01]">
-    <div class="sm:flex">
-        <div class="sm:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
-        <div class="px-6 lg:p-6 bg-gray-50 sm:w-2/3">
-            <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
-            <p class="text-gray-600">${authors}</p>
+        <div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01]">
+          <div class="sm:flex">
+            <div class="sm:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
+            <div class="px-6 lg:p-6 bg-gray-50 sm:w-2/3">
+              <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
+              <p class="text-gray-600">${authors}</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <p class="text-gray-600 text-base">${summary} (<a href="${link}">Read More</a>)</p>
+            <aside class="my-12 prose prose-base text-gray-500">
+            ${allContexts}
+            </aside>
+          </div>
         </div>
-    </div>
-    <div class="px-6 pb-6">
-    <p class="text-gray-600 text-base">${summary} (<a href="${link}">Read More</a>)</p>
-    <aside class="my-12 prose prose-base text-gray-500">
-        ${allContexts}
-    </aside>
-    </div>
-</div>
-
-
 `;
     case "raw":
       return JSON.stringify(details);
@@ -247,7 +247,7 @@ function layoutShelf(
   shelfID,
   shelfBooks,
   shelfData,
-  bookDisplayFormat,
+  shelfDisplayFormat,
   lastModifiedDate
 ) {
   const {
@@ -257,24 +257,24 @@ function layoutShelf(
     commitDate,
   } = shelfData;
   const lastModified = dayjs(commitDate).format("YYYY-MM-DD");
-  switch (bookDisplayFormat) {
+  let renderedCovers = "";
+  switch (shelfDisplayFormat) {
     case "card":
       return `
 <div class="my-6 py-6 px-2 sm:p-6 group m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] cursor-pointer">
-    <a class="no-underline group flex flex-row space-x-8 items-start" href="/${shelfID}">
-        <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
-        <div class="prose prose-xl">
-            <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">${shelfTitle}</div>
-            <div class="mb-1 text-lg no-underline"">${shelfDescription}</div>
-            <div class="text-sm text-gray-400 no-underline"">Updated on ${lastModified}</div>
-        </div>
-    </a>
+ <a class="no-underline group flex flex-row space-x-8 items-start" href="/${shelfID}">
+  <img src="/images/icons/book-shelf.png" alt="Line drawing of books on a shelf" class="h-12 my-0">
+  <div class="prose prose-xl">
+   <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">${shelfTitle}</div>
+   <div class="mb-1 text-lg no-underline"">${shelfDescription}</div>
+   <div class="text-sm text-gray-400 no-underline"">Updated on ${lastModified}</div>
+  </div>
+ </a>
 </div>`;
     case "text":
     default:
       return shelfBooks.join("<br>");
     case "cover":
-      let renderedCovers = "";
       for (let book in shelfBooks) {
         renderedCovers += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
       }
@@ -282,6 +282,20 @@ function layoutShelf(
 <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
 ${renderedCovers}
 </div>`;
+    case "carousel-cover":
+      bookDisplayFormat = "card";
+      for (let book in shelfBooks) {
+        renderedCovers += `
+<div class="carousel-item p-6">
+${shelfBooks[book]}
+</div>`;
+      }
+        return `
+<h3 class="prose prose-xl">${shelfTitle}</h3>
+<div class="carousel carousel-center rounded-box">
+${renderedCovers}
+</div>
+        `
   }
 }
 

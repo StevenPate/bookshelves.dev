@@ -7,7 +7,10 @@ const bookshelves = require("../../bookshelves.config");
 const { checkISBN, getAllData } = require("./_getData");
 const ccd = require('cached-commit-date');
 
+const { markdownFiles, masterShelf, jsonFiles, csvFiles } = bookshelves;
+
 const processFoldersToShelves = (folderPaths) => {
+    console.log(`/||||| Building ${bookshelves.dataFile} now...`)
     fs.writeFile(bookshelves.dataFile, "", "utf8", (err) => {
         if (err) {
             console.log(`Error writing empty ${bookshelves.dataFile}: ${err}`);
@@ -211,8 +214,6 @@ const bookshelvesToJSON = (itemsForJSON) => {
     });
 };
 
-console.log(`/||||| Building ${bookshelves.dataFile} now...`);
-const { markdownFiles, masterShelf, jsonFiles, csvFiles } = bookshelves;
 const booksOnShelves = processFoldersToShelves([
     ...masterShelf,
     ...markdownFiles,

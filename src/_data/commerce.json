@@ -11,6 +11,11 @@
       "pathLinkText": "Buy on Bookshop.org→"
     },
     {
+      "pathName": "pb",
+      "pathURL": "https://bookshop.org/a/566/[ISBN]/",
+      "pathLinkText": "Buy on Bookshop.org (Phinney Books)→"
+    },
+    {
       "pathName": "inventory",
       "pathURL": "/[ISBN]?purchase",
       "pathLinkText": "Buy our copy→"
