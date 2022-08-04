@@ -78,6 +78,17 @@ eleventyConfig.addCollection("nonKidsBooks", (collection) => {
 
   eleventyConfig.addPassthroughCopy("./src/images");
 
+  eleventyConfig.setServerOptions({
+
+    // Show local network IP addresses for device testing
+    showAllHosts: true,
+
+    // Show the server version number on the command line
+    showVersion: true,
+  });
+
+
+
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
     markdownTemplateEngine: "njk",

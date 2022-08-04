@@ -137,7 +137,7 @@ ${otherContexts}
     case "full-details":
       description = description ? md.render(description) : "";
       return `
-<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 lg:pl-16 lg:pr-48 my-16 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300">
+<div data-aos="fade-up" id="${slug}" class="book flex flex-col-reverse sm:flex-row gap-x-8 px-8 md:px-16 my-16 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300">
 <div id="${slug}-info" class="book-info max-w-[65ch] sm:w-2/3">
 <h2 id="${slug}-title" class="mb-2 text-5xl !mt-0 font-bold leading-tight book-title">
 ${title}
@@ -148,10 +148,10 @@ by ${authors}
 </div>
 <div class="prose prose-xl">${description}</div>
 ${contextsLayout}
-${detailsLayout}
 </div>
 <div id="${slug}-image" class="book-cover w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
 <a href="/${id}">${cachedCoverUrl}</a>
+${detailsLayout}
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300  hover:border-transparent transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl">
 ${linkText}
@@ -195,7 +195,7 @@ ${linkText}
     case "card":
       return `
 
-<div class="m-2 bg-white rounded-lg shadow-xl lg:flex lg:max-w-lg">
+<div class="m-2 bg-white rounded-lg shadow-xl lg:flex w-[66vw] lg:max-w-lg">
 <div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverUrl}</div>
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
@@ -272,8 +272,9 @@ function layoutShelf(
  </a>
 </div>`;
     case "text":
-    default:
       return shelfBooks.join("<br>");
+    default:
+      return shelfBooks.join("<!-- book on shelf -->");
     case "cover":
       for (let book in shelfBooks) {
         renderedCovers += `<div class="my-6 text-lg">${shelfBooks[book]}</div>`;
@@ -286,7 +287,7 @@ ${renderedCovers}
       bookDisplayFormat = "card";
       for (let book in shelfBooks) {
         renderedCovers += `
-<div class="carousel-item p-6">
+<div class="carousel-item">
 ${shelfBooks[book]}
 </div>`;
       }
