@@ -20,15 +20,17 @@ eleventyComputed:
 <div x-data="{ currentTab: 'full'}" class="">
 
 <div x-data="{ currentTab: 'full'}" class="">
-  <div class="flex flex-row px-8 mx-auto space-x-4 text-base md:px-16">
-  <div class="p-2 opacity-50">View this shelf as:</div>
+  <div class="flex flex-col px-8 mx-auto space-x-4 text-base sm:flex-row md:px-16">
+  <div class="p-2 mx-auto opacity-50 sm:mx-0">View this shelf as:</div>
   <button @click="currentTab = 'full'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 focus:bg-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200 opacity-100' : currentTab === 'full'}">Full Descriptions</button>
   <button @click="currentTab = 'titles'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200' : currentTab === 'titles'}">Titles</button>
   <button @click="currentTab = 'covers'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200' : currentTab === 'covers'}">Covers</button>
   <button @click="currentTab = 'carousel'" class="p-2 transition duration-300 ease-in-out delay-150 border border-blue-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 hover:scale-110" :class="{ 'bg-blue-200' : currentTab === 'carousel'}">Carousel</button>
   </div>
-  <div class="max-w-5xl p-2 border-2 border-gray-100 border-dotted">
-  <section x-show="currentTab === 'full'" class="px-8 mb-32 md:px-16">
+  <div class="">
+
+
+  <section x-show="currentTab === 'full'" class="mb-32">
 
 {% if sortByDescription %}
   {% shelf page.fileSlug, "full::description" %}
@@ -36,8 +38,13 @@ eleventyComputed:
   <h3 class="prose prose-xl">Other titles on this shelf:</h3>
   {% shelf page.fileSlug, "cover::no-description" %}
   </div>
-{% else %}\
+{% else %}
   {% shelf page.fileSlug, "full" %}
+
+
+
+
+
 {%endif%}
 
 
@@ -58,13 +65,18 @@ eleventyComputed:
 </div>
 
 
-
-
-
-
-
-
-
+{% set previousPost = collections.shelves | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.shelves | getNextCollectionItem(page) %}
+{% if nextPost %}
+<section id="pageContent" class="my-24">
+  <div class="max-w-5xl px-8 prose-xl md:px-16">
+    <h2>Next Shelf:</h2>
+    <div class="mb-12">
+      {% shelf nextPost.fileSlug, 'card' %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 
 
