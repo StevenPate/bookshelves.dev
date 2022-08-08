@@ -25,8 +25,8 @@ module.exports = function (eleventyConfig) {
     const allShelves = collectionApi.getFilteredByGlob("./src/content/shelves/*.md");
     const filteredShelves = allShelves.filter(item => item.data.visible == true)
     return filteredShelves.sort((a, b) => {
-      if (a.data.commitDate > b.data.commitDate) return -1;
-      else if (a.data.commitDate < b.data.commitDate) return 1;
+      if (a.dateCreated> b.dateCreatede) return -1;
+      else if (a.dateCreated < b.dateCreated) return 1;
       else return 0;
     })
   });
@@ -36,16 +36,32 @@ module.exports = function (eleventyConfig) {
 // Create collection from _data/customData.js
 
 eleventyConfig.addCollection("booksOnShelf", (collection) => {
-  const allItems = collection.getAll()[0].data.booksOnShelves.books;
-  return allItems
+  const allItems = collection.getAll()[0]
+  .data.booksOnShelves.books.sort((a, b) => {
+    if (a.dateCreated > b.dateCreated) return -1;
+    else if (a.dateCreated < b.dateCreated) return 1;
+    else return 0;
+  })
+  return allItems.filter(item => item.visible == true);
 });
 
+
 eleventyConfig.addCollection("kidsBooks", (collection) => {
-  return category("kids").with
+  const allItems = category("kids").with.sort((a, b) => {
+    if (a.dateCreated > b.dateCreated) return -1;
+    else if (a.dateCreated < b.dateCreated) return 1;
+    else return 0;
+  })
+  return allItems.filter(item => item.visible == true);
 });
 
 eleventyConfig.addCollection("nonKidsBooks", (collection) => {
-  return category("kids").without
+  const allItems = category("kids").without.sort((a, b) => {
+    if (a.dateCreated > b.dateCreated) return -1;
+    else if (a.dateCreated < b.dateCreated) return 1;
+    else return 0;
+  })
+  return allItems.filter(item => item.visible == true);
 });
 
   

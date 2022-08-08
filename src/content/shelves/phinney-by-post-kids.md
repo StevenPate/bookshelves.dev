@@ -86,4 +86,4 @@ books:
 
 ---
 
-Phinney by Post Kids is dope.
+Phinney by Post Kids is dope. It's exactly what you want in a bookstore subscription service: thoughfully curated books delivered like clockwork, with just enough of a note to remind me of the wonderful humans who authored a note and lovingly wrapped up something that my son is beyond excited to open. If they offered a weekly subscription (and I could afford it) I would not hesitate to subscribe.

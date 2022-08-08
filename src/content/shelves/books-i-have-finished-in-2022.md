@@ -2,6 +2,9 @@
 title: Books I have finished in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
+  - ISBN: "9780375760006"
+    summary: "Bulgaria, 1934. A young man is murdered by the local fascists. His brother, Khristo Stoianev, is recruited into the NKVD, the Soviet secret intelligence service, and sent to Spain to serve in its civil war..."
+    dateCreated: 2022-08-05T07:28:24.291Z
   - ISBN: "9781594857348"
   - ISBN: "9780295745336"
     description: |

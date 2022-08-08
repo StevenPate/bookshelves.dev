@@ -20,8 +20,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     subtitle,
     categories,
     authors,
-    summary,
     description,
+    summary = description, // we want to put something here if there is no summary
     cover,
     cachedCover,
     coverUrl,
@@ -187,7 +187,7 @@ ${linkText}
 `;
     case "title":
       return `
-<div id="${slug}" class="my-2">
+<div id="${slug}" class="my-4">
 <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
 <div id="${slug}-author" class="font-lg">${authors}</div>
 </div>
