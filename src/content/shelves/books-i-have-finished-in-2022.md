@@ -4,6 +4,8 @@ description: Here are the books which I have finished this year and would also r
 books:
   - ISBN: "9780375760006"
     summary: "Bulgaria, 1934. A young man is murdered by the local fascists. His brother, Khristo Stoianev, is recruited into the NKVD, the Soviet secret intelligence service, and sent to Spain to serve in its civil war..."
+    description: |
+     I don't often read spy thrillers, but every so often someone recommends a book to me and I wonder why that is. in ***Night Soldiers***, Furst creates an intoxicating atmosphere, deftly evoking the romance of pre-war Paris and the incomprehensible suffering of the Eastern front, portraying the high-stakes backdrop of war itself, charting the machinations at dark forces manipulating resistance battles for their own gain, and detailing the terrifying competence of spies practicing their craft. But with atmosphere so thick, sometimes things got a bit suffocating, and the pace was bogged down from time to time. The novel's strengths more than made up for those lapses. ***Night Soldiers*** uses the life of one Bulgarian boy recruited to the Soviet intelligence service to anchor the larger struggle of Nazi Germany and Soviet Russia for Europe from 1934–45. It must have taken an extraordinary amount of research to create so much convincing specificity while retaining the sweep of an epic narrative. This is a very top shelf spy novel.
     dateCreated: 2022-08-05T07:28:24.291Z
   - ISBN: "9781594857348"
   - ISBN: "9780295745336"
