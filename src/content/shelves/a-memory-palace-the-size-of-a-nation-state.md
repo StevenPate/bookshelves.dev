@@ -43,7 +43,7 @@ books:
     description: |
       Get ready to have all of your preconceived notions about fourteenth-century Norway totally upended. Wait a second... anyone with ideas about fourteenth-century Norway who *hasn't* read this must reside in the overlappy part of a venn diagram so small that the normal rules of book recommendations just won't work. These aren't quantum rules. Anyway this is a massive epic about early Christian Norway, and it's... epic.
       
-      But listen. Don't listen to the audiobook. Just don't. This was [Type II fun](https://www.rei.com/blog/climb/fun-scale), bordering on type III, for me. But by all means, read this epic tale from slept-on nobel laureate Undset. But I think you're going to enjoy turning pages for this kind of thing. So I've put the link to a paper copy of this one. (It doesn't help that this audiobook is only available via Audible, which I'm not interested in supporting.)
+      But listen. Don't listen to the audiobook. Just don't. This was [Type II fun](https://www.rei.com/blog/climb/fun-scale), bordering on type III, for me. By all means, read this epic tale from slept-on nobel laureate Undset. But I think you're going to enjoy turning pages for this kind of thing. So I've put the link to a paper copy of this one. (It doesn't help that this audiobook is only available via Audible, which I'm not interested in supporting.)
 
       I *will* say that the day I knew I was going to finish this book was a great feeling of triumph that totally compensated for arriving at one of my least favorite trail towns of the whole thing (sorry, Belden, CA). 
   - ISBN: "9781439195468"
