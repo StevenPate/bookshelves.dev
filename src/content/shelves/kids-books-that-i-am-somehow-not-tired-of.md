@@ -5,6 +5,9 @@ categories:
   - kids
 sortByDescription: true
 books:
+  - ISBN: '9781626720916'
+  - ISBN: '9780823444960'
+  - ISBN: '9780763679156'
   - ISBN: '9781452150130'
     description: \"The cat walked through the world, with its whiskers, ears and paws...\" On my short-list for favorite reads of all time, ***They All Saw A Cat*** is a brilliantly imagined and illustrated exploration of how a cat appears to all the other animals it encounters. To the dog, the cat is s slinky whisp with an enormous bell on its collar. How does it look to a fox, or a snake or a bat? Wenzel shows us not only the interaction of these creatures but introduces young readers to the profound impact of perspective.  Using animal characters to foster imagination and curiosity is standard practice in children's books, but this one justifiably snagged a Caldecott Medal for pulling it off so well.
     tags:
@@ -42,12 +45,12 @@ books:
   - ISBN: '9780670012954'
   - ISBN: '9781536210637'
   - ISBN: '9780316457163'
-  - ISBN: '9781626720916'
   - ISBN: '9781481431217'
   - ISBN: '9780618862443'
     authors:
       - Susan Marie Swanson (Author)
       - Beth Krommes (Illustrator)
+  - ISBN: '9780399167898'
 
 ---
 

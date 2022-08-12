@@ -21,7 +21,9 @@
       <h2>Recently:</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-1">
         <div class="mb-12">
-          {% book '9781644450802', "context-card", "local" %}
+          {% for item in collections.booksOnShelf | limit(1) %}
+          {% book item.ISBN, "context-card", "local" %}
+          {% endfor %}
           <h3 class="p-6 mt-0">
             <a href="/books" class="text-2xl !font-bold">More books→</a>
           </h3>

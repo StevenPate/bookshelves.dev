@@ -1,0 +1,19 @@
+{% extends 'layouts/base.njk' %}
+{% block content %}
+<div class="max-w-5xl px-8 prose-xl md:px-16">
+<h1 class="prose-lg max-w-none text-neutral-600 text-[2.8rem] sm:text-5xl">{{ title or metadata.title }}</h1>
+
+  <h2 class="mt-12 mb-24 text-3xl text-gray-400">{{ subtitle }}</h2>
+  
+
+{{ content | safe }}
+
+
+<div class="mt-24">
+  <p class="prose prose-base">This page was updated on {{ page.inputPath | getGitCommitDateFromPath | readableDate }}.</p>
+  <p class="w-full prose prose-base"><a href="{{ site.github }}/blame/main/{{ page.inputPath }}">See the history of updates to this page</a>.</p>
+</div>
+
+
+</div>
+{% endblock %}

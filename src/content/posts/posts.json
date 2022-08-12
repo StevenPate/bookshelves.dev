@@ -1,7 +1,6 @@
 {
   "tags": ["posts"],
   "permalink": "/{{ page.fileSlug }}/",
-  "layout": "layouts/page.njk",
-  "sectionClass": "",
-  "date": "Last Modified"
+  "layout": "layouts/post.njk",
+  "sectionClass": ""
 }

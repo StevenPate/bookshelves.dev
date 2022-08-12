@@ -53,10 +53,12 @@ books:
 ```
 Not only did I add my own description, I also added the ISBN for an audiobook and set told it to use the audiobook link for this title (which defaults to [libro.fm](https://libro.fm)). 
 
-Now, a book can be on multiple shelves. You can see below the book description on the page which is generated for every book placed on a shelf. {% book "9780857861832", "text::Here is an example", "local" %}. I have big plans for this way of linking among books and shelves.
+I think this is a cool and flexible way to create a collection of books and personalized any or all aspects as desired. The system gets more interesting as one imagines a large number of shelves, potentially chosen and annotated by multiple people. 
+
+That is because a book can appear on more than one shelf, and seeing at a glance what other shelves it on is potentially a neat way to find other books that might be of interest. You can see how I'm currently implementing that below the book description on the page which is generated for every book placed on a shelf. {% book "9780857861832", "text::Here is an example", "local" %}. I have big plans for this way of linking among books and shelves.
 
 My idea here is to have <mark class="bg-amber-100">the starting point for a flexible, organized system of books to be a human-readable text file.</mark>. Why? Because in a sense, this doesn't ever need to be backed up or exported. It *is* the collection. Everything else can be built *from* it. By importing it into any CMS, sure. Or just by running bookshelves.dev and building everything, using interchangeable technologies that make sense for specific contexts, at any date in the future.
 
-So by creating a shelf with ISBNs, I generate a collection of books that can showcase different curation contexts which can contain different links (to worldcat, or open library, or bookshop.org, other conversion paths, etc.) or be updated globally if desired. This also produces a data file representing all shelves, which can be shared in a (still-evolving) format (check out the working version: [library.json](/library.json)).
+By creating a shelf with ISBNs, I generate a collection of books that can showcase different curation contexts which can contain different links (to worldcat, or open library, or bookshop.org, other conversion paths, etc.) or be updated globally if desired. This also produces a data file representing all shelves, which can be shared in a (still-evolving) format (check out the working version: [library.json](/library.json)).
 
 There's a lot more to explain about how the shelves can work, and why I built it this way. Another place where I'll talk about this is on the [Building sites with javascript](/building-sites-with-javascript) page. 
