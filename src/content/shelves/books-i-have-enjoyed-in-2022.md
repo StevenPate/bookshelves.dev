@@ -1,5 +1,5 @@
 ---
-title: Books I have finished in 2022
+title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
   - ISBN: "9780375760006"
@@ -75,3 +75,4 @@ books:
 ---
 
 Last year's reading slump has continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. I've finished a really big book (***The Dawn of Everything***) and am making progress on some other things. For now I'm limiting this list to books that I have both finished and which I would recommend.
+
