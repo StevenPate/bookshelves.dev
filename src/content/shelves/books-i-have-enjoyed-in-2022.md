@@ -2,12 +2,30 @@
 title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
+  - ISBN: "9780870711589"
+    title: "A Tidal Oddyssey"
+  - ISBN: "9780802140111"
+    title: "Second Nature: A Gardener's Education"
+    description: Before he became the tribune of a renewed psychedelic era, before he promulgated a perspective on the food system we live in that changed everything, Michael Pollan brought his cerebral and affably discursive style to bear on the subject of gardening. As I try to go from a novice gardener to the caretaking of a small plot of land, I enjoyed this account of his own journey. Pollan's writing is lucid and his thoughts informed by wide reading and reflection on the subject. It was his recounting of a battle with a woodchuck, read as an excerpt on a podcast, that led me to pick this up. I'm glad I did.
+    dateCreated: 2022-09-01
+  - ISBN: "9780593083369"
+    title: "Orwell's Roses: A Memoir"
   - ISBN: "9780375760006"
     summary: "Bulgaria, 1934. A young man is murdered by the local fascists. His brother, Khristo Stoianev, is recruited into the NKVD, the Soviet secret intelligence service, and sent to Spain to serve in its civil war..."
     description: |
      I don't often read spy thrillers, but every so often someone recommends a book to me and I wonder why that is. in ***Night Soldiers***, Furst creates an intoxicating atmosphere, deftly evoking the romance of pre-war Paris and the incomprehensible suffering of the Eastern front, portraying the high-stakes backdrop of war itself, charting the machinations at dark forces manipulating resistance battles for their own gain, and detailing the terrifying competence of spies practicing their craft. But with atmosphere so thick, sometimes things got a bit suffocating, and the pace was bogged down from time to time. The novel's strengths more than made up for those lapses. ***Night Soldiers*** uses the life of one Bulgarian boy recruited to the Soviet intelligence service to anchor the larger struggle of Nazi Germany and Soviet Russia for Europe from 1934–45. It must have taken an extraordinary amount of research to create so much convincing specificity while retaining the sweep of an epic narrative. This is a very top shelf spy novel.
     dateCreated: 2022-08-05T07:28:24.291Z
   - ISBN: "9781594857348"
+  - ISBN: '9781644450802'
+    summary:  |
+      A polyphonic novel with a joyful and fresh voice giving life to a deep specificity of its place: a small Pyrenees village where the physical and spiritual relics of generational tragedy (civil war) litter the landscape and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. 
+    description: |
+      Have you ever wondered what would happen if Haruki Murakami had tried to create his version of Faulkner's Yoknapatawpha County, but in remote Catalonia, with naive but poetic language and (perhaps ironically because we're talking about Catalonia) less surrealism and more folklore? And in under 200 pages?
+
+      ***When I Sing, Mountains Dance*** is a polyphonic novel whose specificity of place pervades it with extraordinary depth. That place is a small town in the Pyrenees, where the physical and spiritual relics of generational tragedy (civil war) litter the landscape, and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. The totality of the place seems to be telling this story. Entries in this collection of monologues are voiced by: clouds, ghosts, mushrooms, deer, witches, mountains, and homo sapiens. The kaleidoscope of perspectives is playful while also grounding the events to an almost elemental perspective. "Here," says a whole, peopled landscape,  "is life; it isn't always easy, but it is very much life." 
+
+      Irene Solà's 2019 novel was translated from the Catalan by Mara Faye Lethem and published by Graywolf Press this year. I ate up its 18 short chapters like so many exquisite little tapas. I don't mean that in an insulting way. Consuming tapas and short chapters of adventurous literary fiction are literally two of my favorite things. Plus this book also let me enjoy remembering the only time I have ever been in the remote Pyrenees, visiting a friend for a week a loooooong time ago. How we took a walk that ended in an improbable ruin perched in a place where nobody should be building anything, were overtaken in a microscopic town by a herd of demonstrative sheep, lost power in the middle of one freezing night in what was still mostly a barn, cobbled together dinners from the neglected pantry of poets and painters, and in general enjoyed feeling alive in majestically unpeopled spaces. That setting felt quiet while also crackling with a capability, if given full attention, of saying more than I was quite ready to understand. And it is surely my own memory playing tricks on me, but... this novel? It felt like that.
+    publisher: Graywolf Press
   - ISBN: "9780295745336"
     description: |
      Every geographically-unque region should be so lucky as to have someone like Murray Morgan to capture it forever in prose. ***The Last Wilderness*** is so evocative, hilarious, informative and I can't imagine it ever losing its place as the definitive introduction to the Olympic Peninsula. Researched with obvious care and undoubtedly benifits from conversations with old sourdoughs and lifers of all stripes from a place that he clearly loved. There are stories of the first peoples here and some forays into the natural wonders of this jungle of giant firs and cedars, glaciar-clad mountains towering straight up from the sea, and rivers teeming with salmon, but this is first and foremost an acount of the loggers and prospectos, the confidence men and utopian cultists, the wobblies and conservationists and all the other colorful characters that have peopled this wildest corner of the conttinental U.S. 
@@ -27,6 +45,8 @@ books:
       The idea that we have passed through a "progression" of development from hunter-gatherers to sedentary agriculturalists to urban city states to a globalized web of capitalist nation states is itself one of the enlightenment era just-so stories that don't stand up to scrutiny, at least according to Graeber and Wengrow's survey of recent research. People have lived in all sorts of ways, sometimes in very large numbers and in arrangements that lasted for hundreds or thousands of years. Things, it turns out, are far messier and perhaps more hopeful than we've been led to believe. Anyone who enjoyed ***Debt&#58; the first 5,000 Years*** or any of the much-beloved Graeber's work won't need any arm-twisting. This is provocative, captivating and mostly convincing extrapolation of one of Graeber's oft-quoted lines~&#58;~ "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently." 
     details: true
     publisher: Farrar, Straus and Giroux
+  - ISBN: "9780811228787"
+    details: true
   - ISBN: "9780062954794"
     description: |
       You don’t see a lot of self help books on your average “Global Climate Change” reading list, unless you count those helping people attend to their energy use or consumer habits. This one is different. 
@@ -36,8 +56,6 @@ books:
       There is great teaching here on listening compassionately to others whom you may be inclined to fear or hate. This book offered me new tools to keep my cool and seek genuine dialog when talking to people I might see as complicit in the climate crisis or whose reluctance to face it I may resent.
 
       The idea that surviving global climate change means first dealing with our own anxiety and despair seems both obvious and under-appreciated. My intuition is this book will be most impactful for those already predisposed to buddhist teachings, but Thay’s accounts of political engagement and the interconnectedness of everything . The author of 75 books available in English (his 1992 work *Peace Is Every Step* is particularly resonant to me), Thay died just days before I am writing this. His legacy is enormous and this book is one epic and generous gift before departing.
-  - ISBN: "9780811228787"
-    details: true
   - ISBN: "9781771644198"
     publisher: Greystone Books
     description: | 
@@ -61,16 +79,6 @@ books:
       In 2003, routine work at the site of the largest construction projects in the state of Washington turned up the first archeological evidence of what eventually was discovered to be the largest pre-European contact village site ever excavated. Stopping work on an enormous project was controversial, but it was the story of how the memory of the site had been ignored and erased which was the most profound revelation. This story encapsulates so much about European settlers' attitudes towards native peoples' cultures, and the hurt this has caused for generations. There are hopeful notes about changing attitudes, and it is certainly noteworthy that the project with so much money and so many interested parties and agencies was indeed stopped.
 
       This is a closely-reported story, and certainly feels definitive. Mapes clearly interviewed a lot of people and the eyewitness accounts yield interesting results, such as an incredibly thorough depiction of a burning ceremony (where a feast table, clothing and other objects were burned for the ancestors). I learned so much from this book.
-  - ISBN: '9781644450802'
-    summary:  |
-      A polyphonic novel with a joyful and fresh voice giving life to a deep specificity of its place: a small Pyrenees village where the physical and spiritual relics of generational tragedy (civil war) litter the landscape and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. 
-    description: |
-      Have you ever wondered what would happen if Haruki Murakami had tried to create his version of Faulkner's Yoknapatawpha County, but in remote Catalonia, with naive but poetic language and (perhaps ironically because we're talking about Catalonia) less surrealism and more folklore? And in under 200 pages?
-
-      ***When I Sing, Mountains Dance*** is a polyphonic novel whose specificity of place pervades it with extraordinary depth. That place is a small town in the Pyrenees, where the physical and spiritual relics of generational tragedy (civil war) litter the landscape, and a particular family is scratching out a life as natural catastrophe and personal trauma sometimes overtake things. The totality of the place seems to be telling this story. Entries in this collection of monologues are voiced by: clouds, ghosts, mushrooms, deer, witches, mountains, and homo sapiens. The kaleidoscope of perspectives is playful while also grounding the events to an almost elemental perspective. "Here," says a whole, peopled landscape,  "is life; it isn't always easy, but it is very much life." 
-
-      Irene Solà's 2019 novel was translated from the Catalan by Mara Faye Lethem and published by Graywolf Press this year. I ate up its 18 short chapters like so many exquisite little tapas. I don't mean that in an insulting way. Consuming tapas and short chapters of adventurous literary fiction are literally two of my favorite things. Plus this book also let me enjoy remembering the only time I have ever been in the remote Pyrenees, visiting a friend for a week a loooooong time ago. How we took a walk that ended in an improbable ruin perched in a place where nobody should be building anything, were overtaken in a microscopic town by a herd of demonstrative sheep, lost power in the middle of one freezing night in what was still mostly a barn, cobbled together dinners from the neglected pantry of poets and painters, and in general enjoyed feeling alive in majestically unpeopled spaces. That setting felt quiet while also crackling with a capability, if given full attention, of saying more than I was quite ready to understand. And it is surely my own memory playing tricks on me, but... this novel? It felt like that.
-    publisher: Graywolf Press
 
 ---
 

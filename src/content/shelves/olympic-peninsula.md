@@ -37,7 +37,6 @@ books:
         (Publisher's Description)
   - ISBN: "9780295748610"
   - ISBN: "9780295988788"
-attribution: Steven
 ---
 1,400 square miles of rugged mountains. The richest old growth forest preserve anywhere. Glaciers. (Still). (Barely). The cleanest air and the quietest places in the country. A human presence at for at least 13,000 years. Home of complex cultures. Site of the most inspiring example of ecological restoration you may ever find. 
 

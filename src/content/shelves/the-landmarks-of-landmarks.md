@@ -14,7 +14,7 @@ books:
     description: |
       "My eyes were in my feet." --Nan Shepherd
 
-      The beautiful, patient specifiity of Nan Shepherd's revered meditation on years of wandering the austere Cairngorm mountains in Scotland, works on you like a spell. Its unforgettable prose worn over like the stones of a weatherbean plateau sat in a drawer, *The Living Mountain* sat unpublished in a drawer for 40 yearsand then spent 40 more accumulating a reknown as a classic of nature writing. As Robert Macfarlane says in his introduction to this edition: "Most works of mountain literature are written by men, and most of them focus on the goal of the summit. Nan Shepherd's aimless, sensual exploration of the Cairngorms is bracingly different."
+      The beautiful, patient specifiity of Nan Shepherd's meditation on years of wandering the austere Cairngorm mountains in Scotland works on you like a spell, its prose worn over like the stones of a weatherbean plateau sat. *The Living Mountain* sat unpublished in a drawer for 40 years and then spent 40 more building its reputation as a classic of nature writing. As Robert Macfarlane says in his introduction to this edition: "Most works of mountain literature are written by men, and most of them focus on the goal of the summit. Nan Shepherd's aimless, sensual exploration of the Cairngorms is bracingly different."
   - ISBN: "9781883011246"
     title: "Nature Writings"
     description: |
