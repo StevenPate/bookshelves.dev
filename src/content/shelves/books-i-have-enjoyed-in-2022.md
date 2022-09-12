@@ -4,6 +4,13 @@ description: Here are the books which I have finished this year and would also r
 books:
   - ISBN: "9780870711589"
     title: "A Tidal Oddyssey"
+    description: |
+      As I began trying to wrap my head around the crazy, new-to-me world of tide pools on the coasts of the Olympic Peninsula, a book that kept coming up in every list and bibliography was __Between Pacific Tides__ by Edward F. Rickets and Jack Calvin. This isn't that book. But while I was still waiting for it to be available at the library when I saw [a post by the Well-read Naturalist](https://www.wellreadnaturalist.com/2022/06/a-tidal-odyssey/) about __this__ book, an account of how that groundbreaking work on Pacific marine ecology came into being.
+
+      Now, a book about a book isn't necessarily the sexiest thing. But this guy Ricketts was an incredibly interesting fellow: he was the inspiration for the protagonists of two books by John Steinbeck (and a collaborator with the legendary Californian Nobel laureate as well), a garrulous renaissance man who changed the course of a scientific specialty from outside the confines of academia and a deep thinker/talker/listener who fostered an atmosphere of curiosity and discussion which influenced a bunch of interesting people hanging around his lab, people like Jospeh Campbell, Henry Miller, John Cage.
+
+      __Between Pacific Tides__ is a striking blend of art and science communication which has influenced generations. It is amazing. Its key insight is that the interrelatedness of the members of actual ecological communities, rather than taxonomic organization, can be the starting point for understanding life, has had incredible influence, to the point where it now seems like a given. The story of this work's long journey is as interesting as the genealogy of its ideas, as Rickets' persistence in the face of academic skepticism and publishers' skepticism triumphs in the end. What an interesting story about an interesting human.
+    dateCreated: 2022-09-02T07:28:24.291Z
   - ISBN: "9780802140111"
     title: "Second Nature: A Gardener's Education"
     description: Before he became the tribune of a renewed psychedelic era, before he promulgated a perspective on the food system we live in that changed everything, Michael Pollan brought his cerebral and affably discursive style to bear on the subject of gardening. As I try to go from a novice gardener to the caretaking of a small plot of land, I enjoyed this account of his own journey. Pollan's writing is lucid and his thoughts informed by wide reading and reflection on the subject. It was his recounting of a battle with a woodchuck, read as an excerpt on a podcast, that led me to pick this up. I'm glad I did.
