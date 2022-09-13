@@ -89,5 +89,4 @@ books:
 
 ---
 
-Last year's reading slump has continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. I've finished a really big book (***The Dawn of Everything***) and am making progress on some other things. For now I'm limiting this list to books that I have both finished and which I would recommend.
-
+Last year's reading slump continued into this year. But I'm in a new place with a nice library and a [couple](https://www.odysseybooksgifts.com/) of [great](https://www.portbooknews.com/) bookstores and have also added many of the books that were waiting for me in storage to my TBR shelf. Also, I discovered that I needed reading glasses and... while I'm not over the blow to my ego, it has made a huge difference. What I thought was a lack of focus was actually a lack of *ability* to focus.
