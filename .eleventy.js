@@ -2,6 +2,7 @@
 // const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { book, shelf } = require("./src/js/_shortcodes");
+const { book2 } = require("./src/js/book2");
 const { category } = require("./src/js/_filters")
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
@@ -14,6 +15,19 @@ const md = new markdownIt({
 
 module.exports = function (eleventyConfig) {
 
+  eleventyConfig.setServerOptions({
+    // Default values are shown:
+
+    // Opt-out of the live reload snippet
+    enabled: false,
+  });
+
+  eleventyConfig.setWatchJavaScriptDependencies(false);
+  eleventyConfig.setBrowserSyncConfig({
+    snippet: false,
+  });
+
+  eleventyConfig.addNunjucksShortcode("book2", book2);
   // book shortcode
   eleventyConfig.addNunjucksAsyncShortcode("book", book);
   // shelf  shortcode

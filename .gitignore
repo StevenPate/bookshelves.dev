@@ -30,3 +30,4 @@ src/_data/booksOnShelves.json
 src/_data/localInventory.json
 b.js
 save.js
+src/.DS_Store

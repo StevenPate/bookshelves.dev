@@ -85,7 +85,6 @@ books:
   - ISBN: "9781534483170"
   - ISBN: "9780735264892"
   - ISBN: "9781953861283"
-
+attribution: "Phinney by Post"
 ---
-
-Phinney by Post Kids is dope. It's exactly what you want in a bookstore subscription service: thoughfully curated books delivered like clockwork, with just enough of a note to remind me of the wonderful humans who authored a note and lovingly wrapped up something that my son is beyond excited to open. If they offered a weekly subscription (and I could afford it) I would not hesitate to subscribe.
+Phinney by Post Kids is exactly what you want in a bookstore subscription service. Expect houghfully curated books delivered like clockwork, with just enough of a note to remind me of the wonderful humans who authored a note and lovingly wrapped up something that my son is beyond excited to open. If they offered a weekly subscription (and I could afford it) I would not hesitate to subscribe.

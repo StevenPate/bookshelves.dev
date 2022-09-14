@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+pagination:
+    data: microblog.blog.items
+    size: 1
+    alias: posts
+permalink: "/blog/{{ posts.title | slug }}/"
+---
+
+{# This is a blog post cross-posted from <a href="{{ microblog.blog.home_page_url }}">my micro.blog</a>. The original post can be found there. #}
+
+<h2>{{ posts.title }}</h2>
+<div>
+    {{ posts.content_html | safe }}
+</div>
