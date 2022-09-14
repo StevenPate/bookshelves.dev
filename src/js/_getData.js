@@ -230,7 +230,7 @@ const getAmazon = async (ISBN) => {
             });
         coverUrl = sortedAmznImages[0].URL;
     } catch (err) {
-        console.log(`getAmazon has a problem with ${ISBN}.`);
+        console.log(`getAmazon has a problem with ${ISBN} .`);
         console.log(err);
     }
     let cachedCoverUrl;

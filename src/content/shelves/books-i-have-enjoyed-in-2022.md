@@ -1,6 +1,7 @@
 ---
 title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
+dateCreated: 2022-01-01T07:28:24.291Z
 dateModified: 2022-09-12T07:28:24.291Z
 books:
   - ISBN: "9780870711589"

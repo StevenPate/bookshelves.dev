@@ -1,8 +1,11 @@
+---
+eleventyComputed:
+  modified: "{{ page.inputPath | getGitCommitDateFromPath | readableDate }}"
+---
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
 <article id="shelf">
-
 <section title="About the '{{ title }}' shelf" class="px-8 mb-32 md:px-16">
   <div class="grid justify-center grid-cols-1 prose prose-xl">
   <h1 class="mb-4">{{ title or metadata.title | safe }}</h1>

@@ -12,6 +12,11 @@ sectionClass: ""
 </div>
 {% endfor %}
 
+<!-- this doesn't work if you use the wrong ISBN. -->
+<!-- % book2 ISBN="9780811228787", layout="title" %}
+% book2 ISBN="9780811228787", layout="title-full", shelf="books-i-have-enjoyed-in-2022" %}
+% book2 ISBN="9780811228787", layout="description", shelf="books-i-have-enjoyed-in-2022" %}
+% book2 ISBN="9780811228787", layout="image", shelf="books-i-have-enjoyed-in-2022" %} -->
 
 </div>
 
