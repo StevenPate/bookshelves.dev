@@ -17,6 +17,20 @@ books:
     dateCreated: 2022-09-01
   - ISBN: "9780593083369"
     title: "Orwell's Roses: A Memoir"
+    description: |
+    
+      I honestly didn't want to read a book about Orwell. But never doubt Rebecca Solnit: clearly written, incisive, insightful and gifted at bringing all kinds of unexpected connections to bear on a subject. Her aim is to tease out how Orwell's lifelong interest in plants and gardening inform a more complete understanding of him as a writer and thinker while exploring the role of pleasure in art and politics.
+
+      > [T]he least political art may give us something that lets us plunge into politics, that human beings need reinforcement and refuge, that pleasure does not necessarily seduce us from the tasks at hand but can fortify us. The pleasure that is beauty, the beauty that is meaning, order, calm. Orwell found this refuge in natural and domestic spaces, and he repaired to them often and emerged from them often to go to war on lies, delusions, cruelties and follies...
+
+      I finished **Orwell's Roses** and would have enjoyed immediately turning back to page one and reading the book again if it hadn’t planted and nourished half a dozen other appetites to be pursued elsewhere.
+
+      
+      
+    excerpts: 
+      - excerpt: |
+          "[T]he least political art may give us something that lets us plunge into politics, that human beings need reinforcement and refuge, that pleasure does not necessarily seduce us from the tasks at hand but can fortify us. The pleasure that is beauty, the beauty that is meaning, order, calm. Orwell found this refuge in natural and domestic spaces, and he repaired to them often and emerged from them often to go to war on lies, delusions, cruelties and follies..."
+        excerptLocation: "Page number: 95"
   - ISBN: "9780375760006"
     summary: "Bulgaria, 1934. A young man is murdered by the local fascists. His brother, Khristo Stoianev, is recruited into the NKVD, the Soviet secret intelligence service, and sent to Spain to serve in its civil war..."
     description: |
