@@ -6,8 +6,8 @@ books:
     description: |
       I needed something quick that would feel good to read, and TJ Kulne's YA Fantasy tale of a mysterious oprhanage  and a by-the-book child welfare case worker more than fit the bill. Here is a book 
       his is a book about finding a home and what it means to find (as opposed to merely have) a family. The prose wasn't always as magical as the subject matter, but the characters were good and the love story was very sweet. Felt good, man.
-    dateCreated: 2022-09-17T19:07:27
-    dateModified: 2022-09-17T20:28:24.291Z
+    dateCreated: 2022-09-18T22:07:27
+    dateModified: 2022-09-18T22:07:27
   - ISBN: "9780870711589"
     title: "A Tidal Oddyssey"
     description: |
