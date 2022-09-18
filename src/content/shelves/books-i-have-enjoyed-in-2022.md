@@ -2,6 +2,12 @@
 title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
+  - ISBN: "9781250217288"
+    description: |
+      I needed something quick that would feel good to read, and TJ Kulne's YA Fantasy tale of a mysterious oprhanage  and a by-the-book child welfare case worker more than fit the bill. Here is a book 
+      his is a book about finding a home and what it means to find (as opposed to merely have) a family. The prose wasn't always as magical as the subject matter, but the characters were good and the love story was very sweet. Felt good, man.
+    dateCreated: 2022-09-17T19:07:27
+    dateModified: 2022-09-17T20:28:24.291Z
   - ISBN: "9780870711589"
     title: "A Tidal Oddyssey"
     description: |
@@ -24,9 +30,6 @@ books:
       > [T]he least political art may give us something that lets us plunge into politics, that human beings need reinforcement and refuge, that pleasure does not necessarily seduce us from the tasks at hand but can fortify us. The pleasure that is beauty, the beauty that is meaning, order, calm. Orwell found this refuge in natural and domestic spaces, and he repaired to them often and emerged from them often to go to war on lies, delusions, cruelties and follies...
 
       I finished **Orwell's Roses** and would have enjoyed immediately turning back to page one and reading the book again if it hadn’t planted and nourished half a dozen other appetites to be pursued elsewhere.
-
-      
-      
     excerpts: 
       - excerpt: |
           "[T]he least political art may give us something that lets us plunge into politics, that human beings need reinforcement and refuge, that pleasure does not necessarily seduce us from the tasks at hand but can fortify us. The pleasure that is beauty, the beauty that is meaning, order, calm. Orwell found this refuge in natural and domestic spaces, and he repaired to them often and emerged from them often to go to war on lies, delusions, cruelties and follies..."
