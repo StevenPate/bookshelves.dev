@@ -2,10 +2,10 @@
 title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
-<<<<<<< HEAD
   - ISBN: "9781681375335"
     description: |
-      From the bulging file of things I was wrong about: I once was convinced that the cover design for the [New York Review Classics books](https://www.nyrb.com/collections/classics) is boring and somewhat crude. It may be a response conditioned by encountering so much joy inside those covers in the meantime, but whenever I see one of these treasures faced out, I shake my head at my old self. What perfect harmony between image The cover of this new Rumi translation seemed quite honestly seemed to glow as it drew me across the library to pull it off the shelf. The startling, electric words I found within cemented the enchantment. Here are verses brimming with the particular clarity of intoxication, perfectly contemporaneous while 800 years old, and not at all how I remembered the experience of reading Rumi. In Persian-American poet and singer Haleh Liza Gafori's brilliant translation, these lyrical selections awaken me,, and lodge themselves in my consciousness. This book is an absolute gem.  "Meet us in the land of insight / Camped under ecstasy's flag". translated by 
+      From the bulging file of things I was wrong about: I once was convinced that the cover design for the [New York Review Classics books](https://www.nyrb.com/collections/classics) is boring and somewhat crude. It may be a response conditioned by encountering so much joy inside those covers in the meantime, but whenever I see one of these treasures faced out, I shake my head at my old self. What perfect harmony between image The cover of this new Rumi translation seemed quite honestly seemed to glow as it drew me across the library to pull it off the shelf. The startling, electric words I found within cemented the enchantment. Here are verses brimming with the particular clarity of intoxication, perfectly contemporaneous while 800 years old, and not at all how I remembered the experience of reading Rumi. In Persian-American poet and singer Haleh Liza Gafori's brilliant translation, these lyrical selections awaken me,, and lodge themselves in my consciousness. This book is an absolute gem.  "Meet us in the land of insight / Camped under ecstasy's flag".
+    dateCreated: 2022-10-18T22:07:27
   - ISBN: "9780295990620"
     description: |
       I regret how many times I looked at **The Final Forest** sitting on the shelf and thought I could hold off on another book about trees. This book is decidedly about people and the evolving ideas about and conflicting attitudes towards humans' relationship to the natural world, and it knocked my boots off. To contextualize the context of the effect of efforts to protect old-growth forests on the exemplary community devoted to logging them, the town of Forks, Washington, William Dietrich allows gives voice to so many actual peoples' voices the seemingly polarized political debate becomes a patchwork of real human experience. An incredible document, this helped me understand the stakes and the contours of the changing pacific northwest, and the Olympic Peninsula in particular
@@ -19,7 +19,6 @@ books:
     title: "A Tidal Oddyssey"
     description: |
       As I began trying to wrap my head around the crazy, new-to-me world of tide pools on the coasts of the Olympic Peninsula, a book that kept coming up in every list and bibliography was __Between Pacific Tides__ by Edward F. Rickets and Jack Calvin. This isn't that book. But while I was still waiting for it to be available at the library when I saw [a post by the Well-read Naturalist](https://www.wellreadnaturalist.com/2022/06/a-tidal-odyssey/) about __this__ book, an account of how that groundbreaking work on Pacific marine ecology came into being.
-=======
 - ISBN: '9780295990620'
   description: Another book picked up on the shelves of Port.Book and News, offering
     some historical perspective on how the evolving conflict between people who live
@@ -40,7 +39,6 @@ books:
   title: A Tidal Oddyssey
   description: |
     As I began trying to wrap my head around the crazy, new-to-me world of tide pools on the coasts of the Olympic Peninsula, a book that kept coming up in every list and bibliography was __Between Pacific Tides__ by Edward F. Rickets and Jack Calvin. This isn't that book. But while I was still waiting for it to be available at the library when I saw [a post by the Well-read Naturalist](https://www.wellreadnaturalist.com/2022/06/a-tidal-odyssey/) about __this__ book, an account of how that groundbreaking work on Pacific marine ecology came into being.
->>>>>>> 801087abebe43411fecb7f01f1adf40bd9c38be9
 
     Now, a book about a book isn't necessarily the sexiest thing. But this guy Ricketts was an incredibly interesting fellow: he was the inspiration for the protagonists of two books by John Steinbeck (and a collaborator with the legendary Californian Nobel laureate as well), a garrulous renaissance man who changed the course of a scientific specialty from outside the confines of academia and a deep thinker/talker/listener who fostered an atmosphere of curiosity and discussion which influenced a bunch of interesting people hanging around his lab, people like Jospeh Campbell, Henry Miller, John Cage.
 
