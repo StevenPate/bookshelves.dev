@@ -2,6 +2,12 @@
 title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
+  - ISBN: "9781681375335"
+    description: |
+      From the bulging file of things I was wrong about: I once was convinced that the cover design for the [New York Review Classics books](https://www.nyrb.com/collections/classics) is boring and somewhat crude. It may be a response conditioned by encountering so much joy inside those covers in the meantime, but whenever I see one of these treasures faced out, I shake my head at my old self. What perfect harmony between image The cover of this new Rumi translation seemed quite honestly seemed to glow as it drew me across the library to pull it off the shelf. The startling, electric words I found within cemented the enchantment. Here are verses brimming with the particular clarity of intoxication, perfectly contemporaneous while 800 years old, and not at all how I remembered the experience of reading Rumi. In Persian-American poet and singer Haleh Liza Gafori's brilliant translation, these lyrical selections awaken me,, and lodge themselves in my consciousness. This book is an absolute gem.  "Meet us in the land of insight / Camped under ecstasy's flag". translated by 
+  - ISBN: "9780295990620"
+    description: |
+      I regret how many times I looked at **The Final Forest** sitting on the shelf and thought I could hold off on another book about trees. This book is decidedly about people and the evolving ideas about and conflicting attitudes towards humans' relationship to the natural world, and it knocked my boots off. To contextualize the context of the effect of efforts to protect old-growth forests on the exemplary community devoted to logging them, the town of Forks, Washington, William Dietrich allows gives voice to so many actual peoples' voices the seemingly polarized political debate becomes a patchwork of real human experience. An incredible document, this helped me understand the stakes and the contours of the changing pacific northwest, and the Olympic Peninsula in particular
   - ISBN: "9781250217288"
     description: |
       I needed something quick that would feel good to read, and TJ Kulne's YA Fantasy tale of a mysterious oprhanage  and a by-the-book child welfare case worker more than fit the bill. Here is a book 
