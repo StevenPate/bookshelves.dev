@@ -19,13 +19,6 @@ books:
     title: "A Tidal Oddyssey"
     description: |
       As I began trying to wrap my head around the crazy, new-to-me world of tide pools on the coasts of the Olympic Peninsula, a book that kept coming up in every list and bibliography was __Between Pacific Tides__ by Edward F. Rickets and Jack Calvin. This isn't that book. But while I was still waiting for it to be available at the library when I saw [a post by the Well-read Naturalist](https://www.wellreadnaturalist.com/2022/06/a-tidal-odyssey/) about __this__ book, an account of how that groundbreaking work on Pacific marine ecology came into being.
-  - ISBN: '9780295990620'
-    description: Another book picked up on the shelves of Port Book and News, offering
-      some historical perspective on how the evolving conflict between people who live
-      and work in communities reliant on resource extraction and growing numbers of
-      people who see the protection of endangered animals and disappearing, fragile
-      ecosystems to be of great value.
-    details: false
   - ISBN: '9781250217288'
     description: "I needed something quick that would feel good to read, and TJ Kulne's
       YA Fantasy tale of a mysterious oprhanage  and a by-the-book child welfare case
