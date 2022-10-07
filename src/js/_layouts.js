@@ -93,6 +93,8 @@ ${otherContexts}
   //     </div>`
   //     : ''
 
+  summary = md.render(summary);
+
   let detailsLayout =
     bookDisplayFormat == "context-card" || bookDisplayFormat == "full-details"
       ? `
