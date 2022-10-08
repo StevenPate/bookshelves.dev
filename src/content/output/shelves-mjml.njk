@@ -1,0 +1,18 @@
+---
+pagination:
+    data: booksOnShelves.shelves
+    size: 1
+    alias: shelf
+permalink: "/{{ shelf.shelfID }}.mjml"
+---
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+
+        <mj-text font-size="20px" color="#F45E43" font-family="helvetica">{{ shelf.data.title }}</mj-text>
+
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
