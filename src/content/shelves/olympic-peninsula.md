@@ -24,6 +24,7 @@ books:
       Nine essays, researched and written by members of the subject tribes, cover cultural history, contemporary affairs, heritage programs, and tourism information. Edited by anthropologist Jacilee Wray, who also provides the book’s introduction, this collection relates the Native peoples’ history in their own words and addresses each tribe’s current cultural and political issues, from the establishment of community centers to mass canoe journeys. The volume’s updated content expands its findings to new audiences. More than 70 photographs and other illustrations, many of which are new to this edition, give further insight into the unique legacy of these groups, moving beyond popular romanticized views of American Indians to portray their lived experiences.
 
       Providing a foundation for outsiders to learn about the Olympic Peninsula tribes’ unique history with one another and their land, this volume demonstrates a cross-tribal commitment to education, adaptation, and cultural preservation. Furthering these goals, this updated edition offers fresh understanding of Native peoples often seen from an outside perspective only. (Publisher's Description)
+  - ISBN: '9781594857348'
   - ISBN: '9780898868081'
     description: |
       * More than 700 color illustrations for easy identification
