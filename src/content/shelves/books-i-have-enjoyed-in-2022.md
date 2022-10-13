@@ -17,19 +17,6 @@ books:
       his is a book about finding a home and what it means to find (as opposed to merely have) a family. The prose wasn't always as magical as the subject matter, but the characters were good and the love story was very sweet. Felt good, man.
     dateCreated: 2022-09-18T22:07:27
     dateModified: 2022-09-18T22:07:27
-  - ISBN: "9780870711589"
-    title: "A Tidal Oddyssey"
-    description: |
-      As I began trying to wrap my head around the crazy, new-to-me world of tide pools on the coasts of the Olympic Peninsula, a book that kept coming up in every list and bibliography was __Between Pacific Tides__ by Edward F. Rickets and Jack Calvin. This isn't that book. But while I was still waiting for it to be available at the library when I saw [a post by the Well-read Naturalist](https://www.wellreadnaturalist.com/2022/06/a-tidal-odyssey/) about __this__ book, an account of how that groundbreaking work on Pacific marine ecology came into being.
-  - ISBN: '9781250217288'
-    description: "I needed something quick that would feel good to read, and TJ Kulne's
-      YA Fantasy tale of a mysterious oprhanage  and a by-the-book child welfare case
-      worker more than fit the bill. Here is a book \nhis is a book about finding a
-      home and what it means to find (as opposed to merely have) a family. The prose
-      wasn't always as magical as the subject matter, but the characters were good and
-      the love story was very sweet. Felt good, man.\n"
-    dateCreated: '2022-09-18T22:07:27.000+00:00'
-    dateModified: '2022-09-18T22:07:27.000+00:00'
   - ISBN: '9780870711589'
     title: A Tidal Oddyssey
     description: |
