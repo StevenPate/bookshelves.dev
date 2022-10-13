@@ -28,4 +28,5 @@ I want to explore how we might build a way of encountering books online that hon
 - My name is [Steven](https://stevenpate.com/). Absolutely nobody asked me to do this.  But also: nobody who knows me will be surprised I'm trying ayway.
 - You can view the <a href="https://github.com/StevenPate/bookshelves.dev/">source code for this project on github</a>. It has a long way to go! 
 - <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Freepik - Flaticon</a>.
+- Ther *is* a collection of [little blog posts](/blog/) where I blog about what I'm working on here more frequently.
 - You are really nice for checking this page out. High five to you.

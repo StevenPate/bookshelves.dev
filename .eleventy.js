@@ -31,6 +31,11 @@ module.exports = function (eleventyConfig) {
     })
   });
 
+  eleventyConfig.addCollection("blog", (collection) => {
+    const allItems = collection.getAll()[0].data.microblog.items;
+    const filteredItems = allItems.filter(item => item.tags && item.tags.includes("bookshelves"));
+    return filteredItems;
+  });
   // eleventyConfig.addCollection('customDataCollection', customDataCollection);
 
 // Create collection from _data/customData.js

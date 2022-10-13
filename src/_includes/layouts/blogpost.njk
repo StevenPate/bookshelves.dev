@@ -1,0 +1,18 @@
+{% extends 'layouts/base.njk' %}
+{% block content %}
+<div class="max-w-5xl px-8 prose-xl md:px-16">
+<h1 class="prose-lg max-w-none text-neutral-600 text-[2.8rem] sm:text-5xl">{{ title or metadata.title }}</h1>
+
+  <h2 class="mt-12 mb-24 text-3xl text-gray-400">{{ post.date_published | dateString }}</h2>
+  
+
+{{ content | safe }}
+
+
+<div class="mt-24"><div></div>
+  <p class="prose prose-base">This post is crostposted from <a href="{{ post.url }}">{{ post.url }}</a>.</p>
+</div>
+
+
+</div>
+{% endblock %}
