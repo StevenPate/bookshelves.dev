@@ -245,16 +245,27 @@ const getAmazon = async (ISBN) => {
     console.log(`getAmazon has a problem with ${ISBN} .`);
     console.log(err);
   }
-  let cachedCoverUrl;
+//   let cachedCoverUrl;
+//   if (coverUrl != null) {
+//     cachedCoverUrl = await cacheImage(
+//       coverUrl,
+//       "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
+//       ISBN
+//     );
+//   }
+
+//   return { coverUrl, cachedCoverUrl };
+
+  let cachedImage;
   if (coverUrl != null) {
-    cachedCoverUrl = await cacheImage(
+    cachedImage = await cacheImage(
       coverUrl,
       "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
       ISBN
     );
   }
 
-  return { coverUrl, cachedCoverUrl };
+  return { coverUrl, cachedCoverHTML: cachedImage.html, cachedLowSrc: cachedImage.lowsrc.url };
 };
 
 const getLibro = async (ISBN) => {
@@ -272,7 +283,7 @@ const getLibro = async (ISBN) => {
             console.log(`getLibro has a problem with ${ISBN} .`);
             console.log(err);
         }
-        let cachedCoverUrl = await cacheImage(
+        let cachedImage = await cacheImage(
             coverUrl,
             "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
             ISBN
@@ -292,7 +303,7 @@ const getLibro = async (ISBN) => {
             .children("a")
             .get(0);
         let narrator = libroHTML(narratorEl).text().trim();
-        return { narrator, publisher, image:{coverUrl, cachedCoverUrl} };
+        return { narrator, publisher, image:{coverUrl, cachedCoverHTML: cachedImage.html, cachedLowSrc: cachedImage.lowsrc.url} };
     } catch (error) {
         console.error(error);
     }

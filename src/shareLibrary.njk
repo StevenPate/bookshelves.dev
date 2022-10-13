@@ -7,18 +7,20 @@ permalink: '/library.json'
   "bio": "{{ site.description }}",
   "lists": [
   {%- for item in booksOnShelves.shelves %}
-    {
-      "title": "{{ item.shelfTitle }}",
-      "shelfID": "{{ item.shelfID }}",
-      "url": "{{ site.url }}/{{ item.shelfID }}",
-      "books": [
-        {%- for ISBN in item.shelfItems %}
-        { 
-          {% book ISBN, 'json' %}
-        }{% if not loop.last %},{% endif %}
-        {%- endfor %}
-      ]
-    }{% if not loop.last %},{% endif %}
+    {% if item.visible %}
+      {
+        "title": "{{ item.shelfTitle }}",
+        "shelfID": "{{ item.shelfID }}",
+        "url": "{{ site.url }}/{{ item.shelfID }}",
+        "books": [
+          {%- for ISBN in item.shelfItems %}
+          { 
+            {% book ISBN, 'json' %}
+          }{% if not loop.last %},{% endif %}
+          {%- endfor %}
+        ]
+      }{% if not loop.last %},{% endif %}
+    {% endif %}
   {%- endfor %}
   ]
 }

@@ -25,7 +25,8 @@ function layoutBook(id, bookDisplayFormat, details, contexts) {
     cover,
     cachedCover,
     coverUrl,
-    cachedCoverUrl,
+    cachedCoverHTML, 
+    cachedLowSrc,
     publisher,
     publishedDate,
     pageCount,
@@ -132,9 +133,9 @@ ${otherContexts}
     default:
       return `<a href="${link}">${textLink}</a>`;
     case "cover":
-      return `<div><a href="${link}">${cachedCoverUrl}</a></div>`;
+      return `<div><a href="${link}">${cachedCoverHTML}</a></div>`;
     case "carousel-cover":
-      return `<div class="max-w-72 py-8"><a href="${link}">${cachedCoverUrl}</a></div>`;
+      return `<div class="max-w-72 py-8"><a href="${link}">${cachedCoverHTML}</a></div>`;
     case "full":
     case "full-details":
       description = description ? md.render(description) : "";
@@ -152,7 +153,7 @@ by ${authors}
 ${contextsLayout}
 </div>
 <div id="${slug}-image" class="book-cover w-full sm:w-1/3 not-prose my-6 sm:px-6 flex flex-col items-center content-start">
-<a href="/${id}">${cachedCoverUrl}</a>
+<a href="/${id}">${cachedCoverHTML}</a>
 ${detailsLayout}
 <a href="${link}">
 <button class="mx-auto w-auto m-6 px-4 py-2 text-base font-semibold text-blue-400 bg-transparent bg-none border border-blue-300  hover:border-transparent transition duration-300 ease-in-out delay-150 hover:bg-white hover:shadow-xl">
@@ -167,7 +168,7 @@ ${linkText}
   <div class="max-w-[65ch] book flex flex-col-reverse sm:flex-row gap-x-8 my-16 pr-12">
     <div id="${slug}-description" class="relative book-description">
       <div id="${slug}-cover" class="float-right -mr-24 w-40 ml-12 mb-12 space-y-8 overflow-hidden book-cover">
-        <a href="/${id}">${cachedCoverUrl}</a>
+        <a href="/${id}">${cachedCoverHTML}</a>
         <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
         <div id="${slug}-author" class="font-lg">by ${authors}</div>
       </div>
@@ -180,7 +181,7 @@ ${linkText}
     case "small":
       return `
 <div id="${slug}" class="my-4 flex flex-col sm:flex-row content-start" >
-<div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCoverUrl}</a></div>
+<div id="${slug}-image" class="w-full sm:w-28 py-8 content-start items-top"><a href="${link}">${cachedCoverHTML}</a></div>
 <div id="${slug}-info" class="w-full sm:w-2/3 prose prose-lg py-6 pl-4 sm:py-auto">
 <div id="${slug}-title" class="font-xl"><a href="${link}">${title}</a></div>
 <div id="${slug}-author" class="font-lg">${authors}</div>
@@ -198,7 +199,7 @@ ${linkText}
       return `
 
 <div class="m-2 bg-white rounded-lg shadow-xl lg:flex w-[66vw] lg:max-w-lg">
-<div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverUrl}</div>
+<div class="lg:w-1/3 bg-gray-50 p-6">${cachedCoverHTML}</div>
 <div class="p-6 bg-gray-50 lg:w-2/3">
 <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
 <p class="text-gray-600">${authors}</p>
@@ -216,7 +217,7 @@ ${linkText}
       return `
         <div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg hover:bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01]">
           <div class="sm:flex">
-            <div class="sm:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverUrl}</a></div>
+            <div class="sm:w-1/3 bg-gray-50 p-6"><a href="${link}">${cachedCoverHTML}</a></div>
             <div class="px-6 lg:p-6 bg-gray-50 sm:w-2/3">
               <h2 class="mb-2 text-2xl font-bold text-gray-900 mt-0">${title}</h2>
               <p class="text-gray-600">${authors}</p>
@@ -239,7 +240,7 @@ ${linkText}
             "id": "${id}",
             "author": "${authors}",
             "link": "${site.url}/${id}/",
-            "image": "${coverUrl}",
+            "image": "${site.url}${cachedLowSrc}",
             "date_finished": null,
             "notes": "TBD"`;
   }

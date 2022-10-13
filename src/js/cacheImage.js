@@ -31,7 +31,7 @@ async function imageShortcode(
     let lowsrc = metadata.jpeg[0];
     let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
-    return `<picture>
+    const html = `<picture>
     ${Object.values(metadata)
         .map((imageFormat) => {
             return `  <source type="${
@@ -48,6 +48,28 @@ async function imageShortcode(
         loading="lazy"
         decoding="async">
     </picture>`;
+
+    return { html, highsrc, lowsrc };
+
+
+
+    // return `<picture>
+    // ${Object.values(metadata)
+    //     .map((imageFormat) => {
+    //         return `  <source type="${
+    //             imageFormat[0].sourceType
+    //         }" srcset="${imageFormat
+    //             .map((entry) => entry.srcset)
+    //             .join(", ")}" sizes="${sizes}">`;
+    //     })
+    //     .join("\n")}
+    //   <img
+    //     src="${lowsrc.url}"
+    //     alt="${alt}"
+    //     class="${cls}"
+    //     loading="lazy"
+    //     decoding="async">
+    // </picture>`;
 }
 
 module.exports = imageShortcode;
