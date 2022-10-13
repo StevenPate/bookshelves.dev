@@ -222,7 +222,7 @@ const addDataToBooks = async (booksOnShelves) => {
 };
 
 const bookshelvesToJSON = (itemsForJSON) => {
-  const JSONdata = JSON.stringify(itemsForJSON);
+  const JSONdata = JSON.stringify(itemsForJSON, null, 2);
   fs.writeFile(bookshelves.dataFile, JSONdata, "utf8", (err) => {
     if (err) {
       console.log(`Error writing ${bookshelves.dataFile}: ${err}`);
