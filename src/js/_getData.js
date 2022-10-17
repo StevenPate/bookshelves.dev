@@ -2,39 +2,37 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
 const cacheImage = require("./cacheImage");
 const MarkdownIt = require("markdown-it");
 const md = new MarkdownIt({
-    html: true,
+  html: true,
 });
 const { Isbn } = require("library-lib");
 const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 
 const getInventory = async (thisISBN) => {
-    const bookshelves = require("../../bookshelves.config");
-    const localInventory = require("../_data/localInventory.json");
-    if (!bookshelves.useLocalInventory) {
-        return;
-    }
-    // console.log(`let's check local inventory for ${ISBN}.`)
-    const inventoryFound = localInventory.find(
-        (item) => item.ISBN === thisISBN
-    );
-    // console.log(inventoryFound)
-    if (!inventoryFound) {
-        return;
-    }
-    const { ISBN, ...inventoryInfo } = inventoryFound;
-    return inventoryInfo;
+  const bookshelves = require("../../bookshelves.config");
+  const localInventory = require("../_data/localInventory.json");
+  if (!bookshelves.useLocalInventory) {
+    return;
+  }
+  // console.log(`let's check local inventory for ${ISBN}.`)
+  const inventoryFound = localInventory.find((item) => item.ISBN === thisISBN);
+  // console.log(inventoryFound)
+  if (!inventoryFound) {
+    return;
+  }
+  const { ISBN, ...inventoryInfo } = inventoryFound;
+  return inventoryInfo;
 };
 
 const checkISBN = (ISBN) => {
-    try {
-        const isbnToParse = ISBN.replace(/[^0-9]/g, "");
-        const { isbn } = Isbn.parse(isbnToParse);
-        return isbn;
-    } catch (err) {
-        console.log(`${ISBN} looks like a bad isbn.`);
-        return { error: "Bad request" };
-    }
+  try {
+    const isbnToParse = ISBN.replace(/[^0-9]/g, "");
+    const { isbn } = Isbn.parse(isbnToParse);
+    return isbn;
+  } catch (err) {
+    console.log(`${ISBN} looks like a bad isbn.`);
+    return { error: "Bad request" };
+  }
 };
 
 // const getIdentifiers = async (ISBN) => {
@@ -63,102 +61,102 @@ const checkISBN = (ISBN) => {
 // };
 
 const getGoogle = async (ISBN) => {
-    try {
-        let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`;
-        let googleData = await EleventyFetch(url, {
-            type: "json",
-            duration: "10d",
-            directory: "_cache",
-        });
+  try {
+    let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`;
+    let googleData = await EleventyFetch(url, {
+      type: "json",
+      duration: "10d",
+      directory: "_cache",
+    });
 
-        if (!googleData.items) {
-            console.log(`No googleapis data found for ${ISBN}.`);
-            return;
-        }
-
-        let {
-            title,
-            subtitle,
-            authors,
-            publisher,
-            description,
-            categories,
-            publishedDate,
-            pageCount,
-        } = googleData.items[0].volumeInfo;
-
-        description += ` (Publisher's Description)`;
-        description = md.render(description);
-
-        let authorSortName;
-        if (authors != undefined && authors.length != 0) {
-            let firstAuthorName = authors[0].split(" ");
-            let firstAuthorLastName = firstAuthorName.reverse();
-            authorSortName = firstAuthorLastName[0];
-        }
-
-        return {
-            title,
-            subtitle,
-            authors,
-            authorSortName,
-            publisher,
-            description,
-            categories,
-            publishedDate,
-            pageCount,
-        };
-    } catch (error) {
-        console.error(error);
+    if (!googleData.items) {
+      console.log(`No googleapis data found for ${ISBN}.`);
+      return;
     }
+
+    let {
+      title,
+      subtitle,
+      authors,
+      publisher,
+      description,
+      categories,
+      publishedDate,
+      pageCount,
+    } = googleData.items[0].volumeInfo;
+
+    description += ` (Publisher's Description)`;
+    description = md.render(description);
+
+    let authorSortName;
+    if (authors != undefined && authors.length != 0) {
+      let firstAuthorName = authors[0].split(" ");
+      let firstAuthorLastName = firstAuthorName.reverse();
+      authorSortName = firstAuthorLastName[0];
+    }
+
+    return {
+      title,
+      subtitle,
+      authors,
+      authorSortName,
+      publisher,
+      description,
+      categories,
+      publishedDate,
+      pageCount,
+    };
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const getOpenLibrary = async (ISBN) => {
-    try {
-        let url = `https://openlibrary.org/isbn/${ISBN}.json`;
-        let openLibraryData = await EleventyFetch(url, {
-            type: "json",
-            duration: "10d",
-            directory: "_cache",
-        });
+  try {
+    let url = `https://openlibrary.org/isbn/${ISBN}.json`;
+    let openLibraryData = await EleventyFetch(url, {
+      type: "json",
+      duration: "10d",
+      directory: "_cache",
+    });
 
-        const {
-            subjects,
-            identifiers,
-            classifications,
-            translated_from,
-            contributors,
-            translation_of,
-            lc_classifications,
-            first_sentence,
-            pagination,
-            copyright_date,
-            publish_places,
-        } = openLibraryData;
+    const {
+      subjects,
+      identifiers,
+      classifications,
+      translated_from,
+      contributors,
+      translation_of,
+      lc_classifications,
+      first_sentence,
+      pagination,
+      copyright_date,
+      publish_places,
+    } = openLibraryData;
 
-        if (!openLibraryData) {
-            console.log("no open library data");
-            return;
-        }
-
-        return {
-            subjects,
-            identifiers,
-            classifications,
-            translated_from,
-            contributors,
-            translation_of,
-            lc_classifications,
-            first_sentence,
-            pagination,
-            copyright_date,
-            publish_places,
-        };
-    } catch (error) {
-        if (error.name === "AbortError") {
-            console.log("OpenLibrary request was aborted");
-        }
+    if (!openLibraryData) {
+      console.log("no open library data");
+      return;
     }
+
+    return {
+      subjects,
+      identifiers,
+      classifications,
+      translated_from,
+      contributors,
+      translation_of,
+      lc_classifications,
+      first_sentence,
+      pagination,
+      copyright_date,
+      publish_places,
+    };
+  } catch (error) {
+    if (error.name === "AbortError") {
+      console.log("OpenLibrary request was aborted");
+    }
+  }
 };
 
 // const getBookshopOrg = async (ISBN) => {
@@ -170,7 +168,7 @@ const getOpenLibrary = async (ISBN) => {
 //             // TODO do error handling and fallbacks
 //             const response = await fetch(cover);
 //             if (response.status == "404") {
-                
+
 //                 cover = `404`;
 //             }
 //         } catch (err) {
@@ -240,21 +238,20 @@ const getAmazon = async (ISBN) => {
         });
       });
     coverUrl = sortedAmznImages[0].URL;
-
   } catch (err) {
     console.log(`getAmazon has a problem with ${ISBN} .`);
     console.log(err);
   }
-//   let cachedCoverUrl;
-//   if (coverUrl != null) {
-//     cachedCoverUrl = await cacheImage(
-//       coverUrl,
-//       "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
-//       ISBN
-//     );
-//   }
+  //   let cachedCoverUrl;
+  //   if (coverUrl != null) {
+  //     cachedCoverUrl = await cacheImage(
+  //       coverUrl,
+  //       "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
+  //       ISBN
+  //     );
+  //   }
 
-//   return { coverUrl, cachedCoverUrl };
+  //   return { coverUrl, cachedCoverUrl };
 
   let cachedImage;
   if (coverUrl != null) {
@@ -265,80 +262,144 @@ const getAmazon = async (ISBN) => {
     );
   }
 
-  return { coverUrl, cachedCoverHTML: cachedImage.html, cachedLowSrc: cachedImage.lowsrc.url };
+  return {
+    coverUrl,
+    cachedCoverHTML: cachedImage.html,
+    cachedLowSrc: cachedImage.lowsrc.url,
+  };
 };
 
 const getLibro = async (ISBN) => {
+  try {
+    let coverUrl = `https://covers.libro.fm/${ISBN}_400.jpg#`;
+
     try {
-        let coverUrl = `https://covers.libro.fm/${ISBN}_400.jpg#`;
-
-        try {
-            // TODO do error handling and fallbacks
-            const response = await fetch(coverUrl);
-            if (response.status == "404") {
-                console.warn(`Couldn't find the ${ISBN} image on libro.fm`);
-                cover = `404`;
-            }
-        } catch (err) {
-            console.log(`getLibro has a problem with ${ISBN} .`);
-            console.log(err);
-        }
-        let cachedImage = await cacheImage(
-            coverUrl,
-            "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
-            ISBN
-        );
-
-        const libroURL = `https://libro.fm/audiobooks/${ISBN}`;
-        const libroData = await EleventyFetch(libroURL, {
-            type: "text",
-            duration: "10d",
-            directory: "_cache",
-        });
-        const libroHTML = cheerio.load(libroData);
-        let publisherEl = libroHTML("*[itemprop = 'publisher']").get(0);
-        let publisher = libroHTML(publisherEl).text().trim();
-
-        let narratorEl = libroHTML("*[class = 'audiobook-information__section']")
-            .children("a")
-            .get(0);
-        let narrator = libroHTML(narratorEl).text().trim();
-        return { narrator, publisher, image:{coverUrl, cachedCoverHTML: cachedImage.html, cachedLowSrc: cachedImage.lowsrc.url} };
-    } catch (error) {
-        console.error(error);
+      // TODO do error handling and fallbacks
+      const response = await fetch(coverUrl);
+      if (response.status == "404") {
+        console.warn(`Couldn't find the ${ISBN} image on libro.fm`);
+        cover = `404`;
+      }
+    } catch (err) {
+      console.log(`getLibro has a problem with ${ISBN} .`);
+      console.log(err);
     }
+    let cachedImage = await cacheImage(
+      coverUrl,
+      "book-cover not-prose my-0 transition duration-300 ease-in-out delay-50 border border-gray-100 hover:bg-white shadow hover:shadow-xl hover:-translate-y-1 hover:scale-110",
+      ISBN
+    );
+
+    const libroURL = `https://libro.fm/audiobooks/${ISBN}`;
+    const libroData = await EleventyFetch(libroURL, {
+      type: "text",
+      duration: "10d",
+      directory: "_cache",
+    });
+    const libroHTML = cheerio.load(libroData);
+    let publisherEl = libroHTML("*[itemprop = 'publisher']").get(0);
+    let publisher = libroHTML(publisherEl).text().trim();
+
+    let narratorEl = libroHTML("*[class = 'audiobook-information__section']")
+      .children("a")
+      .get(0);
+    let narrator = libroHTML(narratorEl).text().trim();
+    return {
+      narrator,
+      publisher,
+      image: {
+        coverUrl,
+        cachedCoverHTML: cachedImage.html,
+        cachedLowSrc: cachedImage.lowsrc.url,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const getISBNdb = async (ISBN) => {
+  // const url = `https://api2.isbndb.com/book/${ISBN}`;
+  // const url = `https://api2.isbndb.com/book/9781934759486`;
+
+  // try {
+
+  //     let headers = {
+  //         "Content-Type": 'application/json',
+  //         "Authorization": '48565_c9d95611e5493d3ce2ac9af517dcac2a'
+  //     }
+
+  //     let ISBNdb = await EleventyFetch(url, {
+  //         headers: headers,
+  //         type: "json",
+  //         duration: "10d",
+  //         directory: "_cache",
+  //     });
+
+  //     return ISBNdb;
+
+  // } catch (error) {
+  //     console.error(error);
+  // }
+
+  let url = `https://api2.isbndb.com/book/${ISBN}`;
+
+  try {
+    let ISBNdb = await EleventyFetch(url, {
+        duration: "10d",
+        directory: "_cache",
+        type: "json",
+        fetchOptions: {
+            headers: {
+                "Host": "api2.isbndb.com",
+                "User-Agent": "insomnia/5.12.4",
+                "Authorization": '48565_c9d95611e5493d3ce2ac9af517dcac2a',
+                "Accept": "*/*",
+                "Content-Type": 'application/json',
+            }
+        },
+    });
+
+    // console.log(ISBNdb);
+    return ISBNdb;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const getAllData = async (books) => {
-    for (let i = 0; i < books.length; i++) {
-        // use promise.all or something better here
-        // identifiers = await getIdentifiers(books[i].ISBN).then(
-        //     (value) => (books[i].identifiers = value)
-        // );
-        google = await getGoogle(books[i].ISBN).then(
-            (value) => (books[i].google = value)
-        );
-        openlibrary = await getOpenLibrary(books[i].ISBN).then(
-            (value) => (books[i].openlibrary = value)
-        );
-        if (books[i].audioISBN) {
-            librofm = await getLibro(books[i].audioISBN)
-            .then((value) => (books[i].librofm = value)
-            );
-            books[i].image = books[i].librofm.image
-        };
-        // bookshopOrg = await getBookshopOrg(books[i].ISBN).then(
-        //     (value) => (books[i].bookshopOrg = value)
-        // );
-        coverImage = await getAmazon(books[i].ISBN).then(
-            (value) => (books[i].image = value)
-        );
-    
-        inventoryInfo = await getInventory(books[i].ISBN).then(
-            (value) => (books[i].inventoryInfo = value)
-        );
+  for (let i = 0; i < books.length; i++) {
+    // use promise.all or something better here
+    // identifiers = await getIdentifiers(books[i].ISBN).then(
+    //     (value) => (books[i].identifiers = value)
+    // );
+    ISBNdb = await getISBNdb(books[i].ISBN).then(
+      (value) => (books[i].ISBNdb = value)
+    );
+    google = await getGoogle(books[i].ISBN).then(
+      (value) => (books[i].google = value)
+    );
+    openlibrary = await getOpenLibrary(books[i].ISBN).then(
+      (value) => (books[i].openlibrary = value)
+    );
+    if (books[i].audioISBN) {
+      librofm = await getLibro(books[i].audioISBN).then(
+        (value) => (books[i].librofm = value)
+      );
+      books[i].image = books[i].librofm.image;
     }
-    return books;
+    // bookshopOrg = await getBookshopOrg(books[i].ISBN).then(
+    //     (value) => (books[i].bookshopOrg = value)
+    // );
+    coverImage = await getAmazon(books[i].ISBN).then(
+      (value) => (books[i].image = value)
+    );
+
+    inventoryInfo = await getInventory(books[i].ISBN).then(
+      (value) => (books[i].inventoryInfo = value)
+    );
+  }
+  return books;
 };
 
 module.exports.getInventory = getInventory;
