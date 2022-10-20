@@ -53,7 +53,7 @@ books:
 ```
 Not only did I add my own description, I also added the ISBN for an audiobook and set told it to use the audiobook link for this title (which defaults to [libro.fm](https://libro.fm)). 
 
-I think this is a cool and flexible way to create a collection of books and personalized any or all aspects as desired. The system gets more interesting as one imagines a large number of shelves, potentially chosen and annotated by multiple people. 
+<mark class="bg-amber-100">I think this is a cool and flexible way to create a collection of books and personalized any or all aspects as desired. The system gets more interesting as one imagines a large number of shelves, potentially chosen and annotated by multiple people.</mark>
 
 That is because a book can appear on more than one shelf, and seeing at a glance what other shelves it on is potentially a neat way to find other books that might be of interest. You can see how I'm currently implementing that below the book description on the page which is generated for every book placed on a shelf. {% book "9780857861832", "text::Here is an example", "local" %}. I have big plans for this way of linking among books and shelves.
 

@@ -33,4 +33,5 @@ Here are a few other links on the subject or describe projects undertaken in a r
 * [Andy Matuschak's Notes](https://notes.andymatuschak.org/About_these_notes)
 * [Chase McCoy on Digital Gardens](https://chasem.co/notes/digital-gardens)
 
+Lastly, I'll note that I recently *have* added [something much more truly blog-like](/blog), where I just talk about updates I make to the site and test out a micro.blog integration..
 

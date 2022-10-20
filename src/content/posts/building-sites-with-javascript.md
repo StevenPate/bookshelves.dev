@@ -8,7 +8,7 @@ This site is a work-in-progress, and this page is about the messiness of me lear
 
 In thinking about how to build a site to encounter books [based on "shelf-like" arrangements](/no-books-but-on-shelves), I am realy captivated by the idea of starting with text, putting something *underneath* the abstraction of an application layer which, even in the [repository]({{ site.github }}), can be understood by a non-technical person. Semantically clear frontmatter and markdown files and a version history of what's changed seems cool. So I started from the premise of not fencing the content off in a database exactly. At the beginning, the only thing I knew like this was Jekyll.
 
-But one day, I was poking around [Craig Mod's site](https://craigmod.com/). The source code revealed it was built with Hugo. Then I went down a deep rabbit-hole o exploring static site Generators and becoming excited about building something that was interesting but also something that people smarter than me could potentially improve. I had tried React. It seemed like a useful thing to learn for other applications but was honestly, as my Dad would say, "a lot of sugar for a dime."
+But one day, I was poking around [Craig Mod's site](https://craigmod.com/). The source code revealed it was built with Hugo. Then I went down a deep rabbit-hole to exploring static site Generators. I became excited about building something that was interesting but also something that people smarter than me could potentially improve. I had tried React. It seemed like a useful thing to learn for other applications but was honestly, as my Dad would say, "a lot of sugar for a dime."
 
 When I found [11ty](https://11ty.dev), something clicked. I could stay very close to HTML and Markdown and Javascript. I can learn all kinds of other things and build in all kinds of other langauges.
 
@@ -19,4 +19,5 @@ So this site is built with love using [11ty](https://11ty.dev) and [Netlify]([11
 Priorities for me as of now are 
 * bringing accessibility up to a much higher standard
 * cleaning up the API/scraping interactions
-* applying a truly well-designed experience as I move on from Tailwind.
+* applying a truly well-designed experience as I move on from Tailwind
+* providing a satisfactory way to use API data (I've been testing out the amazing integration possibilities of [sanity.io](https://sanity.io)..)
