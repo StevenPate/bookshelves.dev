@@ -29,7 +29,7 @@
           </h3>
         </div>
         <div class="mb-12">
-          {% for item in collections.posts | reverse | limit(1) %}
+          {% for item in collections.posts | reverse | limit(3) %}
             <div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg lg:max-w-lg hover:bg-white hover:shadow-2xl
                 hover:-translate-y-1 hover:scale-[1.01]">
               <a class="no-underline group" href="{{ item.url }}">
@@ -44,8 +44,26 @@
               </a>
             </div>
           {% endfor %}
-          <h3 class="p-6 mt-0">
+          <h3 class="p-6 pb-16 mt-0">
             <a href="/digital-garden" class="text-2xl !font-bold">More posts→</a>
+          </h3>
+          <br />
+          {% for item in collections.blog | limit(1) %}
+            <div class="m-2 transition duration-300 ease-in-out bg-white rounded-lg shadow-lg lg:max-w-lg hover:bg-white hover:shadow-2xl
+                hover:-translate-y-1 hover:scale-[1.01] pt-16">
+              <a class="no-underline group" href="/blog/{{ item.title | slug }}/">
+                <div class="flex flex-row items-start p-6 space-x-8 ">
+                  <div class="prose prose-xl">
+                    <div class="underline text-bkshlvs-blue decoration-amber-500 group-hover:underline group-hover:decoration-wavy group-hover:text-blue-800">{{ item.title }}</div>
+                    <div class="my-2 text-base no-underline">{{ item.data.subtitle }}</div>
+                    <div><span class="text-sm text-gray-400">{{ item.date_published | dateString }}</span></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+          <h3 class="p-6 mt-0">
+            <a href="/digital-garden" class="text-2xl !font-bold">More site updates→</a>
           </h3>
         </div>
       </section>
