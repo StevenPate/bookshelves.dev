@@ -1,6 +1,14 @@
 ## Bookshelves.dev 📚
 Building a content-focused approach to online book collections: [bookshelves.dev](https://bookshelves.dev)
 
+## Description 💬 
+
+This system is designed to allow you to easily create a rich book-focused website beginning with nothing but a list of books.
+
+It can be a turnkey solution for adding content marketing to a bookselling ecommerce experience, or for using existing book-related content and curation to create a rich, discoverable, and accessible online experience for all devices.
+
+Bookshelves.dev can take text (such as markdown files), API and json data (such as from a CMS or from library.son files), or CSV files (such as goodreads exports, inventory files, etc.) to build a navigable online rendering of book collections.
+
 ## Features ✨
 - Showcase book recommendations
 - Create online shelves
