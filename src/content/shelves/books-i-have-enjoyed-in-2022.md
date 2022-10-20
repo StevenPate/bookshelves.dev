@@ -3,6 +3,8 @@ title: Books I have enjoyed in 2022
 description: Here are the books which I have finished this year and would also recommend.
 books:
   - ISBN: '9780811230070'
+    summary: |
+      Marguerite, a reserved, sneakily precocious 17-year-old raised by an impossibly privileged and comically exacting mother, endures a traumatic family revelation and navigates the notoriety it brings in this lovely novella. The overriding principal Margeurite’s mother has imparted to her is the avoidance, at all costs, _mauvais ton_ (“bad taste”). But how do you live up to this dictum when the sullied tide of this fallen world washes away everything you thought you had and knew? 
     description: |
       Marguerite, a reserved, sneakily precocious 17-year-old raised by an impossibly privileged and comically exacting mother, endures a traumatic family revelation and navigates the notoriety it brings in this lovely novella. The overriding principal Margeurite’s mother has imparted to her is the avoidance, at all costs, _mauvais ton_ (“bad taste”). But how do you live up to this dictum when the sullied tide of this fallen world washes away everything you thought you had and knew? 
 

@@ -20,22 +20,28 @@ Building a content-focused approach to online book collections: [bookshelves.dev
 
 
 ## ToDo 🛣️
-- [ ] Flesh out this readme 😊 
-- [ ] Add social share images for posts, books, shelves
-- [ ] Add readable *created* and *edited* dates on all content
-- [ ] Handle drafts
-- [ ] Add "next shelf" link on shelf layout
-- [ ] Add "latest" book to homepage
-- [ ] Use local/cached image paths for library.json 
-- [ ] Add read time estimator
+- [ ] Use sanity.io to pull in content for shelves
+- [ ] Improve book schema
+- [ ] Import/export goodreads csv
 - [ ] Generate collage image for shelves using `Sharp`
-- [x] Integrate `fathom analytics`
+- [ ] Add social share images for posts, books, shelves
+- [ ] Try using web components (probably WebC)
+- [ ] Integrate newsletter html generation from pages using MJML
+- [ ] Refactor API/scraping scripts
+- [ ] Add json feed and RSS
+- [ ] Display links to other editions (ISBNs) programatically
+- [ ] Handle drafts
 - [ ] Fix attribution shortcomings (multiple authors, editors, translators, etc.)
-- [ ] Scrape more data to serve with serverless and edge functions
 - [ ] Add fonts and problematic styles to asset pipeline
-- [ ] Integrate newsletter html generation from pages and RSS
-- [ ] Integrate with event data API
-- [ ] Add intuitive way for suggesting the next shelf with clickable component
+- [ ] Improve accessibility
+
+- [x] Flesh out this readme 😊 
+- [x] Add readable *created* and *edited* dates on all content
+- [x] Add "next shelf" link on shelf layout
+- [x] Add "latest" book to homepage
+- [x] Integrate `fathom analytics`
+- [x] Use local/cached image paths for library.json 
+- [x] Import micro.blog for site updates 
 ...
 
-Just getting this thing started. Any feedback is good feedback right now. Thanks for looking!
+Any feedback is good feedback right now. Thanks for looking!
